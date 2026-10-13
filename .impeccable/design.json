@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T07:11:02+00:00",
+  "title": "Design System: SIMAK",
+  "extensions": {
+    "colorMeta": {
+      "rail": {
+        "role": "primary",
+        "displayName": "Buckram Green",
+        "canonical": "#1F4D3A",
+        "tonalRamp": [
+          "#000F07",
+          "#022D1E",
+          "#1E4C39",
+          "#3F6C58",
+          "#608E78",
+          "#82B19B",
+          "#A5D6BF",
+          "#CAFCE4"
+        ]
+      },
+      "rail-deep": {
+        "role": "primary",
+        "displayName": "Deep Buckram",
+        "canonical": "#173B2C",
+        "tonalRamp": [
+          "#000F08",
+          "#072D1E",
+          "#274A3B",
+          "#466A59",
+          "#678C7A",
+          "#89AF9D",
+          "#ACD4C0",
+          "#D1FAE5"
+        ]
+      },
+      "rail-ink": {
+        "role": "primary",
+        "displayName": "Rail Ink",
+        "canonical": "#EEF4F0",
+        "tonalRamp": [
+          "#080C0A",
+          "#222623",
+          "#3F4340",
+          "#5E635F",
+          "#7E8480",
+          "#A1A7A3",
+          "#C5CBC7",
+          "#EAF0EC"
+        ]
+      },
+      "rail-muted": {
+        "role": "primary",
+        "displayName": "Faded Rail Ink",
+        "canonical": "#BBD0C3",
+        "tonalRamp": [
+          "#020F07",
+          "#192920",
+          "#35473C",
+          "#54665B",
+          "#74887C",
+          "#97AB9E",
+          "#BACFC2",
+          "#DFF5E7"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Card-Stock Ground",
+        "canonical": "#F3F6F4",
+        "tonalRamp": [
+          "#0A0C0A",
+          "#232624",
+          "#404341",
+          "#5F6260",
+          "#808381",
+          "#A3A6A4",
+          "#C7CAC8",
+          "#ECEFED"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "slip-paper": {
+        "role": "neutral",
+        "displayName": "Slip Paper",
+        "canonical": "#FBFCFB",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242524",
+          "#414241",
+          "#616161",
+          "#828282",
+          "#A4A5A4",
+          "#C8C9C8",
+          "#EEEFEE"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Catalog Ink",
+        "canonical": "#1B1F1D",
+        "tonalRamp": [
+          "#090C0A",
+          "#222624",
+          "#3F4341",
+          "#5E6260",
+          "#7F8481",
+          "#A1A6A4",
+          "#C5CBC8",
+          "#EAF0ED"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Pencil Grey",
+        "canonical": "#47524C",
+        "tonalRamp": [
+          "#050D09",
+          "#1E2822",
+          "#3A453F",
+          "#59645E",
+          "#7A867F",
+          "#9CA9A2",
+          "#C0CDC6",
+          "#E5F2EB"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Card Edge",
+        "canonical": "#C9D4CE",
+        "tonalRamp": [
+          "#060D09",
+          "#1F2723",
+          "#3B4440",
+          "#5A645F",
+          "#7B8580",
+          "#9DA8A2",
+          "#C1CCC6",
+          "#E6F2EC"
+        ]
+      },
+      "line-soft": {
+        "role": "neutral",
+        "displayName": "Soft Edge",
+        "canonical": "#E1E8E4",
+        "tonalRamp": [
+          "#080C0A",
+          "#212624",
+          "#3E4440",
+          "#5D635F",
+          "#7E8480",
+          "#A0A7A3",
+          "#C4CBC7",
+          "#E9F0EC"
+        ]
+      },
+      "ruling": {
+        "role": "neutral",
+        "displayName": "Blue Ruling",
+        "canonical": "#DCE6F3",
+        "tonalRamp": [
+          "#060C14",
+          "#1E262F",
+          "#3B434D",
+          "#59626D",
+          "#7A838F",
+          "#9DA6B2",
+          "#C0CAD7",
+          "#E5F0FD"
+        ]
+      },
+      "ruling-ink": {
+        "role": "neutral",
+        "displayName": "Ruling Ink",
+        "canonical": "#2F5BA8",
+        "tonalRamp": [
+          "#000826",
+          "#012058",
+          "#123D87",
+          "#325EAC",
+          "#5281D1",
+          "#74A5F8",
+          "#ACCAFE",
+          "#E6EFFF"
+        ]
+      },
+      "catalog-red": {
+        "role": "tertiary",
+        "displayName": "Catalog Red",
+        "canonical": "#B3261E",
+        "tonalRamp": [
+          "#1F0000",
+          "#4D0101",
+          "#800304",
+          "#B0221B",
+          "#D84C3F",
+          "#FD7565",
+          "#FDB4A9",
+          "#FEE9E5"
+        ]
+      },
+      "red-ink": {
+        "role": "tertiary",
+        "displayName": "Oxblood Ink",
+        "canonical": "#8C1D17",
+        "tonalRamp": [
+          "#1F0000",
+          "#4D0001",
+          "#7E0A09",
+          "#A4362C",
+          "#CB5A4D",
+          "#F37D6F",
+          "#FEB4A9",
+          "#FFE9E5"
+        ]
+      },
+      "red-bg": {
+        "role": "tertiary",
+        "displayName": "Blush",
+        "canonical": "#FBE4E2",
+        "tonalRamp": [
+          "#140706",
+          "#30201F",
+          "#4F3D3B",
+          "#6F5C5A",
+          "#917D7B",
+          "#B59F9D",
+          "#D9C3C1",
+          "#FFE9E7"
+        ]
+      },
+      "red-line": {
+        "role": "tertiary",
+        "displayName": "Blush Line",
+        "canonical": "#E3B4B0",
+        "tonalRamp": [
+          "#1D0102",
+          "#3C1918",
+          "#5C3634",
+          "#7E5552",
+          "#A17672",
+          "#C69894",
+          "#EBBCB8",
+          "#FFE9E7"
+        ]
+      },
+      "stamp": {
+        "role": "secondary",
+        "displayName": "Stamp Violet",
+        "canonical": "#5B3FA0",
+        "tonalRamp": [
+          "#0F0029",
+          "#2C0362",
+          "#482989",
+          "#664BAD",
+          "#876ED3",
+          "#A991FA",
+          "#CABFFD",
+          "#EFECFE"
+        ]
+      },
+      "stamp-ink": {
+        "role": "secondary",
+        "displayName": "Ribbon Violet",
+        "canonical": "#4A2C8C",
+        "tonalRamp": [
+          "#0E0129",
+          "#2C0362",
+          "#482989",
+          "#664BAE",
+          "#866ED4",
+          "#A891FA",
+          "#CABFFD",
+          "#EEECFE"
+        ]
+      },
+      "stamp-bg": {
+        "role": "secondary",
+        "displayName": "Violet Wash",
+        "canonical": "#EEE8FA",
+        "tonalRamp": [
+          "#0D0914",
+          "#27222F",
+          "#443F4D",
+          "#635E6D",
+          "#857F8F",
+          "#A7A2B3",
+          "#CCC6D7",
+          "#F1EBFD"
+        ]
+      },
+      "stamp-bg-2": {
+        "role": "secondary",
+        "displayName": "Violet Hatch",
+        "canonical": "#E0D5F5",
+        "tonalRamp": [
+          "#0F061B",
+          "#292037",
+          "#463C56",
+          "#655C77",
+          "#877C99",
+          "#AA9FBD",
+          "#CEC3E2",
+          "#F1EBFE"
+        ]
+      },
+      "ok": {
+        "role": "tertiary",
+        "displayName": "Ledger Green",
+        "canonical": "#1F6B45",
+        "tonalRamp": [
+          "#001006",
+          "#022E19",
+          "#054F2F",
+          "#27714B",
+          "#4B946B",
+          "#6FB78D",
+          "#93DDB0",
+          "#C6FEDB"
+        ]
+      },
+      "ok-bg": {
+        "role": "tertiary",
+        "displayName": "Mint Wash",
+        "canonical": "#E2F1E7",
+        "tonalRamp": [
+          "#050E08",
+          "#1D2821",
+          "#39453E",
+          "#58655C",
+          "#79867D",
+          "#9BA9A0",
+          "#BFCDC4",
+          "#E4F3E9"
+        ]
+      },
+      "highlight": {
+        "role": "neutral",
+        "displayName": "Highlighter",
+        "canonical": "#FFF0A6",
+        "tonalRamp": [
+          "#0F0B00",
+          "#2C2501",
+          "#4D4203",
+          "#706113",
+          "#91833B",
+          "#B4A65E",
+          "#D9CA82",
+          "#FFF0A6"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus Blue",
+        "canonical": "#2F5BA8",
+        "tonalRamp": [
+          "#000826",
+          "#012058",
+          "#123D87",
+          "#325EAC",
+          "#5281D1",
+          "#74A5F8",
+          "#ACCAFE",
+          "#E6EFFF"
+        ]
+      },
+      "dark-ground": {
+        "role": "neutral",
+        "displayName": "Night Ground",
+        "canonical": "#141816",
+        "tonalRamp": [
+          "#080C0A",
+          "#222624",
+          "#3F4341",
+          "#5E6360",
+          "#7F8481",
+          "#A1A6A4",
+          "#C5CBC8",
+          "#EAF0ED"
+        ]
+      },
+      "dark-card": {
+        "role": "neutral",
+        "displayName": "Night Card",
+        "canonical": "#1C211E",
+        "tonalRamp": [
+          "#080C0A",
+          "#212623",
+          "#3E4440",
+          "#5D635F",
+          "#7E8480",
+          "#A0A7A3",
+          "#C4CBC7",
+          "#EAF0EC"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#E8EFEA",
+        "tonalRamp": [
+          "#080C09",
+          "#212723",
+          "#3E4440",
+          "#5D635F",
+          "#7E8480",
+          "#A0A7A2",
+          "#C4CBC6",
+          "#EAF1EC"
+        ]
+      },
+      "dark-ink-2": {
+        "role": "neutral",
+        "displayName": "Night Pencil",
+        "canonical": "#A9B6AE",
+        "tonalRamp": [
+          "#050E08",
+          "#1E2822",
+          "#3A453E",
+          "#59655D",
+          "#7A867E",
+          "#9CA9A1",
+          "#C0CDC5",
+          "#E5F2EA"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Night Edge",
+        "canonical": "#33403A",
+        "tonalRamp": [
+          "#040E09",
+          "#1C2823",
+          "#38463F",
+          "#57655E",
+          "#78867F",
+          "#9AA9A2",
+          "#BECDC6",
+          "#E3F3EB"
+        ]
+      },
+      "dark-ruling": {
+        "role": "neutral",
+        "displayName": "Night Ruling",
+        "canonical": "#2A3540",
+        "tonalRamp": [
+          "#040C15",
+          "#1C2631",
+          "#38434F",
+          "#57636F",
+          "#778491",
+          "#99A7B4",
+          "#BDCBD9",
+          "#E2F0FF"
+        ]
+      },
+      "dark-ok": {
+        "role": "neutral",
+        "displayName": "Night Ledger Green",
+        "canonical": "#7FD3A3",
+        "tonalRamp": [
+          "#000F06",
+          "#012E19",
+          "#034F2F",
+          "#167349",
+          "#419669",
+          "#66BA8B",
+          "#8ADFAE",
+          "#C5FFDB"
+        ]
+      },
+      "dark-ok-bg": {
+        "role": "neutral",
+        "displayName": "Night Mint",
+        "canonical": "#17321F",
+        "tonalRamp": [
+          "#001004",
+          "#112C19",
+          "#2E4935",
+          "#4D6954",
+          "#6D8B74",
+          "#8FAE96",
+          "#B3D3BA",
+          "#D8F8DF"
+        ]
+      },
+      "dark-stamp-ink": {
+        "role": "neutral",
+        "displayName": "Night Ribbon Violet",
+        "canonical": "#CDBAF7",
+        "tonalRamp": [
+          "#110126",
+          "#2B1848",
+          "#493669",
+          "#68568C",
+          "#8977AF",
+          "#AC99D4",
+          "#D0BDFA",
+          "#F0EBFE"
+        ]
+      },
+      "dark-stamp-bg": {
+        "role": "neutral",
+        "displayName": "Night Violet Wash",
+        "canonical": "#2A2140",
+        "tonalRamp": [
+          "#0E0520",
+          "#281F3D",
+          "#443C5D",
+          "#645B7E",
+          "#857CA1",
+          "#A89EC5",
+          "#CCC2EB",
+          "#F0EBFF"
+        ]
+      },
+      "dark-stamp-bg-2": {
+        "role": "neutral",
+        "displayName": "Night Violet Hatch",
+        "canonical": "#33284F",
+        "tonalRamp": [
+          "#0F0324",
+          "#281D43",
+          "#453A63",
+          "#645985",
+          "#857AA8",
+          "#A89DCC",
+          "#CCC1F2",
+          "#EFEBFF"
+        ]
+      },
+      "dark-focus": {
+        "role": "neutral",
+        "displayName": "Night Focus Blue",
+        "canonical": "#9DBBF2",
+        "tonalRamp": [
+          "#000729",
+          "#0C224E",
+          "#28416F",
+          "#466192",
+          "#6682B6",
+          "#88A5DB",
+          "#ADCAFF",
+          "#E6EFFF"
+        ]
+      },
+      "dark-highlight": {
+        "role": "neutral",
+        "displayName": "Night Highlighter",
+        "canonical": "#4B4312",
+        "tonalRamp": [
+          "#0E0B00",
+          "#2B2500",
+          "#4A4211",
+          "#6A6233",
+          "#8C8453",
+          "#AFA675",
+          "#D3CB98",
+          "#F9F0BC"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Poster Figure",
+        "purpose": "Frozen proof numbers (fig-big) in Evaluasi; tabular, buckram or oxblood."
+      },
+      "headline": {
+        "displayName": "Page Headline",
+        "purpose": "One h1 per page; 1.75rem at <=1200px."
+      },
+      "title": {
+        "displayName": "Section Title",
+        "purpose": "Section h2 and gate-card titles."
+      },
+      "title-card": {
+        "displayName": "Card Title",
+        "purpose": "Title in every catalog card head."
+      },
+      "verdict": {
+        "displayName": "Verdict",
+        "purpose": "Status sentence in verdict bands, readable from a projector's back row."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text on the 18px root; page intros cap at 68ch."
+      },
+      "body-ruled": {
+        "displayName": "Ruled Description",
+        "purpose": "Description text typed on 2rem blue ruling, max 75ch."
+      },
+      "label": {
+        "displayName": "Control Label",
+        "purpose": "Buttons, selects, toolbar and field labels, group headings."
+      },
+      "label-small": {
+        "displayName": "Metadata",
+        "purpose": "Card-head metadata, slip label, legends, captions."
+      },
+      "stamp": {
+        "displayName": "Stamp",
+        "purpose": "Stamp impressions on slips."
+      },
+      "call-number": {
+        "displayName": "Call Number",
+        "purpose": "Mono identifier per element, e.g. SIMAK·e014·hlm 2."
+      },
+      "numeric": {
+        "displayName": "Evidence Numerals",
+        "purpose": "Claim numbers, numeric cells, timestamps, file names."
+      },
+      "table-head": {
+        "displayName": "Table Head",
+        "purpose": "Uppercase column heads on a 2px ink rule."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-lift",
+        "value": "0 1px 2px rgba(23, 59, 44, .06), 0 6px 18px -8px rgba(23, 59, 44, .18)",
+        "purpose": "Every catalog card at rest and the queue card under review; the only shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "All state transitions and the stamp press."
+      },
+      {
+        "name": "transition-control",
+        "value": "180ms",
+        "purpose": "Button background/border/press shift."
+      },
+      {
+        "name": "transition-nav",
+        "value": "200ms",
+        "purpose": "Rail nav hover fill."
+      },
+      {
+        "name": "transition-queue-dim",
+        "value": "250ms",
+        "purpose": "Queue siblings dimming to 50% while one card is reviewed."
+      },
+      {
+        "name": "stamp-press",
+        "value": "500ms, scale 1.35 -> 1, rotate -6deg -> rest, blur 1.5px -> 0, stagger 110ms",
+        "purpose": "Stamps pressed in sequence when a run completes or a ULD decision is saved."
+      },
+      {
+        "name": "stamp-rotation",
+        "value": "-1.5deg default; +1.2deg every 3rd; -0.6deg every 4th",
+        "purpose": "Hand-pressed tilt of stamps on a slip (queue stamps are untilted)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce -> no press animation, transitions none",
+        "purpose": "Accessibility floor."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "rail-collapse",
+        "value": "1200px"
+      },
+      {
+        "name": "md",
+        "value": "1000px"
+      },
+      {
+        "name": "halves-stack",
+        "value": "760px"
+      },
+      {
+        "name": "sm",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Buckram-green action for the one forward step on a surface (Jalankan, Proses PDF, Setujui).",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5.5v13l11-6.5z\"/></svg>Jalankan</button>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-btn{font:700 0.9375rem/1.2 var(--f-text);color:var(--ink,#1B1F1D);display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:4px;border:1.5px solid var(--line,#C9D4CE);background:var(--card,#FFFFFF);cursor:pointer;transition:background .18s cubic-bezier(.16,1,.3,1),border-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{border-color:var(--ink-2,#47524C)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus,#2F5BA8);outline-offset:2px}.ds-btn-primary{background:var(--rail,#1F4D3A);border-color:var(--rail,#1F4D3A);color:var(--rail-ink,#EEF4F0)}.ds-btn-primary:hover{background:var(--rail-deep,#173B2C);border-color:var(--rail-deep,#173B2C)}"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "White bordered button for secondary actions and document pickers; border darkens on hover.",
+      "html": "<button class=\"ds-btn\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h7l4 4v14H7z\"/><path d=\"M14 3v4h4\"/></svg>materi_01</button>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-btn{font:700 0.9375rem/1.2 var(--f-text);color:var(--ink,#1B1F1D);display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:4px;border:1.5px solid var(--line,#C9D4CE);background:var(--card,#FFFFFF);cursor:pointer;transition:background .18s cubic-bezier(.16,1,.3,1),border-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{border-color:var(--ink-2,#47524C)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus,#2F5BA8);outline-offset:2px}"
+    },
+    {
+      "name": "Inject / Danger Button",
+      "kind": "button",
+      "refersTo": "button-inject",
+      "description": "Oxblood-on-white action for error injection and destructive decisions (Ubah satu angka, Tolak).",
+      "html": "<button class=\"ds-btn ds-btn-inject\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 4l6 6M17 7l-9 9-3 1 1-3 9-9M4 20l2-2\"/></svg>Ubah satu angka</button> <button class=\"ds-btn ds-btn-inject\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg>Tolak</button>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-btn{font:700 0.9375rem/1.2 var(--f-text);color:var(--ink,#1B1F1D);display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:4px;border:1.5px solid var(--line,#C9D4CE);background:var(--card,#FFFFFF);cursor:pointer;transition:background .18s cubic-bezier(.16,1,.3,1),border-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{border-color:var(--ink-2,#47524C)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus,#2F5BA8);outline-offset:2px}.ds-btn-inject{border-color:var(--red-line,#E3B4B0);color:var(--red-ink,#8C1D17)}.ds-btn-inject:hover{background:var(--red-bg,#FBE4E2);border-color:var(--catalog-red,#B3261E)}"
+    },
+    {
+      "name": "Select",
+      "kind": "input",
+      "refersTo": "input-select",
+      "description": "Chart picker and speed select: white, 1.5px card edge, 44px tall, violet caret, blue focus ring.",
+      "html": "<select class=\"ds-select\" aria-label=\"Grafik uji\"><option>syn043 · Kunjungan perpustakaan per bulan (2021)</option></select>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-select{font:600 0.9375rem/1.2 var(--f-text);color:var(--ink,#1B1F1D);min-height:44px;padding:9px 12px;border:1.5px solid var(--line,#C9D4CE);border-radius:4px;background:var(--card,#FFFFFF);max-width:100%}.ds-select:hover{border-color:var(--ink-2,#47524C)}.ds-select:focus-visible{outline:3px solid var(--focus,#2F5BA8);outline-offset:2px}"
+    },
+    {
+      "name": "Rail Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Buckram ledger spine with wordmark, three icon nav items and the current page as a card-stock pill.",
+      "html": "<nav class=\"ds-rail\"><b class=\"ds-wordmark\">SIMAK</b><a href=\"#\" class=\"ds-nav\" aria-current=\"page\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l9 5-9 5-9-5z\"/><path d=\"M3 13l9 5 9-5\"/></svg>Demo Gerbang</a><a href=\"#\" class=\"ds-nav\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 3h7l4 4v14H7z\"/><path d=\"M14 3v4h4\"/></svg>Remediasi</a><a href=\"#\" class=\"ds-nav\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20V4M4 20h16\"/><path d=\"M8 16v-4M12 16V8M16 16v-6\"/></svg>Evaluasi</a></nav>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-rail{background:var(--rail,#1F4D3A);color:var(--rail-ink,#EEF4F0);padding:32px 24px;display:grid;gap:4px;width:272px}.ds-wordmark{font:800 2rem/1 var(--f-text);letter-spacing:.02em;margin-bottom:24px}.ds-nav{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:4px;color:var(--rail-ink,#EEF4F0);text-decoration:none;font:600 1.0625rem/1.3 var(--f-text);transition:background .2s cubic-bezier(.16,1,.3,1)}.ds-nav:hover{background:var(--rail-deep,#173B2C)}.ds-nav[aria-current=page]{background:var(--ground,#F3F6F4);color:var(--rail,#1F4D3A);font-weight:800}.ds-nav:focus-visible{outline:3px solid var(--rail-ink,#EEF4F0);outline-offset:2px}"
+    },
+    {
+      "name": "Catalog Card",
+      "kind": "card",
+      "refersTo": "catalog-card",
+      "description": "Signature unit: white card with 5px catalog-red top rule, Mono call number, verdict band, ruled description with marked numbers, and stamp slip.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><h3>Sisi B · SIMAK</h3><span class=\"ds-callno\">SIMAK·syn043·hlm 1</span></div><div class=\"ds-verdict pub\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>Terbit · lolos semua pemeriksaan</div><p class=\"ds-ruled\">Nilai tertinggi pada Jul, yaitu <span class=\"ds-cl\" tabindex=\"0\">1.452</span> kali; terendah pada Feb, yaitu <span class=\"ds-cl bad\" tabindex=\"0\">1.107</span> kali.</p><div class=\"ds-slip\"><span class=\"ds-slip-label\">Slip pemeriksaan</span><span class=\"ds-stamp\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>cF lulus <span class=\"ds-when\">14.05</span></span><span class=\"ds-stamp\" style=\"--i:1\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>cδ lulus <span class=\"ds-when\">14.05</span></span></div></article>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-slip{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:16px 24px;border-top:1.5px dashed var(--line,#C9D4CE);background:var(--slip-paper,#FBFCFB)}.ds-slip-label{font:700 0.875rem var(--f-text);color:var(--ink-2,#47524C)}.ds-stamp{display:inline-flex;align-items:center;gap:6px;border:2.5px solid var(--stamp,#5B3FA0);color:var(--stamp-ink,#4A2C8C);font:800 0.875rem/1.2 var(--f-text);letter-spacing:.02em;padding:5px 10px;border-radius:3px;transform:rotate(var(--rot,-1.5deg))}.ds-stamp:nth-child(3n){--rot:1.2deg}.ds-stamp:nth-child(4n){--rot:-0.6deg}.ds-stamp.fail{border-color:var(--catalog-red,#B3261E);color:var(--red-ink,#8C1D17)}.ds-stamp.hold{border-style:dashed;background:repeating-linear-gradient(135deg,var(--stamp-bg,#EEE8FA) 0 7px,var(--stamp-bg-2,#E0D5F5) 7px 14px)}.ds-stamp.pending{border-style:dashed;border-color:var(--line,#C9D4CE);color:var(--ink-2,#47524C)}.ds-when{font:600 .75rem/1 var(--f-num);opacity:.85}.ds-slip:hover .ds-stamp{animation:ds-press .5s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i,0)*110ms)}@keyframes ds-press{0%{opacity:0;transform:scale(1.35) rotate(calc(var(--rot,-1.5deg) - 6deg));filter:blur(1.5px)}60%{opacity:1;filter:blur(0)}100%{opacity:1;transform:scale(1) rotate(var(--rot,-1.5deg))}}@media (prefers-reduced-motion:reduce){.ds-slip:hover .ds-stamp{animation:none}}.ds-card{background:var(--card,#FFFFFF);border:1.5px solid var(--line,#C9D4CE);border-radius:4px;overflow:hidden;color:var(--ink,#1B1F1D);font:400 1.0625rem/1.55 var(--f-text);box-shadow:0 1px 2px rgba(23,59,44,.06),0 6px 18px -8px rgba(23,59,44,.18)}.ds-card::before{content:'';display:block;height:5px;background:var(--catalog-red,#B3261E)}.ds-card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:16px 24px 12px;border-bottom:1.5px solid var(--ruling,#DCE6F3)}.ds-card-head h3{margin:0;font:800 1.25rem/1.2 var(--f-text)}.ds-callno{font:600 0.875rem/1.3 var(--f-num);color:var(--ink-2,#47524C);letter-spacing:.02em}.ds-verdict{display:flex;align-items:center;gap:12px;margin:16px 24px;padding:12px 16px;border-radius:4px;font:800 1.25rem/1.3 var(--f-text)}.ds-verdict .ds-icon{width:1.4em;height:1.4em}.ds-verdict.pub{background:var(--ok-bg,#E2F1E7);color:var(--ok,#1F6B45)}.ds-ruled{margin:0;padding:0 24px 12px;line-height:2rem;max-width:75ch;background:repeating-linear-gradient(to bottom,transparent 0 calc(2rem - 1px),var(--ruling,#DCE6F3) calc(2rem - 1px) 2rem)}.ds-cl{font-family:var(--f-num);padding:0 2px;cursor:pointer;border-bottom:3px solid var(--ok,#1F6B45)}.ds-cl.bad{background:var(--red-bg,#FBE4E2);color:var(--red-ink,#8C1D17);font-weight:700;border-bottom-color:var(--catalog-red,#B3261E)}.ds-cl:hover,.ds-cl:focus{background:var(--highlight,#FFF0A6)}.ds-cl:focus-visible{outline:3px solid var(--focus,#2F5BA8);outline-offset:2px}"
+    },
+    {
+      "name": "Check Stamps",
+      "kind": "custom",
+      "refersTo": "stamp-pass",
+      "description": "Rubber stamps on a slip: violet pass, catalog-red fail, violet-hatch held, dashed pending; tilted and pressed in sequence (hover the slip to replay).",
+      "html": "<div class=\"ds-slip\"><span class=\"ds-slip-label\">Slip pemeriksaan</span><span class=\"ds-stamp\" style=\"--i:0\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>cF lulus <span class=\"ds-when\">14.05</span></span><span class=\"ds-stamp fail\" style=\"--i:1\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg>cA gagal <span class=\"ds-when\">14.05</span></span><span class=\"ds-stamp pending\" style=\"--i:2\">cL</span><span class=\"ds-stamp hold\" style=\"--i:3\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"16\" rx=\"1.5\"/><path d=\"M9 9h6M9 13h6M9 17h3\"/></svg>ULD · menunggu</span></div>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-slip{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:16px 24px;border-top:1.5px dashed var(--line,#C9D4CE);background:var(--slip-paper,#FBFCFB)}.ds-slip-label{font:700 0.875rem var(--f-text);color:var(--ink-2,#47524C)}.ds-stamp{display:inline-flex;align-items:center;gap:6px;border:2.5px solid var(--stamp,#5B3FA0);color:var(--stamp-ink,#4A2C8C);font:800 0.875rem/1.2 var(--f-text);letter-spacing:.02em;padding:5px 10px;border-radius:3px;transform:rotate(var(--rot,-1.5deg))}.ds-stamp:nth-child(3n){--rot:1.2deg}.ds-stamp:nth-child(4n){--rot:-0.6deg}.ds-stamp.fail{border-color:var(--catalog-red,#B3261E);color:var(--red-ink,#8C1D17)}.ds-stamp.hold{border-style:dashed;background:repeating-linear-gradient(135deg,var(--stamp-bg,#EEE8FA) 0 7px,var(--stamp-bg-2,#E0D5F5) 7px 14px)}.ds-stamp.pending{border-style:dashed;border-color:var(--line,#C9D4CE);color:var(--ink-2,#47524C)}.ds-when{font:600 .75rem/1 var(--f-num);opacity:.85}.ds-slip:hover .ds-stamp{animation:ds-press .5s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i,0)*110ms)}@keyframes ds-press{0%{opacity:0;transform:scale(1.35) rotate(calc(var(--rot,-1.5deg) - 6deg));filter:blur(1.5px)}60%{opacity:1;filter:blur(0)}100%{opacity:1;transform:scale(1) rotate(var(--rot,-1.5deg))}}@media (prefers-reduced-motion:reduce){.ds-slip:hover .ds-stamp{animation:none}}"
+    },
+    {
+      "name": "Verdict Bands",
+      "kind": "custom",
+      "refersTo": "verdict-held",
+      "description": "Headline-weight status sentence under each card head: published green, failed blush, held violet hatch, idle grey; always icon plus words.",
+      "html": "<div class=\"ds-v pub\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>Terbit · lolos semua pemeriksaan</div><div class=\"ds-v bad\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4M12 17.5v.01\"/></svg>Terbit · 1 angka keliru sampai ke mahasiswa</div><div class=\"ds-v hold\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"16\" rx=\"1.5\"/><path d=\"M9 9h6M9 13h6M9 17h3\"/></svg>Ditahan · masuk antrean tinjauan ULD</div><div class=\"ds-v idle\">Belum dijalankan</div>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-v{display:flex;align-items:center;gap:12px;margin:0 0 8px;padding:12px 16px;border-radius:4px;font:800 1.25rem/1.3 var(--f-text)}.ds-v .ds-icon{width:1.4em;height:1.4em}.ds-v.pub{background:var(--ok-bg,#E2F1E7);color:var(--ok,#1F6B45)}.ds-v.bad{background:var(--red-bg,#FBE4E2);color:var(--red-ink,#8C1D17)}.ds-v.hold{color:var(--stamp-ink,#4A2C8C);background:repeating-linear-gradient(135deg,var(--stamp-bg,#EEE8FA) 0 9px,var(--stamp-bg-2,#E0D5F5) 9px 18px)}.ds-v.idle{background:var(--line-soft,#E1E8E4);color:var(--ink-2,#47524C);font-weight:700;font-size:1.0625rem}"
+    },
+    {
+      "name": "Queue Card",
+      "kind": "card",
+      "refersTo": "queue-card",
+      "description": "ULD review list item: red top edge, thumbnail, Mono call number, type, flat held stamp; siblings dim while one is reviewed.",
+      "html": "<ul class=\"ds-q\"><li><button class=\"ds-qc\" aria-current=\"true\"><span class=\"ds-thumb\"></span><span class=\"ds-qm\"><span class=\"ds-callno\">SIMAK·e014·hlm 2</span><b>Diagram</b><span class=\"ds-qs\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"16\" rx=\"1.5\"/><path d=\"M9 9h6M9 13h6M9 17h3\"/></svg>Ditahan · menunggu ULD</span></span></button></li><li><button class=\"ds-qc\" aria-current=\"false\"><span class=\"ds-thumb\"></span><span class=\"ds-qm\"><span class=\"ds-callno\">SIMAK·e017·hlm 2</span><b>Rumus</b><span class=\"ds-qs\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"16\" rx=\"1.5\"/><path d=\"M9 9h6M9 13h6M9 17h3\"/></svg>Ditahan · menunggu ULD</span></span></button></li></ul>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-q{list-style:none;margin:0;padding:2px;display:grid;gap:8px;max-width:380px}.ds-qc{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:12px;min-height:72px;background:var(--card,#FFFFFF);border:1.5px solid var(--line,#C9D4CE);border-top:4px solid var(--catalog-red,#B3261E);border-radius:4px;cursor:pointer;font:400 1.0625rem/1.3 var(--f-text);color:var(--ink,#1B1F1D);transition:opacity .25s cubic-bezier(.16,1,.3,1)}.ds-qc[aria-current=false]{opacity:.5}.ds-qc[aria-current=false]:hover,.ds-qc:focus-visible{opacity:1}.ds-qc:focus-visible{outline:3px solid var(--focus,#2F5BA8);outline-offset:2px}.ds-qc[aria-current=true]{border-color:var(--ink,#1B1F1D);border-top-color:var(--catalog-red,#B3261E);box-shadow:0 1px 2px rgba(23,59,44,.06),0 6px 18px -8px rgba(23,59,44,.18)}.ds-thumb{width:64px;height:48px;flex:none;background:#fff;border:1px solid var(--line-soft,#E1E8E4)}.ds-qm{display:grid;gap:4px}.ds-callno{font:600 0.875rem/1.3 var(--f-num);color:var(--ink-2,#47524C);letter-spacing:.02em}.ds-qs{justify-self:start;display:inline-flex;gap:6px;align-items:center;font:800 .72rem/1.2 var(--f-text);padding:3px 7px;border:2.5px dashed var(--stamp,#5B3FA0);border-radius:3px;color:var(--stamp-ink,#4A2C8C);background:repeating-linear-gradient(135deg,var(--stamp-bg,#EEE8FA) 0 7px,var(--stamp-bg-2,#E0D5F5) 7px 14px)}"
+    },
+    {
+      "name": "Listen-Mode Bar",
+      "kind": "nav",
+      "refersTo": "listen-bar",
+      "description": "Sticky buckram bar of the generated student HTML: Putar inverted, other controls outlined in rail ink, live voice status.",
+      "html": "<div class=\"ds-bar\" role=\"region\" aria-label=\"Mode dengar\"><b>SIMAK</b><button class=\"ds-bb play\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5.5v13l11-6.5z\"/></svg>Putar</button><button class=\"ds-bb\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5v14M16 5v14\"/></svg>Jeda</button><span class=\"ds-st\">Suara: Indonesian (Indonesia)</span></div>",
+      "css": ":host{--f-text:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--f-num:\"Atkinson Hyperlegible Mono\",ui-monospace,Consolas,monospace}.ds-icon{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-bar{background:var(--rail,#1F4D3A);color:var(--rail-ink,#EEF4F0);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-family:var(--f-text)}.ds-bar b{font-weight:800;letter-spacing:.02em;margin-right:8px}.ds-bb{font:700 15px/1.2 var(--f-text);min-height:44px;padding:8px 15px;border:1.5px solid rgba(238,244,240,.4);border-radius:4px;background:transparent;color:var(--rail-ink,#EEF4F0);cursor:pointer;display:inline-flex;align-items:center;gap:7px}.ds-bb:hover{background:rgba(0,0,0,.18)}.ds-bb.play{background:var(--rail-ink,#EEF4F0);color:var(--rail,#1F4D3A)}.ds-bb:focus-visible{outline:3px solid var(--rail-ink,#EEF4F0);outline-offset:2px}.ds-st{font-size:14px;opacity:.9}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Kartu Katalog Perpustakaan",
+    "overview": "**Creative North Star: \"Kartu Katalog Perpustakaan\"**\n\nSIMAK looks like the card catalog of a university library. Every document element (a chart, a diagram, a formula) is a numbered catalog card in white card stock, topped by a thin catalog-red rule and carrying a monospaced call number. Each description sits on blue-ruled lines like a typed card. Below it is a dashed-off slip where the gate checks (cF, cδ, cA, cL) and the ULD's decisions are pressed as slightly rotated, dated rubber stamps. A buckram-green rail binds the pages like a library ledger spine. Its foot carries one poster-scale proof figure from the frozen evaluation.\n\nDensity suits a projector: the root size is 18px, controls are at least 44px tall, and verdicts are set at headline weight so the room can read \"Terbit · 1 angka keliru sampai ke mahasiswa\" from the back row. Status is never carried by colour alone. Every verdict band and stamp pairs an icon with Indonesian words, and the held state also gets a violet diagonal hatch. The surfaces are flat colour on paper. The only patterns are the ruling and the hatch, and the only lift is one soft card shadow.\n\nThe world rejects the generic grey SaaS dashboard with coloured pills. It also avoids a glossy AI-startup sheen and the rigid look of a government form. Evidence (numbers, source cells, stamps) always outranks decoration.",
+    "keyCharacteristics": [
+      "White catalog cards on cool card-stock ground, each topped by a 5px catalog-red rule.",
+      "Monospaced call numbers (`SIMAK·e014·hlm 2`, `B2·syn043`) identify every element across pages.",
+      "Descriptions are typed on faint blue ruling, 2rem line pitch.",
+      "Gate checks and ULD decisions are rotated rubber stamps on a slip and are pressed in sequence when a run completes.",
+      "Held equals violet hatch plus words; failure equals catalog red plus words; published equals green band plus words.",
+      "Poster-scale tabular numerals carry the proof (`440/440`, `6 → 5 → 0`).",
+      "One typeface family, Atkinson Hyperlegible Next for text and Mono for evidence, chosen for low-vision legibility."
+    ],
+    "rules": [
+      {
+        "name": "The Stamp Violet Rule",
+        "body": "Violet belongs to the gate and the ULD. It marks checks that passed, ULD decisions and held items, and nothing else. It is never a link, a button or a decorative accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means Wrong Rule",
+        "body": "Outside the card-top rule, catalog red appears only where something is wrong or destructive: a failed check, a wrong number reaching students, an injected error, a delete or reject action.",
+        "section": "colors"
+      },
+      {
+        "name": "The Words-With-Colour Rule",
+        "body": "No status is colour-only. Each verdict band and stamp carries an icon and an Indonesian phrase (\"Ditahan · menunggu ULD\", \"cF gagal\"). Held additionally carries the hatch.",
+        "section": "colors"
+      },
+      {
+        "name": "The Typewriter Evidence Rule",
+        "body": "Anything a reader might check against a source goes in Atkinson Hyperlegible Mono: call numbers, claim numbers, numeric cells, timestamps, file names. Prose never goes in Mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Back-Row Rule",
+        "body": "The root stays at 18px. Body text never goes below 0.875rem. Only stamp timestamps (0.75rem) and the compact stamps on queue cards (0.72rem) go smaller.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Shadow Rule",
+        "body": "Only one shadow value exists. Cards rest on it, and the reviewed queue card gains it. Stamps, buttons, bands and inputs stay flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Pattern-Is-Meaning Rule",
+        "body": "The only gradients allowed are hard-stop pattern gradients: the ruling (horizontal lines every 2rem) and the hatch (135° stripes, 7/14px on stamps and 9/18px on bands). A smooth decorative gradient has no place here.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do give every element its own catalog card with a 5px catalog-red top rule and a Mono call number in the form `SIMAK·<id>·hlm <n>`.",
+      "Do record every gate check and ULD decision as a stamp on the card's slip, with an icon, words and a Mono time where one exists.",
+      "Do mark held items with the violet hatch and words (\"Ditahan · menunggu ULD\") together, never with one alone.",
+      "Do set checkable values (claim numbers, numeric cells, call numbers, times) in Atkinson Hyperlegible Mono with tabular figures.",
+      "Do keep Sisi A and Sisi B as equal halves (1fr 1fr) with identical card anatomy.",
+      "Do keep controls at least 44px tall and text at 0.875rem or above (stamp times and queue stamps excepted) on the 18px root.",
+      "Do honour `prefers-reduced-motion`: stamps appear without the press and transitions stop."
+    ],
+    "donts": [
+      "Don't use stamp violet for links, primary buttons or decoration. It belongs to the gate and the ULD.",
+      "Don't use catalog red except for the card-top rule or something wrong or destructive.",
+      "Don't add smooth gradients, glows or extra shadow levels. Only the ruling, the hatch and the single card-lift shadow exist.",
+      "Don't render status as a coloured pill or badge without words. That is the grey-SaaS-dashboard look this world refuses.",
+      "Don't let decoration outrank evidence. Poster figures must be real, frozen results, and nothing is implied that has not happened."
+    ]
+  }
+}

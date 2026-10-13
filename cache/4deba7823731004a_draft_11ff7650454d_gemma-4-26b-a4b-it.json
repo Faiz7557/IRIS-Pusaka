@@ -1,0 +1,1 @@
+{"text": "LaTeX: \\hat{\\beta} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\nUcapan: Beta topi sama dengan jumlah dari x i dikurangi x bar dikali y i dikurangi y bar, dibagi dengan jumlah dari x i dikurangi x bar kuadrat.\nGambar ini menunjukkan rumus estimasi koefisien regresi linear sederhana."}

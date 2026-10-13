@@ -1,0 +1,2612 @@
+[
+ {
+  "id": "syn000",
+  "judul": "Mahasiswa baru per fakultas (2020)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Sains",
+   "Farmasi",
+   "Vokasi",
+   "Hukum",
+   "Ekonomi",
+   "Teknik",
+   "Psikologi"
+  ],
+  "nilai": [
+   422.0,
+   381.0,
+   328.0,
+   350.0,
+   209.0,
+   398.0,
+   647.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "dev"
+ },
+ {
+  "id": "syn001",
+  "judul": "Persentase penduduk miskin per provinsi (2021)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Aceh",
+   "Jatim",
+   "Jateng",
+   "Papua"
+  ],
+  "nilai": [
+   23.2,
+   25.0,
+   19.0,
+   9.8
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn002",
+  "judul": "Rata-rata IPK lulusan per program studi (2022)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Akuntansi",
+   "Fisika",
+   "Biologi",
+   "Kimia",
+   "Statistika"
+  ],
+  "nilai": [
+   3.86,
+   3.79,
+   3.02,
+   3.57,
+   2.96
+  ],
+  "desimal": 2,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "dev"
+ },
+ {
+  "id": "syn003",
+  "judul": "Kunjungan perpustakaan per bulan (2023)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu",
+   "Sep",
+   "Okt"
+  ],
+  "nilai": [
+   411.0,
+   516.0,
+   379.0,
+   482.0,
+   603.0,
+   737.0,
+   629.0,
+   758.0,
+   596.0,
+   645.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn004",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "nilai": [
+   312.0,
+   291.0,
+   234.0,
+   124.0,
+   98.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn005",
+  "judul": "Anggaran riset per unit (2025)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FISIP",
+   "FT",
+   "LPPM",
+   "FEB",
+   "FST",
+   "FIB",
+   "FK"
+  ],
+  "nilai": [
+   1711.0,
+   789.0,
+   1399.0,
+   1056.0,
+   440.0,
+   930.0,
+   520.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn006",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021"
+  ],
+  "nilai": [
+   59.4,
+   63.0,
+   61.9,
+   70.8,
+   80.7,
+   77.7,
+   85.0
+  ],
+  "desimal": 1,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn007",
+  "judul": "Curah hujan bulanan Surabaya (2021)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul"
+  ],
+  "nilai": [
+   124.0,
+   160.0,
+   167.0,
+   183.0,
+   201.0,
+   145.0,
+   159.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn008",
+  "judul": "Skor rata-rata ujian per kelas (2022)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas E",
+   "Kelas A",
+   "Kelas D",
+   "Kelas C",
+   "Kelas B"
+  ],
+  "nilai": [
+   67.8,
+   76.0,
+   80.8,
+   56.0,
+   77.2
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn009",
+  "judul": "Ekspor komoditas Jawa Timur (2023)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Kertas",
+   "Udang",
+   "Kayu olahan",
+   "Perhiasan",
+   "Rokok"
+  ],
+  "nilai": [
+   269.0,
+   591.0,
+   846.0,
+   1109.0,
+   544.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn010",
+  "judul": "Mahasiswa baru per fakultas (2024)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Sains",
+   "Kedokteran",
+   "Teknik",
+   "Psikologi"
+  ],
+  "nilai": [
+   398.0,
+   803.0,
+   534.0,
+   259.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "dev"
+ },
+ {
+  "id": "syn011",
+  "judul": "Persentase penduduk miskin per provinsi (2025)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Jatim",
+   "Maluku",
+   "Bali",
+   "Aceh",
+   "Papua",
+   "Jabar",
+   "Jateng",
+   "NTT"
+  ],
+  "nilai": [
+   27.5,
+   22.4,
+   8.2,
+   19.6,
+   9.7,
+   12.0,
+   8.3,
+   28.9
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn012",
+  "judul": "Rata-rata IPK lulusan per program studi (2020)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Fisika",
+   "Statistika",
+   "Kimia",
+   "Akuntansi",
+   "Biologi"
+  ],
+  "nilai": [
+   3.38,
+   3.81,
+   3.32,
+   3.2,
+   2.94
+  ],
+  "desimal": 2,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn013",
+  "judul": "Kunjungan perpustakaan per bulan (2021)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul"
+  ],
+  "nilai": [
+   642.0,
+   1052.0,
+   1157.0,
+   1103.0,
+   1155.0,
+   935.0,
+   805.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn014",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "nilai": [
+   166.0,
+   227.0,
+   194.0,
+   189.0,
+   180.0,
+   173.0,
+   160.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn015",
+  "judul": "Anggaran riset per unit (2023)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FEB",
+   "FIB",
+   "FT",
+   "FST",
+   "FK",
+   "LPPM"
+  ],
+  "nilai": [
+   1766.0,
+   219.0,
+   1082.0,
+   861.0,
+   1086.0,
+   1052.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn016",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021"
+  ],
+  "nilai": [
+   41.7,
+   39.3,
+   43.1,
+   45.0,
+   44.9,
+   44.4,
+   44.2
+  ],
+  "desimal": 1,
+  "jenis_grafik": "area",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn017",
+  "judul": "Curah hujan bulanan Surabaya (2025)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul"
+  ],
+  "nilai": [
+   353.0,
+   277.0,
+   251.0,
+   207.0,
+   111.0,
+   151.0,
+   132.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn018",
+  "judul": "Skor rata-rata ujian per kelas (2020)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas A",
+   "Kelas E",
+   "Kelas B",
+   "Kelas D",
+   "Kelas C"
+  ],
+  "nilai": [
+   72.3,
+   70.6,
+   59.0,
+   68.9,
+   67.3
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "dev"
+ },
+ {
+  "id": "syn019",
+  "judul": "Ekspor komoditas Jawa Timur (2021)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Udang",
+   "Perhiasan",
+   "Kertas",
+   "Tembaga",
+   "Rokok"
+  ],
+  "nilai": [
+   767.0,
+   1128.0,
+   1324.0,
+   1116.0,
+   463.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn020",
+  "judul": "Mahasiswa baru per fakultas (2022)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Farmasi",
+   "Ekonomi",
+   "Kedokteran",
+   "Vokasi",
+   "Hukum",
+   "Sains",
+   "Psikologi",
+   "Teknik"
+  ],
+  "nilai": [
+   883.0,
+   707.0,
+   128.0,
+   775.0,
+   572.0,
+   451.0,
+   200.0,
+   234.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn021",
+  "judul": "Persentase penduduk miskin per provinsi (2023)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "NTT",
+   "Maluku",
+   "Jatim",
+   "Jateng",
+   "Sumut",
+   "Jabar",
+   "Papua"
+  ],
+  "nilai": [
+   27.5,
+   29.2,
+   22.0,
+   17.4,
+   9.4,
+   13.8,
+   3.8
+  ],
+  "desimal": 1,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn022",
+  "judul": "Rata-rata IPK lulusan per program studi (2024)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Fisika",
+   "Kimia",
+   "Akuntansi",
+   "Statistika",
+   "Manajemen",
+   "Biologi"
+  ],
+  "nilai": [
+   3.25,
+   2.89,
+   3.72,
+   3.43,
+   3.76,
+   2.87
+  ],
+  "desimal": 2,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn023",
+  "judul": "Kunjungan perpustakaan per bulan (2025)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu",
+   "Sep",
+   "Okt"
+  ],
+  "nilai": [
+   1614.0,
+   1586.0,
+   1402.0,
+   1323.0,
+   1224.0,
+   1044.0,
+   869.0,
+   984.0,
+   740.0,
+   572.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "dev"
+ },
+ {
+  "id": "syn024",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "nilai": [
+   227.0,
+   208.0,
+   135.0,
+   39.0,
+   40.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn025",
+  "judul": "Anggaran riset per unit (2021)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FT",
+   "LPPM",
+   "FEB",
+   "FK"
+  ],
+  "nilai": [
+   1003.0,
+   1701.0,
+   1697.0,
+   485.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn026",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020"
+  ],
+  "nilai": [
+   47.4,
+   58.1,
+   56.6,
+   60.8,
+   68.0,
+   78.0
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn027",
+  "judul": "Curah hujan bulanan Surabaya (2023)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu",
+   "Sep"
+  ],
+  "nilai": [
+   154.0,
+   166.0,
+   183.0,
+   225.0,
+   278.0,
+   302.0,
+   286.0,
+   355.0,
+   366.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn028",
+  "judul": "Skor rata-rata ujian per kelas (2024)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas D",
+   "Kelas A",
+   "Kelas E",
+   "Kelas C"
+  ],
+  "nilai": [
+   86.7,
+   91.7,
+   76.3,
+   85.1
+  ],
+  "desimal": 1,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn029",
+  "judul": "Ekspor komoditas Jawa Timur (2025)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Kertas",
+   "Rokok",
+   "Perhiasan",
+   "Tembaga",
+   "Kayu olahan"
+  ],
+  "nilai": [
+   107.0,
+   178.0,
+   489.0,
+   347.0,
+   1045.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "dev"
+ },
+ {
+  "id": "syn030",
+  "judul": "Mahasiswa baru per fakultas (2020)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Farmasi",
+   "Psikologi",
+   "Kedokteran",
+   "Teknik",
+   "Vokasi"
+  ],
+  "nilai": [
+   262.0,
+   551.0,
+   628.0,
+   503.0,
+   434.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "dev"
+ },
+ {
+  "id": "syn031",
+  "judul": "Persentase penduduk miskin per provinsi (2021)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Aceh",
+   "Jabar",
+   "Papua",
+   "Maluku",
+   "Bali",
+   "NTT",
+   "Jateng"
+  ],
+  "nilai": [
+   27.4,
+   24.6,
+   21.2,
+   27.9,
+   13.1,
+   6.8,
+   28.5
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn032",
+  "judul": "Rata-rata IPK lulusan per program studi (2022)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Kimia",
+   "Manajemen",
+   "Akuntansi",
+   "Biologi"
+  ],
+  "nilai": [
+   3.82,
+   3.81,
+   3.31,
+   3.85
+  ],
+  "desimal": 2,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn033",
+  "judul": "Kunjungan perpustakaan per bulan (2023)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei"
+  ],
+  "nilai": [
+   1572.0,
+   1068.0,
+   735.0,
+   632.0,
+   270.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn034",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "nilai": [
+   128.0,
+   186.0,
+   183.0,
+   235.0,
+   277.0,
+   316.0,
+   359.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn035",
+  "judul": "Anggaran riset per unit (2025)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FEB",
+   "FIB",
+   "FST",
+   "FT",
+   "LPPM"
+  ],
+  "nilai": [
+   622.0,
+   1020.0,
+   1278.0,
+   1076.0,
+   519.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn036",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020"
+  ],
+  "nilai": [
+   55.6,
+   61.7,
+   63.2,
+   67.8,
+   77.4,
+   75.9
+  ],
+  "desimal": 1,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn037",
+  "judul": "Curah hujan bulanan Surabaya (2021)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu"
+  ],
+  "nilai": [
+   112.0,
+   109.0,
+   89.0,
+   164.0,
+   165.0,
+   92.0,
+   128.0,
+   143.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn038",
+  "judul": "Skor rata-rata ujian per kelas (2022)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas B",
+   "Kelas A",
+   "Kelas E",
+   "Kelas D"
+  ],
+  "nilai": [
+   87.6,
+   87.9,
+   69.3,
+   76.8
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "dev"
+ },
+ {
+  "id": "syn039",
+  "judul": "Ekspor komoditas Jawa Timur (2023)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Udang",
+   "Kertas",
+   "Tembaga",
+   "Kayu olahan",
+   "Perhiasan"
+  ],
+  "nilai": [
+   1068.0,
+   118.0,
+   781.0,
+   1311.0,
+   778.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn040",
+  "judul": "Mahasiswa baru per fakultas (2024)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Hukum",
+   "Teknik",
+   "Kedokteran",
+   "Sains"
+  ],
+  "nilai": [
+   780.0,
+   620.0,
+   514.0,
+   636.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn041",
+  "judul": "Persentase penduduk miskin per provinsi (2025)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Bali",
+   "Jabar",
+   "Jateng",
+   "Jatim",
+   "NTT",
+   "Sumut"
+  ],
+  "nilai": [
+   8.0,
+   3.9,
+   23.4,
+   28.3,
+   7.3,
+   3.2
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn042",
+  "judul": "Rata-rata IPK lulusan per program studi (2020)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Akuntansi",
+   "Kimia",
+   "Biologi",
+   "Manajemen",
+   "Statistika",
+   "Fisika"
+  ],
+  "nilai": [
+   3.45,
+   3.71,
+   3.39,
+   3.65,
+   3.58,
+   3.22
+  ],
+  "desimal": 2,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "dev"
+ },
+ {
+  "id": "syn043",
+  "judul": "Kunjungan perpustakaan per bulan (2021)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu",
+   "Sep",
+   "Okt"
+  ],
+  "nilai": [
+   1267.0,
+   854.0,
+   1155.0,
+   1298.0,
+   1308.0,
+   1271.0,
+   1452.0,
+   1239.0,
+   962.0,
+   1262.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn044",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "nilai": [
+   324.0,
+   308.0,
+   235.0,
+   276.0,
+   243.0,
+   224.0,
+   161.0,
+   172.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "dev"
+ },
+ {
+  "id": "syn045",
+  "judul": "Anggaran riset per unit (2023)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FK",
+   "FST",
+   "FIB",
+   "LPPM",
+   "FISIP"
+  ],
+  "nilai": [
+   571.0,
+   312.0,
+   1371.0,
+   450.0,
+   1710.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn046",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019"
+  ],
+  "nilai": [
+   42.6,
+   52.7,
+   55.3,
+   64.8,
+   61.3
+  ],
+  "desimal": 1,
+  "jenis_grafik": "area",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "dev"
+ },
+ {
+  "id": "syn047",
+  "judul": "Curah hujan bulanan Surabaya (2025)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu",
+   "Sep"
+  ],
+  "nilai": [
+   124.0,
+   103.0,
+   134.0,
+   135.0,
+   114.0,
+   109.0,
+   132.0,
+   156.0,
+   169.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "dev"
+ },
+ {
+  "id": "syn048",
+  "judul": "Skor rata-rata ujian per kelas (2020)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas D",
+   "Kelas B",
+   "Kelas E",
+   "Kelas A",
+   "Kelas C"
+  ],
+  "nilai": [
+   87.0,
+   70.2,
+   93.0,
+   57.2,
+   67.0
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn049",
+  "judul": "Ekspor komoditas Jawa Timur (2021)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Tembaga",
+   "Kertas",
+   "Kayu olahan",
+   "Udang",
+   "Rokok",
+   "Perhiasan"
+  ],
+  "nilai": [
+   1373.0,
+   169.0,
+   1158.0,
+   262.0,
+   406.0,
+   1178.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn050",
+  "judul": "Mahasiswa baru per fakultas (2022)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Teknik",
+   "Kedokteran",
+   "Farmasi",
+   "Psikologi",
+   "Hukum"
+  ],
+  "nilai": [
+   776.0,
+   449.0,
+   565.0,
+   594.0,
+   562.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn051",
+  "judul": "Persentase penduduk miskin per provinsi (2023)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "NTT",
+   "Bali",
+   "Sumut",
+   "Jabar",
+   "Aceh",
+   "Jateng"
+  ],
+  "nilai": [
+   12.2,
+   16.5,
+   28.7,
+   7.3,
+   19.0,
+   8.7
+  ],
+  "desimal": 1,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "dev"
+ },
+ {
+  "id": "syn052",
+  "judul": "Rata-rata IPK lulusan per program studi (2024)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Akuntansi",
+   "Statistika",
+   "Manajemen",
+   "Kimia",
+   "Biologi"
+  ],
+  "nilai": [
+   3.77,
+   3.06,
+   3.22,
+   3.08,
+   3.46
+  ],
+  "desimal": 2,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "dev"
+ },
+ {
+  "id": "syn053",
+  "judul": "Kunjungan perpustakaan per bulan (2025)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu"
+  ],
+  "nilai": [
+   1713.0,
+   1574.0,
+   1524.0,
+   1476.0,
+   1134.0,
+   1168.0,
+   958.0,
+   796.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn054",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "nilai": [
+   36.0,
+   37.0,
+   70.0,
+   40.0,
+   55.0,
+   68.0,
+   51.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "dev"
+ },
+ {
+  "id": "syn055",
+  "judul": "Anggaran riset per unit (2021)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FEB",
+   "FST",
+   "FIB",
+   "FK",
+   "FT"
+  ],
+  "nilai": [
+   319.0,
+   876.0,
+   1684.0,
+   1581.0,
+   879.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn056",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021"
+  ],
+  "nilai": [
+   47.2,
+   48.4,
+   47.4,
+   55.2,
+   47.6,
+   46.3,
+   49.9
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "dev"
+ },
+ {
+  "id": "syn057",
+  "judul": "Curah hujan bulanan Surabaya (2023)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei"
+  ],
+  "nilai": [
+   356.0,
+   296.0,
+   271.0,
+   154.0,
+   110.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn058",
+  "judul": "Skor rata-rata ujian per kelas (2024)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas A",
+   "Kelas E",
+   "Kelas C",
+   "Kelas B",
+   "Kelas D"
+  ],
+  "nilai": [
+   76.3,
+   56.2,
+   92.7,
+   88.2,
+   85.0
+  ],
+  "desimal": 1,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn059",
+  "judul": "Ekspor komoditas Jawa Timur (2025)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Kayu olahan",
+   "Rokok",
+   "Udang",
+   "Kertas"
+  ],
+  "nilai": [
+   1185.0,
+   703.0,
+   947.0,
+   1140.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn060",
+  "judul": "Mahasiswa baru per fakultas (2020)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Hukum",
+   "Psikologi",
+   "Farmasi",
+   "Sains",
+   "Vokasi",
+   "Ekonomi"
+  ],
+  "nilai": [
+   125.0,
+   423.0,
+   746.0,
+   230.0,
+   318.0,
+   413.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn061",
+  "judul": "Persentase penduduk miskin per provinsi (2021)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Jateng",
+   "Jabar",
+   "Aceh",
+   "NTT",
+   "Maluku"
+  ],
+  "nilai": [
+   15.2,
+   21.1,
+   12.5,
+   10.1,
+   26.0
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn062",
+  "judul": "Rata-rata IPK lulusan per program studi (2022)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Kimia",
+   "Manajemen",
+   "Biologi",
+   "Fisika"
+  ],
+  "nilai": [
+   2.96,
+   3.78,
+   2.82,
+   3.42
+  ],
+  "desimal": 2,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn063",
+  "judul": "Kunjungan perpustakaan per bulan (2023)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu"
+  ],
+  "nilai": [
+   2156.0,
+   1819.0,
+   1918.0,
+   1446.0,
+   1184.0,
+   1027.0,
+   874.0,
+   575.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn064",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "nilai": [
+   253.0,
+   241.0,
+   187.0,
+   130.0,
+   71.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "dev"
+ },
+ {
+  "id": "syn065",
+  "judul": "Anggaran riset per unit (2025)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FISIP",
+   "LPPM",
+   "FIB",
+   "FT",
+   "FEB"
+  ],
+  "nilai": [
+   427.0,
+   1644.0,
+   1548.0,
+   635.0,
+   1723.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn066",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021"
+  ],
+  "nilai": [
+   73.3,
+   65.7,
+   59.3,
+   55.6,
+   48.2,
+   49.2,
+   35.7
+  ],
+  "desimal": 1,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn067",
+  "judul": "Curah hujan bulanan Surabaya (2021)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul"
+  ],
+  "nilai": [
+   114.0,
+   118.0,
+   87.0,
+   107.0,
+   106.0,
+   76.0,
+   147.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "garis",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "dev"
+ },
+ {
+  "id": "syn068",
+  "judul": "Skor rata-rata ujian per kelas (2022)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas C",
+   "Kelas D",
+   "Kelas A",
+   "Kelas B",
+   "Kelas E"
+  ],
+  "nilai": [
+   76.1,
+   74.5,
+   79.4,
+   78.3,
+   71.7
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn069",
+  "judul": "Ekspor komoditas Jawa Timur (2023)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Tembaga",
+   "Kertas",
+   "Perhiasan",
+   "Rokok",
+   "Udang",
+   "Kayu olahan"
+  ],
+  "nilai": [
+   1138.0,
+   272.0,
+   855.0,
+   219.0,
+   160.0,
+   260.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "dev"
+ },
+ {
+  "id": "syn070",
+  "judul": "Mahasiswa baru per fakultas (2024)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Teknik",
+   "Hukum",
+   "Vokasi",
+   "Farmasi",
+   "Psikologi"
+  ],
+  "nilai": [
+   839.0,
+   304.0,
+   117.0,
+   190.0,
+   690.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn071",
+  "judul": "Persentase penduduk miskin per provinsi (2025)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Sumut",
+   "Papua",
+   "NTT",
+   "Maluku",
+   "Aceh",
+   "Jatim"
+  ],
+  "nilai": [
+   11.9,
+   19.1,
+   15.3,
+   11.8,
+   29.6,
+   10.7
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "dev"
+ },
+ {
+  "id": "syn072",
+  "judul": "Rata-rata IPK lulusan per program studi (2020)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Kimia",
+   "Manajemen",
+   "Statistika",
+   "Biologi"
+  ],
+  "nilai": [
+   3.86,
+   3.04,
+   3.6,
+   3.61
+  ],
+  "desimal": 2,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "dev"
+ },
+ {
+  "id": "syn073",
+  "judul": "Kunjungan perpustakaan per bulan (2021)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul"
+  ],
+  "nilai": [
+   270.0,
+   393.0,
+   394.0,
+   537.0,
+   306.0,
+   607.0,
+   389.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn074",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "nilai": [
+   90.0,
+   193.0,
+   225.0,
+   271.0,
+   292.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "uji"
+ },
+ {
+  "id": "syn075",
+  "judul": "Anggaran riset per unit (2023)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FST",
+   "FT",
+   "FIB",
+   "LPPM",
+   "FEB",
+   "FK"
+  ],
+  "nilai": [
+   1442.0,
+   565.0,
+   1191.0,
+   546.0,
+   1635.0,
+   141.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn076",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021"
+  ],
+  "nilai": [
+   70.3,
+   76.5,
+   66.0,
+   64.7,
+   58.1,
+   50.0,
+   46.6
+  ],
+  "desimal": 1,
+  "jenis_grafik": "area",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn077",
+  "judul": "Curah hujan bulanan Surabaya (2025)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul"
+  ],
+  "nilai": [
+   127.0,
+   166.0,
+   147.0,
+   116.0,
+   133.0,
+   159.0,
+   163.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "area",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn078",
+  "judul": "Skor rata-rata ujian per kelas (2020)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas C",
+   "Kelas A",
+   "Kelas E",
+   "Kelas D"
+  ],
+  "nilai": [
+   74.0,
+   74.6,
+   92.4,
+   91.3
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn079",
+  "judul": "Ekspor komoditas Jawa Timur (2021)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Kertas",
+   "Udang",
+   "Rokok",
+   "Tembaga",
+   "Perhiasan",
+   "Kayu olahan"
+  ],
+  "nilai": [
+   97.0,
+   584.0,
+   826.0,
+   1200.0,
+   1106.0,
+   893.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang_horizontal",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn080",
+  "judul": "Mahasiswa baru per fakultas (2022)",
+  "label_x": "Fakultas",
+  "label_y": "Jumlah mahasiswa",
+  "satuan": "orang",
+  "label_y_full": "Jumlah mahasiswa (orang)",
+  "kategori": [
+   "Ekonomi",
+   "Psikologi",
+   "Teknik",
+   "Hukum"
+  ],
+  "nilai": [
+   848.0,
+   238.0,
+   281.0,
+   195.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "dev"
+ },
+ {
+  "id": "syn081",
+  "judul": "Persentase penduduk miskin per provinsi (2023)",
+  "label_x": "Provinsi",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "Sumut",
+   "Maluku",
+   "Jabar",
+   "Aceh",
+   "Bali",
+   "NTT",
+   "Papua",
+   "Jateng",
+   "Jatim"
+  ],
+  "nilai": [
+   4.2,
+   25.5,
+   17.0,
+   25.8,
+   18.2,
+   7.1,
+   19.0,
+   15.4,
+   3.6
+  ],
+  "desimal": 1,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "uji"
+ },
+ {
+  "id": "syn082",
+  "judul": "Rata-rata IPK lulusan per program studi (2024)",
+  "label_x": "Program studi",
+  "label_y": "IPK",
+  "satuan": "",
+  "label_y_full": "IPK",
+  "kategori": [
+   "Kimia",
+   "Manajemen",
+   "Akuntansi",
+   "Statistika"
+  ],
+  "nilai": [
+   3.39,
+   3.45,
+   3.4,
+   2.89
+  ],
+  "desimal": 2,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn083",
+  "judul": "Kunjungan perpustakaan per bulan (2025)",
+  "label_x": "Bulan",
+  "label_y": "Kunjungan",
+  "satuan": "kali",
+  "label_y_full": "Kunjungan (kali)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei",
+   "Jun",
+   "Jul",
+   "Agu",
+   "Sep",
+   "Okt",
+   "Nov",
+   "Des"
+  ],
+  "nilai": [
+   270.0,
+   546.0,
+   311.0,
+   388.0,
+   591.0,
+   667.0,
+   520.0,
+   557.0,
+   548.0,
+   566.0,
+   500.0,
+   391.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ },
+ {
+  "id": "syn084",
+  "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+  "label_x": "Tahun",
+  "label_y": "Jumlah",
+  "satuan": "orang",
+  "label_y_full": "Jumlah (orang)",
+  "kategori": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "nilai": [
+   116.0,
+   206.0,
+   145.0,
+   282.0,
+   232.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#2b6cb0",
+  "set": "uji"
+ },
+ {
+  "id": "syn085",
+  "judul": "Anggaran riset per unit (2021)",
+  "label_x": "Unit",
+  "label_y": "Anggaran",
+  "satuan": "juta rupiah",
+  "label_y_full": "Anggaran (juta rupiah)",
+  "kategori": [
+   "FIB",
+   "FST",
+   "FISIP",
+   "FEB",
+   "LPPM"
+  ],
+  "nilai": [
+   980.0,
+   467.0,
+   524.0,
+   1609.0,
+   447.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#2f855a",
+  "set": "uji"
+ },
+ {
+  "id": "syn086",
+  "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+  "label_x": "Angkatan",
+  "label_y": "Persentase",
+  "satuan": "%",
+  "label_y_full": "Persentase (%)",
+  "kategori": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021"
+  ],
+  "nilai": [
+   89.5,
+   84.2,
+   82.9,
+   78.3,
+   78.4,
+   72.1,
+   62.9
+  ],
+  "desimal": 1,
+  "jenis_grafik": "batang",
+  "label_nilai": false,
+  "warna": "#c05621",
+  "set": "dev"
+ },
+ {
+  "id": "syn087",
+  "judul": "Curah hujan bulanan Surabaya (2023)",
+  "label_x": "Bulan",
+  "label_y": "Curah hujan",
+  "satuan": "mm",
+  "label_y_full": "Curah hujan (mm)",
+  "kategori": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "Mei"
+  ],
+  "nilai": [
+   86.0,
+   177.0,
+   199.0,
+   218.0,
+   264.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "batang",
+  "label_nilai": true,
+  "warna": "#6b46c1",
+  "set": "dev"
+ },
+ {
+  "id": "syn088",
+  "judul": "Skor rata-rata ujian per kelas (2024)",
+  "label_x": "Kelas",
+  "label_y": "Skor",
+  "satuan": "",
+  "label_y_full": "Skor",
+  "kategori": [
+   "Kelas B",
+   "Kelas E",
+   "Kelas C",
+   "Kelas D"
+  ],
+  "nilai": [
+   86.8,
+   68.9,
+   90.0,
+   67.1
+  ],
+  "desimal": 1,
+  "jenis_grafik": "titik",
+  "label_nilai": true,
+  "warna": "#b7791f",
+  "set": "uji"
+ },
+ {
+  "id": "syn089",
+  "judul": "Ekspor komoditas Jawa Timur (2025)",
+  "label_x": "Komoditas",
+  "label_y": "Nilai ekspor",
+  "satuan": "juta USD",
+  "label_y_full": "Nilai ekspor (juta USD)",
+  "kategori": [
+   "Kertas",
+   "Kayu olahan",
+   "Perhiasan",
+   "Udang",
+   "Tembaga",
+   "Rokok"
+  ],
+  "nilai": [
+   1332.0,
+   700.0,
+   124.0,
+   1247.0,
+   1132.0,
+   308.0
+  ],
+  "desimal": 0,
+  "jenis_grafik": "titik",
+  "label_nilai": false,
+  "warna": "#2c7a7b",
+  "set": "uji"
+ }
+]

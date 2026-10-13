@@ -1,0 +1,62 @@
+[
+ {
+  "file": "materi_01.pdf",
+  "set": "dev",
+  "charts": [
+   "syn010",
+   "syn018",
+   "syn072"
+  ],
+  "rumus": "$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$"
+ },
+ {
+  "file": "materi_02.pdf",
+  "set": "dev",
+  "charts": [
+   "syn080",
+   "syn071",
+   "syn023"
+  ],
+  "rumus": "$s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})^2$"
+ },
+ {
+  "file": "materi_03.pdf",
+  "set": "uji",
+  "charts": [
+   "syn058",
+   "syn032",
+   "syn076"
+  ],
+  "rumus": "$\\hat{\\beta} = \\frac{\\sum (x_i-\\bar{x})(y_i-\\bar{y})}{\\sum (x_i-\\bar{x})^2}$"
+ },
+ {
+  "file": "materi_04.pdf",
+  "set": "uji",
+  "charts": [
+   "syn035",
+   "syn024",
+   "syn014"
+  ],
+  "rumus": "$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$"
+ },
+ {
+  "file": "materi_05.pdf",
+  "set": "uji",
+  "charts": [
+   "syn024",
+   "syn079",
+   "syn066"
+  ],
+  "rumus": "$s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})^2$"
+ },
+ {
+  "file": "materi_06.pdf",
+  "set": "uji",
+  "charts": [
+   "syn021",
+   "syn083",
+   "syn084"
+  ],
+  "rumus": "$\\hat{\\beta} = \\frac{\\sum (x_i-\\bar{x})(y_i-\\bar{y})}{\\sum (x_i-\\bar{x})^2}$"
+ }
+]

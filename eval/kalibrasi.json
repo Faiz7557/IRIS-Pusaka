@@ -1,0 +1,306 @@
+{
+ "grid": [
+  {
+   "theta_e": 0.0,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.002,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.005,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.01,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.015,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.02,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.03,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.05,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.08,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  },
+  {
+   "theta_e": 0.12,
+   "terbit": 20,
+   "fk_rerata": 1.0
+  }
+ ],
+ "per_grafik": [
+  {
+   "id": "syn000",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn001",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn002",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 0.7777777777777778,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn007",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn010",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn018",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn019",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn023",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn025",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn029",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn030",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn038",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 0.75,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn042",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn044",
+   "delta": 0.006901840490797546,
+   "axis": false,
+   "fk": 0.8571428571428571,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn046",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn047",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn051",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn052",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn054",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn055",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn056",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 0.15384615384615385,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn061",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn064",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn067",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn069",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn071",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 0.8,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn072",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  },
+  {
+   "id": "syn080",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn086",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 0.9230769230769231,
+   "label": false,
+   "label_tertulis_vlm": false
+  },
+  {
+   "id": "syn087",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true,
+   "label_tertulis_vlm": true
+  }
+ ],
+ "terkunci": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "θe terkecil (≥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) ≥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada δ=0 → ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ }
+}

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo Gerbang · SIMAK</title>
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="style.css">
+<style>
+.lower { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: var(--s5); margin-top: var(--s5); align-items: start; }
+.lower-side { display: grid; gap: var(--s5); }
+.score { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .score { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .lower { grid-template-columns: 1fr; } }
+.score div span:last-child { text-wrap: balance; }
+.score { display: grid; gap: var(--s4); }
+.score div { display: grid; grid-template-columns: auto 1fr; gap: var(--s3); align-items: baseline; }
+.score .n { font: 800 2.5rem/1 var(--f-text); font-variant-numeric: tabular-nums; min-width: 2ch; text-align: right; }
+.score .n.red { color: var(--red-ink); } .score .n.vio { color: var(--stamp-ink); }
+.legend { font-size: var(--t-xs); color: var(--ink-2); padding: 0 var(--s5) var(--s4); }
+.side-b .ruled { min-height: 8rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#isi">Lompat ke isi</a>
+<div class="shell">
+<aside class="rail"></aside>
+<main id="isi">
+  <header class="page-head">
+    <h1>Demo gerbang: VLM langsung vs SIMAK</h1>
+    <p>Grafik yang sama dideskripsikan dua cara. Sisi A meminta VLM menulis deskripsi lalu langsung menerbitkannya. Sisi B mengekstraksi tabel data dua kali, menghitung statistik dengan kode, lalu mencocokkan setiap klaim sebelum terbit. Suntikkan kesalahan dan lihat mana yang sampai ke mahasiswa.</p>
+  </header>
+
+  <div class="toolbar" role="group" aria-label="Kendali demo">
+    <div class="row"><label class="lbl" for="pick">Grafik uji</label>
+      <select id="pick" style="flex:1 1 22rem"></select>
+      <button class="btn-primary" id="run"></button>
+      <button class="btn-quiet" id="reset" disabled></button>
+      <span class="status" id="st" role="status" aria-live="polite"></span></div>
+    <div class="row"><span class="lbl" id="inj-lbl">Suntik kesalahan</span>
+      <span id="mut" role="group" aria-labelledby="inj-lbl" style="display:contents"></span></div>
+  </div>
+
+  <section class="halves" aria-label="Perbandingan keluaran">
+    <article class="card side-a" aria-labelledby="h-a">
+      <div class="card-head"><h2 id="h-a">Sisi A · VLM langsung (B2)</h2><span class="callno" id="a-call">B2</span></div>
+      <div id="a-verdict" class="verdict v-idle">Belum dijalankan</div>
+      <p class="ruled empty" id="a-text">Pilih grafik lalu tekan Jalankan. Deskripsi VLM akan muncul di sini, dengan setiap angka dicocokkan ke tabel acuan.</p>
+      <div class="slip" id="a-slip"><span class="slip-label">Slip pemeriksaan</span><span class="stamp pending">tidak ada pemeriksaan</span></div>
+    </article>
+    <article class="card side-b" aria-labelledby="h-b">
+      <div class="card-head"><h2 id="h-b">Sisi B · SIMAK</h2><span class="callno" id="b-call">D</span></div>
+      <div id="b-verdict" class="verdict v-idle">Belum dijalankan</div>
+      <ul class="reasons" id="b-reasons"></ul>
+      <p class="ruled empty" id="b-text">Deskripsi SIMAK dibangun dari templat yang diisi fakta hasil hitungan kode. Klik angka mana pun untuk melihat sel sumbernya.</p>
+      <div class="slip" id="b-slip"><span class="slip-label">Slip pemeriksaan</span><span class="stamp pending">cF</span><span class="stamp pending">cδ</span><span class="stamp pending">cA</span><span class="stamp pending">cL</span></div>
+      <p class="legend"><span id="b-fk"></span> <span id="legend"></span></p>
+    </article>
+  </section>
+
+  <section class="lower" aria-label="Bahan dan bukti">
+    <div class="lower-side">
+    <article class="card chart-card" aria-labelledby="h-img">
+      <div class="card-head"><h3 id="h-img">Grafik masukan</h3><span class="callno" id="img-call"></span></div>
+      <div class="card-body" id="img-slot"><p class="muted">Grafik muncul setelah dijalankan.</p></div>
+    </article>
+    <article class="card score-card" aria-labelledby="h-score">
+      <div class="card-head"><h3 id="h-score">Papan skor</h3><span class="meta">sesi ini</span></div>
+      <div class="card-body score" id="score"></div>
+    </article>
+    </div>
+    <div class="lower-side">
+    <article class="card" aria-labelledby="h-truth">
+      <div class="card-head"><h3 id="h-truth">Tabel acuan</h3><span class="meta">set sintetis</span></div>
+      <div class="card-body">
+        <p class="small muted">Kunci jawaban diketahui karena grafik dibuat sendiri. Dipakai untuk menilai, tidak dilihat sistem.</p>
+        <table id="truth"><tbody><tr><td class="muted">Belum ada data.</td></tr></tbody></table>
+        <details id="t12" hidden><summary>Tabel hasil ekstraksi ganda SIMAK</summary><div id="t12-body"></div></details>
+      </div>
+    </article>
+    </div>
+  </section>
+</main>
+</div>
+<script src="common.js"></script>
+<script>
+renderRail('demo.html');
+const SHORT = {ubah_angka: 'Ubah satu angka', tukar_label: 'Tukar label–nilai', turunan_salah: 'Salahkan selisih', tren_salah: 'Balik tren'};
+let CID = null, BASE = null, SCORE = {n: 0, b2: 0, d: 0};
+$('#run').innerHTML = icon('play') + 'Jalankan';
+$('#reset').innerHTML = icon('undo') + 'Kembalikan';
+$('#legend').innerHTML = checkLegend();
+
+(async () => {
+  const g = await (await fetch('/api/demo/grafik')).json();
+  $('#pick').innerHTML = g.map(c => `<option value="${c.id}">${c.id} · ${esc(c.judul)}${c.label_nilai ? '' : ' (tanpa label nilai)'}</option>`).join('');
+  const want = new URLSearchParams(location.search).get('grafik');
+  $('#pick').value = g.some(c => c.id === want) ? want : g.some(c => c.id === 'syn043') ? 'syn043' : g[0].id;
+  const m = await (await fetch('/api/demo/mutasi')).json();
+  $('#mut').innerHTML = Object.entries(m).map(([k, v]) =>
+    `<button class="btn-inject" data-k="${k}" title="${esc(v)}" disabled>${icon('inject')}${SHORT[k] || esc(v)}</button>`).join('');
+  $('#mut').querySelectorAll('button').forEach(b => b.onclick = () => inject(b.dataset.k));
+  score();
+  if (want) $('#run').click();  // tautan langsung untuk presentasi: demo.html?grafik=syn043
+})();
+
+function setBusy(on, msg) {
+  $('#st').textContent = msg || '';
+  $('#st').classList.toggle('busy', on);
+  $('#run').disabled = on;
+  document.querySelectorAll('#mut button, #reset').forEach(b => b.disabled = on || !BASE);
+}
+
+$('#run').onclick = async () => {
+  CID = $('#pick').value;
+  setBusy(true, 'Memproses ekstraksi ganda dan deskripsi B2…');
+  const r = await fetch('/api/demo/jalankan/' + CID, {method: 'POST'});
+  if (!r.ok) { setBusy(false, 'Gagal memproses grafik (kode ' + r.status + '). Coba lagi atau pilih grafik lain.'); return; }
+  BASE = await r.json();
+  SCORE = {n: 0, b2: 0, d: 0};
+  setBusy(false, '');
+  $('#img-slot').innerHTML = `<img class="chart-img" src="/api/grafik/${CID}.png" alt="${esc('Grafik ' + BASE.spec.judul)}">`;
+  $('#img-call').textContent = 'SIMAK·' + CID;
+  $('#truth').innerHTML = '<thead><tr><th scope="col">Kategori</th><th scope="col" class="n">Nilai acuan</th></tr></thead><tbody>' +
+    BASE.truth.map(r => `<tr data-row="${esc(norm(r.kategori))}"><th scope="row">${esc(r.kategori)}</th><td class="n">${fmtId(r.nilai)}</td></tr>`).join('') + '</tbody>';
+  show(BASE.simak, BASE.b2, null);
+  score();
+  announce('Selesai. Sisi A terbit. Sisi B ' + (BASE.simak.status === 'terbit_otomatis' ? 'terbit setelah lolos semua pemeriksaan.' : 'ditahan.'));
+};
+$('#reset').onclick = () => { if (BASE) { show(BASE.simak, BASE.b2, null); $('#st').textContent = ''; announce('Keluaran asli dikembalikan.'); } };
+
+function show(el, b2, mut) {
+  const bad = b2.marks.filter(m => m.verdict !== 'setia' && m.start >= 0);
+  const av = $('#a-verdict');
+  av.className = 'verdict ' + (bad.length ? 'v-bad' : 'v-pub');
+  av.innerHTML = icon(bad.length ? 'alert' : 'check') + (bad.length ? `Terbit · ${bad.length} angka keliru sampai ke mahasiswa` : 'Terbit · angka cocok (kali ini)');
+  let t = b2.text, out = '', pos = 0;
+  b2.marks.filter(m => m.start >= 0).sort((a, b) => a.start - b.start).forEach(m => {
+    if (m.start < pos) return;
+    out += esc(t.slice(pos, m.start));
+    out += `<span class="mk ${m.verdict}" title="${esc(m.note || 'cocok dengan tabel acuan')}">${esc(t.slice(m.start, m.end))}</span>`;
+    pos = m.end;
+  });
+  $('#a-text').innerHTML = out + esc(t.slice(pos));
+  $('#a-text').classList.remove('empty');
+  $('#a-slip').innerHTML = '<span class="slip-label">Slip pemeriksaan</span><span class="stamp fail">' + icon('cross') + 'Tidak diperiksa · tetap terbit</span>';
+
+  const pub = el.status === 'terbit_otomatis';
+  const bv = $('#b-verdict');
+  bv.className = 'verdict ' + (pub ? 'v-pub' : 'v-hold');
+  bv.innerHTML = icon(pub ? 'check' : 'hold') + (pub ? 'Terbit · lolos semua pemeriksaan' : 'Ditahan · masuk antrean tinjauan ULD');
+  $('#b-reasons').innerHTML = (el.reasons || []).map(r => `<li>${icon('cross')}<span>${esc(r)}</span></li>`).join('');
+  $('#b-text').innerHTML = el.seg ? segHtml(el.seg, el.claim_detail) : esc(el.draft || '');
+  $('#b-text').classList.remove('empty');
+  const slip = $('#b-slip');
+  slip.innerHTML = '<span class="slip-label">Slip pemeriksaan</span>' + checkStamps(el.checks, nowStamp()) +
+    (pub ? '' : `<span class="stamp hold" style="--i:5">${icon('hold')}ULD · menunggu</span>`);
+  pressSlip(slip);
+  if (el.T1) { $('#t12').hidden = false; $('#t12-body').innerHTML = t1t2(el); }
+  const f = BASE.simak_vs_truth;
+  $('#a-call').textContent = `B2·${CID}`;
+  $('#b-call').textContent = `SIMAK·${CID}·hlm 1`;
+  $('#b-fk').textContent = !mut && f ? `${f.detail.filter(d => d.ok).length} dari ${f.detail.length} klaim setia pada tabel acuan.` : 'Deskripsi bermutasi, diperiksa ulang oleh gerbang.';
+  bindClaims(document.querySelector('main'));
+}
+
+async function inject(k) {
+  if (!CID) return;
+  setBusy(true, 'Menyuntik kesalahan dan memeriksa ulang…');
+  const r = await fetch('/api/demo/suntik/' + CID, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({jenis: k, seed: SCORE.n})});
+  if (!r.ok) {
+    const d = (await r.json().catch(() => ({}))).detail || 'Mutasi ini tidak berlaku untuk grafik ini.';
+    setBusy(false, d); announce(d); return;
+  }
+  const j = await r.json();
+  SCORE.n++; SCORE.b2++;
+  if (j.simak.status !== 'terbit_otomatis') SCORE.d++;
+  setBusy(false, 'Disuntik: ' + j.mutasi);
+  show(j.simak, j.b2, j.mutasi);
+  score();
+  announce(`Kesalahan disuntik. Sisi A tetap terbit. Sisi B ${j.simak.status === 'terbit_otomatis' ? 'terbit' : 'ditahan'}.`);
+}
+
+function score() {
+  $('#score').innerHTML = [[SCORE.n, '', 'kesalahan disuntik'], [SCORE.b2, 'red', 'suntikan yang lolos terbit di Sisi A'], [SCORE.d, 'vio', 'suntikan yang ditahan di Sisi B']]
+    .map(([n, c, l]) => `<div><span class="n ${c}">${n}</span><span>${l}</span></div>`).join('');
+}
+</script>
+</body>
+</html>

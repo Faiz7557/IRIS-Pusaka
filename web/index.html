@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Remediasi &amp; Tinjauan · SIMAK</title>
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="style.css">
+<style>
+.pick { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--s5); }
+@media (max-width: 1000px) { .pick { grid-template-columns: 1fr; } }
+.docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--s2); }
+.docs button { justify-content: flex-start; min-height: 52px; font-weight: 700; }
+.docs button .callno { font-weight: 600; }
+.group-h { font-size: var(--t-sm); font-weight: 800; margin: var(--s4) 0 var(--s2); color: var(--ink-2); }
+.group-h:first-child { margin-top: 0; }
+.upload { display: grid; gap: var(--s3); align-content: start; }
+.file-pick { justify-content: flex-start; border-style: dashed; min-height: 64px; font-weight: 700; overflow-wrap: anywhere; }
+#file:focus-visible + .file-pick { outline: 3px solid var(--focus); outline-offset: 2px; }
+.progress { margin-top: var(--s4); }
+.results { margin-top: var(--s6); }
+.results > h2 { margin-bottom: var(--s4); }
+.summary { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.45fr) minmax(0, .85fr); gap: var(--s5); align-items: start; }
+@media (max-width: 1200px) { .summary { grid-template-columns: 1fr 1fr; } .summary .out-card { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .summary { grid-template-columns: 1fr; } }
+dl.tally { display: grid; grid-template-columns: auto 1fr; gap: var(--s2) var(--s4); margin: 0; align-items: baseline; }
+dl.tally dt { font: 800 2rem/1 var(--f-text); font-variant-numeric: tabular-nums; text-align: right; }
+dl.tally dd { margin: 0; color: var(--ink-2); }
+.vtrail { display: flex; align-items: baseline; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s4); }
+.vtrail .num { font: 800 2.25rem/1 var(--f-text); font-variant-numeric: tabular-nums; }
+.vtrail .num.final { color: var(--rail); }
+.vtrail .arrow { color: var(--ink-2); }
+.yes { color: var(--ok); font-weight: 700; } .no { color: var(--red-ink); font-weight: 700; }
+.out-actions { display: grid; gap: var(--s2); }
+.queue { display: grid; grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); gap: var(--s5); align-items: start; margin-top: var(--s5); }
+@media (max-width: 1000px) { .queue { grid-template-columns: 1fr; } }
+.qlist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); max-height: 78vh; overflow: auto; padding: 2px; }
+.qlist button {
+  width: 100%; justify-content: flex-start; align-items: center; gap: var(--s3); text-align: left;
+  padding: var(--s3); border-top: 4px solid var(--catalog-red); background: var(--card); min-height: 72px;
+  transition: opacity .25s var(--ease), border-color .2s var(--ease);
+}
+.qlist img { width: 64px; height: 48px; object-fit: contain; background: #fff; border: 1px solid var(--line-soft); flex: none; }
+.qlist .meta { display: grid; gap: 4px; min-width: 0; }
+.qlist .meta b { font-size: var(--t-md); }
+.qlist .stamp { transform: none; font-size: .72rem; padding: 3px 7px; justify-self: start; }
+.qlist.reviewing button:not([aria-current="true"]) { opacity: .5; }
+.qlist.reviewing button:not([aria-current="true"]):hover, .qlist.reviewing button:focus-visible { opacity: 1; }
+.qlist button[aria-current="true"] { border-color: var(--ink); border-top-color: var(--catalog-red); box-shadow: var(--shadow); }
+.filter { display: flex; gap: var(--s2); margin-bottom: var(--s3); }
+.detail-img { max-width: 100%; max-height: 360px; display: block; margin: 0 auto; background: #fff; border: 1.5px solid var(--line-soft); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.draft { white-space: pre-wrap; }
+.empty-q { padding: var(--s5); text-align: left; }
+</style>
+</head>
+<body>
+<a class="skip" href="#isi">Lompat ke isi</a>
+<div class="shell">
+<aside class="rail"></aside>
+<main id="isi">
+  <header class="page-head">
+    <h1>Remediasi materi kuliah</h1>
+    <p>Unggah PDF apa adanya. SIMAK melengkapi struktur dan tag, menyusun deskripsi grafik dari tabel data yang statistiknya dihitung kode, lalu menahan setiap keluaran yang tidak dapat diverifikasi ke antrean tinjauan ULD.</p>
+  </header>
+
+  <section class="card" aria-labelledby="h-pilih">
+    <div class="card-head"><h2 id="h-pilih">Pilih dokumen</h2><span class="meta">diproses per sesi, dihapus setelah 6 jam</span></div>
+    <div class="card-body pick">
+      <div id="sampel"><p class="muted">Memuat daftar dokumen…</p></div>
+      <form id="up" class="upload">
+        <p class="group-h" style="margin-top:0">Unggah PDF sendiri</p>
+        <input type="file" id="file" accept="application/pdf" class="sr">
+        <label for="file" class="btn file-pick" id="file-lbl"></label>
+        <button class="btn-primary" type="submit" id="up-btn"></button>
+        <p class="small muted">PDF berlapis teks. PDF hasil pindai dan PowerPoint belum didukung langsung.</p>
+      </form>
+    </div>
+    <p class="status progress card-body hide" id="prog" role="status" aria-live="polite"></p>
+  </section>
+
+  <section id="hasil" class="results hide" aria-labelledby="h-hasil">
+    <h2 id="h-hasil">Hasil remediasi: <span id="nama"></span></h2>
+    <div class="summary">
+      <article class="card" aria-labelledby="h-kat">
+        <div class="card-head"><h3 id="h-kat">Katalog gambar</h3><span class="meta" id="pages"></span></div>
+        <div class="card-body"><dl class="tally" id="tally"></dl></div>
+      </article>
+      <article class="card" aria-labelledby="h-vp">
+        <div class="card-head"><h3 id="h-vp">Validasi PDF/UA-1</h3><span class="meta">veraPDF</span></div>
+        <div class="card-body">
+          <div class="vtrail" id="vtrail" aria-label="Aturan PDF/UA-1 yang gagal: asli, auto-tag, SIMAK"></div>
+          <div class="twrap"><table id="vera"><thead><tr><th scope="col">Versi</th><th scope="col" class="n">Gagal</th><th scope="col">Alt bermakna</th><th scope="col">Bahasa</th><th scope="col">Judul</th></tr></thead><tbody></tbody></table></div>
+          <p class="small muted">B0 PDF asli · B1 auto-tag OpenDataLoader tanpa modul tambahan · D SIMAK.</p>
+        </div>
+      </article>
+      <article class="card out-card" aria-labelledby="h-out">
+        <div class="card-head"><h3 id="h-out">Keluaran</h3></div>
+        <div class="card-body"><div class="out-actions" id="out"></div><p class="small muted" id="timing"></p></div>
+      </article>
+    </div>
+
+    <h2 style="margin-top:var(--s6)">Antrean tinjauan ULD</h2>
+    <div class="queue">
+      <div>
+        <div class="filter" role="group" aria-label="Saring elemen">
+          <button data-f="antrean" aria-pressed="true">Antrean</button>
+          <button data-f="semua" aria-pressed="false">Semua gambar</button>
+        </div>
+        <ul class="qlist" id="els" aria-label="Daftar kartu elemen gambar"></ul>
+      </div>
+      <article class="card" id="detail" aria-live="polite" aria-labelledby="h-detail">
+        <div class="card-head"><h3 id="h-detail">Kartu elemen</h3></div>
+        <div class="card-body"><p class="muted">Pilih kartu di sebelah kiri untuk meninjau.</p></div>
+      </article>
+    </div>
+  </section>
+</main>
+</div>
+<script src="common.js"></script>
+<script>
+renderRail('index.html');
+let JID = null, STATE = null, FILTER = 'antrean', SEL = null;
+$('#up-btn').innerHTML = icon('upload') + 'Proses PDF';
+const fileLabel = () => { const f = $('#file').files[0]; $('#file-lbl').innerHTML = icon('doc') + (f ? esc(f.name) : 'Pilih berkas PDF…'); };
+$('#file').addEventListener('change', fileLabel); fileLabel();
+
+async function loadSamples() {
+  const s = await (await fetch('/api/sampel')).json();
+  const groups = [['dev', 'Set sintetis · pengembangan'], ['uji', 'Set sintetis · uji'], ['nyata', 'Materi nyata · Common Crawl ac.id']];
+  $('#sampel').innerHTML = groups.map(([g, l]) => {
+    const items = s.filter(x => x.set === g);
+    if (!items.length) return '';
+    return `<p class="group-h">${l}</p><div class="docs">${items.map(x =>
+      `<button data-s="${esc(x.file)}">${icon('doc')}<span>${esc(x.file.replace('.pdf', ''))}</span></button>`).join('')}</div>`;
+  }).join('');
+  $('#sampel').querySelectorAll('button').forEach(b => b.onclick = () => start(fetch('/api/sampel/' + encodeURIComponent(b.dataset.s), {method: 'POST'})));
+}
+$('#up').onsubmit = e => {
+  e.preventDefault();
+  const f = $('#file').files[0];
+  if (!f) { prog('Pilih berkas PDF terlebih dahulu.', false); $('#file-lbl').focus(); return; }
+  const fd = new FormData(); fd.append('file', f);
+  start(fetch('/api/unggah', {method: 'POST', body: fd}));
+};
+
+async function start(req) {
+  const r = await req;
+  if (!r.ok) { prog((await r.json().catch(() => ({}))).detail || 'Gagal memulai pemrosesan.', false); return; }
+  JID = (await r.json()).id; SEL = null;
+  $('#hasil').classList.add('hide');
+  poll();
+}
+function prog(msg, busy) {
+  const p = $('#prog'); p.classList.remove('hide'); p.textContent = msg; p.classList.toggle('busy', !!busy);
+}
+async function poll() {
+  const j = await (await fetch('/api/pekerjaan/' + JID)).json();
+  if (j.tahap === 'selesai') { prog('Selesai diproses.', false); STATE = j.state; $('#nama').textContent = j.nama; render(); return; }
+  if (j.tahap === 'gagal') { prog('Gagal: ' + j.pesan, false); return; }
+  prog(j.pesan || 'Memproses…', true);
+  setTimeout(poll, 1200);
+}
+
+function render() {
+  $('#hasil').classList.remove('hide');
+  const imgs = STATE.elements.filter(e => e.kind === 'image');
+  const c = s => imgs.filter(e => s.includes(e.status)).length;
+  const nondek = imgs.filter(e => e.status !== 'dekoratif').length;
+  const vec = (STATE.patch || {}).figur_tambahan || 0;
+  const R = nondek + vec ? Math.round(100 * (c(['antrean']) + vec) / (nondek + vec)) : 0;
+  $('#pages').textContent = `${STATE.pages} halaman`;
+  $('#tally').innerHTML = [
+    [c(['terbit_otomatis']), 'terbit otomatis, lolos gerbang'],
+    [c(['antrean']), 'ditahan di antrean ULD'],
+    [c(['disetujui', 'diubah']), 'disetujui atau diubah ULD'],
+    [c(['dekoratif']), 'dekoratif (alt kosong)'],
+    ...(vec ? [[vec, 'figur vektor ditahan di PDF']] : []),
+  ].map(([n, l]) => `<dt>${n}</dt><dd>${l}</dd>`).join('') + `<dt>${R}%</dt><dd>beban tinjauan R</dd>`;
+  const rep = STATE.report || {};
+  const rules = k => ((rep[k] || {}).verapdf || {}).failed_rules ?? '–';
+  $('#vtrail').innerHTML = `<span class="num">${rules('B0')}</span><span class="arrow">→</span><span class="num">${rules('B1')}</span><span class="arrow">→</span><span class="num final">${rules('D')}</span><span class="muted small">aturan gagal</span>`;
+  const yn = b => b ? '<span class="yes">ya</span>' : '<span class="no">tidak</span>';
+  $('#vera tbody').innerHTML = ['B0', 'B1', 'D'].map(k => {
+    const g = (rep[k] || {}).g1 || {};
+    return `<tr><th scope="row">${k}</th><td class="n">${rules(k)}</td><td>${g.figures ? g.alt_bermakna + ' / ' + g.figures : '0 / 0'} ${yn(g.alt_ok)}</td><td>${yn(g.lang_ok)}</td><td>${yn(g.title_ok)}</td></tr>`;
+  }).join('');
+  $('#out').innerHTML = `<a class="btn btn-primary" href="dengar.html?job=${JID}">${icon('ear')}Dengar sebelum vs sesudah</a>
+    <a class="btn" href="/keluaran/${JID}/simak.html" target="_blank" rel="noopener">${icon('open')}HTML aksesibel + mode dengar</a>
+    <a class="btn" href="/keluaran/${JID}/simak.pdf" target="_blank" rel="noopener">${icon('doc')}PDF bertag (D)</a>
+    <a class="btn" href="/keluaran/${JID}/asli.pdf" target="_blank" rel="noopener">${icon('doc')}PDF asli (B0)</a>
+    <button class="btn-danger" id="del">${icon('trash')}Hapus sesi</button>`;
+  $('#del').onclick = async () => { await fetch('/api/pekerjaan/' + JID, {method: 'DELETE'}); location.reload(); };
+  $('#timing').textContent = `Struktur ${STATE.timing.struktur_s} dtk · total ${STATE.timing.total_s} dtk · model ${STATE.manifest.model_t1}`;
+  renderList();
+}
+document.querySelectorAll('[data-f]').forEach(b => b.onclick = () => {
+  FILTER = b.dataset.f;
+  document.querySelectorAll('[data-f]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  renderList();
+});
+
+function renderList() {
+  const imgs = STATE.elements.filter(e => e.kind === 'image' && (FILTER === 'semua' || e.status === 'antrean'));
+  const ul = $('#els');
+  ul.classList.toggle('reviewing', !!SEL && imgs.some(e => e.id === SEL));
+  ul.innerHTML = imgs.length ? imgs.map(e => `<li><button data-id="${e.id}" aria-current="${e.id === SEL}">
+    <img src="/api/pekerjaan/${JID}/img/${e.id}" alt="">
+    <span class="meta"><span class="callno">SIMAK·${e.id}·hlm ${e.page}</span><b>${cap(e.jenis || 'gambar')}</b>${statusStamp(e.status)}</span></button></li>`).join('')
+    : `<li class="card empty-q"><p><b>Antrean kosong.</b></p><p class="muted small">Semua gambar sudah terbit otomatis atau ditinjau. Pilih "Semua gambar" untuk melihat riwayatnya.</p></li>`;
+  ul.querySelectorAll('button').forEach(b => b.onclick = () => { SEL = b.dataset.id; renderList(); detail(); });
+}
+
+function detail() {
+  const e = STATE.elements.find(x => x.id === SEL);
+  if (!e) return;
+  const pub = ['terbit_otomatis', 'disetujui', 'diubah'].includes(e.status);
+  const vClass = pub ? 'v-pub' : e.status === 'antrean' ? 'v-hold' : e.status === 'ditolak' ? 'v-bad' : 'v-idle';
+  const vText = {terbit_otomatis: 'Terbit otomatis · lolos semua pemeriksaan', antrean: 'Ditahan · menunggu keputusan ULD',
+    disetujui: 'Disetujui ULD', diubah: 'Diubah dan disetujui ULD', ditolak: 'Ditolak ULD', dekoratif: 'Dekoratif · alt kosong di HTML'}[e.status] || e.status;
+  let body = '';
+  if (e.table) body += `<details><summary>Ekstraksi ganda T1 dan T2</summary>${t1t2(e)}</details>
+    <h4 class="small" style="margin:var(--s4) 0 0">Deskripsi level 1–3 · klik angka untuk melihat sumbernya</h4></div><p class="ruled">${segHtml(e.seg, e.claim_detail)}</p><div class="card-body">`;
+  else if (e.draft) body += `<h4 class="small" style="margin:0">Draf AI · belum diverifikasi</h4><p class="draft">${esc(e.draft)}</p>`;
+  const pre = e.alt_final || e.alt_auto || e.draft || '';
+  const logStamps = (e.log || []).map(l => `<span class="stamp ${l.aksi === 'tolak' ? 'fail' : ''}">${icon(l.aksi === 'tolak' ? 'cross' : 'check')}ULD ${esc(l.aksi)} <span class="when">${esc(l.waktu)}</span></span>`).join('');
+  $('#detail').innerHTML = `
+    <div class="card-head"><h3 id="h-detail">${cap(e.jenis || 'gambar')} · halaman ${e.page}</h3><span class="callno">SIMAK·${e.id}</span></div>
+    <div class="verdict ${vClass}">${icon(pub ? 'check' : e.status === 'antrean' ? 'hold' : 'doc')}${vText}</div>
+    ${(e.reasons || []).length ? `<ul class="reasons">${e.reasons.map(r => `<li>${icon('cross')}<span>${esc(r)}</span></li>`).join('')}</ul>` : ''}
+    <div class="card-body">
+      <img class="detail-img" src="/api/pekerjaan/${JID}/img/${e.id}" alt="Pratinjau ${esc(e.jenis || 'gambar')} yang ditinjau, halaman ${e.page}">
+      ${body}
+      <label class="field" for="alt">Teks alternatif yang akan diterbitkan</label>
+      <textarea id="alt">${esc(pre)}</textarea>
+      <div class="actions">
+        <button class="btn-primary" data-a="setujui">${icon('check')}Setujui</button>
+        <button data-a="ubah">Simpan perubahan &amp; setujui</button>
+        <button data-a="dekoratif">Tandai dekoratif</button>
+        <button class="btn-danger" data-a="tolak">${icon('cross')}Tolak</button>
+      </div>
+    </div>
+    <div class="slip" id="d-slip"><span class="slip-label">Slip</span>${checkStamps(e.checks) || '<span class="stamp pending">K = ∅ · tanpa pemeriksaan otomatis</span>'}${logStamps}${e.status === 'antrean' ? `<span class="stamp hold">${icon('hold')}ULD · menunggu</span>` : ''}</div>`;
+  $('#detail').querySelectorAll('[data-a]').forEach(b => b.onclick = () => act(e, b.dataset.a));
+  bindClaims($('#detail'));
+}
+async function act(e, aksi) {
+  const alt = $('#alt').value;
+  $('#detail').querySelectorAll('[data-a]').forEach(b => b.disabled = true);
+  const r = await fetch(`/api/tinjau/${JID}/${e.id}`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({aksi, alt})});
+  if (!r.ok) {
+    const d = (await r.json().catch(() => ({}))).detail || 'Keputusan gagal disimpan.';
+    announce(d); prog(d, false);
+    $('#detail').querySelectorAll('[data-a]').forEach(b => b.disabled = false);
+    return;
+  }
+  const j = await (await fetch('/api/pekerjaan/' + JID)).json();
+  STATE = j.state; render(); detail();
+  pressSlip($('#d-slip'));
+  announce(`Keputusan "${aksi}" dicap. PDF dan HTML dirakit ulang.`);
+}
+loadSamples();
+</script>
+</body>
+</html>
