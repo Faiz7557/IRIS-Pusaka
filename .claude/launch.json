@@ -3,8 +3,12 @@
   "configurations": [
     {
       "name": "simak",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "uvicorn", "app:app", "--port", "8000"],
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-Command",
+        "foreach ($n in 'ELEVENLABS_API_KEY','ELEVENLABS_VOICE_ID','ELEVENLABS_MODEL') { if (-not [Environment]::GetEnvironmentVariable($n,'Process')) { $v = [Environment]::GetEnvironmentVariable($n,'User'); if ($v) { Set-Item \"Env:$n\" $v } } }; python -m uvicorn app:app --port 8000"
+      ],
       "port": 8000
     }
   ]

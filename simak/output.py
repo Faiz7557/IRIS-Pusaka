@@ -57,7 +57,7 @@ const synth=window.speechSynthesis;
 function bVoice(){const v=synth?synth.getVoices():[];return v.find(x=>/natural|online/i.test(x.name)&&x.lang.toLowerCase().startsWith('id'))||v.find(x=>x.lang.toLowerCase().startsWith('id'))||null}
 try{const p=JSON.parse(localStorage.getItem('simak-suara')||'{}');if(p.suara)selV.value=p.suara;if(p.kecepatan!==undefined)selR.value=p.kecepatan}catch(e){}
 // Suara server (Satya, Ardi) hanya tersedia bila halaman dibuka dari aplikasi SIMAK.
-fetch('/api/suara/daftar').then(r=>{if(!r.ok)throw 0}).catch(()=>{[...selV.options].forEach(o=>{if(o.value!=='peramban')o.remove()});selV.value='peramban'});
+fetch('/api/suara/daftar').then(r=>{if(!r.ok)throw 0;return r.json()}).then(l=>{if(l.some(s=>s.id==='eleven'))return;const o=selV.querySelector('option[value=eleven]');if(o)o.remove();if(selV.value==='eleven')selV.value='satya'}).catch(()=>{[...selV.options].forEach(o=>{if(o.value!=='peramban')o.remove()});selV.value='peramban'});
 function save(){try{localStorage.setItem('simak-suara',JSON.stringify({suara:selV.value,kecepatan:+selR.value,nada:0}))}catch(e){}}
 function stopAll(){if(ctl)ctl.abort();ctl=null;if(audio){audio.pause();audio=null}if(synth)synth.cancel()}
 function mark(){blocks.forEach(b=>b.classList.remove('speaking'));const b=blocks[i];if(b){b.classList.add('speaking');b.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}}
@@ -158,7 +158,7 @@ def build_html(state: dict, alt_for) -> str:
 <div class="bar" role="region" aria-label="Mode dengar"><b>SIMAK</b>
 <button id="play">{_ic('play')}Putar</button><button id="pause">{_ic('pause')}Jeda</button>
 <button id="prev" aria-label="Bagian sebelumnya">{_ic('prev')}</button><button id="next" aria-label="Bagian berikutnya">{_ic('next')}</button>
-<label>Suara <select id="voice"><option value="satya" selected>Satya (sintetis, dengan izin)</option><option value="gadis">Gadis (neural, perempuan)</option><option value="ardi">Ardi (neural, laki-laki)</option><option value="peramban">Suara peramban</option></select></label>
+<label>Suara <select id="voice"><option value="satya" selected>Satya (sintetis, dengan izin)</option><option value="gadis">Gadis (neural, perempuan)</option><option value="ardi">Ardi (neural, laki-laki)</option><option value="eleven">Suara manusia (ElevenLabs, berbayar)</option><option value="peramban">Suara peramban</option></select></label>
 <label>Kecepatan <select id="rate"><option value="-20">−20%</option><option value="-10">−10%</option><option value="0" selected>normal</option><option value="10">+10%</option><option value="20">+20%</option><option value="35">+35%</option></select></label>
 <span class="st" id="st" aria-live="polite"></span></div>
 <main id="isi">{notice}{''.join(parts)}</main><script>{JS}</script></body></html>"""

@@ -175,7 +175,7 @@ const Voice = {
     const opt = (v, l, cur) => `<option value="${v}" ${String(cur) === String(v) ? 'selected' : ''}>${l}</option>`;
     el.innerHTML = `
       <label class="lbl" for="v-suara" style="min-width:0">Suara</label>
-      <select id="v-suara">${opt('satya', 'Satya (sintetis, dengan izin)', this.pref.suara)}${opt('gadis', 'Gadis (neural, perempuan)', this.pref.suara)}${opt('ardi', 'Ardi (neural, laki-laki)', this.pref.suara)}${opt('peramban', 'Suara peramban', this.pref.suara)}</select>
+      <select id="v-suara">${opt('satya', 'Satya (sintetis, dengan izin)', this.pref.suara)}${opt('gadis', 'Gadis (neural, perempuan)', this.pref.suara)}${opt('ardi', 'Ardi (neural, laki-laki)', this.pref.suara)}${opt('eleven', 'Suara manusia (ElevenLabs, berbayar)', this.pref.suara)}${opt('peramban', 'Suara peramban', this.pref.suara)}</select>
       <label class="lbl" for="v-cepat" style="min-width:0">Kecepatan</label>
       <select id="v-cepat">${[-20, -10, 0, 10, 20, 35].map(v => opt(v, (v > 0 ? '+' : '') + v + '%', this.pref.kecepatan)).join('')}</select>
       <label class="lbl" for="v-nada" style="min-width:0">Nada</label>
@@ -185,6 +185,13 @@ const Voice = {
       this.pref = {suara: el.querySelector('#v-suara').value, kecepatan: +el.querySelector('#v-cepat').value, nada: +el.querySelector('#v-nada').value};
       this.save(); this.stop(); onchange && onchange();
     };
+    // Suara ElevenLabs hanya muncul bila server sudah dikonfigurasi (ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID).
+    fetch('/api/suara/daftar').then(r => r.json()).then(list => {
+      if (list.some(s => s.id === 'eleven')) return;
+      const sel = el.querySelector('#v-suara');
+      sel.querySelector('option[value="eleven"]').remove();
+      if (this.pref.suara === 'eleven') { this.pref.suara = 'satya'; sel.value = 'satya'; this.save(); }
+    }).catch(() => {});
     el.querySelectorAll('select').forEach(s => s.onchange = upd);
     el.querySelector('#v-coba').onclick = () => this.speak('Halo, saya membacakan materi kuliah untuk Anda. Nilai tertinggi pada Juli, yaitu 1.452 kunjungan.');
   },

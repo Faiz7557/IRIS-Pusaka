@@ -250,7 +250,8 @@ def demo_mutasi():
 
 # ------------------------------------------------------------------ evaluasi
 # ------------------------------------------------------------------ suara
-SUARA = {"satya": "Satya (suara sintetis, dengan izin)", "gadis": "Gadis (neural)", "ardi": "Ardi (neural)"}
+SUARA = {"satya": "Satya (suara sintetis, dengan izin)", "gadis": "Gadis (neural)", "ardi": "Ardi (neural)",
+         "eleven": "Suara manusia (ElevenLabs, berbayar)"}
 _voice_lock = threading.Lock()
 _prep_q: list[tuple] = []
 _prep_cv = threading.Condition()
@@ -297,7 +298,8 @@ threading.Thread(target=_prep_worker, daemon=True).start()
 
 @app.get("/api/suara/daftar")
 def suara_daftar():
-    return [{"id": k, "nama": v} for k, v in SUARA.items()]
+    from simak import voice
+    return [{"id": k, "nama": v} for k, v in SUARA.items() if k not in voice.PAID_SPEAKERS or voice.eleven_ready()]
 
 
 @app.post("/api/suara")
@@ -321,8 +323,11 @@ class Siapkan(BaseModel):
 @app.post("/api/suara/siapkan")
 def suara_siapkan(body: Siapkan):
     """Membuat audio lebih dulu di latar belakang agar pemutaran tidak menunggu."""
+    from simak import voice
     if body.suara not in SUARA:
         raise HTTPException(400)
+    if body.suara in voice.PAID_SPEAKERS:  # berbayar per karakter: hanya dibuat saat benar-benar diputar
+        return {"diantrekan": 0}
     with _prep_cv:
         for t in body.teks[:300]:
             if t.strip():

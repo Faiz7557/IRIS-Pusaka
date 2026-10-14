@@ -28,6 +28,12 @@ rotasi kuota. Jangan menaruh key di berkas mana pun di repo ini.
    (1–2 menit, dengan izin pemilik suara) di `data/voice/satya_ref.mp3`. Tanpa rekaman ini, pilih suara
    "Gadis", "Ardi", atau "Suara peramban".
 
+4. **Suara manusia via ElevenLabs (opsional, berbayar per karakter):** buat suara dari rekaman (dengan izin
+   pemilik suara) di akun ElevenLabs, lalu atur environment variable `ELEVENLABS_API_KEY` dan
+   `ELEVENLABS_VOICE_ID` (opsional `ELEVENLABS_MODEL`, bawaan `eleven_multilingual_v2`). Pilihan "Suara manusia"
+   baru muncul bila keduanya terisi. Teks yang dibacakan dikirim ke ElevenLabs, dan audio hanya dibuat saat
+   diputar (tanpa pra-pembuatan massal) agar kredit tidak terpakai sia-sia.
+
 Data yang sengaja tidak ikut di repo: PDF materi kuliah nyata (`data/cc/*.pdf`, hanya metadata `cc.json`
 yang disertakan; jalankan `python data/fetch_cc.py` untuk mengambil ulang dari Common Crawl), rekaman dan
 audio suara Satya, serta folder sesi `work/`.

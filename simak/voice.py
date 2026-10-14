@@ -6,10 +6,14 @@ Rekaman referensi tidak dikirim ke layanan luar; hanya teks yang dikirim ke laya
 """
 import asyncio
 import hashlib
+import json
+import os
 import re
 import subprocess
 import sys
 import types
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 from .config import CACHE, ROOT
@@ -159,9 +163,45 @@ def _base_se(base: str = "ardi"):
     return _se["_base_" + base]
 
 
+# ------------------------------------------------------------------ suara manusia (ElevenLabs, berbayar)
+# Suara hasil kloning/pelatihan dari rekaman manusia (dengan izin pemiliknya) di akun ElevenLabs sendiri.
+# Key dan voice id dibaca dari environment variable; teks yang dibacakan dikirim ke layanan ElevenLabs.
+ELEVEN_SPEAKER = "eleven"
+PAID_SPEAKERS = {ELEVEN_SPEAKER}  # dipakai server agar tidak membuat audio massal di latar belakang
+ELEVEN_MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2")
+
+
+def eleven_ready() -> bool:
+    return bool(os.environ.get("ELEVENLABS_API_KEY") and os.environ.get("ELEVENLABS_VOICE_ID"))
+
+
+def _eleven(text: str, out: Path, rate: str):
+    if not eleven_ready():
+        raise RuntimeError("ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID belum diatur")
+    speed = max(0.7, min(1.2, 1 + int(rate.rstrip("%")) / 100))
+    body = json.dumps({"text": text, "model_id": ELEVEN_MODEL,
+                       "voice_settings": {"stability": 0.4, "similarity_boost": 0.8, "style": 0.0, "speed": speed}})
+    req = urllib.request.Request(
+        f"https://api.elevenlabs.io/v1/text-to-speech/{os.environ['ELEVENLABS_VOICE_ID']}?output_format=mp3_44100_128",
+        data=body.encode(), method="POST",
+        headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"], "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            out.write_bytes(r.read())
+    except urllib.error.HTTPError as e:  # ke log server saja, tanpa key
+        print("ElevenLabs gagal:", e.code, e.read()[:300].decode("utf-8", "replace"))
+        raise
+
+
 def synthesize(text: str, speaker: str = "satya", rate: str = "+0%", pitch: str = "+0Hz", tau: float = 0.3) -> Path:
     """Teks → berkas MP3 dengan suara speaker; hasil di-cache menurut isi dan pengaturan."""
     spoken = normalize(text)
+    if speaker == ELEVEN_SPEAKER:
+        key = hashlib.sha256(f"{speaker}|{ELEVEN_MODEL}|{os.environ.get('ELEVENLABS_VOICE_ID')}|{rate}|{spoken}".encode()).hexdigest()[:20]
+        out = AUDIO / f"{key}.mp3"
+        if not out.exists():
+            _eleven(spoken, out, rate)
+        return out
     base = SPEAKER_BASE.get(speaker, "ardi")
     key = hashlib.sha256(f"{speaker}|{base}|{rate}|{pitch}|{tau}|{spoken}".encode()).hexdigest()[:20]
     out = AUDIO / f"{key}.mp3"
