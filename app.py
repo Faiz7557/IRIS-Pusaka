@@ -250,8 +250,7 @@ def demo_mutasi():
 
 # ------------------------------------------------------------------ evaluasi
 # ------------------------------------------------------------------ suara
-SUARA = {"satya": "Satya (suara sintetis, dengan izin)", "gadis": "Gadis (neural)", "ardi": "Ardi (neural)",
-         "eleven": "Suara manusia (ElevenLabs, berbayar)"}
+SUARA = {"eleven": "Suara manusia (ElevenLabs)"}  # satu-satunya sumber suara
 _voice_lock = threading.Lock()
 _prep_q: list[tuple] = []
 _prep_cv = threading.Condition()
@@ -259,7 +258,7 @@ _prep_cv = threading.Condition()
 
 class Suara(BaseModel):
     teks: str
-    suara: str = "satya"
+    suara: str = "eleven"
     kecepatan: int = 0   # persen, mis. -10 atau 15
     nada: int = 0        # Hz, mis. -20 atau 10
 
@@ -315,7 +314,7 @@ def suara(body: Suara):
 
 class Siapkan(BaseModel):
     teks: list[str]
-    suara: str = "satya"
+    suara: str = "eleven"
     kecepatan: int = 0
     nada: int = 0
 

@@ -193,8 +193,8 @@ def _eleven(text: str, out: Path, rate: str):
         raise
 
 
-def synthesize(text: str, speaker: str = "satya", rate: str = "+0%", pitch: str = "+0Hz", tau: float = 0.3) -> Path:
-    """Teks → berkas MP3 dengan suara speaker; hasil di-cache menurut isi dan pengaturan."""
+def synthesize(text: str, speaker: str = ELEVEN_SPEAKER, rate: str = "+0%", pitch: str = "+0Hz", tau: float = 0.3) -> Path:
+    """Teks → berkas MP3 dengan suara ElevenLabs; hasil di-cache menurut isi dan pengaturan."""
     spoken = normalize(text)
     if speaker == ELEVEN_SPEAKER:
         key = hashlib.sha256(f"{speaker}|{ELEVEN_MODEL}|{os.environ.get('ELEVENLABS_VOICE_ID')}|{rate}|{spoken}".encode()).hexdigest()[:20]
@@ -202,21 +202,4 @@ def synthesize(text: str, speaker: str = "satya", rate: str = "+0%", pitch: str 
         if not out.exists():
             _eleven(spoken, out, rate)
         return out
-    base = SPEAKER_BASE.get(speaker, "ardi")
-    key = hashlib.sha256(f"{speaker}|{base}|{rate}|{pitch}|{tau}|{spoken}".encode()).hexdigest()[:20]
-    out = AUDIO / f"{key}.mp3"
-    if out.exists():
-        return out
-    tmp = AUDIO / f"{key}_base"
-    asyncio.run(_edge(spoken, tmp.with_suffix(".mp3"), rate, pitch, base))
-    if speaker in BASE_VOICES:
-        tmp.with_suffix(".mp3").rename(out)
-        return out
-    _wav(tmp.with_suffix(".mp3"), tmp.with_suffix(".wav"))
-    conv_wav = AUDIO / f"{key}_conv.wav"
-    _converter().convert(audio_src_path=str(tmp.with_suffix(".wav")), src_se=_base_se(base),
-                         tgt_se=speaker_embedding(speaker), output_path=str(conv_wav), tau=tau)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(conv_wav), "-b:a", "96k", str(out)], check=True)
-    for p in (tmp.with_suffix(".mp3"), tmp.with_suffix(".wav"), conv_wav):
-        p.unlink(missing_ok=True)
-    return out
+    raise ValueError(f"Sumber suara tidak didukung: {speaker}")

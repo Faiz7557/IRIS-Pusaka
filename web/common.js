@@ -119,36 +119,21 @@ function announce(msg) {
 }
 
 // ---------------------------------------------------------------- suara (mode dengar)
-// Tiga sumber: suara peramban (Web Speech), Ardi neural, dan Satya (suara sintetis dengan izin) dari server.
+// Satu sumber: suara manusia dari ElevenLabs, dibuat oleh server (perlu ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID).
 const Voice = {
-  pref: {suara: 'satya', kecepatan: 0, nada: 0},
+  pref: {suara: 'eleven', kecepatan: 0, nada: 0},
   audio: null, utter: null, ctl: null,
-  load() { try { Object.assign(this.pref, JSON.parse(localStorage.getItem('simak-suara') || '{}')); } catch (e) {} },
+  load() { try { Object.assign(this.pref, JSON.parse(localStorage.getItem('simak-suara') || '{}'), {suara: 'eleven'}); } catch (e) {} },
   save() { try { localStorage.setItem('simak-suara', JSON.stringify(this.pref)); } catch (e) {} },
-  browserVoice() {
-    const v = window.speechSynthesis ? speechSynthesis.getVoices() : [];
-    return v.find(x => /natural|online/i.test(x.name) && x.lang.toLowerCase().startsWith('id')) ||
-           v.find(x => x.lang.toLowerCase().startsWith('id')) || null;
-  },
   stop() {
     if (this.ctl) this.ctl.abort();
     this.ctl = null;
     if (this.audio) { this.audio.pause(); this.audio = null; }
-    if (window.speechSynthesis) speechSynthesis.cancel();
   },
   // Mengucapkan teks; onend dipanggil saat selesai, onerror bila suara server gagal.
   async speak(text, onend, onerror, onstart) {
     this.stop();
     const p = this.pref;
-    if (p.suara === 'peramban') {
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'id-ID'; const v = this.browserVoice(); if (v) u.voice = v;
-      u.rate = 1 + p.kecepatan / 100; u.pitch = 1 + p.nada / 100;
-      u.onend = () => onend && onend();
-      u.onstart = () => onstart && onstart();
-      speechSynthesis.speak(u);
-      return;
-    }
     const ctl = new AbortController(); this.ctl = ctl;
     try {
       const r = await fetch('/api/suara', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: ctl.signal,
@@ -166,7 +151,6 @@ const Voice = {
     }
   },
   prefetch(texts) {
-    if (this.pref.suara === 'peramban') return;
     fetch('/api/suara/siapkan', {method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({teks: texts.filter(Boolean), suara: this.pref.suara, kecepatan: this.pref.kecepatan, nada: this.pref.nada})}).catch(() => {});
   },
@@ -174,23 +158,18 @@ const Voice = {
   controls(el, onchange) {
     const opt = (v, l, cur) => `<option value="${v}" ${String(cur) === String(v) ? 'selected' : ''}>${l}</option>`;
     el.innerHTML = `
-      <label class="lbl" for="v-suara" style="min-width:0">Suara</label>
-      <select id="v-suara">${opt('satya', 'Satya (sintetis, dengan izin)', this.pref.suara)}${opt('gadis', 'Gadis (neural, perempuan)', this.pref.suara)}${opt('ardi', 'Ardi (neural, laki-laki)', this.pref.suara)}${opt('eleven', 'Suara manusia (ElevenLabs, berbayar)', this.pref.suara)}${opt('peramban', 'Suara peramban', this.pref.suara)}</select>
+      <span class="lbl" style="min-width:0">Suara: manusia (ElevenLabs)</span>
       <label class="lbl" for="v-cepat" style="min-width:0">Kecepatan</label>
       <select id="v-cepat">${[-20, -10, 0, 10, 20, 35].map(v => opt(v, (v > 0 ? '+' : '') + v + '%', this.pref.kecepatan)).join('')}</select>
-      <label class="lbl" for="v-nada" style="min-width:0">Nada</label>
-      <select id="v-nada">${[-20, -10, 0, 10, 20].map(v => opt(v, v === 0 ? 'normal' : (v > 0 ? 'lebih tinggi ' : 'lebih rendah ') + Math.abs(v), this.pref.nada)).join('')}</select>
       <button type="button" id="v-coba">${icon('play')}Coba suara</button>`;
     const upd = () => {
-      this.pref = {suara: el.querySelector('#v-suara').value, kecepatan: +el.querySelector('#v-cepat').value, nada: +el.querySelector('#v-nada').value};
+      this.pref = {suara: 'eleven', kecepatan: +el.querySelector('#v-cepat').value, nada: 0};
       this.save(); this.stop(); onchange && onchange();
     };
-    // Suara ElevenLabs hanya muncul bila server sudah dikonfigurasi (ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID).
+    // Bila server belum dikonfigurasi (ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID), beri tahu pengguna.
     fetch('/api/suara/daftar').then(r => r.json()).then(list => {
       if (list.some(s => s.id === 'eleven')) return;
-      const sel = el.querySelector('#v-suara');
-      sel.querySelector('option[value="eleven"]').remove();
-      if (this.pref.suara === 'eleven') { this.pref.suara = 'satya'; sel.value = 'satya'; this.save(); }
+      el.querySelector('#v-coba').insertAdjacentHTML('afterend', '<span class="lbl" role="alert">Suara ElevenLabs belum diatur di server.</span>');
     }).catch(() => {});
     el.querySelectorAll('select').forEach(s => s.onchange = upd);
     el.querySelector('#v-coba').onclick = () => this.speak('Halo, saya membacakan materi kuliah untuk Anda. Nilai tertinggi pada Juli, yaitu 1.452 kunjungan.');

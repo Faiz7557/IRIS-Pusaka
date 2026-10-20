@@ -91,7 +91,7 @@
         <ol class="tr" id="tr-s" aria-label="Transkrip setelah SIMAK"></ol>
       </article>
     </section>
-    <p class="honest">Transkrip PDF asli adalah simulasi, bukan rekaman NVDA: teks dibacakan menurut urutan di dalam berkas PDF, gambar tanpa teks alternatif hanya disebut "Gambar.", dan tabel terbaca sel demi sel tanpa judul kolom. Suara "Satya" adalah suara sintetis: suara Indonesia neural yang warna suaranya diubah ke rekaman Satya, dibuat dengan izin pemilik suara; "Suara peramban" memakai Web Speech API. Gambar yang ditahan SIMAK dibacakan apa adanya sebagai "menunggu tinjauan", tidak dikarang.</p>
+    <p class="honest">Transkrip PDF asli adalah simulasi, bukan rekaman NVDA: teks dibacakan menurut urutan di dalam berkas PDF, gambar tanpa teks alternatif hanya disebut "Gambar.", dan tabel terbaca sel demi sel tanpa judul kolom. Suara pembaca adalah suara manusia dari ElevenLabs. Gambar yang ditahan SIMAK dibacakan apa adanya sebagai "menunggu tinjauan", tidak dikarang.</p>
   </div>
 </main>
 </div>
@@ -118,7 +118,7 @@ function sayOnce(text, btn) {
   const reset = () => { btn.innerHTML = label; btn.dataset.on = ''; };
   btn.innerHTML = icon('hold') + 'Menyiapkan suara…';
   btn.dataset.on = '1';
-  Voice.speak(text, reset, () => { reset(); $('#st').textContent = 'Suara server gagal dibuat; coba pilih "Suara peramban".'; },
+  Voice.speak(text, reset, () => { reset(); $('#st').textContent = 'Suara gagal dibuat; periksa pengaturan ElevenLabs di server.'; },
     () => { btn.innerHTML = icon('pause') + 'Hentikan'; });
   btn._reset = reset;
 }
@@ -153,7 +153,7 @@ class Player {
     const s = this.segs[this.i];
     const next = () => { if (this.playing && active === this) { this.i++; this.speak(); } };
     if (!s.say) { setTimeout(next, 250); return; }
-    Voice.speak(s.say, next, () => { this.playing = false; this.render(); $('#st').textContent = 'Suara server gagal dibuat; coba pilih "Suara peramban".'; });
+    Voice.speak(s.say, next, () => { this.playing = false; this.render(); $('#st').textContent = 'Suara gagal dibuat; periksa pengaturan ElevenLabs di server.'; });
   }
   prev() { this.i = Math.max(0, this.i - 1); this.playing ? this.start() : (this.mark(), this.render()); }
   next() { this.i = Math.min(this.segs.length - 1, this.i + 1); this.playing ? this.start() : (this.mark(), this.render()); }
@@ -206,7 +206,7 @@ async function show() {
   const r = await fetch(`/api/pekerjaan/${JID}/dengar`);
   if (!r.ok) { done('Dokumen tidak ditemukan. Pilih dokumen lalu tekan Bandingkan.'); return; }
   DATA = await r.json();
-  done(Voice.pref.suara === 'satya' ? 'Suara Satya adalah suara sintetis yang dibuat dengan izin pemiliknya. Bagian pertama bisa butuh beberapa detik.' : '');
+  done('Bagian pertama bisa butuh beberapa detik untuk dibuat.');
   $('#stage').classList.remove('hide');
   const R = DATA.ringkasan;
   $('#tally').innerHTML = `
