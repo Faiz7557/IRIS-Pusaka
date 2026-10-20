@@ -256,3 +256,11 @@ details summary { cursor: pointer; font-weight: 700; color: var(--ruling-ink); p
 .halves { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5); align-items: start; }
 .span-2 { grid-column: 1 / -1; }
 @media (max-width: 760px) { .halves { grid-template-columns: 1fr; } }
+
+/* Perintah suara di rail */
+.vc { margin-top: var(--s5); }
+.vc button { width: 100%; justify-content: center; background: transparent; color: #EEF4F0; border-color: rgba(238, 244, 240, .4); }
+.vc button:hover { border-color: #EEF4F0; }
+.vc button[aria-pressed="true"] { background: #EEF4F0; color: var(--ink); border-color: #EEF4F0; }
+.vc p { color: var(--rail-muted); font-size: var(--t-sm); margin-top: var(--s2); line-height: 1.4; }
+@media (max-width: 900px) { .vc p { display: none; } }

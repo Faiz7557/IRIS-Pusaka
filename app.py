@@ -335,6 +335,20 @@ def suara_siapkan(body: Siapkan):
     return {"diantrekan": len(body.teks[:300])}
 
 
+class Perintah(BaseModel):
+    ucapan: str
+    tombol: list[str]
+
+
+@app.post("/api/perintah")
+def perintah(body: Perintah):
+    """Perintah suara yang tidak cocok persis dengan nama tombol: biarkan LLM menebak tombol yang dimaksud."""
+    ucapan, tombol = body.ucapan.strip()[:200], [t.strip()[:80] for t in body.tombol[:60]]
+    if not ucapan or not tombol:
+        raise HTTPException(400)
+    return {"pilihan": vlm.pilih_tombol(ucapan, tombol)}
+
+
 @app.get("/api/evaluasi")
 def evaluasi():
     f = ROOT / "eval" / "results.json"

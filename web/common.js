@@ -26,6 +26,7 @@ const ICON_PATHS = {
   chart: '<path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/>',
   ear: '<path d="M7 9a5 5 0 0110 0c0 3-3 4-3 7a3 3 0 01-5.5 1.6"/><path d="M10 9a2 2 0 014 0"/>',
   skip: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/>',
   heading: '<path d="M6 4v16M18 4v16M6 12h12"/>',
   table: '<rect x="4" y="5" width="16" height="14" rx="1"/><path d="M4 10h16M10 10v9"/>',
 };
@@ -39,7 +40,12 @@ function renderRail(current) {
     <a class="wordmark" href="demo.html"><b>SIMAK</b><span>Sistem Ilustrasi Materi Aksesibel untuk Kuliah</span></a>
     <nav class="nav" aria-label="Navigasi utama">${items.map(([h, l, i]) =>
       `<a href="${h}" ${h === current ? 'aria-current="page"' : ''}>${icon(i)}${l}</a>`).join('')}</nav>
+    <div class="vc" id="vc" hidden>
+      <button type="button" id="vc-btn" aria-pressed="false">${icon('mic')}<span>Perintah suara</span></button>
+      <p id="vc-st" role="status" aria-live="polite">Ucapkan nama tombol, mis. "Bandingkan" atau "Evaluasi".</p>
+    </div>
     <div class="rail-proof" id="rail-proof" hidden></div>`;
+  VoiceCmd.init();
   fetch('/api/evaluasi').then(r => r.json()).then(r => {
     if (!r || r.ada === false || !r.G3) return;
     const f = r.G3.D_fk_terbit;
@@ -176,3 +182,93 @@ const Voice = {
   },
 };
 Voice.load();
+
+// ---------------------------------------------------------------- perintah suara
+// Pengenalan ucapan bawaan peramban (Web Speech API): tanpa API key. Ucapan dicocokkan dengan nama tombol dan
+// tautan yang tampil di halaman, jadi tombol baru ikut terkendali tanpa daftar perintah tambahan.
+const VoiceCmd = {
+  rec: null, on: false, busy: false,
+  EXIT: ['matikan perintah suara', 'berhenti mendengarkan', 'stop perintah suara'],
+  label(el) { return norm(el.getAttribute('aria-label') || el.textContent || ''); },
+  targets() {
+    return [...document.querySelectorAll('button, a[href], [role="button"]')].filter(el =>
+      !el.disabled && el.getAttribute('aria-disabled') !== 'true' && el.id !== 'vc-btn' && el.offsetParent !== null && this.label(el));
+  },
+  say(msg) { const st = document.getElementById('vc-st'); if (st) st.textContent = msg; },
+  // Mengembalikan tombol yang dimaksud, atau daftar kandidat bila ambigu.
+  match(phrase) {
+    const items = this.targets().map(el => ({el, l: this.label(el)}));
+    const inPhrase = items.filter(x => (' ' + phrase + ' ').includes(' ' + x.l + ' ')).sort((a, b) => b.l.length - a.l.length);
+    if (inPhrase.length) return [inPhrase[0].el];
+    const words = phrase.split(' ');
+    const part = items.filter(x => words.length && words.every(w => w.length > 2 && (' ' + x.l + ' ').includes(' ' + w + ' ')));
+    return part.map(x => x.el);
+  },
+  // Tebakan LLM (lewat server, key tidak sampai ke peramban) untuk ucapan yang tidak cocok persis.
+  async guess(phrase) {
+    const items = this.targets();
+    const labels = [...new Set(items.map(e => this.label(e)))];
+    try {
+      const r = await fetch('/api/perintah', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ucapan: phrase, tombol: labels})});
+      if (!r.ok) return null;
+      const n = (await r.json()).pilihan;
+      return Number.isInteger(n) && labels[n] ? items.find(e => this.label(e) === labels[n]) : null;
+    } catch (e) { return null; }
+  },
+  async handle(raw) {
+    const phrase = norm(raw);
+    if (!phrase) return;
+    if (this.EXIT.some(e => phrase.includes(e))) { this.stop(); return; }
+    // Saat suara pembaca menyala, mikrofon bisa menangkap bacaannya; hanya perintah pendek yang diterima.
+    if (Voice.audio && phrase.split(' ').length > 3) return;
+    let hit = this.match(phrase);
+    if (hit.length !== 1) {  // tidak cocok persis atau ambigu: minta LLM menimbang
+      this.say('Terdengar: "' + phrase + '". Mencari tombol yang dimaksud…');
+      const g = await this.guess(phrase);
+      if (g) hit = [g];
+    }
+    if (hit.length === 1) {
+      this.say('Terdengar: "' + phrase + '" → ' + this.label(hit[0]));
+      hit[0].click();
+    } else if (hit.length > 1) {
+      this.say('Terdengar: "' + phrase + '". Maksudnya yang mana: ' + [...new Set(hit.map(e => this.label(e)))].slice(0, 4).join(' atau ') + '?');
+    } else {
+      this.say('Terdengar: "' + phrase + '". Tidak ada tombol yang cocok.');
+    }
+  },
+  start() {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return;
+    const r = new SR();
+    r.lang = 'id-ID'; r.continuous = true; r.interimResults = false;
+    r.onresult = e => { for (let i = e.resultIndex; i < e.results.length; i++) if (e.results[i].isFinal) this.handle(e.results[i][0].transcript); };
+    r.onerror = e => {
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { this.on = false; this.say('Izin mikrofon ditolak. Izinkan mikrofon di pengaturan situs.'); this.sync(); }
+    };
+    r.onend = () => { if (this.on) { try { r.start(); } catch (e) {} } else this.sync(); };  // sambung lagi bila peramban memutus
+    this.rec = r;
+    try { r.start(); this.on = true; this.say('Mendengarkan… ucapkan nama tombol.'); } catch (e) {}
+    this.sync(); this.save();
+  },
+  stop() {
+    this.on = false;
+    if (this.rec) { try { this.rec.stop(); } catch (e) {} }
+    this.say('Perintah suara mati.'); this.sync(); this.save();
+  },
+  sync() {
+    const b = document.getElementById('vc-btn');
+    if (!b) return;
+    b.setAttribute('aria-pressed', String(this.on));
+    b.querySelector('span').textContent = this.on ? 'Mendengarkan…' : 'Perintah suara';
+  },
+  save() { try { localStorage.setItem('simak-perintah', this.on ? '1' : '0'); } catch (e) {} },
+  init() {
+    const box = document.getElementById('vc');
+    if (!box) return;
+    if (!(window.SpeechRecognition || window.webkitSpeechRecognition)) return;  // peramban tanpa dukungan: sembunyikan
+    box.hidden = false;
+    document.getElementById('vc-btn').onclick = () => this.on ? this.stop() : this.start();
+    let was = false; try { was = localStorage.getItem('simak-perintah') === '1'; } catch (e) {}
+    if (was) this.start();  // izin mikrofon yang sudah diberikan berlaku lagi tanpa klik
+  },
+};
