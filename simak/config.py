@@ -33,17 +33,6 @@ def thresholds() -> dict:
     return dict(DEFAULT_THRESHOLDS)
 
 
-def api_key() -> str:
-    key = os.environ.get("GEMINI_API_KEY")
-    if not key and os.name == "nt":
-        import winreg
-        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as h:
-            key = winreg.QueryValueEx(h, "GEMINI_API_KEY")[0]
-    if not key:
-        raise RuntimeError("GEMINI_API_KEY belum diset")
-    return key
-
-
 def java_bin() -> str:
     for base in (Path(r"C:\Program Files\Eclipse Adoptium"), Path(r"C:\Program Files\Java")):
         if base.exists():

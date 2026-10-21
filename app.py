@@ -65,7 +65,8 @@ def sampel():
     out = [{"file": m["file"], "set": m["set"]} for m in meta]
     cc = DATA / "cc" / "cc.json"
     if cc.exists():
-        out += [{"file": m["file"], "set": "nyata"} for m in json.loads(cc.read_text(encoding="utf-8"))["sampel"]]
+        out += [{"file": m["file"], "set": "nyata"} for m in json.loads(cc.read_text(encoding="utf-8"))["sampel"]
+                if (DATA / "cc" / m["file"]).exists()]  # PDF nyata tidak ikut repo (fetch_cc.py)
     return out
 
 

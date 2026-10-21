@@ -124,6 +124,16 @@ def process_image(el: dict, th: dict) -> dict:
     return el
 
 
+def process_or_hold(el: dict, th: dict) -> dict:
+    """Tanpa VLM (key kosong atau kuota habis), gambar ditahan untuk ULD; dokumen tetap selesai (fail-closed)."""
+    try:
+        return process_image(el, th)
+    except vlm.QuotaHabis as e:
+        el.update(jenis=el.get("jenis", "gambar"), status="antrean", checks={},
+                  reasons=[f"VLM tidak tersedia ({e}); ditahan untuk tinjauan ULD"])
+        return el
+
+
 HELD_FIGURE_ALT = ("[Menunggu tinjauan ULD] Gambar yang belum dapat diproses otomatis "
                    "(mis. figur vektor); deskripsi belum diverifikasi.")
 
@@ -172,7 +182,7 @@ def run(pdf_path: Path, job: Path, progress=lambda *a: None) -> dict:
     progress("gambar", f"Mengklasifikasi dan mendeskripsikan {len(imgs)} gambar")
     done = 0
     with ThreadPoolExecutor(max_workers=6) as ex:
-        for _ in ex.map(lambda e: process_image(e, th), imgs):
+        for _ in ex.map(lambda e: process_or_hold(e, th), imgs):
             done += 1
             progress("gambar", f"Gambar {done}/{len(imgs)} selesai")
     for e in els:

@@ -3,9 +3,9 @@ uvicorn
 python-multipart
 pydantic
 google-genai
-pymupdf
+pymupdf==1.28.2           # versi Lampiran D; diuji end-to-end dari clone bersih 21 Okt
 pikepdf
-opendataloader-pdf
+opendataloader-pdf==2.5.11
 numpy
 matplotlib
 # suara (opsional)

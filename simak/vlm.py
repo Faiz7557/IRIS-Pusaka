@@ -15,7 +15,7 @@ import os
 import re
 import threading
 
-from .config import CACHE, MODEL, api_key, sha
+from .config import CACHE, MODEL, sha
 
 # Ekstraksi ganda dengan dua perintah berbeda (Bab III.F). Dengan akun berbayar, SIMAK_MODEL_T2 dapat
 # diisi model lain agar kedua pengenal independen. B2 memakai model yang sama dengan T1.
@@ -41,7 +41,8 @@ def _env(name):
 
 
 # Rotasi key: setiap key Gemini dari project berbeda punya kuota harian sendiri.
-KEYS = [k for k in [api_key()] + [_env(f"GEMINI_API_KEY_{i}") for i in range(2, 10)] if k]
+# Tanpa key, aplikasi tetap jalan dari cache/ (demo cadangan luring); hanya cache miss yang gagal.
+KEYS = [k for k in [_env("GEMINI_API_KEY")] + [_env(f"GEMINI_API_KEY_{i}") for i in range(2, 10)] if k]
 _clients: dict[int, genai.Client] = {}
 _exhausted: set[tuple[int, str]] = set()  # (indeks key, model) yang kuota hariannya habis
 
@@ -164,6 +165,8 @@ _rr = [0]
 
 
 def _gen(model, contents, schema=None):
+    if not KEYS:
+        raise QuotaHabis("GEMINI_API_KEY belum diset; hanya respons yang sudah ada di cache/ yang tersedia")
     _rr[0] += 1  # bagi beban antar-key (kuota dihitung per project)
     order = [(_rr[0] + j) % len(KEYS) for j in range(len(KEYS))]
     for i in order:
