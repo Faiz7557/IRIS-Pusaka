@@ -17,10 +17,11 @@ rotasi kuota. Jangan menaruh key di berkas mana pun di repo ini.
 
 ### Persiapan alat (folder `tools/`, tidak ikut di repo)
 
-1. **Java 21** (Temurin), lalu **veraPDF 1.30** dipasang headless ke `tools/verapdf/`:
+1. **Java 21** (Temurin), lalu **veraPDF 1.30** (diuji 1.30.3) dipasang headless ke `tools/verapdf/`:
    unduh `https://software.verapdf.org/releases/verapdf-installer.zip`, ekstrak, ganti `TOOLS_DIR` di
-   `setup/verapdf-auto-install.xml` dengan path folder `tools` kamu, lalu
-   `java -jar verapdf-izpack-installer-*.jar setup/verapdf-auto-install.xml`.
+   `setup/verapdf-auto-install.xml` dengan path absolute folder `tools` kamu **memakai garis miring**
+   (mis. `C:/proyek/Prototype/tools`), lalu `java -jar verapdf-izpack-installer-*.jar setup/verapdf-auto-install.xml`.
+   Berhasil bila `tools/verapdf/bin/` memuat `cli-*.jar` dan `gui-*.jar`.
 2. **Suara.** Bawaan: **Web Speech API** peramban dengan suara bahasa Indonesia (`id-ID`, mis. Microsoft Andika
    di Windows/Edge). Berjalan lokal, tanpa key, juga saat HTML keluaran dibuka langsung dari disk. Bila peramban
    tidak punya suara `id-ID`, pasang paket suara Indonesia di pengaturan sistem operasi.

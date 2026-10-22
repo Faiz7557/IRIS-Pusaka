@@ -284,5 +284,19 @@ def nyata():
     print(json.dumps({k: v for k, v in g6.items() if k != "per_dokumen"}, ensure_ascii=False, indent=1))
 
 
+# ------------------------------------------------------------------ cache contoh: demo luring
+def contoh():
+    """Memproses ke-6 dokumen contoh sekali agar hasil VLM-nya tersimpan di cache/ (demo tanpa key/internet).
+    Tidak menyetel apa pun dan tidak menulis results.json."""
+    belum = 0
+    for m in json.loads((SYN / "docs.json").read_text(encoding="utf-8")):
+        st = pipeline.run(SYN / "docs" / m["file"], WORK / f"contoh_{Path(m['file']).stem}")
+        imgs = [e for e in st["elements"] if e["kind"] == "image"]
+        miss = sum(any("VLM tidak tersedia" in str(r) for r in e.get("reasons", [])) for e in imgs)
+        belum += miss
+        print(f"{m['file']}: {len(imgs)} gambar, {miss} tanpa hasil VLM")
+    print("Semua contoh tersimpan di cache." if not belum else f"{belum} gambar belum di cache (VLM tidak tersedia).")
+
+
 if __name__ == "__main__":
-    {"kalibrasi": kalibrasi, "uji": uji, "nyata": nyata}[sys.argv[1]]()
+    {"kalibrasi": kalibrasi, "uji": uji, "nyata": nyata, "contoh": contoh}[sys.argv[1]]()
