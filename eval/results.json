@@ -1,5 +1,5 @@
 {
- "waktu": "2026-10-12 13:20:22",
+ "waktu": "2026-10-23 01:39:38",
  "manifest": {
   "model_t1": "gemma-4-26b-a4b-it",
   "model_t2": "gemma-4-26b-a4b-it",
@@ -9,7 +9,8 @@
   "temperature": 0,
   "prompt_t1": "a2db0023d821",
   "prompt_t2": "bbe13c6a83dc",
-  "prompt_b2": "ad760959b04a"
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
  },
  "ambang": {
   "theta_e": 0.01,
@@ -60,6 +61,15 @@
     1.0
    ]
   },
+  "D_ketat": {
+   "k": 0,
+   "n": 4,
+   "p": 0.0,
+   "ci95": [
+    0.0,
+    0.4899
+   ]
+  },
   "veraPDF_lulus_D": {
    "k": 4,
    "n": 4,
@@ -76,68 +86,80 @@
    "file": "materi_03.pdf",
    "B0": {
     "aturan_gagal": 6,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "B1": {
     "aturan_gagal": 5,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "D": {
     "aturan_gagal": 0,
-    "g1_lulus": true
+    "g1_lulus": true,
+    "g1_ketat": false
    },
-   "detik": 6.97,
+   "detik": 39.87,
    "halaman": 3
   },
   {
    "file": "materi_04.pdf",
    "B0": {
     "aturan_gagal": 6,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "B1": {
     "aturan_gagal": 5,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "D": {
     "aturan_gagal": 0,
-    "g1_lulus": true
+    "g1_lulus": true,
+    "g1_ketat": false
    },
-   "detik": 6.91,
+   "detik": 34.02,
    "halaman": 3
   },
   {
    "file": "materi_05.pdf",
    "B0": {
     "aturan_gagal": 6,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "B1": {
     "aturan_gagal": 5,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "D": {
     "aturan_gagal": 0,
-    "g1_lulus": true
+    "g1_lulus": true,
+    "g1_ketat": false
    },
-   "detik": 6.95,
+   "detik": 43.9,
    "halaman": 3
   },
   {
    "file": "materi_06.pdf",
    "B0": {
     "aturan_gagal": 6,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "B1": {
     "aturan_gagal": 5,
-    "g1_lulus": false
+    "g1_lulus": false,
+    "g1_ketat": false
    },
    "D": {
     "aturan_gagal": 0,
-    "g1_lulus": true
+    "g1_lulus": true,
+    "g1_ketat": false
    },
-   "detik": 7.08,
+   "detik": 29.87,
    "halaman": 3
   }
  ],
