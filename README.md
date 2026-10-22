@@ -79,7 +79,7 @@ python -m eval.evaluate uji         # set uji tertahan, sekali → eval/results.
 | REV-01 tinjauan ULD | `pipeline.review`, `web/index.html` |
 | OUT-02 mode dengar | `simak/output.py` |
 | Evaluasi, pers. (8), G1/G3/G4 | `eval/evaluate.py` |
-| Adaptor VLM tidak terikat penyedia | `simak/vlm.py` (T1 dan T2 memakai model berbeda) |
+| Adaptor VLM tidak terikat penyedia | `simak/vlm.py` (bawaan T1 dan T2 satu model dengan dua perintah; `SIMAK_MODEL_T2` untuk model berbeda) |
 
 ## Model
 
@@ -89,14 +89,14 @@ model lain (mis. `gemma-4-31b-it`, sudah diuji dan berjalan tetapi ±40–70 dtk
 benar-benar independen. Model lain bisa diganti lewat env `SIMAK_MODEL`, `SIMAK_MODEL_T2`, `SIMAK_MODEL_QA`.
 Respons di-cache di `cache/` menurut hash (citra, perintah, model) supaya demo stabil.
 
-## Hasil (versi beku, 12 Okt 2026, `eval/results.json`)
+## Hasil (run 2, 23 Okt 2026, `eval/results.json`; run 1 12 Okt di `eval/results_run1_2026-10-12.json`, identik)
 
 Set uji tertahan sintetis: 60 grafik, 4 dokumen. Ambang dikunci pada 30 grafik dev (θe = 0,01, ε = 0,02, ρ = 0,10).
 
 | Gerbang | Hasil | Kriteria | Status |
 |---|---|---|---|
 | G1 | D 4/4 dokumen lulus (B0 0/4, B1 0/4); veraPDF: B0 6 → B1 5 → D 0 aturan gagal | ≥ 90%, lebih baik dari B1 | lulus |
-| G1 ketat | Penanda "[Menunggu tinjauan ULD]" dihitung belum bermakna (`pass_ketat`); dilaporkan berdampingan sejak run berikutnya | dilaporkan | — |
+| G1 ketat | D 0/4: penanda "[Menunggu tinjauan ULD]" dihitung belum bermakna (`pass_ketat`) | dilaporkan | — |
 | G3 | Fk terbit **440/440 = 1,00** [0,991; 1,00]; injeksi tertahan **137/138 = 0,993** | Fk ≥ 0,98; ≥ 0,90 | lulus |
 | G3 (pembanding) | B2 terbit 60/60, 17 angka tidak setia pada 7/60 grafik; D 0 angka keliru terbit | — | — |
 | G3 (biaya) | D terbit 40/60; beban tinjauan R = 20/60 (semua grafik tanpa label nilai) | dilaporkan | — |
@@ -114,7 +114,7 @@ Catatan penting:
 
 - Kuota free tier Gemini Flash hanya 20 permintaan/hari/model. Karena itu evaluasi memakai Gemma, dan T1/T2 memakai model yang sama dengan dua perintah berbeda.
 - Figur vektor (bukan citra raster) belum dideskripsikan; semuanya ditahan dengan penanda di PDF dan dihitung dalam R, tetapi belum muncul sebagai kartu di antrean UI.
-- Evaluasi baru satu kali run (VLM suhu 0 + cache); dua run dengan selisih dilaporkan seperti di Bab III.C belum dilakukan.
+- Evaluasi dijalankan dua kali (VLM suhu 0 + cache): run 1 (12 Okt) dan run 2 (23 Okt) pada ambang yang sama; 0/60 status grafik berbeda (`python -m eval.banding_run eval/results_run1_2026-10-12.json eval/results.json`). Kedua run memakai model yang sama, jadi keduanya tidak mengukur variasi antarmodel.
 - Rumus belum memakai pengenal kedua dan MathCAT, jadi seluruh rumus ditahan (fail-closed) dengan draf LaTeX + ucapan untuk ULD.
 - Gambar dekoratif diberi `/Alt` "Hiasan (dekoratif)" di PDF; penandaan sebagai *Artifact* (menyunting aliran konten) belum dibuat. Di HTML sudah `alt=""`.
 - Tabel yang tidak dikenali auto-tag tetap benar di HTML (deteksi PyMuPDF), tetapi di PDF bertag belum menjadi `Table/TH`.
