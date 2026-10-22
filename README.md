@@ -21,11 +21,30 @@ rotasi kuota. Jangan menaruh key di berkas mana pun di repo ini.
    unduh `https://software.verapdf.org/releases/verapdf-installer.zip`, ekstrak, ganti `TOOLS_DIR` di
    `setup/verapdf-auto-install.xml` dengan path folder `tools` kamu, lalu
    `java -jar verapdf-izpack-installer-*.jar setup/verapdf-auto-install.xml`.
-2. **Suara (ElevenLabs, satu-satunya sumber suara; berbayar per karakter):** buat suara dari rekaman (dengan izin
-   pemilik suara) di akun ElevenLabs, lalu atur environment variable `ELEVENLABS_API_KEY` dan
-   `ELEVENLABS_VOICE_ID` (opsional `ELEVENLABS_MODEL`, bawaan `eleven_multilingual_v2`). Tanpa keduanya, mode
-   dengar tidak bisa bersuara. Teks yang dibacakan dikirim ke ElevenLabs, dan audio hanya dibuat saat
-   diputar (tanpa pra-pembuatan massal) agar kredit tidak terpakai sia-sia.
+2. **Suara.** Bawaan: **Web Speech API** peramban dengan suara bahasa Indonesia (`id-ID`, mis. Microsoft Andika
+   di Windows/Edge). Berjalan lokal, tanpa key, juga saat HTML keluaran dibuka langsung dari disk. Bila peramban
+   tidak punya suara `id-ID`, pasang paket suara Indonesia di pengaturan sistem operasi.
+   Opsional: suara manusia **ElevenLabs** (berbayar per karakter). Buat suara dari rekaman (dengan izin pemilik
+   suara), lalu atur `ELEVENLABS_API_KEY` dan `ELEVENLABS_VOICE_ID` (opsional `ELEVENLABS_MODEL`, bawaan
+   `eleven_multilingual_v2`); pilihan "Manusia (ElevenLabs)" baru muncul setelah keduanya diatur. Teks yang
+   dibacakan dengan suara ini dikirim ke ElevenLabs. Jalur lama edge-tts + OpenVoice tidak dipakai aplikasi
+   (`requirements-suara.txt`).
+
+### Demo luring (tanpa internet dan tanpa key)
+
+Hasil VLM di-cache di `cache/` menurut hash (citra, perintah, skema, model). Tanpa `GEMINI_API_KEY`:
+- **Demo Gerbang** hanya menjalankan grafik yang hasilnya ada di cache; grafik lain ditandai
+  "(perlu VLM, belum di cache)" dan tidak bisa dipilih.
+- **Remediasi**: gambar yang hasil VLM-nya belum di cache **ditahan** ke antrean ULD dengan alasan
+  "VLM tidak tersedia" (fail-closed); dokumen tetap selesai.
+- Isi cache untuk semua contoh sekali dengan key aktif sebelum presentasi: jalankan `python -m eval.evaluate uji`
+  dan proses setiap `materi_0x.pdf` lewat aplikasi, lalu commit `cache/`.
+
+Pemeriksaan cepat tanpa API (berapa grafik uji yang belum ada di cache):
+
+```bash
+python -c "from simak import vlm; from eval.evaluate import charts; print(sum(not vlm.chart_cached(open(f'data/synth/charts/{c[\"id\"]}.png','rb').read()) for c in charts('uji')), 'grafik uji belum di cache')"
+```
 
 Data yang sengaja tidak ikut di repo: PDF materi kuliah nyata (`data/cc/*.pdf`, hanya metadata `cc.json`
 yang disertakan; jalankan `python data/fetch_cc.py` untuk mengambil ulang dari Common Crawl), audio suara hasil cache, serta folder sesi `work/`.
@@ -44,7 +63,7 @@ python -m eval.evaluate uji         # set uji tertahan, sekali → eval/results.
 | **Remediasi & Tinjauan** (`/`) | Unggah PDF atau pilih contoh. Menampilkan veraPDF B0/B1/D, G1, beban tinjauan R, antrean ULD (setujui/ubah/tolak/dekoratif) dengan T1 vs T2 dan klaim yang bisa diklik ke sumbernya |
 | **Demo Gerbang** (`/demo.html`) | B2 (VLM langsung) vs SIMAK pada grafik yang sama. Tombol *suntik kesalahan* (ubah angka, tukar label, angka turunan, tren) menunjukkan B2 tetap terbit sementara SIMAK menahan |
 | **Evaluasi** (`/evaluasi.html`) | G1, G3, G4 dengan selang Wilson 95%, injeksi per jenis, dan manifes run |
-| **Keluaran HTML** | HTML semantik `lang="id"`, penanda status per gambar, tabel data grafik, mode dengar Web Speech id-ID |
+| **Keluaran HTML** | HTML semantik `lang="id"`, penanda status per gambar, tabel data grafik, mode dengar Web Speech id-ID (ElevenLabs opsional) |
 
 ## Pemetaan ke proposal
 
@@ -76,6 +95,7 @@ Set uji tertahan sintetis: 60 grafik, 4 dokumen. Ambang dikunci pada 30 grafik d
 | Gerbang | Hasil | Kriteria | Status |
 |---|---|---|---|
 | G1 | D 4/4 dokumen lulus (B0 0/4, B1 0/4); veraPDF: B0 6 → B1 5 → D 0 aturan gagal | ≥ 90%, lebih baik dari B1 | lulus |
+| G1 ketat | Penanda "[Menunggu tinjauan ULD]" dihitung belum bermakna (`pass_ketat`); dilaporkan berdampingan sejak run berikutnya | dilaporkan | — |
 | G3 | Fk terbit **440/440 = 1,00** [0,991; 1,00]; injeksi tertahan **137/138 = 0,993** | Fk ≥ 0,98; ≥ 0,90 | lulus |
 | G3 (pembanding) | B2 terbit 60/60, 17 angka tidak setia pada 7/60 grafik; D 0 angka keliru terbit | — | — |
 | G3 (biaya) | D terbit 40/60; beban tinjauan R = 20/60 (semua grafik tanpa label nilai) | dilaporkan | — |
@@ -98,4 +118,10 @@ Catatan penting:
 - Gambar dekoratif diberi `/Alt` "Hiasan (dekoratif)" di PDF; penandaan sebagai *Artifact* (menyunting aliran konten) belum dibuat. Di HTML sudah `alt=""`.
 - Tabel yang tidak dikenali auto-tag tetap benar di HTML (deteksi PyMuPDF), tetapi di PDF bertag belum menjadi `Table/TH`.
 - Pemeriksa angka B2 adalah pemeriksa pola pada teks bebas, sehingga Fk B2 berupa perkiraan.
-- Evaluasi baru pada set sintetis. G2, G5, G6 (dokumen nyata Common Crawl), dan G7 belum dijalankan.
+- Set uji G1/G3/G4 sintetis buatan tim. G6 baru versi ringan: 6 PDF Common Crawl yang lolos aturan URL ternyata
+  RPS, *module handbook*, SOP, dan pengumuman, bukan salindia; tidak ada grafik raster, sehingga R = 18/18.
+  G2, G5, G6 penuh (60 dokumen, kappa, NVDA), dan G7 belum dijalankan.
+- G1 menghitung teks alt penanda "[Menunggu tinjauan ULD] …" sebagai bermakna (aturannya hanya menolak kosong,
+  "image N", nama berkas). Karena itu G1 ketat dilaporkan berdampingan.
+- Hasil beku 12 Okt dibuat sebelum commit pertama; skema JSON ekstraksi berubah sesudahnya, sehingga kunci cache
+  sebagian grafik uji tidak cocok dengan kode sekarang. Hash skema kini tercatat di manifes (`skema`).

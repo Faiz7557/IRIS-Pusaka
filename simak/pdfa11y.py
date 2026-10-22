@@ -23,6 +23,9 @@ PLACEHOLDER = re.compile(r"^\s*(image|img|gambar|grafik|figure|picture|foto|char
                          r"|\.(png|jpe?g|gif|bmp|tiff?)\s*$", re.I)
 
 
+HELD_PREFIXES = ("[Menunggu tinjauan ULD]", "[Ditolak ULD]")  # teks alt penanda dari pipeline.alt_for
+
+
 def is_placeholder(alt) -> bool:
     """G1: teks alternatif dianggap tidak ada bila kosong atau teks pengisi."""
     return alt is None or not str(alt).strip() or bool(PLACEHOLDER.search(str(alt).strip()))
@@ -175,6 +178,9 @@ def g1_audit(pdf: Path) -> dict:
     alts = figure_alts(pdf)
     tagged = is_tagged(pdf)
     bad_alt = sum(is_placeholder(a) for a in alts)
+    # G1 ketat: penanda tahan SIMAK informatif bagi pembaca layar, tetapi belum mendeskripsikan gambarnya.
+    held = sum(bool(a) and str(a).lstrip().startswith(HELD_PREFIXES) for a in alts)
+    ok = tagged and bad_alt == 0 and bool(lang) and bool(title) and display_title
     return {"tagged": tagged, "figures": len(alts), "alt_bermakna": len(alts) - bad_alt,
             "alt_ok": tagged and bad_alt == 0, "lang_ok": bool(lang), "title_ok": bool(title) and display_title,
-            "pass": tagged and bad_alt == 0 and bool(lang) and bool(title) and display_title}
+            "pass": ok, "alt_ditahan": held, "pass_ketat": ok and held == 0}

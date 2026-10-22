@@ -1,0 +1,6 @@
+# Opsional: jalur suara lama edge-tts + konverter OpenVoice V2 di simak/voice.py (tidak dipanggil aplikasi).
+# Suara ElevenLabs opsional tidak membutuhkan paket tambahan (urllib).
+edge-tts>=7.3.1
+librosa
+soundfile
+torch

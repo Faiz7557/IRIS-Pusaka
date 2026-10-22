@@ -181,7 +181,7 @@ function render() {
   const yn = b => b ? '<span class="yes">ya</span>' : '<span class="no">tidak</span>';
   $('#vera tbody').innerHTML = ['B0', 'B1', 'D'].map(k => {
     const g = (rep[k] || {}).g1 || {};
-    return `<tr><th scope="row">${k}</th><td class="n">${rules(k)}</td><td>${g.figures ? g.alt_bermakna + ' / ' + g.figures : '0 / 0'} ${yn(g.alt_ok)}</td><td>${yn(g.lang_ok)}</td><td>${yn(g.title_ok)}</td></tr>`;
+    return `<tr><th scope="row">${k}</th><td class="n">${rules(k)}</td><td>${g.figures ? g.alt_bermakna + ' / ' + g.figures : '0 / 0'} ${yn(g.alt_ok)}${g.alt_ditahan ? ` <span class="muted small">(${g.alt_ditahan} penanda tahan)</span>` : ''}</td><td>${yn(g.lang_ok)}</td><td>${yn(g.title_ok)}</td></tr>`;
   }).join('');
   $('#out').innerHTML = `<a class="btn btn-primary" href="dengar.html?job=${JID}">${icon('ear')}Dengar sebelum vs sesudah</a>
     <a class="btn" href="/keluaran/${JID}/simak.html" target="_blank" rel="noopener">${icon('open')}HTML aksesibel + mode dengar</a>

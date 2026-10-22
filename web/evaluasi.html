@@ -77,7 +77,8 @@ const gateCard = (id, title, ok, crit, inner) => `
     </tbody></table>
     <p class="note">Satu tukar label tidak tertahan karena kedua nilai berselisih di bawah toleransi ε; kesalahan di bawah ε tidak terdeteksi menurut definisi pers. (5).</p>`);
   html += '<div class="cols">' + gateCard('G1', 'Struktur dan metadata', r.G1.lulus, r.kriteria.G1, `
-    <table><caption>Dokumen uji sintetis</caption>${HEAD}<tbody>${['B0', 'B1', 'D'].map(k => row(k + ' · dokumen lulus G1', r.G1[k])).join('')}${row('D · lulus veraPDF penuh', r.G1.veraPDF_lulus_D)}</tbody></table>
+    <table><caption>Dokumen uji sintetis</caption>${HEAD}<tbody>${['B0', 'B1', 'D'].map(k => row(k + ' · dokumen lulus G1', r.G1[k])).join('')}${r.G1.D_ketat ? row('D · lulus G1 ketat (penanda tahan = belum bermakna)', r.G1.D_ketat) : ''}${row('D · lulus veraPDF penuh', r.G1.veraPDF_lulus_D)}</tbody></table>
+    ${r.G1.D_ketat ? '' : '<p class="note">G1 ketat belum tersedia pada run ini; dihitung pada run evaluasi berikutnya.</p>'}
     <table style="margin-top:var(--s4)"><caption>Aturan PDF/UA-1 yang gagal per dokumen</caption><thead><tr><th scope="col">Dokumen</th><th scope="col" class="n">B0</th><th scope="col" class="n">B1</th><th scope="col" class="n">D</th></tr></thead><tbody>
     ${r.G1_per_dokumen.map(d => `<tr><th scope="row" class="num">${esc(d.file)}</th><td class="n">${d.B0.aturan_gagal}</td><td class="n">${d.B1.aturan_gagal}</td><td class="n">${d.D.aturan_gagal}</td></tr>`).join('')}</tbody></table>`)
     + gateCard('G4', 'Kesetaraan informasi', r.G4.lulus, r.kriteria.G4, `
@@ -89,7 +90,7 @@ const gateCard = (id, title, ok, crit, inner) => `
     const g6 = r.G6_ringan;
     html += gateCard('G6', 'Dokumen nyata (ringan)', null, g6.sumber, `
       <table><caption>${g6.berhasil}/${g6.dokumen} dokumen diproses · berkas tidak disebarluaskan</caption>${HEAD}<tbody>
-      ${row('B0 · lulus G1', g6.G1_B0)}${row('B1 · lulus G1', g6.G1_B1)}${row('D · lulus G1', g6.G1_D)}${row('D · lulus veraPDF penuh', g6.veraPDF_lulus_D)}${row('Beban tinjauan R', g6.R_beban_tinjauan)}</tbody></table>
+      ${row('B0 · lulus G1', g6.G1_B0)}${row('B1 · lulus G1', g6.G1_B1)}${row('D · lulus G1', g6.G1_D)}${g6.G1_D_ketat ? row('D · lulus G1 ketat', g6.G1_D_ketat) : ''}${row('D · lulus veraPDF penuh', g6.veraPDF_lulus_D)}${row('Beban tinjauan R', g6.R_beban_tinjauan)}</tbody></table>
       <table style="margin-top:var(--s4)"><caption>Per dokumen</caption><thead><tr><th scope="col">Dokumen</th><th scope="col" class="n">Hlm</th><th scope="col" class="n">Gambar</th><th scope="col" class="n">Figur vektor</th><th scope="col" class="n">Ditahan</th><th scope="col" class="n">Aturan gagal B0 → B1 → D</th></tr></thead><tbody>
       ${g6.per_dokumen.map(d => d.galat ? `<tr><th scope="row">${esc(d.file)}</th><td colspan="5" class="muted">${esc(d.galat)}</td></tr>` :
         `<tr><th scope="row"><span class="num">${esc(d.file)}</span> <span class="muted small">${esc(d.domain)}</span></th><td class="n">${d.halaman}</td><td class="n">${d.gambar}</td><td class="n">${d.figur_vektor_ditahan ?? '–'}</td><td class="n">${d.antrean}</td><td class="n">${d.B0.aturan_gagal} → ${d.B1.aturan_gagal} → ${d.D.aturan_gagal}</td></tr>`).join('')}</tbody></table>

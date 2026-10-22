@@ -91,9 +91,12 @@ $('#legend').innerHTML = checkLegend();
 
 (async () => {
   const g = await (await fetch('/api/demo/grafik')).json();
-  $('#pick').innerHTML = g.map(c => `<option value="${c.id}">${c.id} · ${esc(c.judul)}${c.label_nilai ? '' : ' (tanpa label nilai)'}</option>`).join('');
+  // Tanpa VLM aktif, hanya grafik yang hasilnya sudah di cache/ yang dapat dijalankan (demo luring).
+  const usable = c => c.luring || c.vlm_aktif;
+  $('#pick').innerHTML = g.map(c => `<option value="${c.id}" ${usable(c) ? '' : 'disabled'}>${c.id} · ${esc(c.judul)}${c.label_nilai ? '' : ' (tanpa label nilai)'}${usable(c) ? '' : ' (perlu VLM, belum di cache)'}</option>`).join('');
   const want = new URLSearchParams(location.search).get('grafik');
-  $('#pick').value = g.some(c => c.id === want) ? want : g.some(c => c.id === 'syn043') ? 'syn043' : g[0].id;
+  const ok = id => g.some(c => c.id === id && usable(c));
+  $('#pick').value = ok(want) ? want : ok('syn043') ? 'syn043' : (g.find(usable) || g[0]).id;
   const m = await (await fetch('/api/demo/mutasi')).json();
   $('#mut').innerHTML = Object.entries(m).map(([k, v]) =>
     `<button class="btn-inject" data-k="${k}" title="${esc(v)}" disabled>${icon('inject')}${SHORT[k] || esc(v)}</button>`).join('');
@@ -113,7 +116,11 @@ $('#run').onclick = async () => {
   CID = $('#pick').value;
   setBusy(true, 'Memproses ekstraksi ganda dan deskripsi B2…');
   const r = await fetch('/api/demo/jalankan/' + CID, {method: 'POST'});
-  if (!r.ok) { setBusy(false, 'Gagal memproses grafik (kode ' + r.status + '). Coba lagi atau pilih grafik lain.'); return; }
+  if (!r.ok) {
+    const d = (await r.json().catch(() => ({}))).detail;
+    setBusy(false, d || 'Gagal memproses grafik (kode ' + r.status + '). Coba lagi atau pilih grafik lain.');
+    return;
+  }
   BASE = await r.json();
   SCORE = {n: 0, b2: 0, d: 0};
   setBusy(false, '');

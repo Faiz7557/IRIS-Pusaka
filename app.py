@@ -165,7 +165,9 @@ def _charts():
 
 @app.get("/api/demo/grafik")
 def demo_grafik():
-    return [{"id": c["id"], "judul": c["judul"], "jenis": c["jenis_grafik"], "label_nilai": c["label_nilai"]}
+    # luring: hasil VLM grafik ini sudah di cache/, jadi demo berjalan tanpa API key atau internet.
+    return [{"id": c["id"], "judul": c["judul"], "jenis": c["jenis_grafik"], "label_nilai": c["label_nilai"],
+             "luring": vlm.chart_cached((SYN / "charts" / f"{c['id']}.png").read_bytes()), "vlm_aktif": bool(vlm.KEYS)}
             for c in _charts().values() if c["set"] == "uji"]
 
 
@@ -185,8 +187,12 @@ def demo_jalankan(cid: str):
         raise HTTPException(404)
     spec = charts[cid]
     img = (SYN / "charts" / f"{cid}.png").read_bytes()
-    el = _simak_chart(img)
-    b2 = vlm.describe_direct(img)
+    try:
+        el = _simak_chart(img)
+        b2 = vlm.describe_direct(img)
+    except vlm.QuotaHabis as e:  # cache miss tanpa VLM: beri tahu, jangan 500
+        raise HTTPException(503, f"Hasil VLM untuk {cid} belum ada di cache dan VLM tidak tersedia ({e}). "
+                                 "Pilih grafik bertanda tersedia luring.")
     th = thresholds()
     truth = [{"kategori": k, "nilai": v} for k, v in zip(spec["kategori"], spec["nilai"])]
     ordered = chart.is_ordered({"jenis_grafik": spec["jenis_grafik"]}, [{"kategori": k} for k in spec["kategori"]])
@@ -251,7 +257,7 @@ def demo_mutasi():
 
 # ------------------------------------------------------------------ evaluasi
 # ------------------------------------------------------------------ suara
-SUARA = {"eleven": "Suara manusia (ElevenLabs)"}  # satu-satunya sumber suara
+SUARA = {"eleven": "Suara manusia (ElevenLabs)"}  # suara server opsional; bawaan Web Speech API di peramban
 _voice_lock = threading.Lock()
 _prep_q: list[tuple] = []
 _prep_cv = threading.Condition()

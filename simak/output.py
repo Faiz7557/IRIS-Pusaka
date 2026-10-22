@@ -51,23 +51,30 @@ img.deco{height:1.6em;width:auto}
 """
 
 JS = """
-const blocks=[...document.querySelectorAll('[data-say]')];let i=0,playing=false,audio=null,ctl=null;
-const st=document.getElementById('st'),selR=document.getElementById('rate'),VOICE='eleven';
+const blocks=[...document.querySelectorAll('[data-say]')];let i=0,playing=false,audio=null,ctl=null,utter=null;
+const st=document.getElementById('st'),selR=document.getElementById('rate'),selV=document.getElementById('voice');
 try{const p=JSON.parse(localStorage.getItem('simak-suara')||'{}');if(p.kecepatan!==undefined)selR.value=p.kecepatan}catch(e){}
-// Suara ElevenLabs hanya tersedia bila halaman dibuka dari aplikasi SIMAK yang sudah dikonfigurasi.
-fetch('/api/suara/daftar').then(r=>{if(!r.ok)throw 0;return r.json()}).then(l=>{if(!l.some(s=>s.id===VOICE))throw 0}).catch(()=>{st.textContent='Suara ElevenLabs hanya tersedia lewat aplikasi SIMAK yang sudah diatur.'});
-function save(){try{localStorage.setItem('simak-suara',JSON.stringify({suara:VOICE,kecepatan:+selR.value,nada:0}))}catch(e){}}
-function stopAll(){if(ctl)ctl.abort();ctl=null;if(audio){audio.pause();audio=null}}
+// Bawaan: Web Speech API peramban (id-ID), berjalan lokal walau berkas dibuka langsung dari disk.
+// Suara manusia ElevenLabs ditawarkan hanya bila halaman dibuka lewat aplikasi SIMAK yang sudah dikonfigurasi.
+const idVoice=()=>(window.speechSynthesis?speechSynthesis.getVoices():[]).find(v=>/^id[-_]/i.test(v.lang));
+fetch('/api/suara/daftar').then(r=>{if(!r.ok)throw 0;return r.json()}).then(l=>{if(l.some(s=>s.id==='eleven'))selV.add(new Option('Manusia (ElevenLabs)','eleven'))}).catch(()=>{});
+if(!window.speechSynthesis)st.textContent='Peramban ini tidak mendukung Web Speech API.';
+function save(){try{localStorage.setItem('simak-suara',JSON.stringify({suara:selV.value,kecepatan:+selR.value,nada:0}))}catch(e){}}
+function stopAll(){if(ctl)ctl.abort();ctl=null;if(audio){audio.pause();audio=null}if(utter){utter=null;speechSynthesis.cancel()}}
 function mark(){blocks.forEach(b=>b.classList.remove('speaking'));const b=blocks[i];if(b){b.classList.add('speaking');b.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}}
 function next(){if(playing){i++;speak()}}
+function fail(){playing=false;st.textContent='Suara gagal diputar; periksa suara bahasa Indonesia di peramban atau pengaturan ElevenLabs di server.'}
 async function speak(){stopAll();if(i>=blocks.length){playing=false;st.textContent='Selesai dibacakan';return}
 mark();const text=blocks[i].dataset.say,rate=+selR.value;st.textContent='Membacakan bagian '+(i+1)+' dari '+blocks.length;
+if(selV.value!=='eleven'){if(!window.speechSynthesis)return fail();const u=new SpeechSynthesisUtterance(text);u.lang='id-ID';u.rate=Math.max(.5,1+rate/100);
+const v=idVoice();if(v)u.voice=v;u.onend=()=>{if(utter===u){utter=null;next()}};u.onerror=e=>{if(utter===u&&e.error!=='canceled'&&e.error!=='interrupted'){utter=null;fail()}};
+utter=u;speechSynthesis.speak(u);return}
 const c=new AbortController();ctl=c;
-try{const r=await fetch('/api/suara',{method:'POST',headers:{'Content-Type':'application/json'},signal:c.signal,body:JSON.stringify({teks:text,suara:VOICE,kecepatan:rate,nada:0})});
+try{const r=await fetch('/api/suara',{method:'POST',headers:{'Content-Type':'application/json'},signal:c.signal,body:JSON.stringify({teks:text,suara:'eleven',kecepatan:rate,nada:0})});
 if(!r.ok)throw new Error(r.status);const url=URL.createObjectURL(await r.blob());if(ctl!==c)return;
 const a=new Audio(url);audio=a;a.onended=()=>{URL.revokeObjectURL(url);if(audio===a){audio=null;next()}};await a.play()}
-catch(e){if(e.name!=='AbortError'){playing=false;st.textContent='Suara gagal dibuat; periksa pengaturan ElevenLabs di server.'}}}
-selR.onchange=()=>{save();stopAll();if(playing)speak()};
+catch(e){if(e.name!=='AbortError')fail()}}
+selR.onchange=selV.onchange=()=>{save();stopAll();if(playing)speak()};
 document.getElementById('play').onclick=()=>{playing=true;speak()};
 document.getElementById('pause').onclick=()=>{playing=false;stopAll();st.textContent='Dijeda pada bagian '+(i+1)};
 document.getElementById('prev').onclick=()=>{i=Math.max(0,i-1);if(playing)speak();else mark()};
@@ -152,7 +159,7 @@ def build_html(state: dict, alt_for) -> str:
 <div class="bar" role="region" aria-label="Mode dengar"><b>SIMAK</b>
 <button id="play">{_ic('play')}Putar</button><button id="pause">{_ic('pause')}Jeda</button>
 <button id="prev" aria-label="Bagian sebelumnya">{_ic('prev')}</button><button id="next" aria-label="Bagian berikutnya">{_ic('next')}</button>
-<span>Suara: manusia (ElevenLabs)</span>
+<label>Suara <select id="voice"><option value="peramban" selected>Peramban (id-ID)</option></select></label>
 <label>Kecepatan <select id="rate"><option value="-20">−20%</option><option value="-10">−10%</option><option value="0" selected>normal</option><option value="10">+10%</option><option value="20">+20%</option><option value="35">+35%</option></select></label>
 <span class="st" id="st" aria-live="polite"></span></div>
 <main id="isi">{notice}{''.join(parts)}</main><script>{JS}</script></body></html>"""

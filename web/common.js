@@ -125,21 +125,37 @@ function announce(msg) {
 }
 
 // ---------------------------------------------------------------- suara (mode dengar)
-// Satu sumber: suara manusia dari ElevenLabs, dibuat oleh server (perlu ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID).
+// Bawaan: Web Speech API peramban dengan suara id-ID (lokal, tanpa key, Bab III.B). Opsional: suara manusia
+// ElevenLabs dari server, hanya bila server dikonfigurasi (ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID).
+const idVoice = () => (window.speechSynthesis ? speechSynthesis.getVoices() : []).find(v => /^id[-_]/i.test(v.lang));
 const Voice = {
-  pref: {suara: 'eleven', kecepatan: 0, nada: 0},
+  pref: {suara: 'peramban', kecepatan: 0, nada: 0},
   audio: null, utter: null, ctl: null,
-  load() { try { Object.assign(this.pref, JSON.parse(localStorage.getItem('simak-suara') || '{}'), {suara: 'eleven'}); } catch (e) {} },
+  load() { try { Object.assign(this.pref, JSON.parse(localStorage.getItem('simak-suara') || '{}')); } catch (e) {} },
   save() { try { localStorage.setItem('simak-suara', JSON.stringify(this.pref)); } catch (e) {} },
+  speaking() { return !!this.audio || !!(window.speechSynthesis && speechSynthesis.speaking); },
   stop() {
     if (this.ctl) this.ctl.abort();
     this.ctl = null;
     if (this.audio) { this.audio.pause(); this.audio = null; }
+    if (this.utter) { this.utter = null; speechSynthesis.cancel(); }
   },
-  // Mengucapkan teks; onend dipanggil saat selesai, onerror bila suara server gagal.
+  // Mengucapkan teks; onend dipanggil saat selesai, onerror bila suara gagal.
   async speak(text, onend, onerror, onstart) {
     this.stop();
     const p = this.pref;
+    if (p.suara !== 'eleven') {
+      if (!window.speechSynthesis) { onerror ? onerror(new Error('Web Speech API tidak tersedia')) : onend && onend(); return; }
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'id-ID'; u.rate = Math.max(0.5, 1 + p.kecepatan / 100);
+      const v = idVoice(); if (v) u.voice = v;
+      u.onend = () => { if (this.utter === u) { this.utter = null; onend && onend(); } };
+      u.onerror = e => { if (this.utter === u && e.error !== 'canceled' && e.error !== 'interrupted') { this.utter = null; onerror ? onerror(e) : onend && onend(); } };
+      this.utter = u;
+      speechSynthesis.speak(u);
+      onstart && onstart();
+      return;
+    }
     const ctl = new AbortController(); this.ctl = ctl;
     try {
       const r = await fetch('/api/suara', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: ctl.signal,
@@ -157,6 +173,7 @@ const Voice = {
     }
   },
   prefetch(texts) {
+    if (this.pref.suara !== 'eleven') return;
     fetch('/api/suara/siapkan', {method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({teks: texts.filter(Boolean), suara: this.pref.suara, kecepatan: this.pref.kecepatan, nada: this.pref.nada})}).catch(() => {});
   },
@@ -164,19 +181,24 @@ const Voice = {
   controls(el, onchange) {
     const opt = (v, l, cur) => `<option value="${v}" ${String(cur) === String(v) ? 'selected' : ''}>${l}</option>`;
     el.innerHTML = `
-      <span class="lbl" style="min-width:0">Suara: manusia (ElevenLabs)</span>
+      <label class="lbl" for="v-suara" style="min-width:0">Suara</label>
+      <select id="v-suara">${opt('peramban', 'Peramban (id-ID)', this.pref.suara)}</select>
       <label class="lbl" for="v-cepat" style="min-width:0">Kecepatan</label>
       <select id="v-cepat">${[-20, -10, 0, 10, 20, 35].map(v => opt(v, (v > 0 ? '+' : '') + v + '%', this.pref.kecepatan)).join('')}</select>
       <button type="button" id="v-coba">${icon('play')}Coba suara</button>`;
     const upd = () => {
-      this.pref = {suara: 'eleven', kecepatan: +el.querySelector('#v-cepat').value, nada: 0};
+      this.pref = {suara: el.querySelector('#v-suara').value, kecepatan: +el.querySelector('#v-cepat').value, nada: 0};
       this.save(); this.stop(); onchange && onchange();
     };
-    // Bila server belum dikonfigurasi (ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID), beri tahu pengguna.
+    // Suara ElevenLabs hanya ditawarkan bila server sudah dikonfigurasi; selain itu tetap suara peramban.
     fetch('/api/suara/daftar').then(r => r.json()).then(list => {
-      if (list.some(s => s.id === 'eleven')) return;
-      el.querySelector('#v-coba').insertAdjacentHTML('afterend', '<span class="lbl" role="alert">Suara ElevenLabs belum diatur di server.</span>');
-    }).catch(() => {});
+      if (!list.some(s => s.id === 'eleven')) throw 0;
+      el.querySelector('#v-suara').insertAdjacentHTML('beforeend', opt('eleven', 'Manusia (ElevenLabs)', this.pref.suara));
+    }).catch(() => { if (this.pref.suara === 'eleven') { this.pref.suara = 'peramban'; this.save(); } });
+    if (window.speechSynthesis && !idVoice()) speechSynthesis.onvoiceschanged = () => {
+      if (!idVoice()) el.querySelector('#v-coba').insertAdjacentHTML('afterend', '<span class="lbl" role="alert">Peramban ini belum memiliki suara bahasa Indonesia.</span>');
+      speechSynthesis.onvoiceschanged = null;
+    };
     el.querySelectorAll('select').forEach(s => s.onchange = upd);
     el.querySelector('#v-coba').onclick = () => this.speak('Halo, saya membacakan materi kuliah untuk Anda. Nilai tertinggi pada Juli, yaitu 1.452 kunjungan.');
   },
@@ -220,7 +242,7 @@ const VoiceCmd = {
     if (!phrase) return;
     if (this.EXIT.some(e => phrase.includes(e))) { this.stop(); return; }
     // Saat suara pembaca menyala, mikrofon bisa menangkap bacaannya; hanya perintah pendek yang diterima.
-    if (Voice.audio && phrase.split(' ').length > 3) return;
+    if (Voice.speaking() && phrase.split(' ').length > 3) return;
     let hit = this.match(phrase);
     if (hit.length !== 1) {  // tidak cocok persis atau ambigu: minta LLM menimbang
       this.say('Terdengar: "' + phrase + '". Mencari tombol yang dimaksud…');

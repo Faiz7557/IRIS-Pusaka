@@ -194,15 +194,28 @@ def _json(text: str):
         return json.loads(m.group(0))
 
 
+def _key_ext(img: bytes, variant: int) -> str:
+    prompt, model = (PROMPT_T1, MODEL_T1) if variant == 1 else (PROMPT_T2, MODEL_T2)
+    return hashlib.sha256(img).hexdigest()[:16] + f"_ext{variant}_{sha(prompt + json.dumps(SCHEMA))}_{model}"
+
+
+def _key_b2(img: bytes) -> str:
+    return hashlib.sha256(img).hexdigest()[:16] + f"_b2_{sha(PROMPT_B2)}_{MODEL_T1}"
+
+
+def chart_cached(img: bytes) -> bool:
+    """True bila T1, T2, dan B2 grafik ini sudah ada di cache/ sehingga demo jalan tanpa API."""
+    return all((CACHE / f"{k}.json").exists() for k in (_key_ext(img, 1), _key_ext(img, 2), _key_b2(img)))
+
+
 def extract_table(img: bytes, variant: int = 1) -> dict:
     prompt, model = (PROMPT_T1, MODEL_T1) if variant == 1 else (PROMPT_T2, MODEL_T2)
-    key = hashlib.sha256(img).hexdigest()[:16] + f"_ext{variant}_{sha(prompt + json.dumps(SCHEMA))}_{model}"
-    return _cached(key, model, lambda: _json(_gen(model, [_img_part(img), prompt], SCHEMA)))
+    return _cached(_key_ext(img, variant), model, lambda: _json(_gen(model, [_img_part(img), prompt], SCHEMA)))
 
 
 def describe_direct(img: bytes) -> str:
     """Pembanding B2: VLM langsung menulis deskripsi, tanpa tabel dan gerbang."""
-    key = hashlib.sha256(img).hexdigest()[:16] + f"_b2_{sha(PROMPT_B2)}_{MODEL_T1}"
+    key = _key_b2(img)
     return _cached(key, MODEL_T1, lambda: {"text": _gen(MODEL_T1, [_img_part(img), PROMPT_B2]).strip()})["text"]
 
 
@@ -224,7 +237,8 @@ def answer(context: str, question: str) -> str:
 def manifest() -> dict:
     return {"model_t1": MODEL_T1, "model_t2": MODEL_T2, "model_b2": MODEL_T1, "model_qa": MODEL_QA,
             "thinking": "bawaan (Gemma) / minimal (Gemini)", "temperature": 0, "prompt_t1": sha(PROMPT_T1),
-            "prompt_t2": sha(PROMPT_T2), "prompt_b2": sha(PROMPT_B2)}
+            "prompt_t2": sha(PROMPT_T2), "prompt_b2": sha(PROMPT_B2),
+            "skema": sha(json.dumps(SCHEMA))}  # ikut menentukan kunci cache ekstraksi
 
 
 def pilih_tombol(ucapan: str, labels: list[str]) -> int | None:

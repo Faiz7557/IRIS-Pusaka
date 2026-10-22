@@ -222,9 +222,12 @@ def uji(n_g4=20):
         st = pipeline.run(SYN / "docs" / m["file"], job)
         rep = st["report"]
         g1_rows.append({"file": m["file"], **{k: {"aturan_gagal": rep[k]["verapdf"].get("failed_rules"),
-                                                   "g1_lulus": rep[k]["g1"]["pass"]} for k in ("B0", "B1", "D")},
+                                                   "g1_lulus": rep[k]["g1"]["pass"],
+                                                   "g1_ketat": rep[k]["g1"]["pass_ketat"]} for k in ("B0", "B1", "D")},
                         "detik": st["timing"]["total_s"], "halaman": st["pages"]})
     g1 = {k: prop(sum(r[k]["g1_lulus"] for r in g1_rows), len(g1_rows)) for k in ("B0", "B1", "D")}
+    # Penanda "[Menunggu tinjauan ULD]" dihitung belum bermakna; dilaporkan berdampingan, bukan kriteria terkunci.
+    g1["D_ketat"] = prop(sum(r["D"]["g1_ketat"] for r in g1_rows), len(g1_rows))
     g1["veraPDF_lulus_D"] = prop(sum(r["D"]["aturan_gagal"] == 0 for r in g1_rows), len(g1_rows))
     g1["lulus"] = bool(g1["D"]["p"] >= 0.90 and g1["D"]["p"] > g1["B1"]["p"])
 
@@ -263,12 +266,14 @@ def nyata():
                      "figur_vektor_ditahan": st["patch"]["figur_tambahan"],
                      "antrean": sum(e["status"] == "antrean" for e in nondek) + st["patch"]["figur_tambahan"],
                      "terbit_otomatis": sum(e["status"] == "terbit_otomatis" for e in nondek),
-                     **{k: {"aturan_gagal": rep[k]["verapdf"].get("failed_rules"), "g1_lulus": rep[k]["g1"]["pass"]}
+                     **{k: {"aturan_gagal": rep[k]["verapdf"].get("failed_rules"), "g1_lulus": rep[k]["g1"]["pass"],
+                            "g1_ketat": rep[k]["g1"]["pass_ketat"]}
                         for k in ("B0", "B1", "D")}, "detik": st["timing"]["total_s"]})
     ok = [r for r in rows if "galat" not in r]
     g6 = {"sumber": f"Common Crawl {meta['crawl']}, seed {meta['seed']}, bingkai stratum A = {meta['bingkai_stratum_A']}",
           "dokumen": len(rows), "berhasil": len(ok),
           **{f"G1_{k}": prop(sum(r[k]["g1_lulus"] for r in ok), len(ok)) for k in ("B0", "B1", "D")},
+          "G1_D_ketat": prop(sum(r["D"]["g1_ketat"] for r in ok), len(ok)),
           "veraPDF_lulus_D": prop(sum(r["D"]["aturan_gagal"] == 0 for r in ok), len(ok)),
           "R_beban_tinjauan": prop(sum(r["antrean"] for r in ok), sum(r["gambar"] - r["dekoratif"] for r in ok)),
           "per_dokumen": rows}

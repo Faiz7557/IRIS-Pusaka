@@ -1,8 +1,9 @@
-"""Suara sintetis 'Satya' untuk mode dengar (dengan izin pemilik suara).
+"""Suara server opsional untuk mode dengar. Suara bawaan adalah Web Speech API di peramban (id-ID).
 
-Alur: teks → normalisasi angka ke kata → suara dasar Indonesia neural (edge-tts, Ardi)
-→ warna suara diubah ke suara referensi dengan konverter OpenVoice V2 (berjalan lokal di CPU).
-Rekaman referensi tidak dikirim ke layanan luar; hanya teks yang dikirim ke layanan TTS dasar.
+Yang dipakai server: ElevenLabs (`synthesize`, suara klon dengan izin pemilik), hanya bila
+ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID diatur; teks yang dibacakan dikirim ke ElevenLabs.
+Jalur lama edge-tts + konverter OpenVoice V2 masih ada di modul ini tetapi tidak dipanggil aplikasi
+(dependensinya di requirements-suara.txt).
 """
 import asyncio
 import hashlib
