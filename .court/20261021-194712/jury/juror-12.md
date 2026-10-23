@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: As things stand, the team has a written admission of AI use that the rules list as grounds for disqualification, and the record also shows course-material text and images going to outside services (ElevenLabs, Gemini API free tier) with no word on consent or licensing; a disqualification risk on paper outweighs any strength in the demo, and nothing in the record removes it.
+DECIDING FACT: Lampiran A states Claude was used for "penyusunan dan revisi draf naskah", while guidebook 7.2.4 bans generative AI for "narasi substansial lainnya" and "pemakaian AI di luar batas" is listed as a disqualification ground, and the semifinal rules carry over to the final.
+WOULD FLIP IF: The record showed written confirmation from the committee that the semifinal AI statement was reviewed and accepted as within 7.2.4 (or allowed to be corrected without penalty), so the final submission could carry an accurate statement that does not admit a disqualifying use.

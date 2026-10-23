@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: I would not let my kids walk into a final with a signed statement already admitting AI drafted the manuscript, two days left to write Bab 4-5 from scratch, and a demo whose voice mode sends text to a paid outside service the paper never mentions; the gate idea is honest and good, but as described this puts four people's whole effort at risk of disqualification and isn't ready to stand on.
+DECIDING FACT: Lampiran A says Claude was used for "penyusunan dan revisi draf naskah", guidebook 7.2.4 bans generative AI for substantial narrative, "pemakaian AI di luar batas" is grounds for disqualification, and the defense itself called it "tidak bisa dibela".
+WOULD FLIP IF: the record showed the committee had reviewed Lampiran A and confirmed in writing that the team's AI use is within 7.2.4, so the disqualification risk is off the table and only the schedule risk remains.

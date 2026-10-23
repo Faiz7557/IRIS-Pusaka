@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: Seeing this for the first time, I believe the gate stops bad descriptions, but on real lecture PDFs it gave me nothing new because every image still landed in the ULD queue, the voice feature needs paid ElevenLabs instead of the Web Speech API the paper describes, and the app does not start on this laptop, so I would not buy it as described this week.
+DECIDING FACT: On the 6 real Common Crawl PDFs, R = 18/18 and "0 grafik terbit otomatis", and G1's 6/6 pass counts the "[Menunggu tinjauan ULD] ..." placeholder as meaningful alt text.
+WOULD FLIP IF: The record showed the gate auto-publishing faithful descriptions for at least some charts in real (non-synthetic) lecture PDFs, with Fk checked against reference tables, and the demo running end to end on the presentation laptop as the paper describes it.

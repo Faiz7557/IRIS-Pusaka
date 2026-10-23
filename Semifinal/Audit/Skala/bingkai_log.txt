@@ -1,0 +1,4 @@
+berkas parquet subset=warc: 300
+selesai dalam 309 detik
+[(56662, 1216, 54233)]
+{'crawl': 'CC-MAIN-2026-39', 'n': 56373, 'd': 1216, 'utuh': 53949, 'n_materi': 310, 'd_materi': 85, 'utuh_materi': 281}

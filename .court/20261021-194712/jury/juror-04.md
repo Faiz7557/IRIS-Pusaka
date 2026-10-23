@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: The defense's case rests on things that are still promises, like "tinggal ditulis" for Bab 4-5 and "hitungan jam" for a demo that does not start on this laptop, while the written record openly admits AI use that 7.2.4 forbids, and a promise is not proof that the work is ready.
+DECIDING FACT: Two days before the deadline, Bab 4 and Bab 5 are not written, Bab 1-3 have not been revised, and there is no final Turnitin appendix. The only evidence that published descriptions are faithful (Fk 440/440) comes from the team's own synthetic charts, because on real documents 0 charts were published and R = 18/18.
+WOULD FLIP IF: The record showed a complete Bab 1-5 draft written by the team, with Lampiran A corrected to the uses 7.2.4 allows, and a confirmed run of the MVP from a clean checkout whose voice and formula features match what Bab 3 says.

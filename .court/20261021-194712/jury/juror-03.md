@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: As a rival finalist I cannot copy a live "suntik kesalahan" side-by-side in two days, where B2 publishes the bad chart and SIMAK holds it, and my best counterattack is that nothing auto-publishes on real PDFs (R = 18/18), which they already disclose and frame as fail-closed, so I would have to fight this case rather than ignore it.
+DECIDING FACT: On the held-out set, injected errors were held 137/138 while B2 published 60/60 charts with 17 unfaithful numbers on 7/60, and the thresholds were locked on the dev set before the test set was opened.
+WOULD FLIP IF: The prototype still cannot be run from the GitHub repo by the deadline (the `import app` failure and missing tools/ are confirmed and unfixed), because then I win the 30% demo score with any product that actually runs and their gate is only a claim on paper.

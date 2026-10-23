@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: Sixty self-made synthetic charts and six real PDFs that were not lecture material are a tiny base, and on real files the system published nothing, but the paper limits its claims to that base, set its thresholds before opening the test set, replicated the run, and reports Wilson intervals, so the evidence is small yet not overstated, and that is enough to submit.
+DECIDING FACT: Thresholds were locked on 12 Oct on 30 dev charts before the 60-chart test set was opened, run 2 matched run 1 with 0/60 statuses different, and the paper scopes the result as "RM3 terjawab untuk grafik pada set uji".
+WOULD FLIP IF: The unread, Claude-written Bab IV–V or abstract claimed the gate works on real lecture PDFs or for blind users, generalising beyond the 60 synthetic charts when G2, G5 and G7 were never run and G6 published 0 charts.

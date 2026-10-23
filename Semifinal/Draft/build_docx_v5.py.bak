@@ -1,0 +1,344 @@
+﻿# -*- coding: utf-8 -*-
+import re, sys, os
+from xml.sax.saxutils import escape
+from docx import Document
+from docx.shared import Cm
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import parse_xml
+from docx.oxml.ns import qn
+import content as C
+
+# urutan Gambar 2 terhadap paragraf pengantarnya dapat diatur (FIGFIRST=1: gambar dahulu); bawaan: paragraf dahulu
+_i = [k for k, b in enumerate(C.B) if b["kind"] == "fig" and b["key"] == "pen"][0]
+if os.environ.get("FIGFIRST", "1") != "1" and C.B[_i + 1]["kind"] == "p":
+    C.B[_i], C.B[_i + 1] = C.B[_i + 1], C.B[_i]
+FIGW = float(os.environ.get("FIGW", "15.0"))
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+TEMPLATE = os.path.join(ROOT, "..", "Template Paper Semifinal ICC 2026.docx")
+DIAG = os.path.join(ROOT, "..", "Diagram")
+OUT = os.path.join(ROOT, sys.argv[1] if len(sys.argv) > 1 else "Draft_Semifinal_ICC2026_Bab1-3.docx")
+TBL_PT = float(sys.argv[2]) if len(sys.argv) > 2 else 9
+
+W = ('xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
+     'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" '
+     'xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"')
+FONT = '<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman"/>'
+
+# ================================================================= LaTeX (subset) -> OMML
+GREEK = {"tau": "τ", "delta": "δ", "mu": "μ", "sigma": "σ", "beta": "β", "rho": "ρ", "kappa": "κ",
+         "epsilon": "ε", "theta": "θ", "Delta": "Δ", "Lambda": "Λ"}
+SYM = {"in": "∈", "le": "≤", "ge": "≥", "neq": "≠", "ne": "≠", "cdot": "·", "pm": "±", "emptyset": "∅",
+       "exists": "∃", "times": "×", "cup": "∪", "mid": "∣", "{": "{", "}": "}"}
+RELSTOP = {"=", ",", "<", ">", r"\le", r"\ge", r"\neq", r"\qquad", r"\quad"}
+MR = '<w:rPr><w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr>'
+
+def mrun(t, style=None):
+    sty = '<m:rPr><m:sty m:val="%s"/></m:rPr>' % style if style else ""
+    return '<m:r>%s%s<m:t xml:space="preserve">%s</m:t></m:r>' % (sty, MR, escape(t))
+
+TOK = re.compile(r"\\[A-Za-z]+|\\.|[{}^_]|\s+|.", re.S)
+
+class LP:
+    def __init__(self, s):
+        self.t = [x for x in TOK.findall(s) if not x.isspace()]; self.i = 0; self.stops = []
+    def peek(self): return self.t[self.i] if self.i < len(self.t) else None
+    def nxt(self): x = self.t[self.i]; self.i += 1; return x
+    def seq(self, stop=None, rel=False):
+        if stop: self.stops.append(stop)
+        out = []
+        while True:
+            k = self.peek()
+            if k is None or k in self.stops or (rel and k in RELSTOP): break
+            out.append(self.term())
+        if stop: self.stops.pop()
+        return "".join(out)
+    def arg(self):
+        if self.peek() == "{":
+            self.nxt(); r = self.seq("}"); self.nxt(); return r
+        return self.atom()
+    def term(self):
+        base = self.atom(); sub = sup = None
+        while self.peek() in ("^", "_"):
+            op = self.nxt(); a = self.arg()
+            if op == "_": sub = a
+            else: sup = a
+        if sub and sup: return "<m:sSubSup><m:e>%s</m:e><m:sub>%s</m:sub><m:sup>%s</m:sup></m:sSubSup>" % (base, sub, sup)
+        if sub: return "<m:sSub><m:e>%s</m:e><m:sub>%s</m:sub></m:sSub>" % (base, sub)
+        if sup: return "<m:sSup><m:e>%s</m:e><m:sup>%s</m:sup></m:sSup>" % (base, sup)
+        return base
+    def atom(self):
+        k = self.nxt()
+        if k == "{":
+            r = self.seq("}"); self.nxt(); return r
+        if not k.startswith("\\"): return mrun(k)
+        c = k[1:]
+        if c == "frac":
+            a = self.arg(); b = self.arg()
+            return "<m:f><m:num>%s</m:num><m:den>%s</m:den></m:f>" % (a, b)
+        if c == "sqrt":
+            a = self.arg()
+            return '<m:rad><m:radPr><m:degHide m:val="1"/></m:radPr><m:deg/><m:e>%s</m:e></m:rad>' % a
+        if c in ("sum", "prod"):
+            sub = sup = None
+            while self.peek() in ("_", "^"):
+                op = self.nxt(); a = self.arg()
+                if op == "_": sub = a
+                else: sup = a
+            body = self.seq(rel=True)
+            hide = ('<m:subHide m:val="1"/>' if not sub else "") + ('<m:supHide m:val="1"/>' if not sup else "")
+            return ('<m:nary><m:naryPr><m:chr m:val="%s"/><m:limLoc m:val="undOvr"/>%s</m:naryPr><m:sub>%s</m:sub><m:sup>%s</m:sup><m:e>%s</m:e></m:nary>'
+                    % ("∑" if c == "sum" else "∏", hide, sub or "", sup or "", body))
+        if c == "bar":
+            a = self.arg()
+            return '<m:bar><m:barPr><m:pos m:val="top"/></m:barPr><m:e>%s</m:e></m:bar>' % a
+        if c == "hat":
+            a = self.arg()
+            return '<m:acc><m:accPr><m:chr m:val="̂"/></m:accPr><m:e>%s</m:e></m:acc>' % a
+        if c == "mathrm" or c == "mathbf":
+            txt = self.arg()
+            # ambil teks dari run-run di dalamnya dan tulis ulang dengan gaya tegak/tebal
+            plain = "".join(re.findall(r"<m:t[^>]*>([^<]*)</m:t>", txt))
+            return mrun(re.sub(r"&amp;", "&", plain).replace("&lt;", "<").replace("&gt;", ">"), "p" if c == "mathrm" else "b")
+        if c == "left":
+            d1 = self.nxt(); d1 = {"\\{": "{"}.get(d1, d1)
+            body = self.seq("\\right"); self.nxt(); d2 = self.nxt(); d2 = {"\\}": "}"}.get(d2, d2)
+            return '<m:d><m:dPr><m:begChr m:val="%s"/><m:endChr m:val="%s"/></m:dPr><m:e>%s</m:e></m:d>' % (escape(d1), escape(d2), body)
+        if c in ("max", "min"): return mrun(c, "p")
+        if c in GREEK: return mrun(GREEK[c])
+        if c in SYM: return mrun(SYM[c])
+        if c in (",", ";", " ", "!"): return mrun(" ")
+        if c == "quad": return mrun(" ")
+        if c == "qquad": return mrun("  ")
+        raise ValueError("perintah LaTeX belum didukung: " + k)
+
+def latex_to_omml(s):
+    p = LP(s); out = p.seq()
+    assert p.i == len(p.t), "token tersisa: %s" % p.t[p.i:]
+    return out
+
+# ================================================================= penomoran otomatis
+tn, gn, en = {}, {}, {}
+for b in C.B:
+    if b["kind"] == "table": tn[b["key"]] = len(tn) + 1
+    elif b["kind"] == "fig": gn[b["key"]] = len(gn) + 1
+    elif b["kind"] == "eq": en[b["key"]] = len(en) + 1
+
+def roman(n):
+    out = ""
+    for v, r in ((10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")):
+        while n >= v: out += r; n -= v
+    return out
+
+def xref(s):
+    s = re.sub(r"\{T:(\w+)\}", lambda m: roman(tn[m.group(1)]), s)
+    s = re.sub(r"\{G:(\w+)\}", lambda m: str(gn[m.group(1)]), s)
+    s = re.sub(r"\{E:(\w+)\}", lambda m: "(%d)" % en[m.group(1)], s)
+    return s
+
+# ================================================================= sitasi
+CITE = re.compile(r"\[@([^\]]+)\]")
+order = []
+def scan(s):
+    for m in CITE.finditer(s):
+        for k in m.group(1).split(","):
+            k = k.strip().lstrip("@")
+            if k not in order: order.append(k)
+for b in C.B:
+    k = b["kind"]
+    if k in ("p", "h1", "h2"): scan(b["text"])
+    elif k == "list":
+        for it in b["items"]: scan(it)
+    elif k == "table":
+        for row in b["rows"]:
+            for c in row: scan(c)
+    elif k == "fig": scan(b["cap"])
+num = {k: i + 1 for i, k in enumerate(order)}
+assert not [k for k in order if k not in C.REFS], [k for k in order if k not in C.REFS]
+unused = [k for k in C.REFS if k not in order]
+if unused: print("PERINGATAN referensi tidak dikutip:", unused)
+
+def cites(s):
+    return CITE.sub(lambda m: "[" + ", ".join(str(x) for x in sorted({num[k.strip().lstrip('@')] for k in m.group(1).split(',')})) + "]", s)
+
+# ================================================================= XML pembuat
+def run(text, size=20, b=False, i=False, sub=False, sup=False, caps=False):
+    pr = FONT + ("<w:caps/>" if caps else "") +("<w:b/><w:bCs/>" if b else "") + ("<w:i/><w:iCs/>" if i else "") + \
+         '<w:sz w:val="%d"/><w:szCs w:val="%d"/>' % (size, size) + ('<w:vertAlign w:val="subscript"/>' if sub else "") + ('<w:vertAlign w:val="superscript"/>' if sup else "") + '<w:lang w:val="id-ID"/>'
+    return '<w:r><w:rPr>%s</w:rPr><w:t xml:space="preserve">%s</w:t></w:r>' % (pr, escape(text))
+
+def tab_run(size=20):
+    return '<w:r><w:rPr>%s<w:sz w:val="%d"/><w:szCs w:val="%d"/></w:rPr><w:tab/></w:r>' % (FONT, size, size)
+
+SPLIT = re.compile(r"(\*[^*]+\*|_\{[^}]*\})")
+FOREIGN = re.compile(r"(?<!Adobe )\b(pipeline|fail-closed|vision-language|low vision|auto-tag|zero-shot|benchmark|caption|hash|cache|slide|held-out|Figure|Artifact|StructTreeRoot|MarkInfo)\b", re.I)
+def inline(text, size=20, bold=False):
+    text = cites(xref(text))
+    out = []
+    for part in SPLIT.split(text):
+        if not part: continue
+        if part.startswith("*") and part.endswith("*") and len(part) > 2: out.append(run(part[1:-1], size, b=bold, i=True))
+        elif part.startswith("_{"): out.append(run(part[2:-1], size, b=bold, sub=True))
+        else:
+            for k, seg in enumerate(FOREIGN.split(part)):
+                if seg: out.append(run(seg, size, b=bold, i=(k % 2 == 1)))
+    return "".join(out)
+
+def para(inner, ppr=""):
+    return parse_xml('<w:p %s><w:pPr>%s</w:pPr>%s</w:p>' % (W, ppr, inner))
+
+def body_p(t): return para(inline(t), '<w:widowControl/><w:ind w:firstLine="142"/><w:jc w:val="both"/>')
+def heading1(t): return para(run(t[0], 20) + run(t[1:], 16), '<w:pStyle w:val="Heading1"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="2"/></w:numPr><w:ind w:left="0" w:firstLine="0"/>')
+def heading2(t): return para(run(t, 20), '<w:pStyle w:val="Heading2"/><w:numPr><w:ilvl w:val="1"/><w:numId w:val="2"/></w:numPr><w:ind w:left="0" w:firstLine="0"/>')
+def list_item(n, t): return para(run("%d)" % n, 20) + tab_run() + inline(t), '<w:ind w:left="284" w:hanging="284"/><w:jc w:val="both"/>')
+
+def equation(latex, number):
+    omml = "<m:oMath>%s</m:oMath>" % latex_to_omml(latex)
+    tabs = '<w:tab w:val="center" w:pos="2520"/><w:tab w:val="right" w:pos="5040"/>'
+    inner = tab_run(20) + omml + tab_run(20) + run("(%d)" % number, 20)
+    return para(inner, '<w:keepLines/><w:tabs>%s</w:tabs><w:spacing w:before="40" w:after="40"/>' % tabs)
+
+def table_caption(text):
+    # gaya IEEE: "TABEL III.  JUDUL DALAM HURUF KAPITAL", di tengah, di atas tabel
+    label, title = xref(text).split(". ", 1)
+    return para(run(label.upper() + ".", 18) + run("  " + title, 18, caps=True), '<w:keepNext/><w:spacing w:before="100" w:after="60"/><w:jc w:val="center"/>')
+
+def caption(text, top=False, keep=True):
+    return para(run(xref(text), 18), ('<w:keepNext/>' if keep else "") + '<w:spacing w:before="%d" w:after="%d"/><w:jc w:val="center"/>' % ((80, 40) if top else (40, 80)))
+
+def sect(cols):
+    colx = ('<w:cols w:equalWidth="0" w:num="2"><w:col w:w="5040" w:space="288"/><w:col w:w="5040"/></w:cols>' if cols == 2 else '<w:cols w:space="720" w:num="1"/>')
+    return parse_xml('<w:sectPr %s><w:headerReference w:type="default" r:id="rId10"/><w:type w:val="continuous"/><w:pgSz w:w="12240" w:h="15840" w:orient="portrait"/>'
+                     '<w:pgMar w:top="1008" w:right="936" w:bottom="1008" w:left="936" w:header="432" w:footer="432"/>%s</w:sectPr>' % (W, colx))
+
+def caption_runs(text):
+    label, title = xref(text).split(". ", 1)
+    return run(label.upper() + ".", 18) + run("  " + title, 18, caps=True)
+
+def table_xml(header, rows, widths_cm, cap=None, newpage=False):
+    tw = [int(round(w * 567)) for w in widths_cm]
+    sz = int(TBL_PT * 2)
+    def cell(text, w, head=False, keep=False):
+        bd = ('<w:tcBorders><w:top w:val="single" w:sz="8" w:space="0" w:color="000000"/>'
+              '<w:bottom w:val="single" w:sz="6" w:space="0" w:color="000000"/></w:tcBorders>') if head else ""
+        return ('<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr><w:p><w:pPr>%s<w:spacing w:before="10" w:after="10"/><w:jc w:val="%s"/></w:pPr>%s</w:p></w:tc>'
+                % (w, bd, "<w:keepNext/>" if (head or keep) else "", "center" if head else "left", inline(text, sz, bold=head)))
+    # gaya IEEE: garis atas, garis di bawah judul kolom, dan garis bawah; tanpa garis vertikal dan tanpa arsiran
+    b = ('<w:top w:val="nil"/><w:left w:val="nil"/>'
+         '<w:bottom w:val="single" w:sz="8" w:space="0" w:color="000000"/><w:right w:val="nil"/>'
+         '<w:insideH w:val="nil"/><w:insideV w:val="nil"/>')
+    x = '<w:tbl %s><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:jc w:val="center"/><w:tblBorders>%s</w:tblBorders><w:tblLayout w:type="fixed"/><w:tblCellMar><w:left w:w="70" w:type="dxa"/><w:right w:w="70" w:type="dxa"/></w:tblCellMar></w:tblPr>' % (W, sum(tw), b)
+    x += '<w:tblGrid>' + "".join('<w:gridCol w:w="%d"/>' % w for w in tw) + '</w:tblGrid>'
+    if cap:   # keterangan menjadi baris pertama tabel (tanpa garis) agar tidak terpisah dari tabelnya
+        x += ('<w:tr><w:trPr><w:cantSplit/><w:tblHeader/></w:trPr><w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/><w:gridSpan w:val="%d"/></w:tcPr>'
+              '<w:p><w:pPr><w:keepNext/>%s<w:spacing w:before="100" w:after="60"/><w:jc w:val="center"/></w:pPr>%s</w:p></w:tc></w:tr>' % (sum(tw), len(tw), "<w:pageBreakBefore/>" if newpage else "", caption_runs(cap)))
+    hdr_flag = "" if os.environ.get("NOHDR") == "1" else "<w:tblHeader/>"
+    x += '<w:tr><w:trPr><w:cantSplit/>' + hdr_flag + '</w:trPr>' + "".join(cell(h, w, True) for h, w in zip(header, tw)) + '</w:tr>'
+    # baris data boleh terpotong batas halaman agar tidak ada ruang kosong (permintaan penulis)
+    for n, r in enumerate(rows):
+        x += '<w:tr>' + "".join(cell(c, w) for c, w in zip(r, tw)) + '</w:tr>'
+    return parse_xml(x + '</w:tbl>')
+
+# ================================================================= dokumen
+doc = Document(TEMPLATE)
+body = doc.element.body
+kids = list(body); final_sect = kids[-1]
+assert final_sect.tag == qn("w:sectPr")
+head = kids[:4]
+for el in kids[4:-1]: body.remove(el)
+for pg in final_sect.findall(qn("w:pgNumType")): final_sect.remove(pg)
+def clear_runs(p):
+    for r in p.findall(qn("w:r")): p.remove(r)
+clear_runs(head[0]); head[0].append(parse_xml('<w:r %s><w:rPr>%s<w:sz w:val="48"/><w:szCs w:val="48"/><w:lang w:val="id-ID"/></w:rPr><w:t xml:space="preserve">%s</w:t></w:r>' % (W, FONT, escape(C.TITLE))))
+clear_runs(head[2]); head[2].append(parse_xml('<w:r %s><w:rPr>%s<w:i/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="id-ID"/></w:rPr><w:t>%s</w:t></w:r>' % (W, FONT, escape(C.TEAM))))
+clear_runs(head[3])
+def add_runs(par, xml):
+    tmp = parse_xml('<w:p %s>%s</w:p>' % (W, xml))
+    for r in list(tmp): par.append(r)
+au = ""
+for n, (name, mark) in enumerate(C.AUTHORS):
+    au += run(name, 22) + run(mark, 22, sup=True) + (run(", ", 22) if n < len(C.AUTHORS) - 1 else "")
+for lab, txt in C.AFFILS:
+    au += '<w:r><w:br/></w:r>' + run(lab, 22, i=True, sup=True) + run(txt, 22, i=True)
+add_runs(head[3], au)
+sp = head[3].find(qn("w:pPr")).find(qn("w:spacing"))
+if sp is not None: sp.set(qn("w:after"), "160")
+
+def append(el): final_sect.addprevious(el); return el
+def last_child(): return final_sect.getprevious()
+
+def abs_para(label, text):
+    return para(run(label, 18, b=True, i=True) + run("— ", 18, b=True) + inline(text, 18, bold=True),
+                '<w:widowControl/><w:spacing w:before="20"/><w:ind w:firstLine="202"/><w:jc w:val="both"/>')
+append(abs_para("Abstrak", C.ABSTRACT))
+kw = abs_para("Kata Kunci", C.KEYWORDS); kw.find(qn("w:pPr")).find(qn("w:spacing")).set(qn("w:after"), "80"); append(kw)
+
+def _ppr(lc):
+    ppr = lc.find(qn("w:pPr"))
+    if ppr is None:
+        ppr = parse_xml('<w:pPr %s/>' % W); lc.insert(0, ppr)
+    return ppr
+def begin_full():
+    lc = last_child(); assert lc.tag == qn("w:p")
+    ppr = _ppr(lc); prev = ppr.find(qn("w:sectPr"))
+    if prev is not None: ppr.remove(prev); return       # gabung blok lebar-penuh berurutan
+    ppr.append(sect(2))
+def end_full(): _ppr(last_child()).append(sect(1))
+def spacer(): return para(run("", 4), '<w:spacing w:before="0" w:after="0" w:line="40" w:lineRule="exact"/>')
+
+eq_dump = []
+for b in C.B:
+    k = b["kind"]
+    if k == "h1": append(heading1(b["text"]))
+    elif k == "h2": append(heading2(b["text"]))
+    elif k == "p": append(body_p(b["text"]))
+    elif k == "list":
+        for n, t in enumerate(b["items"], 1): append(list_item(n, t))
+    elif k == "eq":
+        append(equation(b["latex"], en[b["key"]])); eq_dump.append((en[b["key"]], b["key"], b["desc"], b["latex"]))
+    elif k == "table":
+        if b["full"]:
+            begin_full(); append(table_xml(b["hdr"], b["rows"], b["widths"], cap=b["cap"], newpage=b.get("newpage", False)))
+            if b["note"]: append(para(inline(b["note"], 16), '<w:spacing w:before="40" w:after="0"/><w:jc w:val="left"/>'))
+            else: append(spacer())
+            end_full()
+        else:
+            append(table_xml(b["hdr"], b["rows"], b["widths"], cap=b["cap"])); append(spacer())
+    elif k == "fig":
+        begin_full()
+        pe = doc.add_paragraph(); pe.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        pe.paragraph_format.keep_with_next = True; pe.paragraph_format.space_before = 0; pe.paragraph_format.space_after = 0
+        pe.add_run().add_picture(os.path.join(DIAG, b["file"]), width=Cm(FIGW))
+        dp = pe._p.xpath(".//wp:docPr")[0]; dp.set("descr", b["alt"]); dp.set("title", xref(b["cap"]).split(".")[0])
+        append(caption(b["cap"], top=False, keep=False)); end_full()
+
+append(para(run("R", 20) + run("EFERENSI", 16), '<w:pStyle w:val="Heading1"/><w:ind w:left="0" w:firstLine="0"/>'))
+for k in order:
+    append(para(run("[%d]" % num[k], 16) + tab_run(16) + run(C.REFS[k], 16), '<w:ind w:left="284" w:hanging="295"/><w:jc w:val="left"/>'))
+first = True
+for kind, text in C.APPENDIX:
+    if kind == "h":
+        append(para(run(text, 20, b=True), '<w:pStyle w:val="Heading1"/>' + ('<w:pageBreakBefore/>' if first else "") + '<w:ind w:left="0" w:firstLine="0"/>')); first = False
+    else: append(body_p(text))
+
+print("kata abstrak:", len(C.ABSTRACT.split()))
+doc.core_properties.title = C.TITLE; doc.core_properties.author = C.TEAM; doc.core_properties.language = "id-ID"
+try:
+    doc.save(OUT)
+except PermissionError:
+    OUT = OUT.replace(".docx", "_v3.docx"); doc.save(OUT); print("Berkas asli terkunci (terbuka di Word); disimpan sebagai", OUT)
+
+# ================================================================= ekspor LaTeX untuk Auto-LaTeX (Google Docs)
+txt = ["PERSAMAAN LATEX UNTUK AUTO-LATEX EQUATIONS (GOOGLE DOCS)",
+       "Cara pakai: salin SATU baris kode LaTeX di bawah (tanpa tanda $), tempel di Google Docs, blok teksnya, lalu",
+       "Add-ons > Auto-LaTeX Equations > Render Equations. Bila add-on Anda memakai pembatas, bungkus dengan $$ ... $$.",
+       "Nomor persamaan mengikuti naskah; ketik nomor secara terpisah di sebelah kanan (mis. tab lalu \"(1)\").", ""]
+for n, key, desc, lx in eq_dump:
+    txt += ["(%d)  %s" % (n, desc), "     " + lx, ""]
+open(os.path.join(ROOT, "Persamaan_LaTeX_AutoLaTeX.txt"), "w", encoding="utf-8").write("\n".join(txt))
+tex = ["\\documentclass{article}", "\\usepackage{amsmath,amssymb}", "\\begin{document}"]
+for n, key, desc, lx in eq_dump: tex += ["%% (%d) %s" % (n, desc), "\\begin{equation}", lx, "\\end{equation}"]
+tex += ["\\end{document}"]
+open(os.path.join(ROOT, "../Audit/persamaan_check.tex"), "w", encoding="utf-8").write("\n".join(tex))
+print("tersimpan:", OUT, "| referensi:", len(order), "| tabel:", len(tn), "| gambar:", len(gn), "| persamaan:", len(en))
+

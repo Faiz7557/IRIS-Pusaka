@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: A stranger gets this project in five seconds, because it fits one plain promise ("no wrong description publishes without a marker") and one screen that proves it. The unwritten chapters and the voice mismatch are things to finish and disclose. They don't stop a judge from seeing what SIMAK is and why it matters.
+DECIDING FACT: The Demo Gerbang page puts B2 (direct VLM) and SIMAK side by side on the same chart. When you press "suntik kesalahan", B2 still publishes while SIMAK holds the output, and the frozen numbers back this up: 137/138 injected errors held, while B2 published 60/60 charts and 17 of its numbers were unfaithful.
+WOULD FLIP IF: The 15-minute demo had to run only on the real PDFs, where R = 18/18 and 0 charts publish. A stranger would then see a queue where every item is held, with no visible contrast, and could not tell what the product actually does.

@@ -1,0 +1,5825 @@
+{
+ "grafik": [
+  {
+   "id": "syn003",
+   "judul": "Kunjungan perpustakaan per bulan (2023)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 10,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 16,
+   "klaim_setia": 16,
+   "b2_angka": 14,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn004",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn005",
+   "judul": "Anggaran riset per unit (2025)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 7,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn006",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn008",
+   "judul": "Skor rata-rata ujian per kelas (2022)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 5,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn009",
+   "judul": "Ekspor komoditas Jawa Timur (2023)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn011",
+   "judul": "Persentase penduduk miskin per provinsi (2025)",
+   "jenis": "batang_horizontal",
+   "label_nilai": false,
+   "n_kategori": 8,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 12,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn012",
+   "judul": "Rata-rata IPK lulusan per program studi (2020)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn013",
+   "judul": "Kunjungan perpustakaan per bulan (2021)",
+   "jenis": "area",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn014",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+   "jenis": "area",
+   "label_nilai": false,
+   "n_kategori": 7,
+   "status": "antrean",
+   "delta": 0.01279317697228145,
+   "checks": {
+    "cF": true,
+    "cδ": false,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Dua ekstraksi tidak konsisten: δ = 0.013 > θe = 0.01",
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 5,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn015",
+   "judul": "Anggaran riset per unit (2023)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn016",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+   "jenis": "area",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn017",
+   "judul": "Curah hujan bulanan Surabaya (2025)",
+   "jenis": "area",
+   "label_nilai": false,
+   "n_kategori": 7,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn020",
+   "judul": "Mahasiswa baru per fakultas (2022)",
+   "jenis": "titik",
+   "label_nilai": false,
+   "n_kategori": 8,
+   "status": "antrean",
+   "delta": 0.0008333333333333334,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 12,
+   "klaim_setia": 12,
+   "b2_angka": 12,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn021",
+   "judul": "Persentase penduduk miskin per provinsi (2023)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn022",
+   "judul": "Rata-rata IPK lulusan per program studi (2024)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn024",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn026",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 6,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 12,
+   "klaim_setia": 12,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn027",
+   "judul": "Curah hujan bulanan Surabaya (2023)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 9,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 15,
+   "klaim_setia": 15,
+   "b2_angka": 13,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn028",
+   "judul": "Skor rata-rata ujian per kelas (2024)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 4,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 7,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn031",
+   "judul": "Persentase penduduk miskin per provinsi (2021)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn032",
+   "judul": "Rata-rata IPK lulusan per program studi (2022)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 4,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 8,
+   "klaim_setia": 7,
+   "b2_angka": 7,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn033",
+   "judul": "Kunjungan perpustakaan per bulan (2023)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 7,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn034",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn035",
+   "judul": "Anggaran riset per unit (2025)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 5,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn036",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 12,
+   "klaim_setia": 12,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn037",
+   "judul": "Curah hujan bulanan Surabaya (2021)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 8,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 14,
+   "klaim_setia": 14,
+   "b2_angka": 12,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn039",
+   "judul": "Ekspor komoditas Jawa Timur (2023)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn040",
+   "judul": "Mahasiswa baru per fakultas (2024)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 4,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 6,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn041",
+   "judul": "Persentase penduduk miskin per provinsi (2025)",
+   "jenis": "batang_horizontal",
+   "label_nilai": false,
+   "n_kategori": 6,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn043",
+   "judul": "Kunjungan perpustakaan per bulan (2021)",
+   "jenis": "area",
+   "label_nilai": true,
+   "n_kategori": 10,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 16,
+   "klaim_setia": 16,
+   "b2_angka": 14,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn045",
+   "judul": "Anggaran riset per unit (2023)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn048",
+   "judul": "Skor rata-rata ujian per kelas (2020)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn049",
+   "judul": "Ekspor komoditas Jawa Timur (2021)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn050",
+   "judul": "Mahasiswa baru per fakultas (2022)",
+   "jenis": "titik",
+   "label_nilai": false,
+   "n_kategori": 5,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 11,
+   "klaim_setia": 9,
+   "b2_angka": 7,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn053",
+   "judul": "Kunjungan perpustakaan per bulan (2025)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 8,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 14,
+   "klaim_setia": 14,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn057",
+   "judul": "Curah hujan bulanan Surabaya (2023)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn058",
+   "judul": "Skor rata-rata ujian per kelas (2024)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn059",
+   "judul": "Ekspor komoditas Jawa Timur (2025)",
+   "jenis": "titik",
+   "label_nilai": false,
+   "n_kategori": 4,
+   "status": "antrean",
+   "delta": 0.005154639175257732,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 6,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn060",
+   "judul": "Mahasiswa baru per fakultas (2020)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn062",
+   "judul": "Rata-rata IPK lulusan per program studi (2022)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 4,
+   "status": "antrean",
+   "delta": 0.0026041666666666114,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 8,
+   "b2_keliru": 6
+  },
+  {
+   "id": "syn063",
+   "judul": "Kunjungan perpustakaan per bulan (2023)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 8,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 14,
+   "klaim_setia": 14,
+   "b2_angka": 12,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn065",
+   "judul": "Anggaran riset per unit (2025)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 5,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn066",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "jenis": "garis",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn068",
+   "judul": "Skor rata-rata ujian per kelas (2022)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 5,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 9,
+   "klaim_setia": 1,
+   "b2_angka": 7,
+   "b2_keliru": 6
+  },
+  {
+   "id": "syn070",
+   "judul": "Mahasiswa baru per fakultas (2024)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn073",
+   "judul": "Kunjungan perpustakaan per bulan (2021)",
+   "jenis": "area",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn074",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+   "jenis": "area",
+   "label_nilai": false,
+   "n_kategori": 5,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn075",
+   "judul": "Anggaran riset per unit (2023)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn076",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+   "jenis": "area",
+   "label_nilai": true,
+   "n_kategori": 7,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn077",
+   "judul": "Curah hujan bulanan Surabaya (2025)",
+   "jenis": "area",
+   "label_nilai": false,
+   "n_kategori": 7,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 13,
+   "klaim_setia": 12,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn078",
+   "judul": "Skor rata-rata ujian per kelas (2020)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 4,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn079",
+   "judul": "Ekspor komoditas Jawa Timur (2021)",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "n_kategori": 6,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 10,
+   "klaim_setia": 10,
+   "b2_angka": 11,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn081",
+   "judul": "Persentase penduduk miskin per provinsi (2023)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 9,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 13,
+   "klaim_setia": 13,
+   "b2_angka": 13,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn082",
+   "judul": "Rata-rata IPK lulusan per program studi (2024)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 4,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn083",
+   "judul": "Kunjungan perpustakaan per bulan (2025)",
+   "jenis": "batang",
+   "label_nilai": false,
+   "n_kategori": 12,
+   "status": "antrean",
+   "delta": 0.0027287993282955497,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 18,
+   "klaim_setia": 18,
+   "b2_angka": 16,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn084",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "jenis": "batang",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 11,
+   "klaim_setia": 11,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn085",
+   "judul": "Anggaran riset per unit (2021)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 5,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 9,
+   "klaim_setia": 9,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn088",
+   "judul": "Skor rata-rata ujian per kelas (2024)",
+   "jenis": "titik",
+   "label_nilai": true,
+   "n_kategori": 4,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "alasan": [],
+   "n_klaim": 8,
+   "klaim_setia": 8,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn089",
+   "judul": "Ekspor komoditas Jawa Timur (2025)",
+   "jenis": "titik",
+   "label_nilai": false,
+   "n_kategori": 6,
+   "status": "antrean",
+   "delta": 0.0,
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "alasan": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "n_klaim": 12,
+   "klaim_setia": 10,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  }
+ ],
+ "injeksi": [
+  {
+   "id": "syn003",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Agu, nilai, 948) tidak setia: T memuat 758"
+   ],
+   "eps_s": 7.58
+  },
+  {
+   "id": "syn003",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Apr, nilai, 645) tidak setia: T memuat 482",
+    "Klaim (Okt, nilai, 482) tidak setia: T memuat 645"
+   ],
+   "eps_s": 7.58
+  },
+  {
+   "id": "syn003",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Agu|Mar, selisih, 494,7) tidak setia: T memuat 379"
+   ],
+   "eps_s": 7.58
+  },
+  {
+   "id": "syn003",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 7.58
+  },
+  {
+   "id": "syn004",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2021, nilai, 155) tidak setia: T memuat 124"
+   ],
+   "eps_s": 4.28
+  },
+  {
+   "id": "syn004",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2020, nilai, 124) tidak setia: T memuat 234",
+    "Klaim (2021, nilai, 234) tidak setia: T memuat 124"
+   ],
+   "eps_s": 4.28
+  },
+  {
+   "id": "syn004",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018|2022, selisih, 280,2) tidak setia: T memuat 214"
+   ],
+   "eps_s": 4.28
+  },
+  {
+   "id": "syn004",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 4.28
+  },
+  {
+   "id": "syn006",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018, nilai, 88,5) tidak setia: T memuat 70,8"
+   ],
+   "eps_s": 0.512
+  },
+  {
+   "id": "syn006",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2017, nilai, 85) tidak setia: T memuat 61,9",
+    "Klaim (2021, nilai, 61,9) tidak setia: T memuat 85"
+   ],
+   "eps_s": 0.512
+  },
+  {
+   "id": "syn006",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2021|2015, selisih, 35,3) tidak setia: T memuat 25,6"
+   ],
+   "eps_s": 0.512
+  },
+  {
+   "id": "syn006",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 0.512
+  },
+  {
+   "id": "syn009",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Perhiasan, nilai, 1.386) tidak setia: T memuat 1.109"
+   ],
+   "eps_s": 16.8
+  },
+  {
+   "id": "syn009",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kayu olahan, nilai, 1.109) tidak setia: T memuat 846",
+    "Klaim (Perhiasan, nilai, 846) tidak setia: T memuat 1.109"
+   ],
+   "eps_s": 16.8
+  },
+  {
+   "id": "syn009",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Perhiasan|Kertas, selisih, 1.094) tidak setia: T memuat 840"
+   ],
+   "eps_s": 16.8
+  },
+  {
+   "id": "syn012",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Akuntansi, nilai, 4) tidak setia: T memuat 3,2"
+   ],
+   "eps_s": 0.017
+  },
+  {
+   "id": "syn012",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kimia, nilai, 3,2) tidak setia: T memuat 3,32",
+    "Klaim (Akuntansi, nilai, 3,32) tidak setia: T memuat 3,2"
+   ],
+   "eps_s": 0.017
+  },
+  {
+   "id": "syn012",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Statistika|Biologi, selisih, 3,1) tidak setia: T memuat 0,87"
+   ],
+   "eps_s": 0.017
+  },
+  {
+   "id": "syn013",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Apr, nilai, 1.379) tidak setia: T memuat 1.103"
+   ],
+   "eps_s": 10.3
+  },
+  {
+   "id": "syn013",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mar, nilai, 805) tidak setia: T memuat 1.157",
+    "Klaim (Jul, nilai, 1.157) tidak setia: T memuat 805"
+   ],
+   "eps_s": 10.3
+  },
+  {
+   "id": "syn013",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mar|Jan, selisih, 671,5) tidak setia: T memuat 515"
+   ],
+   "eps_s": 10.3
+  },
+  {
+   "id": "syn013",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 10.3
+  },
+  {
+   "id": "syn015",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FT, nilai, 1.352) tidak setia: T memuat 1.082"
+   ],
+   "eps_s": 30.94
+  },
+  {
+   "id": "syn015",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FK, nilai, 219) tidak setia: T memuat 1.086",
+    "Klaim (FIB, nilai, 1.086) tidak setia: T memuat 219"
+   ],
+   "eps_s": 30.94
+  },
+  {
+   "id": "syn015",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FEB|FIB, selisih, 2.013,1) tidak setia: T memuat 1.547"
+   ],
+   "eps_s": 30.94
+  },
+  {
+   "id": "syn016",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018, nilai, 56) tidak setia: T memuat 45"
+   ],
+   "eps_s": 0.114
+  },
+  {
+   "id": "syn016",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2017, nilai, 44,2) tidak setia: T memuat 43,1",
+    "Klaim (2021, nilai, 43,1) tidak setia: T memuat 44,2"
+   ],
+   "eps_s": 0.114
+  },
+  {
+   "id": "syn016",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018|2016, selisih, 9,4) tidak setia: T memuat 5,7"
+   ],
+   "eps_s": 0.114
+  },
+  {
+   "id": "syn016",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 0.114
+  },
+  {
+   "id": "syn021",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jateng, nilai, 21,8) tidak setia: T memuat 17,4"
+   ],
+   "eps_s": 0.508
+  },
+  {
+   "id": "syn021",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jatim, nilai, 3,8) tidak setia: T memuat 22",
+    "Klaim (Papua, nilai, 22) tidak setia: T memuat 3,8"
+   ],
+   "eps_s": 0.508
+  },
+  {
+   "id": "syn021",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Maluku|Papua, selisih, 35) tidak setia: T memuat 25,4"
+   ],
+   "eps_s": 0.508
+  },
+  {
+   "id": "syn022",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Statistika, nilai, 4,3) tidak setia: T memuat 3,43"
+   ],
+   "eps_s": 0.018
+  },
+  {
+   "id": "syn022",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kimia, nilai, 3,76) tidak setia: T memuat 2,89",
+    "Klaim (Manajemen, nilai, 2,89) tidak setia: T memuat 3,76"
+   ],
+   "eps_s": 0.018
+  },
+  {
+   "id": "syn022",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Manajemen|Biologi, selisih, 3,2) tidak setia: T memuat 0,89"
+   ],
+   "eps_s": 0.018
+  },
+  {
+   "id": "syn024",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2021, nilai, 49) tidak setia: T memuat 39"
+   ],
+   "eps_s": 3.76
+  },
+  {
+   "id": "syn024",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2020, nilai, 39) tidak setia: T memuat 135",
+    "Klaim (2021, nilai, 135) tidak setia: T memuat 39"
+   ],
+   "eps_s": 3.76
+  },
+  {
+   "id": "syn024",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018|2021, selisih, 246,4) tidak setia: T memuat 188"
+   ],
+   "eps_s": 3.76
+  },
+  {
+   "id": "syn024",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 3.76
+  },
+  {
+   "id": "syn027",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Agu, nilai, 444) tidak setia: T memuat 355"
+   ],
+   "eps_s": 4.24
+  },
+  {
+   "id": "syn027",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mei, nilai, 366) tidak setia: T memuat 278",
+    "Klaim (Sep, nilai, 278) tidak setia: T memuat 366"
+   ],
+   "eps_s": 4.24
+  },
+  {
+   "id": "syn027",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Sep|Jan, selisih, 277,6) tidak setia: T memuat 212"
+   ],
+   "eps_s": 4.24
+  },
+  {
+   "id": "syn027",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 4.24
+  },
+  {
+   "id": "syn028",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas C, nilai, 106,4) tidak setia: T memuat 85,1"
+   ],
+   "eps_s": 0.308
+  },
+  {
+   "id": "syn028",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas A, nilai, 76,3) tidak setia: T memuat 91,7",
+    "Klaim (Kelas E, nilai, 91,7) tidak setia: T memuat 76,3"
+   ],
+   "eps_s": 0.308
+  },
+  {
+   "id": "syn028",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas A|Kelas E, selisih, 22) tidak setia: T memuat 15,4"
+   ],
+   "eps_s": 0.308
+  },
+  {
+   "id": "syn031",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Maluku, nilai, 34,9) tidak setia: T memuat 27,9"
+   ],
+   "eps_s": 0.434
+  },
+  {
+   "id": "syn031",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Papua, nilai, 28,5) tidak setia: T memuat 21,2",
+    "Klaim (Jateng, nilai, 21,2) tidak setia: T memuat 28,5"
+   ],
+   "eps_s": 0.434
+  },
+  {
+   "id": "syn031",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jateng|NTT, selisih, 30,2) tidak setia: T memuat 21,7"
+   ],
+   "eps_s": 0.434
+  },
+  {
+   "id": "syn033",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Apr, nilai, 790) tidak setia: T memuat 632"
+   ],
+   "eps_s": 26.04
+  },
+  {
+   "id": "syn033",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mar, nilai, 632) tidak setia: T memuat 735",
+    "Klaim (Apr, nilai, 735) tidak setia: T memuat 632"
+   ],
+   "eps_s": 26.04
+  },
+  {
+   "id": "syn033",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jan|Mei, selisih, 1.694,6) tidak setia: T memuat 1.302"
+   ],
+   "eps_s": 26.04
+  },
+  {
+   "id": "syn033",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 26.04
+  },
+  {
+   "id": "syn034",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2021, nilai, 294) tidak setia: T memuat 235"
+   ],
+   "eps_s": 4.62
+  },
+  {
+   "id": "syn034",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2020, nilai, 359) tidak setia: T memuat 183",
+    "Klaim (2024, nilai, 183) tidak setia: T memuat 359"
+   ],
+   "eps_s": 4.62
+  },
+  {
+   "id": "syn034",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2024|2018, selisih, 302,3) tidak setia: T memuat 231"
+   ],
+   "eps_s": 4.62
+  },
+  {
+   "id": "syn034",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 4.62
+  },
+  {
+   "id": "syn036",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018, nilai, 84,8) tidak setia: T memuat 67,8"
+   ],
+   "eps_s": 0.436
+  },
+  {
+   "id": "syn036",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2016, nilai, 77,4) tidak setia: T memuat 61,7",
+    "Klaim (2019, nilai, 61,7) tidak setia: T memuat 77,4"
+   ],
+   "eps_s": 0.436
+  },
+  {
+   "id": "syn036",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2019|2015, selisih, 30,3) tidak setia: T memuat 21,8"
+   ],
+   "eps_s": 0.436
+  },
+  {
+   "id": "syn036",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 0.436
+  },
+  {
+   "id": "syn037",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Agu, nilai, 179) tidak setia: T memuat 143"
+   ],
+   "eps_s": 1.52
+  },
+  {
+   "id": "syn037",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mar, nilai, 165) tidak setia: T memuat 89",
+    "Klaim (Mei, nilai, 89) tidak setia: T memuat 165"
+   ],
+   "eps_s": 1.52
+  },
+  {
+   "id": "syn037",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mei|Mar, selisih, 100,8) tidak setia: T memuat 76"
+   ],
+   "eps_s": 1.52
+  },
+  {
+   "id": "syn037",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 1.52
+  },
+  {
+   "id": "syn039",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kayu olahan, nilai, 1.639) tidak setia: T memuat 1.311"
+   ],
+   "eps_s": 23.86
+  },
+  {
+   "id": "syn039",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Tembaga, nilai, 1.311) tidak setia: T memuat 781",
+    "Klaim (Kayu olahan, nilai, 781) tidak setia: T memuat 1.311"
+   ],
+   "eps_s": 23.86
+  },
+  {
+   "id": "syn039",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kayu olahan|Kertas, selisih, 1.552,9) tidak setia: T memuat 1.193"
+   ],
+   "eps_s": 23.86
+  },
+  {
+   "id": "syn040",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Sains, nilai, 795) tidak setia: T memuat 636"
+   ],
+   "eps_s": 5.32
+  },
+  {
+   "id": "syn040",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Teknik, nilai, 514) tidak setia: T memuat 620",
+    "Klaim (Kedokteran, nilai, 620) tidak setia: T memuat 514"
+   ],
+   "eps_s": 5.32
+  },
+  {
+   "id": "syn040",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Hukum|Kedokteran, selisih, 347,8) tidak setia: T memuat 266"
+   ],
+   "eps_s": 5.32
+  },
+  {
+   "id": "syn043",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Agu, nilai, 1.549) tidak setia: T memuat 1.239"
+   ],
+   "eps_s": 11.96
+  },
+  {
+   "id": "syn043",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Apr, nilai, 1.262) tidak setia: T memuat 1.298",
+    "Klaim (Okt, nilai, 1.298) tidak setia: T memuat 1.262"
+   ],
+   "eps_s": 11.96
+  },
+  {
+   "id": "syn043",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jul|Feb, selisih, 779,4) tidak setia: T memuat 598"
+   ],
+   "eps_s": 11.96
+  },
+  {
+   "id": "syn043",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 11.96
+  },
+  {
+   "id": "syn045",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FST, nilai, 390) tidak setia: T memuat 312"
+   ],
+   "eps_s": 27.96
+  },
+  {
+   "id": "syn045",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FIB, nilai, 312) tidak setia: T memuat 1.371",
+    "Klaim (FST, nilai, 1.371) tidak setia: T memuat 312"
+   ],
+   "eps_s": 27.96
+  },
+  {
+   "id": "syn045",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FISIP|FST, selisih, 1.819,4) tidak setia: T memuat 1.398"
+   ],
+   "eps_s": 27.96
+  },
+  {
+   "id": "syn048",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas A, nilai, 71,5) tidak setia: T memuat 57,2"
+   ],
+   "eps_s": 0.716
+  },
+  {
+   "id": "syn048",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas E, nilai, 57,2) tidak setia: T memuat 93",
+    "Klaim (Kelas A, nilai, 93) tidak setia: T memuat 57,2"
+   ],
+   "eps_s": 0.716
+  },
+  {
+   "id": "syn048",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas E|Kelas A, selisih, 48,5) tidak setia: T memuat 35,8"
+   ],
+   "eps_s": 0.716
+  },
+  {
+   "id": "syn049",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Udang, nilai, 328) tidak setia: T memuat 262"
+   ],
+   "eps_s": 24.08
+  },
+  {
+   "id": "syn049",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kertas, nilai, 406) tidak setia: T memuat 169",
+    "Klaim (Rokok, nilai, 169) tidak setia: T memuat 406"
+   ],
+   "eps_s": 24.08
+  },
+  {
+   "id": "syn049",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Tembaga|Kertas, selisih, 1.567,2) tidak setia: T memuat 1.204"
+   ],
+   "eps_s": 24.08
+  },
+  {
+   "id": "syn057",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Apr, nilai, 192) tidak setia: T memuat 154"
+   ],
+   "eps_s": 4.92
+  },
+  {
+   "id": "syn057",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mar, nilai, 154) tidak setia: T memuat 271",
+    "Klaim (Apr, nilai, 271) tidak setia: T memuat 154"
+   ],
+   "eps_s": 4.92
+  },
+  {
+   "id": "syn057",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jan|Mei, selisih, 321,8) tidak setia: T memuat 246"
+   ],
+   "eps_s": 4.92
+  },
+  {
+   "id": "syn057",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 4.92
+  },
+  {
+   "id": "syn058",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas B, nilai, 110,2) tidak setia: T memuat 88,2"
+   ],
+   "eps_s": 0.73
+  },
+  {
+   "id": "syn058",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas C, nilai, 88,2) tidak setia: T memuat 92,7",
+    "Klaim (Kelas B, nilai, 92,7) tidak setia: T memuat 88,2"
+   ],
+   "eps_s": 0.73
+  },
+  {
+   "id": "syn058",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas C|Kelas E, selisih, 49,5) tidak setia: T memuat 36,5"
+   ],
+   "eps_s": 0.73
+  },
+  {
+   "id": "syn060",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Sains, nilai, 288) tidak setia: T memuat 230"
+   ],
+   "eps_s": 12.42
+  },
+  {
+   "id": "syn060",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Psikologi, nilai, 318) tidak setia: T memuat 423",
+    "Klaim (Vokasi, nilai, 423) tidak setia: T memuat 318"
+   ],
+   "eps_s": 12.42
+  },
+  {
+   "id": "syn060",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Farmasi|Hukum, selisih, 809,3) tidak setia: T memuat 621"
+   ],
+   "eps_s": 12.42
+  },
+  {
+   "id": "syn063",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Agu, nilai, 719) tidak setia: T memuat 575"
+   ],
+   "eps_s": 31.62
+  },
+  {
+   "id": "syn063",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Mar, nilai, 1.184) tidak setia: T memuat 1.918",
+    "Klaim (Mei, nilai, 1.918) tidak setia: T memuat 1.184"
+   ],
+   "eps_s": 31.62
+  },
+  {
+   "id": "syn063",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jan|Agu, selisih, 2.057,3) tidak setia: T memuat 1.581"
+   ],
+   "eps_s": 31.62
+  },
+  {
+   "id": "syn063",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 31.62
+  },
+  {
+   "id": "syn066",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018, nilai, 69,5) tidak setia: T memuat 55,6"
+   ],
+   "eps_s": 0.752
+  },
+  {
+   "id": "syn066",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2017, nilai, 35,7) tidak setia: T memuat 59,3",
+    "Klaim (2021, nilai, 59,3) tidak setia: T memuat 35,7"
+   ],
+   "eps_s": 0.752
+  },
+  {
+   "id": "syn066",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2015|2021, selisih, 50,9) tidak setia: T memuat 37,6"
+   ],
+   "eps_s": 0.752
+  },
+  {
+   "id": "syn066",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 0.752
+  },
+  {
+   "id": "syn070",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Farmasi, nilai, 238) tidak setia: T memuat 190"
+   ],
+   "eps_s": 14.44
+  },
+  {
+   "id": "syn070",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Vokasi, nilai, 190) tidak setia: T memuat 117",
+    "Klaim (Farmasi, nilai, 117) tidak setia: T memuat 190"
+   ],
+   "eps_s": 14.44
+  },
+  {
+   "id": "syn070",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Teknik|Vokasi, selisih, 940,6) tidak setia: T memuat 722"
+   ],
+   "eps_s": 14.44
+  },
+  {
+   "id": "syn073",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Apr, nilai, 671) tidak setia: T memuat 537"
+   ],
+   "eps_s": 6.74
+  },
+  {
+   "id": "syn073",
+   "jenis": "tukar_label",
+   "tertahan": false,
+   "alasan": [],
+   "eps_s": 6.74
+  },
+  {
+   "id": "syn073",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jun|Jan, selisih, 440,1) tidak setia: T memuat 337"
+   ],
+   "eps_s": 6.74
+  },
+  {
+   "id": "syn073",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 6.74
+  },
+  {
+   "id": "syn075",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (LPPM, nilai, 682) tidak setia: T memuat 546"
+   ],
+   "eps_s": 29.88
+  },
+  {
+   "id": "syn075",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FT, nilai, 1.635) tidak setia: T memuat 565",
+    "Klaim (FEB, nilai, 565) tidak setia: T memuat 1.635"
+   ],
+   "eps_s": 29.88
+  },
+  {
+   "id": "syn075",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FEB|FK, selisih, 1.944,2) tidak setia: T memuat 1.494"
+   ],
+   "eps_s": 29.88
+  },
+  {
+   "id": "syn076",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2018, nilai, 80,9) tidak setia: T memuat 64,7"
+   ],
+   "eps_s": 0.598
+  },
+  {
+   "id": "syn076",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2017, nilai, 46,6) tidak setia: T memuat 66",
+    "Klaim (2021, nilai, 66) tidak setia: T memuat 46,6"
+   ],
+   "eps_s": 0.598
+  },
+  {
+   "id": "syn076",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2016|2021, selisih, 40,9) tidak setia: T memuat 29,9"
+   ],
+   "eps_s": 0.598
+  },
+  {
+   "id": "syn076",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, naik) tidak setia: T memuat turun"
+   ],
+   "eps_s": 0.598
+  },
+  {
+   "id": "syn078",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas D, nilai, 114,1) tidak setia: T memuat 91,3"
+   ],
+   "eps_s": 0.368
+  },
+  {
+   "id": "syn078",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas A, nilai, 92,4) tidak setia: T memuat 74,6",
+    "Klaim (Kelas E, nilai, 74,6) tidak setia: T memuat 92,4"
+   ],
+   "eps_s": 0.368
+  },
+  {
+   "id": "syn078",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas E|Kelas C, selisih, 25,9) tidak setia: T memuat 18,4"
+   ],
+   "eps_s": 0.368
+  },
+  {
+   "id": "syn079",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Tembaga, nilai, 1.500) tidak setia: T memuat 1.200"
+   ],
+   "eps_s": 22.06
+  },
+  {
+   "id": "syn079",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Udang, nilai, 1.106) tidak setia: T memuat 584",
+    "Klaim (Perhiasan, nilai, 584) tidak setia: T memuat 1.106"
+   ],
+   "eps_s": 22.06
+  },
+  {
+   "id": "syn079",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Tembaga|Kertas, selisih, 1.435,9) tidak setia: T memuat 1.103"
+   ],
+   "eps_s": 22.06
+  },
+  {
+   "id": "syn081",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Jateng, nilai, 19,2) tidak setia: T memuat 15,4"
+   ],
+   "eps_s": 0.444
+  },
+  {
+   "id": "syn081",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Bali, nilai, 3,6) tidak setia: T memuat 18,2",
+    "Klaim (Jatim, nilai, 18,2) tidak setia: T memuat 3,6"
+   ],
+   "eps_s": 0.444
+  },
+  {
+   "id": "syn081",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Aceh|Jatim, selisih, 30,9) tidak setia: T memuat 22,2"
+   ],
+   "eps_s": 0.444
+  },
+  {
+   "id": "syn082",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Statistika, nilai, 3,6) tidak setia: T memuat 2,89"
+   ],
+   "eps_s": 0.011
+  },
+  {
+   "id": "syn082",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Manajemen, nilai, 3,4) tidak setia: T memuat 3,45",
+    "Klaim (Akuntansi, nilai, 3,45) tidak setia: T memuat 3,4"
+   ],
+   "eps_s": 0.011
+  },
+  {
+   "id": "syn082",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Manajemen|Statistika, selisih, 2,7) tidak setia: T memuat 0,56"
+   ],
+   "eps_s": 0.011
+  },
+  {
+   "id": "syn084",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2021, nilai, 352) tidak setia: T memuat 282"
+   ],
+   "eps_s": 3.32
+  },
+  {
+   "id": "syn084",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2020, nilai, 282) tidak setia: T memuat 145",
+    "Klaim (2021, nilai, 145) tidak setia: T memuat 282"
+   ],
+   "eps_s": 3.32
+  },
+  {
+   "id": "syn084",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (2021|2018, selisih, 217,8) tidak setia: T memuat 166"
+   ],
+   "eps_s": 3.32
+  },
+  {
+   "id": "syn084",
+   "jenis": "tren_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (*, tren, turun) tidak setia: T memuat naik"
+   ],
+   "eps_s": 3.32
+  },
+  {
+   "id": "syn085",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FEB, nilai, 2.011) tidak setia: T memuat 1.609"
+   ],
+   "eps_s": 23.24
+  },
+  {
+   "id": "syn085",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FISIP, nilai, 1.609) tidak setia: T memuat 524",
+    "Klaim (FEB, nilai, 524) tidak setia: T memuat 1.609"
+   ],
+   "eps_s": 23.24
+  },
+  {
+   "id": "syn085",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (FEB|LPPM, selisih, 1.512,6) tidak setia: T memuat 1.162"
+   ],
+   "eps_s": 23.24
+  },
+  {
+   "id": "syn088",
+   "jenis": "ubah_angka",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas D, nilai, 83,9) tidak setia: T memuat 67,1"
+   ],
+   "eps_s": 0.458
+  },
+  {
+   "id": "syn088",
+   "jenis": "tukar_label",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas E, nilai, 90) tidak setia: T memuat 68,9",
+    "Klaim (Kelas C, nilai, 68,9) tidak setia: T memuat 90"
+   ],
+   "eps_s": 0.458
+  },
+  {
+   "id": "syn088",
+   "jenis": "turunan_salah",
+   "tertahan": true,
+   "alasan": [
+    "Klaim (Kelas C|Kelas D, selisih, 31,8) tidak setia: T memuat 22,9"
+   ],
+   "eps_s": 0.458
+  }
+ ],
+ "audit_b2": [
+  {
+   "id": "syn011",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "tinggi berada di NTT dengan 29%, diikuti oleh Jatim sebesar 28%, Maluku sebes"
+  },
+  {
+   "id": "syn032",
+   "label_nilai": false,
+   "verdict": "label_tertukar",
+   "kutipan": "ilai rata-rata IPK untuk program studi Kimia adalah sekitar 3,8, Manajemen sek"
+  },
+  {
+   "id": "syn043",
+   "label_nilai": true,
+   "verdict": "dikarang",
+   "kutipan": "r 598 kunjungan. Rata-rata kunjungan bulanan adalah sekitar 1.107 kali. Tren kun"
+  },
+  {
+   "id": "syn062",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "ilai IPK untuk Kimia adalah sekitar 2,95, Manajemen sekitar 3,75, Biologi sekit"
+  },
+  {
+   "id": "syn062",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "dalah sekitar 2,95, Manajemen sekitar 3,75, Biologi sekitar 2,8, dan Fisika se"
+  },
+  {
+   "id": "syn062",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "jemen sekitar 3,75, Biologi sekitar 2,8, dan Fisika sekitar 3,4. Nilai terting"
+  },
+  {
+   "id": "syn062",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "i tertinggi dicapai oleh program studi Manajemen dengan IPK 3,75, sedangkan nil"
+  },
+  {
+   "id": "syn062",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "gkan nilai terendah adalah program studi Biologi dengan IPK 2,8, yang menunjuk"
+  },
+  {
+   "id": "syn062",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "rata IPK dari keempat program studi tersebut adalah sekitar 3,2, dan data menu"
+  },
+  {
+   "id": "syn068",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "arkan grafik, Kelas A memiliki skor tertinggi yaitu sekitar 79, diikuti oleh"
+  },
+  {
+   "id": "syn068",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "kor tertinggi yaitu sekitar 79, diikuti oleh Kelas B dengan 78, Kelas C denga"
+  },
+  {
+   "id": "syn068",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "i oleh Kelas B dengan 78, Kelas C dengan 76, Kelas D dengan 74, dan Kelas E m"
+  },
+  {
+   "id": "syn068",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "dengan 74, dan Kelas E memiliki skor terendah yaitu sekitar 71. Selisih antar"
+  },
+  {
+   "id": "syn068",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "kitar 71. Selisih antara skor tertinggi dan terendah adalah 8 poin, dengan n"
+  },
+  {
+   "id": "syn068",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "rata-rata keseluruhan seluruh kelas berada di angka sekitar 75,6. Tren data men"
+  },
+  {
+   "id": "syn079",
+   "label_nilai": true,
+   "verdict": "dikarang",
+   "kutipan": "n besar komoditas memiliki nilai ekspor yang tinggi di atas 500 juta USD, kecu"
+  },
+  {
+   "id": "syn083",
+   "label_nilai": false,
+   "verdict": "dikarang",
+   "kutipan": "besar 400 kunjungan dan rata-rata kunjungan bulanan sekitar 448 kali. Tren kun"
+  }
+ ],
+ "kalibrasi": {
+  "v1": {
+   "grid": [
+    {
+     "theta_e": 0.0,
+     "terbit": 25,
+     "fk_rerata": 0.9374667554667555
+    },
+    {
+     "theta_e": 0.002,
+     "terbit": 26,
+     "fk_rerata": 0.9350641879488033
+    },
+    {
+     "theta_e": 0.005,
+     "terbit": 26,
+     "fk_rerata": 0.9350641879488033
+    },
+    {
+     "theta_e": 0.01,
+     "terbit": 26,
+     "fk_rerata": 0.9350641879488033
+    },
+    {
+     "theta_e": 0.015,
+     "terbit": 26,
+     "fk_rerata": 0.9350641879488033
+    },
+    {
+     "theta_e": 0.02,
+     "terbit": 26,
+     "fk_rerata": 0.9350641879488033
+    },
+    {
+     "theta_e": 0.03,
+     "terbit": 27,
+     "fk_rerata": 0.931771212326768
+    },
+    {
+     "theta_e": 0.05,
+     "terbit": 27,
+     "fk_rerata": 0.931771212326768
+    },
+    {
+     "theta_e": 0.08,
+     "terbit": 27,
+     "fk_rerata": 0.931771212326768
+    },
+    {
+     "theta_e": 0.12,
+     "terbit": 27,
+     "fk_rerata": 0.931771212326768
+    }
+   ],
+   "per_grafik": [
+    {
+     "id": "syn000",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn001",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn002",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.7777777777777778,
+     "label": false
+    },
+    {
+     "id": "syn007",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn010",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn018",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn019",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn023",
+     "delta": 0.0019230769230769232,
+     "axis": true,
+     "fk": 0.875,
+     "label": false
+    },
+    {
+     "id": "syn025",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn029",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": false
+    },
+    {
+     "id": "syn030",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn038",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.75,
+     "label": false
+    },
+    {
+     "id": "syn042",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn044",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.8571428571428571,
+     "label": false
+    },
+    {
+     "id": "syn046",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn047",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": false
+    },
+    {
+     "id": "syn051",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn052",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn054",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.8461538461538461,
+     "label": true
+    },
+    {
+     "id": "syn055",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.8181818181818182,
+     "label": true
+    },
+    {
+     "id": "syn056",
+     "delta": 0.02982731554160134,
+     "axis": true,
+     "fk": 0.8461538461538461,
+     "label": false
+    },
+    {
+     "id": "syn061",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn064",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn067",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn069",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn071",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.8,
+     "label": false
+    },
+    {
+     "id": "syn072",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true
+    },
+    {
+     "id": "syn080",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": false
+    },
+    {
+     "id": "syn086",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.7692307692307693,
+     "label": false
+    },
+    {
+     "id": "syn087",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 0.8181818181818182,
+     "label": true
+    }
+   ],
+   "terkunci": {
+    "theta_e": 0.0,
+    "epsilon": 0.02,
+    "rho": 0.1,
+    "locked": true,
+    "locked_at": "2026-10-12 12:32:19",
+    "calibrated_on": "30 grafik dev",
+    "aturan": "θe terbesar dengan rerata Fk (vs acuan) ≥ 0,98 pada grafik dev yang terbit"
+   }
+  },
+  "v2": {
+   "grid": [
+    {
+     "theta_e": 0.0,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.002,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.005,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.01,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.015,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.02,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.03,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.05,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.08,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    },
+    {
+     "theta_e": 0.12,
+     "terbit": 20,
+     "fk_rerata": 1.0
+    }
+   ],
+   "per_grafik": [
+    {
+     "id": "syn000",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn001",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn002",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 0.7777777777777778,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn007",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn010",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn018",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn019",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn023",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn025",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn029",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn030",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn038",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 0.75,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn042",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn044",
+     "delta": 0.006901840490797546,
+     "axis": false,
+     "fk": 0.8571428571428571,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn046",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn047",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn051",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn052",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn054",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn055",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn056",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 0.15384615384615385,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn061",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn064",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn067",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn069",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn071",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 0.8,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn072",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    },
+    {
+     "id": "syn080",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 1.0,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn086",
+     "delta": 0.0,
+     "axis": false,
+     "fk": 0.9230769230769231,
+     "label": false,
+     "label_tertulis_vlm": false
+    },
+    {
+     "id": "syn087",
+     "delta": 0.0,
+     "axis": true,
+     "fk": 1.0,
+     "label": true,
+     "label_tertulis_vlm": true
+    }
+   ],
+   "terkunci": {
+    "theta_e": 0.01,
+    "epsilon": 0.02,
+    "rho": 0.1,
+    "locked": true,
+    "locked_at": "2026-10-12 12:38:31",
+    "calibrated_on": "30 grafik dev",
+    "aturan": "θe terkecil (≥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) ≥ 0,98 pada grafik dev",
+    "riwayat": "v1: Fk 0,937 pada δ=0 → ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+   }
+  }
+ },
+ "charts_json": [
+  {
+   "id": "syn000",
+   "judul": "Mahasiswa baru per fakultas (2020)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Sains",
+    "Farmasi",
+    "Vokasi",
+    "Hukum",
+    "Ekonomi",
+    "Teknik",
+    "Psikologi"
+   ],
+   "nilai": [
+    422.0,
+    381.0,
+    328.0,
+    350.0,
+    209.0,
+    398.0,
+    647.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "dev"
+  },
+  {
+   "id": "syn001",
+   "judul": "Persentase penduduk miskin per provinsi (2021)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Aceh",
+    "Jatim",
+    "Jateng",
+    "Papua"
+   ],
+   "nilai": [
+    23.2,
+    25.0,
+    19.0,
+    9.8
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn002",
+   "judul": "Rata-rata IPK lulusan per program studi (2022)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Akuntansi",
+    "Fisika",
+    "Biologi",
+    "Kimia",
+    "Statistika"
+   ],
+   "nilai": [
+    3.86,
+    3.79,
+    3.02,
+    3.57,
+    2.96
+   ],
+   "desimal": 2,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "dev"
+  },
+  {
+   "id": "syn003",
+   "judul": "Kunjungan perpustakaan per bulan (2023)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Okt"
+   ],
+   "nilai": [
+    411.0,
+    516.0,
+    379.0,
+    482.0,
+    603.0,
+    737.0,
+    629.0,
+    758.0,
+    596.0,
+    645.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn004",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022"
+   ],
+   "nilai": [
+    312.0,
+    291.0,
+    234.0,
+    124.0,
+    98.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn005",
+   "judul": "Anggaran riset per unit (2025)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FISIP",
+    "FT",
+    "LPPM",
+    "FEB",
+    "FST",
+    "FIB",
+    "FK"
+   ],
+   "nilai": [
+    1711.0,
+    789.0,
+    1399.0,
+    1056.0,
+    440.0,
+    930.0,
+    520.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn006",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "nilai": [
+    59.4,
+    63.0,
+    61.9,
+    70.8,
+    80.7,
+    77.7,
+    85.0
+   ],
+   "desimal": 1,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn007",
+   "judul": "Curah hujan bulanan Surabaya (2021)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul"
+   ],
+   "nilai": [
+    124.0,
+    160.0,
+    167.0,
+    183.0,
+    201.0,
+    145.0,
+    159.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn008",
+   "judul": "Skor rata-rata ujian per kelas (2022)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas E",
+    "Kelas A",
+    "Kelas D",
+    "Kelas C",
+    "Kelas B"
+   ],
+   "nilai": [
+    67.8,
+    76.0,
+    80.8,
+    56.0,
+    77.2
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn009",
+   "judul": "Ekspor komoditas Jawa Timur (2023)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Kertas",
+    "Udang",
+    "Kayu olahan",
+    "Perhiasan",
+    "Rokok"
+   ],
+   "nilai": [
+    269.0,
+    591.0,
+    846.0,
+    1109.0,
+    544.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn010",
+   "judul": "Mahasiswa baru per fakultas (2024)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Sains",
+    "Kedokteran",
+    "Teknik",
+    "Psikologi"
+   ],
+   "nilai": [
+    398.0,
+    803.0,
+    534.0,
+    259.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "dev"
+  },
+  {
+   "id": "syn011",
+   "judul": "Persentase penduduk miskin per provinsi (2025)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Jatim",
+    "Maluku",
+    "Bali",
+    "Aceh",
+    "Papua",
+    "Jabar",
+    "Jateng",
+    "NTT"
+   ],
+   "nilai": [
+    27.5,
+    22.4,
+    8.2,
+    19.6,
+    9.7,
+    12.0,
+    8.3,
+    28.9
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn012",
+   "judul": "Rata-rata IPK lulusan per program studi (2020)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Fisika",
+    "Statistika",
+    "Kimia",
+    "Akuntansi",
+    "Biologi"
+   ],
+   "nilai": [
+    3.38,
+    3.81,
+    3.32,
+    3.2,
+    2.94
+   ],
+   "desimal": 2,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn013",
+   "judul": "Kunjungan perpustakaan per bulan (2021)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul"
+   ],
+   "nilai": [
+    642.0,
+    1052.0,
+    1157.0,
+    1103.0,
+    1155.0,
+    935.0,
+    805.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn014",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "nilai": [
+    166.0,
+    227.0,
+    194.0,
+    189.0,
+    180.0,
+    173.0,
+    160.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn015",
+   "judul": "Anggaran riset per unit (2023)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FEB",
+    "FIB",
+    "FT",
+    "FST",
+    "FK",
+    "LPPM"
+   ],
+   "nilai": [
+    1766.0,
+    219.0,
+    1082.0,
+    861.0,
+    1086.0,
+    1052.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn016",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "nilai": [
+    41.7,
+    39.3,
+    43.1,
+    45.0,
+    44.9,
+    44.4,
+    44.2
+   ],
+   "desimal": 1,
+   "jenis_grafik": "area",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn017",
+   "judul": "Curah hujan bulanan Surabaya (2025)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul"
+   ],
+   "nilai": [
+    353.0,
+    277.0,
+    251.0,
+    207.0,
+    111.0,
+    151.0,
+    132.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn018",
+   "judul": "Skor rata-rata ujian per kelas (2020)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas A",
+    "Kelas E",
+    "Kelas B",
+    "Kelas D",
+    "Kelas C"
+   ],
+   "nilai": [
+    72.3,
+    70.6,
+    59.0,
+    68.9,
+    67.3
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "dev"
+  },
+  {
+   "id": "syn019",
+   "judul": "Ekspor komoditas Jawa Timur (2021)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Udang",
+    "Perhiasan",
+    "Kertas",
+    "Tembaga",
+    "Rokok"
+   ],
+   "nilai": [
+    767.0,
+    1128.0,
+    1324.0,
+    1116.0,
+    463.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn020",
+   "judul": "Mahasiswa baru per fakultas (2022)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Farmasi",
+    "Ekonomi",
+    "Kedokteran",
+    "Vokasi",
+    "Hukum",
+    "Sains",
+    "Psikologi",
+    "Teknik"
+   ],
+   "nilai": [
+    883.0,
+    707.0,
+    128.0,
+    775.0,
+    572.0,
+    451.0,
+    200.0,
+    234.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn021",
+   "judul": "Persentase penduduk miskin per provinsi (2023)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "NTT",
+    "Maluku",
+    "Jatim",
+    "Jateng",
+    "Sumut",
+    "Jabar",
+    "Papua"
+   ],
+   "nilai": [
+    27.5,
+    29.2,
+    22.0,
+    17.4,
+    9.4,
+    13.8,
+    3.8
+   ],
+   "desimal": 1,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn022",
+   "judul": "Rata-rata IPK lulusan per program studi (2024)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Fisika",
+    "Kimia",
+    "Akuntansi",
+    "Statistika",
+    "Manajemen",
+    "Biologi"
+   ],
+   "nilai": [
+    3.25,
+    2.89,
+    3.72,
+    3.43,
+    3.76,
+    2.87
+   ],
+   "desimal": 2,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn023",
+   "judul": "Kunjungan perpustakaan per bulan (2025)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Okt"
+   ],
+   "nilai": [
+    1614.0,
+    1586.0,
+    1402.0,
+    1323.0,
+    1224.0,
+    1044.0,
+    869.0,
+    984.0,
+    740.0,
+    572.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "dev"
+  },
+  {
+   "id": "syn024",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022"
+   ],
+   "nilai": [
+    227.0,
+    208.0,
+    135.0,
+    39.0,
+    40.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn025",
+   "judul": "Anggaran riset per unit (2021)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FT",
+    "LPPM",
+    "FEB",
+    "FK"
+   ],
+   "nilai": [
+    1003.0,
+    1701.0,
+    1697.0,
+    485.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn026",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020"
+   ],
+   "nilai": [
+    47.4,
+    58.1,
+    56.6,
+    60.8,
+    68.0,
+    78.0
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn027",
+   "judul": "Curah hujan bulanan Surabaya (2023)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep"
+   ],
+   "nilai": [
+    154.0,
+    166.0,
+    183.0,
+    225.0,
+    278.0,
+    302.0,
+    286.0,
+    355.0,
+    366.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn028",
+   "judul": "Skor rata-rata ujian per kelas (2024)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas D",
+    "Kelas A",
+    "Kelas E",
+    "Kelas C"
+   ],
+   "nilai": [
+    86.7,
+    91.7,
+    76.3,
+    85.1
+   ],
+   "desimal": 1,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn029",
+   "judul": "Ekspor komoditas Jawa Timur (2025)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Kertas",
+    "Rokok",
+    "Perhiasan",
+    "Tembaga",
+    "Kayu olahan"
+   ],
+   "nilai": [
+    107.0,
+    178.0,
+    489.0,
+    347.0,
+    1045.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "dev"
+  },
+  {
+   "id": "syn030",
+   "judul": "Mahasiswa baru per fakultas (2020)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Farmasi",
+    "Psikologi",
+    "Kedokteran",
+    "Teknik",
+    "Vokasi"
+   ],
+   "nilai": [
+    262.0,
+    551.0,
+    628.0,
+    503.0,
+    434.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "dev"
+  },
+  {
+   "id": "syn031",
+   "judul": "Persentase penduduk miskin per provinsi (2021)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Aceh",
+    "Jabar",
+    "Papua",
+    "Maluku",
+    "Bali",
+    "NTT",
+    "Jateng"
+   ],
+   "nilai": [
+    27.4,
+    24.6,
+    21.2,
+    27.9,
+    13.1,
+    6.8,
+    28.5
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn032",
+   "judul": "Rata-rata IPK lulusan per program studi (2022)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Kimia",
+    "Manajemen",
+    "Akuntansi",
+    "Biologi"
+   ],
+   "nilai": [
+    3.82,
+    3.81,
+    3.31,
+    3.85
+   ],
+   "desimal": 2,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn033",
+   "judul": "Kunjungan perpustakaan per bulan (2023)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei"
+   ],
+   "nilai": [
+    1572.0,
+    1068.0,
+    735.0,
+    632.0,
+    270.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn034",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "nilai": [
+    128.0,
+    186.0,
+    183.0,
+    235.0,
+    277.0,
+    316.0,
+    359.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn035",
+   "judul": "Anggaran riset per unit (2025)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FEB",
+    "FIB",
+    "FST",
+    "FT",
+    "LPPM"
+   ],
+   "nilai": [
+    622.0,
+    1020.0,
+    1278.0,
+    1076.0,
+    519.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn036",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020"
+   ],
+   "nilai": [
+    55.6,
+    61.7,
+    63.2,
+    67.8,
+    77.4,
+    75.9
+   ],
+   "desimal": 1,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn037",
+   "judul": "Curah hujan bulanan Surabaya (2021)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu"
+   ],
+   "nilai": [
+    112.0,
+    109.0,
+    89.0,
+    164.0,
+    165.0,
+    92.0,
+    128.0,
+    143.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn038",
+   "judul": "Skor rata-rata ujian per kelas (2022)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas B",
+    "Kelas A",
+    "Kelas E",
+    "Kelas D"
+   ],
+   "nilai": [
+    87.6,
+    87.9,
+    69.3,
+    76.8
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "dev"
+  },
+  {
+   "id": "syn039",
+   "judul": "Ekspor komoditas Jawa Timur (2023)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Udang",
+    "Kertas",
+    "Tembaga",
+    "Kayu olahan",
+    "Perhiasan"
+   ],
+   "nilai": [
+    1068.0,
+    118.0,
+    781.0,
+    1311.0,
+    778.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn040",
+   "judul": "Mahasiswa baru per fakultas (2024)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Hukum",
+    "Teknik",
+    "Kedokteran",
+    "Sains"
+   ],
+   "nilai": [
+    780.0,
+    620.0,
+    514.0,
+    636.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn041",
+   "judul": "Persentase penduduk miskin per provinsi (2025)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Bali",
+    "Jabar",
+    "Jateng",
+    "Jatim",
+    "NTT",
+    "Sumut"
+   ],
+   "nilai": [
+    8.0,
+    3.9,
+    23.4,
+    28.3,
+    7.3,
+    3.2
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn042",
+   "judul": "Rata-rata IPK lulusan per program studi (2020)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Akuntansi",
+    "Kimia",
+    "Biologi",
+    "Manajemen",
+    "Statistika",
+    "Fisika"
+   ],
+   "nilai": [
+    3.45,
+    3.71,
+    3.39,
+    3.65,
+    3.58,
+    3.22
+   ],
+   "desimal": 2,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "dev"
+  },
+  {
+   "id": "syn043",
+   "judul": "Kunjungan perpustakaan per bulan (2021)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Okt"
+   ],
+   "nilai": [
+    1267.0,
+    854.0,
+    1155.0,
+    1298.0,
+    1308.0,
+    1271.0,
+    1452.0,
+    1239.0,
+    962.0,
+    1262.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn044",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "nilai": [
+    324.0,
+    308.0,
+    235.0,
+    276.0,
+    243.0,
+    224.0,
+    161.0,
+    172.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "dev"
+  },
+  {
+   "id": "syn045",
+   "judul": "Anggaran riset per unit (2023)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FK",
+    "FST",
+    "FIB",
+    "LPPM",
+    "FISIP"
+   ],
+   "nilai": [
+    571.0,
+    312.0,
+    1371.0,
+    450.0,
+    1710.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn046",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019"
+   ],
+   "nilai": [
+    42.6,
+    52.7,
+    55.3,
+    64.8,
+    61.3
+   ],
+   "desimal": 1,
+   "jenis_grafik": "area",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "dev"
+  },
+  {
+   "id": "syn047",
+   "judul": "Curah hujan bulanan Surabaya (2025)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep"
+   ],
+   "nilai": [
+    124.0,
+    103.0,
+    134.0,
+    135.0,
+    114.0,
+    109.0,
+    132.0,
+    156.0,
+    169.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "dev"
+  },
+  {
+   "id": "syn048",
+   "judul": "Skor rata-rata ujian per kelas (2020)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas D",
+    "Kelas B",
+    "Kelas E",
+    "Kelas A",
+    "Kelas C"
+   ],
+   "nilai": [
+    87.0,
+    70.2,
+    93.0,
+    57.2,
+    67.0
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn049",
+   "judul": "Ekspor komoditas Jawa Timur (2021)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Tembaga",
+    "Kertas",
+    "Kayu olahan",
+    "Udang",
+    "Rokok",
+    "Perhiasan"
+   ],
+   "nilai": [
+    1373.0,
+    169.0,
+    1158.0,
+    262.0,
+    406.0,
+    1178.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn050",
+   "judul": "Mahasiswa baru per fakultas (2022)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Teknik",
+    "Kedokteran",
+    "Farmasi",
+    "Psikologi",
+    "Hukum"
+   ],
+   "nilai": [
+    776.0,
+    449.0,
+    565.0,
+    594.0,
+    562.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn051",
+   "judul": "Persentase penduduk miskin per provinsi (2023)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "NTT",
+    "Bali",
+    "Sumut",
+    "Jabar",
+    "Aceh",
+    "Jateng"
+   ],
+   "nilai": [
+    12.2,
+    16.5,
+    28.7,
+    7.3,
+    19.0,
+    8.7
+   ],
+   "desimal": 1,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "dev"
+  },
+  {
+   "id": "syn052",
+   "judul": "Rata-rata IPK lulusan per program studi (2024)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Akuntansi",
+    "Statistika",
+    "Manajemen",
+    "Kimia",
+    "Biologi"
+   ],
+   "nilai": [
+    3.77,
+    3.06,
+    3.22,
+    3.08,
+    3.46
+   ],
+   "desimal": 2,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "dev"
+  },
+  {
+   "id": "syn053",
+   "judul": "Kunjungan perpustakaan per bulan (2025)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu"
+   ],
+   "nilai": [
+    1713.0,
+    1574.0,
+    1524.0,
+    1476.0,
+    1134.0,
+    1168.0,
+    958.0,
+    796.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn054",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "nilai": [
+    36.0,
+    37.0,
+    70.0,
+    40.0,
+    55.0,
+    68.0,
+    51.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "dev"
+  },
+  {
+   "id": "syn055",
+   "judul": "Anggaran riset per unit (2021)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FEB",
+    "FST",
+    "FIB",
+    "FK",
+    "FT"
+   ],
+   "nilai": [
+    319.0,
+    876.0,
+    1684.0,
+    1581.0,
+    879.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn056",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "nilai": [
+    47.2,
+    48.4,
+    47.4,
+    55.2,
+    47.6,
+    46.3,
+    49.9
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "dev"
+  },
+  {
+   "id": "syn057",
+   "judul": "Curah hujan bulanan Surabaya (2023)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei"
+   ],
+   "nilai": [
+    356.0,
+    296.0,
+    271.0,
+    154.0,
+    110.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn058",
+   "judul": "Skor rata-rata ujian per kelas (2024)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas A",
+    "Kelas E",
+    "Kelas C",
+    "Kelas B",
+    "Kelas D"
+   ],
+   "nilai": [
+    76.3,
+    56.2,
+    92.7,
+    88.2,
+    85.0
+   ],
+   "desimal": 1,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn059",
+   "judul": "Ekspor komoditas Jawa Timur (2025)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Kayu olahan",
+    "Rokok",
+    "Udang",
+    "Kertas"
+   ],
+   "nilai": [
+    1185.0,
+    703.0,
+    947.0,
+    1140.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn060",
+   "judul": "Mahasiswa baru per fakultas (2020)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Hukum",
+    "Psikologi",
+    "Farmasi",
+    "Sains",
+    "Vokasi",
+    "Ekonomi"
+   ],
+   "nilai": [
+    125.0,
+    423.0,
+    746.0,
+    230.0,
+    318.0,
+    413.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn061",
+   "judul": "Persentase penduduk miskin per provinsi (2021)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Jateng",
+    "Jabar",
+    "Aceh",
+    "NTT",
+    "Maluku"
+   ],
+   "nilai": [
+    15.2,
+    21.1,
+    12.5,
+    10.1,
+    26.0
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn062",
+   "judul": "Rata-rata IPK lulusan per program studi (2022)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Kimia",
+    "Manajemen",
+    "Biologi",
+    "Fisika"
+   ],
+   "nilai": [
+    2.96,
+    3.78,
+    2.82,
+    3.42
+   ],
+   "desimal": 2,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn063",
+   "judul": "Kunjungan perpustakaan per bulan (2023)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu"
+   ],
+   "nilai": [
+    2156.0,
+    1819.0,
+    1918.0,
+    1446.0,
+    1184.0,
+    1027.0,
+    874.0,
+    575.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn064",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2024)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022"
+   ],
+   "nilai": [
+    253.0,
+    241.0,
+    187.0,
+    130.0,
+    71.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "dev"
+  },
+  {
+   "id": "syn065",
+   "judul": "Anggaran riset per unit (2025)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FISIP",
+    "LPPM",
+    "FIB",
+    "FT",
+    "FEB"
+   ],
+   "nilai": [
+    427.0,
+    1644.0,
+    1548.0,
+    635.0,
+    1723.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn066",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "nilai": [
+    73.3,
+    65.7,
+    59.3,
+    55.6,
+    48.2,
+    49.2,
+    35.7
+   ],
+   "desimal": 1,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn067",
+   "judul": "Curah hujan bulanan Surabaya (2021)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul"
+   ],
+   "nilai": [
+    114.0,
+    118.0,
+    87.0,
+    107.0,
+    106.0,
+    76.0,
+    147.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "garis",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "dev"
+  },
+  {
+   "id": "syn068",
+   "judul": "Skor rata-rata ujian per kelas (2022)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas C",
+    "Kelas D",
+    "Kelas A",
+    "Kelas B",
+    "Kelas E"
+   ],
+   "nilai": [
+    76.1,
+    74.5,
+    79.4,
+    78.3,
+    71.7
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn069",
+   "judul": "Ekspor komoditas Jawa Timur (2023)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Tembaga",
+    "Kertas",
+    "Perhiasan",
+    "Rokok",
+    "Udang",
+    "Kayu olahan"
+   ],
+   "nilai": [
+    1138.0,
+    272.0,
+    855.0,
+    219.0,
+    160.0,
+    260.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "dev"
+  },
+  {
+   "id": "syn070",
+   "judul": "Mahasiswa baru per fakultas (2024)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Teknik",
+    "Hukum",
+    "Vokasi",
+    "Farmasi",
+    "Psikologi"
+   ],
+   "nilai": [
+    839.0,
+    304.0,
+    117.0,
+    190.0,
+    690.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn071",
+   "judul": "Persentase penduduk miskin per provinsi (2025)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Sumut",
+    "Papua",
+    "NTT",
+    "Maluku",
+    "Aceh",
+    "Jatim"
+   ],
+   "nilai": [
+    11.9,
+    19.1,
+    15.3,
+    11.8,
+    29.6,
+    10.7
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "dev"
+  },
+  {
+   "id": "syn072",
+   "judul": "Rata-rata IPK lulusan per program studi (2020)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Kimia",
+    "Manajemen",
+    "Statistika",
+    "Biologi"
+   ],
+   "nilai": [
+    3.86,
+    3.04,
+    3.6,
+    3.61
+   ],
+   "desimal": 2,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "dev"
+  },
+  {
+   "id": "syn073",
+   "judul": "Kunjungan perpustakaan per bulan (2021)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul"
+   ],
+   "nilai": [
+    270.0,
+    393.0,
+    394.0,
+    537.0,
+    306.0,
+    607.0,
+    389.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn074",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022"
+   ],
+   "nilai": [
+    90.0,
+    193.0,
+    225.0,
+    271.0,
+    292.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "uji"
+  },
+  {
+   "id": "syn075",
+   "judul": "Anggaran riset per unit (2023)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FST",
+    "FT",
+    "FIB",
+    "LPPM",
+    "FEB",
+    "FK"
+   ],
+   "nilai": [
+    1442.0,
+    565.0,
+    1191.0,
+    546.0,
+    1635.0,
+    141.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn076",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "nilai": [
+    70.3,
+    76.5,
+    66.0,
+    64.7,
+    58.1,
+    50.0,
+    46.6
+   ],
+   "desimal": 1,
+   "jenis_grafik": "area",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn077",
+   "judul": "Curah hujan bulanan Surabaya (2025)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul"
+   ],
+   "nilai": [
+    127.0,
+    166.0,
+    147.0,
+    116.0,
+    133.0,
+    159.0,
+    163.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "area",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn078",
+   "judul": "Skor rata-rata ujian per kelas (2020)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas C",
+    "Kelas A",
+    "Kelas E",
+    "Kelas D"
+   ],
+   "nilai": [
+    74.0,
+    74.6,
+    92.4,
+    91.3
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn079",
+   "judul": "Ekspor komoditas Jawa Timur (2021)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Kertas",
+    "Udang",
+    "Rokok",
+    "Tembaga",
+    "Perhiasan",
+    "Kayu olahan"
+   ],
+   "nilai": [
+    97.0,
+    584.0,
+    826.0,
+    1200.0,
+    1106.0,
+    893.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang_horizontal",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn080",
+   "judul": "Mahasiswa baru per fakultas (2022)",
+   "label_x": "Fakultas",
+   "label_y": "Jumlah mahasiswa",
+   "satuan": "orang",
+   "label_y_full": "Jumlah mahasiswa (orang)",
+   "kategori": [
+    "Ekonomi",
+    "Psikologi",
+    "Teknik",
+    "Hukum"
+   ],
+   "nilai": [
+    848.0,
+    238.0,
+    281.0,
+    195.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "dev"
+  },
+  {
+   "id": "syn081",
+   "judul": "Persentase penduduk miskin per provinsi (2023)",
+   "label_x": "Provinsi",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "Sumut",
+    "Maluku",
+    "Jabar",
+    "Aceh",
+    "Bali",
+    "NTT",
+    "Papua",
+    "Jateng",
+    "Jatim"
+   ],
+   "nilai": [
+    4.2,
+    25.5,
+    17.0,
+    25.8,
+    18.2,
+    7.1,
+    19.0,
+    15.4,
+    3.6
+   ],
+   "desimal": 1,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "uji"
+  },
+  {
+   "id": "syn082",
+   "judul": "Rata-rata IPK lulusan per program studi (2024)",
+   "label_x": "Program studi",
+   "label_y": "IPK",
+   "satuan": "",
+   "label_y_full": "IPK",
+   "kategori": [
+    "Kimia",
+    "Manajemen",
+    "Akuntansi",
+    "Statistika"
+   ],
+   "nilai": [
+    3.39,
+    3.45,
+    3.4,
+    2.89
+   ],
+   "desimal": 2,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn083",
+   "judul": "Kunjungan perpustakaan per bulan (2025)",
+   "label_x": "Bulan",
+   "label_y": "Kunjungan",
+   "satuan": "kali",
+   "label_y_full": "Kunjungan (kali)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Okt",
+    "Nov",
+    "Des"
+   ],
+   "nilai": [
+    270.0,
+    546.0,
+    311.0,
+    388.0,
+    591.0,
+    667.0,
+    520.0,
+    557.0,
+    548.0,
+    566.0,
+    500.0,
+    391.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  },
+  {
+   "id": "syn084",
+   "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "label_x": "Tahun",
+   "label_y": "Jumlah",
+   "satuan": "orang",
+   "label_y_full": "Jumlah (orang)",
+   "kategori": [
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022"
+   ],
+   "nilai": [
+    116.0,
+    206.0,
+    145.0,
+    282.0,
+    232.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#2b6cb0",
+   "set": "uji"
+  },
+  {
+   "id": "syn085",
+   "judul": "Anggaran riset per unit (2021)",
+   "label_x": "Unit",
+   "label_y": "Anggaran",
+   "satuan": "juta rupiah",
+   "label_y_full": "Anggaran (juta rupiah)",
+   "kategori": [
+    "FIB",
+    "FST",
+    "FISIP",
+    "FEB",
+    "LPPM"
+   ],
+   "nilai": [
+    980.0,
+    467.0,
+    524.0,
+    1609.0,
+    447.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#2f855a",
+   "set": "uji"
+  },
+  {
+   "id": "syn086",
+   "judul": "Tingkat kelulusan tepat waktu per angkatan (2022)",
+   "label_x": "Angkatan",
+   "label_y": "Persentase",
+   "satuan": "%",
+   "label_y_full": "Persentase (%)",
+   "kategori": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "nilai": [
+    89.5,
+    84.2,
+    82.9,
+    78.3,
+    78.4,
+    72.1,
+    62.9
+   ],
+   "desimal": 1,
+   "jenis_grafik": "batang",
+   "label_nilai": false,
+   "warna": "#c05621",
+   "set": "dev"
+  },
+  {
+   "id": "syn087",
+   "judul": "Curah hujan bulanan Surabaya (2023)",
+   "label_x": "Bulan",
+   "label_y": "Curah hujan",
+   "satuan": "mm",
+   "label_y_full": "Curah hujan (mm)",
+   "kategori": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei"
+   ],
+   "nilai": [
+    86.0,
+    177.0,
+    199.0,
+    218.0,
+    264.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "batang",
+   "label_nilai": true,
+   "warna": "#6b46c1",
+   "set": "dev"
+  },
+  {
+   "id": "syn088",
+   "judul": "Skor rata-rata ujian per kelas (2024)",
+   "label_x": "Kelas",
+   "label_y": "Skor",
+   "satuan": "",
+   "label_y_full": "Skor",
+   "kategori": [
+    "Kelas B",
+    "Kelas E",
+    "Kelas C",
+    "Kelas D"
+   ],
+   "nilai": [
+    86.8,
+    68.9,
+    90.0,
+    67.1
+   ],
+   "desimal": 1,
+   "jenis_grafik": "titik",
+   "label_nilai": true,
+   "warna": "#b7791f",
+   "set": "uji"
+  },
+  {
+   "id": "syn089",
+   "judul": "Ekspor komoditas Jawa Timur (2025)",
+   "label_x": "Komoditas",
+   "label_y": "Nilai ekspor",
+   "satuan": "juta USD",
+   "label_y_full": "Nilai ekspor (juta USD)",
+   "kategori": [
+    "Kertas",
+    "Kayu olahan",
+    "Perhiasan",
+    "Udang",
+    "Tembaga",
+    "Rokok"
+   ],
+   "nilai": [
+    1332.0,
+    700.0,
+    124.0,
+    1247.0,
+    1132.0,
+    308.0
+   ],
+   "desimal": 0,
+   "jenis_grafik": "titik",
+   "label_nilai": false,
+   "warna": "#2c7a7b",
+   "set": "uji"
+  }
+ ]
+}

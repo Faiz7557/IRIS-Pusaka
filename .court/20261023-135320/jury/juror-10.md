@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: Not submitting means zero return, while submitting puts a working, frozen and honestly scoped asset in front of the judges, and the open risks (Turnitin, the unread chapters) can be fixed in the hours left. I would back it, while pricing in that the real-world upside is still unproven because the real PDFs produced "0 grafik terbit".
+DECIDING FACT: On the same 60 charts, the ungated baseline B2 published every chart, with 17 numbers flagged wrong on 7/60 charts, while SIMAK's gate published 440/440 faithful claims against thresholds "dikunci 12 Okt ... sebelum set uji dibuka", and run 2 matched run 1 at 0/60 changed statuses.
+WOULD FLIP IF: The Turnitin check comes back at 15% or higher and cannot be brought under the limit before the 23.59 deadline, because then the entry breaks a stated rule and the downside becomes certain.

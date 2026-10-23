@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: When I check what the paper promised against what was delivered, the numbers that carry the claims are a small fraction of what was booked, and the demo's audio now depends on ElevenLabs, a service billed per character, where the paper described the browser's free Web Speech API, with no line in the record saying who holds the key or pays for it, so as described this is not ready to submit in two days.
+DECIDING FACT: G1, a core gate, was promised as at least 90% on 200 test PDFs but was run on 4 synthetic documents (Wilson [0,51; 1,00]), and the core G6 was promised on 60 real documents with kappa but was run on 6 with no kappa, so the headline figures have no adequate sample behind them.
+WOULD FLIP IF: The record showed the full G6 run finished (60 real documents, kappa from two raters, NVDA check), with its numbers in eval/results.json ready to go into Bab 4.

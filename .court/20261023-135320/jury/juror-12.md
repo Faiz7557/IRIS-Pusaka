@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: The compliance traps I see (an unchecked Turnitin report, an AI statement and Claude-written chapters the team has not read, and a cached-VLM demo that must be openly described as cached so it is not read as "direkayasa") are all curable before 23.59, and nothing in the record shows a rule already broken, so they call for finishing the plan before 21.00 rather than abandoning it.
+DECIDING FACT: The only hard eligibility condition still open is "Similarity Turnitin < 15% ... dilampirkan", which the record lists as "belum dicek" at ±14.30 WIB with about 9.5 hours left; no score exists to show it fails.
+WOULD FLIP IF: The Turnitin report comes back at 15% or higher, or cannot be attached before the 23.59 deadline, since the submission would then break a stated rule regardless of how good the MVP is.

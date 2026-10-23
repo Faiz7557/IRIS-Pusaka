@@ -1,0 +1,34 @@
+PERSAMAAN LATEX UNTUK AUTO-LATEX EQUATIONS (GOOGLE DOCS)
+Cara pakai: salin SATU baris kode LaTeX di bawah (tanpa tanda $), tempel di Google Docs, blok teksnya, lalu
+Add-ons > Auto-LaTeX Equations > Render Equations. Bila add-on Anda memakai pembatas, bungkus dengan $$ ... $$.
+Nomor persamaan mengikuti naskah; ketik nomor secara terpisah di sebelah kanan (mis. tab lalu "(1)").
+
+(1)  Korelasi peringkat Kendall untuk urutan baca (G2)
+     \tau=\frac{C-D}{n(n-1)/2}
+
+(2)  Selisih relatif antar-ekstraksi tabel data terhadap rentang nilai s
+     \delta(T_1,T_2)=\frac{1}{|T|}\sum_{t\in T}\frac{|t_1-t_2|}{s}
+
+(3)  Kemiringan regresi linear kuadrat terkecil
+     \hat{\beta}=\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{n}(x_i-\bar{x})^2}
+
+(4)  Perubahan terfit sepanjang sumbu
+     \hat{\Delta}=\hat{\beta}\,(x_n-x_1)
+
+(5)  Kesetiaan klaim deskripsi terhadap tabel data (gerbang dan G3)
+     F_{\mathrm{k}}(d,T)=\frac{\left|\left\{(e,m,v)\in\Lambda(d):\ \exists\,(e,m,v')\in T\cup D(T),\ |v-v'|\le\epsilon\,s\right\}\right|}{|\Lambda(d)|}
+
+(6)  Kecocokan LaTeX berbasis jarak sunting (kesepakatan pengenal dan G5)
+     A(\hat{L},L)=1-\frac{\mathrm{ED}(\hat{L},L)}{\max(|\hat{L}|,|L|)}
+
+(7)  Aturan penerbitan gerbang fail-closed
+     \mathrm{pub}(e)=\mathbf{1}\left[K(e)\neq\emptyset\right]\prod_{k\in K(e)}c_k(e)=1
+
+(8)  Selang kepercayaan Wilson untuk proporsi
+     \frac{\hat{p}+z^2/(2n)\pm z\sqrt{\hat{p}(1-\hat{p})/n+z^2/(4n^2)}}{1+z^2/n}
+
+(9)  Kappa Cohen antar-penilai (G6)
+     \kappa=\frac{p_o-p_e}{1-p_e}
+
+(10)  Rasio kesetaraan informasi Q dan beban tinjauan R
+     Q=\frac{\mathrm{Acc}_{\mathrm{alt}}}{\mathrm{Acc}_{\mathrm{tab}}},\qquad R=\frac{|E_{\mathrm{tinjau}}|}{|E|}

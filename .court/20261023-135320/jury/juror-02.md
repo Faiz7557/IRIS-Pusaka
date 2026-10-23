@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: If I'm a blind student or a ULD reviewer seeing this for the first time, the only time it touched real university PDFs it published no charts and kept most figures out of the reviewer's queue, so as described I would not use it this week instead of asking ULD staff directly, and a paper its own team hasn't read doesn't help me believe it.
+DECIDING FACT: On the 6 real ac.id PDFs (G6), 0 charts were published and 15 of 18 figures were vector figures that are "belum dideskripsikan dan belum tampil sebagai kartu di antrean UI", so the reviewer hand-off that RM3 promises never reached them.
+WOULD FLIP IF: The prototype were shown on real lecture PDFs (actual course material, not handbooks or SOPs) with every figure, vector ones included, either published correctly or appearing as a card in the ULD review queue.

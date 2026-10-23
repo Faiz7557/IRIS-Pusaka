@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: The gate engine is a real asset, but as described I would be backing a two-day sprint to write all of Bab 4-5 on top of an AI disclosure that already admits a banned use, and one disqualification takes the whole return to zero, so I would keep my money until that tail risk is closed.
+DECIDING FACT: Lampiran A, which carries over to the final, says Claude was used for "penyusunan dan revisi draf naskah", which guidebook 7.2.4 forbids and which is grounds for disqualification; the defense calls it "tidak bisa dibela", and the record shows no remedy.
+WOULD FLIP IF: The record showed the AI use was actually inside the 7.2.4 limits (or the committee had confirmed the semifinal statement acceptable) and the corrected statement were in hand, leaving only the schedule risk on Bab 4-5.

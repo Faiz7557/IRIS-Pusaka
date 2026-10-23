@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: Sebagai orang tua, yang saya tanyakan adalah apakah alat ini bisa mencelakai mahasiswa tunanetra dengan deskripsi keliru, dan dari berkas jawabannya tidak: gerbangnya menahan apa yang tidak bisa ia pastikan dan semua kekurangannya diungkap. Jadi kasus ini layak dikumpulkan, asalkan pekerjaan malam ini benar-benar dikerjakan, bukan dilewati.
+DECIDING FACT: Pada set uji, D menerbitkan 440/440 klaim setia dan menahan 137/138 injeksi, sedangkan B2 tanpa gerbang menerbitkan 17 angka keliru pada 7/60 grafik tanpa penanda; pada PDF nyata, sistem menerbitkan 0 grafik, bukan deskripsi yang salah.
+WOULD FLIP IF: Tim mengumpulkan naskah tanpa membaca ulang Bab IV–V yang ditulis Claude, atau tanpa melampirkan laporan Turnitin di bawah 15%, sehingga yang dikumpulkan adalah teks yang tidak bisa mereka pertanggungjawabkan.

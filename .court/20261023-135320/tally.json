@@ -1,0 +1,92 @@
+{
+  "verdict": "NOT GUILTY",
+  "guilty": 2,
+  "not_guilty": 10,
+  "no_vote": 0,
+  "jurors": [
+    {
+      "juror": "The Accountant",
+      "vote": "NOT GUILTY",
+      "reason": "Every number in the ledger traces back to eval/results.json, which a script has reconciled against the text, and the real gap over B2 is thin (3 true model errors out of 17 flagged numbers), but not submitting forfeits all 100 points while submitting with the gaps disclosed still earns partial credit on every weighted criterion, so the books say go ahead and pay off the open items (Turnitin, the team read-through, the PDF export) before 21.00.",
+      "fact": "`cek_naskah.py` confirms that every fraction and decimal in the Abstract and Bab IV\u2013V matches the data, and the shortfall between planned and actual scale is booked openly in Lampiran O and Table 9, so no figure is unsourced or inflated.",
+      "flip": "The Turnitin check comes back at 15% or higher and cannot be brought under the limit before 23.59, because a missing mandatory attachment is a liability that disclosure cannot offset."
+    },
+    {
+      "juror": "The First-Time Customer",
+      "vote": "GUILTY",
+      "reason": "If I'm a blind student or a ULD reviewer seeing this for the first time, the only time it touched real university PDFs it published no charts and kept most figures out of the reviewer's queue, so as described I would not use it this week instead of asking ULD staff directly, and a paper its own team hasn't read doesn't help me believe it.",
+      "fact": "On the 6 real ac.id PDFs (G6), 0 charts were published and 15 of 18 figures were vector figures that are \"belum dideskripsikan dan belum tampil sebagai kartu di antrean UI\", so the reviewer hand-off that RM3 promises never reached them.",
+      "flip": "The prototype were shown on real lecture PDFs (actual course material, not handbooks or SOPs) with every figure, vector ones included, either published correctly or appearing as a card in the ULD review queue."
+    },
+    {
+      "juror": "The Competitor",
+      "vote": "NOT GUILTY",
+      "reason": "As a rival finalist, I would attack them in Q&A with the fact that the system published nothing on real PDFs, but I could not copy a held-out test with thresholds locked in advance plus a gated-versus-ungated comparison in five days, so this entry is a threat I have to beat rather than one that should be pulled.",
+      "fact": "Thresholds were locked on 12 Oct before the test set was opened, and run 2 matched run 1 (0/60 statuses differed); on that set D published 440/440 faithful claims, while the ungated B2 published 17 flagged numbers on 7/60 charts with no marker.",
+      "flip": "The Turnitin report comes back at 15% or higher, or cannot be attached before 23.59, because that turns a beatable entry into one that breaks a mandatory rule."
+    },
+    {
+      "juror": "The Retired Judge",
+      "vote": "NOT GUILTY",
+      "reason": "The prosecution showed gaps, not overclaims: the paper limits each conclusion to what the record proves, and the missing pieces (Turnitin check, the team's read-through, PDF export) are open tasks with about nine hours left, while no evidence says they will fail.",
+      "fact": "Thresholds were locked on 12 Oct on 30 dev charts before the test set was opened, run 2 matched run 1 with 0/60 statuses changed, and the paper claims only \"RM3 terjawab untuk grafik pada set uji\", with RM1 marked partial and formulas marked not done.",
+      "flip": "The Turnitin report came back at 15% or higher, or could not be attached before 23.59, because then a mandatory requirement would be broken instead of just pending."
+    },
+    {
+      "juror": "The Teenager",
+      "vote": "NOT GUILTY",
+      "reason": "Honestly most of this is boring stats, but \"plain AI makes up chart numbers for blind students and ours catches it\" is a demo people would actually remember and talk about, and not turning it in tonight gets them nothing.",
+      "fact": "The ungated baseline B2 published all 60 charts with 17 numbers flagged wrong on 7/60 of them, while the gate held back 137/138 injected errors and every claim it did publish (440/440) was faithful.",
+      "flip": "The Demo Gerbang page (B2 vs SIMAK with injected errors) could not run live on 28 Oct, leaving only the real-PDF result where 0 charts got published and nobody has anything to watch or listen to."
+    },
+    {
+      "juror": "The Engineer",
+      "vote": "NOT GUILTY",
+      "reason": "As a builder I see a thing that actually runs, is frozen at a pushed tag, gives the same result twice, and fails closed instead of publishing junk; the hole that breaks first on real PDFs (vector figures not described and not shown in the ULD queue) is a disclosed scope gap in an honest MVP, not a reason to hold back tonight's submission, though tonight's unread text and missing Turnitin report still have to be fixed before upload.",
+      "fact": "The prototype is public at tag v1.0-final (commit f73bfb1), caches VLM responses so the demo runs offline, and run 2 matched run 1 with \"0/60 status berbeda\", while on the real ac.id PDFs the gate published 0 charts rather than unverified ones.",
+      "flip": "The record showed the demo cannot be reproduced from the tagged commit (for example the cache or veraPDF setup missing), or that on real PDFs the pipeline published a wrong description without a status marker, because then the core fail-closed mechanism would not work outside the team's synthetic set."
+    },
+    {
+      "juror": "The Small-Business Owner",
+      "vote": "NOT GUILTY",
+      "reason": "The shop is stocked and the till works: what's left tonight is Turnitin, a read-through, a PDF export and an upload, which is four people's afternoon of chores and not a reason to keep the doors shut, because a team that doesn't submit scores zero no matter how honest its limitations section is.",
+      "fact": "At about 14.30 WIB on 23 Oct the code is already frozen and pushed (tag v1.0-final, commit f73bfb1), the demo runs offline from cached VLM responses, and the only open items listed are the Turnitin check, the team read-through, the Word-to-PDF export and the upload, with about 9.5 hours to go before 23.59.",
+      "flip": "The Turnitin report comes back at 15% or higher and there is no time left to rewrite before 23.59, or the team uploads without anyone reading Bab IV\u2013V, so the people answering in Q&A on 28 Oct haven't read their own results."
+    },
+    {
+      "juror": "The Statistician",
+      "vote": "NOT GUILTY",
+      "reason": "Sixty self-made synthetic charts and six real PDFs that were not lecture material are a tiny base, and on real files the system published nothing, but the paper limits its claims to that base, set its thresholds before opening the test set, replicated the run, and reports Wilson intervals, so the evidence is small yet not overstated, and that is enough to submit.",
+      "fact": "Thresholds were locked on 12 Oct on 30 dev charts before the 60-chart test set was opened, run 2 matched run 1 with 0/60 statuses different, and the paper scopes the result as \"RM3 terjawab untuk grafik pada set uji\".",
+      "flip": "The unread, Claude-written Bab IV\u2013V or abstract claimed the gate works on real lecture PDFs or for blind users, generalising beyond the 60 synthetic charts when G2, G5 and G7 were never run and G6 published 0 charts."
+    },
+    {
+      "juror": "The Parent",
+      "vote": "NOT GUILTY",
+      "reason": "Sebagai orang tua, yang saya tanyakan adalah apakah alat ini bisa mencelakai mahasiswa tunanetra dengan deskripsi keliru, dan dari berkas jawabannya tidak: gerbangnya menahan apa yang tidak bisa ia pastikan dan semua kekurangannya diungkap. Jadi kasus ini layak dikumpulkan, asalkan pekerjaan malam ini benar-benar dikerjakan, bukan dilewati.",
+      "fact": "Pada set uji, D menerbitkan 440/440 klaim setia dan menahan 137/138 injeksi, sedangkan B2 tanpa gerbang menerbitkan 17 angka keliru pada 7/60 grafik tanpa penanda; pada PDF nyata, sistem menerbitkan 0 grafik, bukan deskripsi yang salah.",
+      "flip": "Tim mengumpulkan naskah tanpa membaca ulang Bab IV\u2013V yang ditulis Claude, atau tanpa melampirkan laporan Turnitin di bawah 15%, sehingga yang dikumpulkan adalah teks yang tidak bisa mereka pertanggungjawabkan."
+    },
+    {
+      "juror": "The Investor",
+      "vote": "NOT GUILTY",
+      "reason": "Not submitting means zero return, while submitting puts a working, frozen and honestly scoped asset in front of the judges, and the open risks (Turnitin, the unread chapters) can be fixed in the hours left. I would back it, while pricing in that the real-world upside is still unproven because the real PDFs produced \"0 grafik terbit\".",
+      "fact": "On the same 60 charts, the ungated baseline B2 published every chart, with 17 numbers flagged wrong on 7/60 charts, while SIMAK's gate published 440/440 faithful claims against thresholds \"dikunci 12 Okt ... sebelum set uji dibuka\", and run 2 matched run 1 at 0/60 changed statuses.",
+      "flip": "The Turnitin check comes back at 15% or higher and cannot be brought under the limit before the 23.59 deadline, because then the entry breaks a stated rule and the downside becomes certain."
+    },
+    {
+      "juror": "The Designer",
+      "vote": "GUILTY",
+      "reason": "A stranger reads a title that promises lecture PDFs, formulas and reading order for blind students, but on a real PDF the screen they would see publishes nothing and hides most figures from the reviewer, so the only clear five-second story (the gate catching wrong numbers on the team's own synthetic charts) is not the story the case tells.",
+      "fact": "On the 6 real ac.id PDFs (G6), 0 charts were published and 15/18 figures were vector, and vector figures \"belum tampil sebagai kartu di antrean UI\", so the reviewer queue that RM3 depends on looks empty on real material.",
+      "flip": "Vector figures appeared as held cards in the ULD review queue, so a real lecture PDF in the demo visibly shows every withheld figure handed to the reviewer."
+    },
+    {
+      "juror": "The Lawyer",
+      "vote": "NOT GUILTY",
+      "reason": "The compliance traps I see (an unchecked Turnitin report, an AI statement and Claude-written chapters the team has not read, and a cached-VLM demo that must be openly described as cached so it is not read as \"direkayasa\") are all curable before 23.59, and nothing in the record shows a rule already broken, so they call for finishing the plan before 21.00 rather than abandoning it.",
+      "fact": "The only hard eligibility condition still open is \"Similarity Turnitin < 15% ... dilampirkan\", which the record lists as \"belum dicek\" at \u00b114.30 WIB with about 9.5 hours left; no score exists to show it fails.",
+      "flip": "The Turnitin report comes back at 15% or higher, or cannot be attached before the 23.59 deadline, since the submission would then break a stated rule regardless of how good the MVP is."
+    }
+  ]
+}

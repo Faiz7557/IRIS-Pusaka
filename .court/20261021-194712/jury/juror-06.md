@@ -1,0 +1,4 @@
+VOTE: GUILTY
+REASON: The gate machinery is real and well tested on charts the team made itself, but on real campus PDFs it publishes nothing, cannot even show most of the figures in the review queue, and has not been shown to boot from a clean checkout, so as described this is not yet a demo-ready system that proves the paper.
+DECIDING FACT: On the 6 real Common Crawl documents, R = 18/18 and 0 charts were auto-published, and 13 of the 18 held images were vector figures that the README says are not described and do not appear as cards in the review UI.
+WOULD FLIP IF: A clean checkout of the repo ran end to end (Java/veraPDF and google-genai installed, `import app` working) on real PDFs and published a meaningful share of real charts with Fk still held, with the voice mode matching what Bab 3 describes.

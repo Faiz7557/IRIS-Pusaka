@@ -1,0 +1,92 @@
+{
+  "verdict": "GUILTY",
+  "guilty": 10,
+  "not_guilty": 2,
+  "no_vote": 0,
+  "jurors": [
+    {
+      "juror": "The Accountant",
+      "vote": "GUILTY",
+      "reason": "When I check what the paper promised against what was delivered, the numbers that carry the claims are a small fraction of what was booked, and the demo's audio now depends on ElevenLabs, a service billed per character, where the paper described the browser's free Web Speech API, with no line in the record saying who holds the key or pays for it, so as described this is not ready to submit in two days.",
+      "fact": "G1, a core gate, was promised as at least 90% on 200 test PDFs but was run on 4 synthetic documents (Wilson [0,51; 1,00]), and the core G6 was promised on 60 real documents with kappa but was run on 6 with no kappa, so the headline figures have no adequate sample behind them.",
+      "flip": "The record showed the full G6 run finished (60 real documents, kappa from two raters, NVDA check), with its numbers in eval/results.json ready to go into Bab 4."
+    },
+    {
+      "juror": "The First-Time Customer",
+      "vote": "GUILTY",
+      "reason": "Seeing this for the first time, I believe the gate stops bad descriptions, but on real lecture PDFs it gave me nothing new because every image still landed in the ULD queue, the voice feature needs paid ElevenLabs instead of the Web Speech API the paper describes, and the app does not start on this laptop, so I would not buy it as described this week.",
+      "fact": "On the 6 real Common Crawl PDFs, R = 18/18 and \"0 grafik terbit otomatis\", and G1's 6/6 pass counts the \"[Menunggu tinjauan ULD] ...\" placeholder as meaningful alt text.",
+      "flip": "The record showed the gate auto-publishing faithful descriptions for at least some charts in real (non-synthetic) lecture PDFs, with Fk checked against reference tables, and the demo running end to end on the presentation laptop as the paper describes it."
+    },
+    {
+      "juror": "The Competitor",
+      "vote": "NOT GUILTY",
+      "reason": "As a rival finalist I cannot copy a live \"suntik kesalahan\" side-by-side in two days, where B2 publishes the bad chart and SIMAK holds it, and my best counterattack is that nothing auto-publishes on real PDFs (R = 18/18), which they already disclose and frame as fail-closed, so I would have to fight this case rather than ignore it.",
+      "fact": "On the held-out set, injected errors were held 137/138 while B2 published 60/60 charts with 17 unfaithful numbers on 7/60, and the thresholds were locked on the dev set before the test set was opened.",
+      "flip": "The prototype still cannot be run from the GitHub repo by the deadline (the `import app` failure and missing tools/ are confirmed and unfixed), because then I win the 30% demo score with any product that actually runs and their gate is only a claim on paper."
+    },
+    {
+      "juror": "The Retired Judge",
+      "vote": "GUILTY",
+      "reason": "The defense's case rests on things that are still promises, like \"tinggal ditulis\" for Bab 4-5 and \"hitungan jam\" for a demo that does not start on this laptop, while the written record openly admits AI use that 7.2.4 forbids, and a promise is not proof that the work is ready.",
+      "fact": "Two days before the deadline, Bab 4 and Bab 5 are not written, Bab 1-3 have not been revised, and there is no final Turnitin appendix. The only evidence that published descriptions are faithful (Fk 440/440) comes from the team's own synthetic charts, because on real documents 0 charts were published and R = 18/18.",
+      "flip": "The record showed a complete Bab 1-5 draft written by the team, with Lampiran A corrected to the uses 7.2.4 allows, and a confirmed run of the MVP from a clean checkout whose voice and formula features match what Bab 3 says."
+    },
+    {
+      "juror": "The Teenager",
+      "vote": "GUILTY",
+      "reason": "The \"inject an error\" demo is honestly cool and I'd remember it, but once someone asks \"okay, what happens on a real PDF?\" the answer is \"it holds everything for a human to check\", and that kills the hype, especially when the paper chapters that would explain it aren't even written yet with two days left.",
+      "fact": "On the 6 real Common Crawl documents, R = 18/18 and \"0 grafik terbit otomatis\": every non-decorative image went to the ULD queue, so a blind student using real course files gets nothing new automatically.",
+      "flip": "The real-document run showed a meaningful share of real charts published automatically with faithful numbers (not just synthetic matplotlib charts), so the gate visibly does something useful on actual course material."
+    },
+    {
+      "juror": "The Engineer",
+      "vote": "GUILTY",
+      "reason": "The gate machinery is real and well tested on charts the team made itself, but on real campus PDFs it publishes nothing, cannot even show most of the figures in the review queue, and has not been shown to boot from a clean checkout, so as described this is not yet a demo-ready system that proves the paper.",
+      "fact": "On the 6 real Common Crawl documents, R = 18/18 and 0 charts were auto-published, and 13 of the 18 held images were vector figures that the README says are not described and do not appear as cards in the review UI.",
+      "flip": "A clean checkout of the repo ran end to end (Java/veraPDF and google-genai installed, `import app` working) on real PDFs and published a meaningful share of real charts with Fk still held, with the voice mode matching what Bab 3 describes."
+    },
+    {
+      "juror": "The Small-Business Owner",
+      "vote": "GUILTY",
+      "reason": "I've seen this setup before: the machine sends every real job back to the one person at the counter, the voice only works while someone pays ElevenLabs per character, and two days before the deadline nobody has written Bab 4 and 5, which the team has to write by hand because AI drafting is banned, so it isn't ready to go ahead the way it's described.",
+      "fact": "On the 6 real Common Crawl PDFs, R = 18/18 and \"0 grafik terbit otomatis\", so every non-decorative image went to the ULD queue and the reviewer does all the Monday-morning work.",
+      "flip": "A run on real documents showed the gate publishing a real share of charts on its own with Fk holding, so the ULD reviewer gets a lighter load instead of the whole pile."
+    },
+    {
+      "juror": "The Statistician",
+      "vote": "GUILTY",
+      "reason": "Every strong number here comes from charts the team generated itself or from a sample too small to mean anything (G1 rests on 4 documents with a Wilson interval of [0,51; 1,00]); on real documents the gate published zero charts, so its accuracy on real material has a sample size of zero, and the 60-document G6, the 600-PDF audit and the external benchmarks that would fix this cannot be run and written into Bab 4-5 in the two days left.",
+      "fact": "On the 6 real Common Crawl PDFs, R = 18/18 and \"0 grafik terbit otomatis\", so the 440/440 Fk applies only to the synthetic set from data/make_synth.py and gives no evidence about how faithful published descriptions are on real course material.",
+      "flip": "The record showed the full G6 run (60 real documents, two raters with kappa) in which a meaningful number of real charts were actually auto-published and their Fk measured against reference tables, with a Wilson lower bound near the locked 0,98 threshold."
+    },
+    {
+      "juror": "The Parent",
+      "vote": "GUILTY",
+      "reason": "I would not let my kids walk into a final with a signed statement already admitting AI drafted the manuscript, two days left to write Bab 4-5 from scratch, and a demo whose voice mode sends text to a paid outside service the paper never mentions; the gate idea is honest and good, but as described this puts four people's whole effort at risk of disqualification and isn't ready to stand on.",
+      "fact": "Lampiran A says Claude was used for \"penyusunan dan revisi draf naskah\", guidebook 7.2.4 bans generative AI for substantial narrative, \"pemakaian AI di luar batas\" is grounds for disqualification, and the defense itself called it \"tidak bisa dibela\".",
+      "flip": "the record showed the committee had reviewed Lampiran A and confirmed in writing that the team's AI use is within 7.2.4, so the disqualification risk is off the table and only the schedule risk remains."
+    },
+    {
+      "juror": "The Investor",
+      "vote": "GUILTY",
+      "reason": "The gate engine is a real asset, but as described I would be backing a two-day sprint to write all of Bab 4-5 on top of an AI disclosure that already admits a banned use, and one disqualification takes the whole return to zero, so I would keep my money until that tail risk is closed.",
+      "fact": "Lampiran A, which carries over to the final, says Claude was used for \"penyusunan dan revisi draf naskah\", which guidebook 7.2.4 forbids and which is grounds for disqualification; the defense calls it \"tidak bisa dibela\", and the record shows no remedy.",
+      "flip": "The record showed the AI use was actually inside the 7.2.4 limits (or the committee had confirmed the semifinal statement acceptable) and the corrected statement were in hand, leaving only the schedule risk on Bab 4-5."
+    },
+    {
+      "juror": "The Designer",
+      "vote": "NOT GUILTY",
+      "reason": "A stranger gets this project in five seconds, because it fits one plain promise (\"no wrong description publishes without a marker\") and one screen that proves it. The unwritten chapters and the voice mismatch are things to finish and disclose. They don't stop a judge from seeing what SIMAK is and why it matters.",
+      "fact": "The Demo Gerbang page puts B2 (direct VLM) and SIMAK side by side on the same chart. When you press \"suntik kesalahan\", B2 still publishes while SIMAK holds the output, and the frozen numbers back this up: 137/138 injected errors held, while B2 published 60/60 charts and 17 of its numbers were unfaithful.",
+      "flip": "The 15-minute demo had to run only on the real PDFs, where R = 18/18 and 0 charts publish. A stranger would then see a queue where every item is held, with no visible contrast, and could not tell what the product actually does."
+    },
+    {
+      "juror": "The Lawyer",
+      "vote": "GUILTY",
+      "reason": "As things stand, the team has a written admission of AI use that the rules list as grounds for disqualification, and the record also shows course-material text and images going to outside services (ElevenLabs, Gemini API free tier) with no word on consent or licensing; a disqualification risk on paper outweighs any strength in the demo, and nothing in the record removes it.",
+      "fact": "Lampiran A states Claude was used for \"penyusunan dan revisi draf naskah\", while guidebook 7.2.4 bans generative AI for \"narasi substansial lainnya\" and \"pemakaian AI di luar batas\" is listed as a disqualification ground, and the semifinal rules carry over to the final.",
+      "flip": "The record showed written confirmation from the committee that the semifinal AI statement was reviewed and accepted as within 7.2.4 (or allowed to be corrected without penalty), so the final submission could carry an accurate statement that does not admit a disqualifying use."
+    }
+  ]
+}

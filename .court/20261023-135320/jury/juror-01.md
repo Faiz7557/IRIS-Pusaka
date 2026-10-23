@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: Every number in the ledger traces back to eval/results.json, which a script has reconciled against the text, and the real gap over B2 is thin (3 true model errors out of 17 flagged numbers), but not submitting forfeits all 100 points while submitting with the gaps disclosed still earns partial credit on every weighted criterion, so the books say go ahead and pay off the open items (Turnitin, the team read-through, the PDF export) before 21.00.
+DECIDING FACT: `cek_naskah.py` confirms that every fraction and decimal in the Abstract and Bab IV–V matches the data, and the shortfall between planned and actual scale is booked openly in Lampiran O and Table 9, so no figure is unsourced or inflated.
+WOULD FLIP IF: The Turnitin check comes back at 15% or higher and cannot be brought under the limit before 23.59, because a missing mandatory attachment is a liability that disclosure cannot offset.

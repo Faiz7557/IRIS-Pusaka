@@ -1,0 +1,4 @@
+VOTE: NOT GUILTY
+REASON: The shop is stocked and the till works: what's left tonight is Turnitin, a read-through, a PDF export and an upload, which is four people's afternoon of chores and not a reason to keep the doors shut, because a team that doesn't submit scores zero no matter how honest its limitations section is.
+DECIDING FACT: At about 14.30 WIB on 23 Oct the code is already frozen and pushed (tag v1.0-final, commit f73bfb1), the demo runs offline from cached VLM responses, and the only open items listed are the Turnitin check, the team read-through, the Word-to-PDF export and the upload, with about 9.5 hours to go before 23.59.
+WOULD FLIP IF: The Turnitin report comes back at 15% or higher and there is no time left to rewrite before 23.59, or the team uploads without anyone reading Bab IV–V, so the people answering in Q&A on 28 Oct haven't read their own results.

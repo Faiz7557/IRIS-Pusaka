@@ -1,0 +1,3 @@
+berkas parquet subset=warc: 300
+selesai dalam 629 detik
+[(53410, 1161, 51210)]
