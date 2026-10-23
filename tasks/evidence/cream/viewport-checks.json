@@ -1,0 +1,278 @@
+[
+  {
+    "page": "dengar",
+    "targetWidth": 1440,
+    "background": "rgb(246, 239, 223)",
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 1366,
+    "background": "rgb(246, 239, 223)",
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 1024,
+    "background": "rgb(246, 239, 223)",
+    "scrollWidth": 1025,
+    "width": 1025
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 768,
+    "background": "rgb(246, 239, 223)",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 390,
+    "background": "rgb(246, 239, 223)",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 320,
+    "background": "rgb(246, 239, 223)",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "demo",
+    "targetWidth": 1440,
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "page": "demo",
+    "targetWidth": 1366,
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  {
+    "page": "demo",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "demo",
+    "targetWidth": 768,
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "demo",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "demo",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 1440,
+    "missing": "Memuat hasil evaluasi…",
+    "scrollWidth": 1440,
+    "tables": 7,
+    "width": 1440
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 1366,
+    "missing": "Memuat hasil evaluasi…",
+    "scrollWidth": 1366,
+    "tables": 7,
+    "width": 1366
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 1024,
+    "missing": "Memuat hasil evaluasi…",
+    "scrollWidth": 1023,
+    "tables": 7,
+    "width": 1023
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 768,
+    "missing": "Memuat hasil evaluasi…",
+    "scrollWidth": 768,
+    "tables": 7,
+    "width": 768
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 390,
+    "missing": "Memuat hasil evaluasi…",
+    "scrollWidth": 390,
+    "tables": 7,
+    "width": 390
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 320,
+    "missing": "Memuat hasil evaluasi…",
+    "scrollWidth": 356,
+    "tables": 7,
+    "width": 320
+  },
+  {
+    "page": "remediasi-result",
+    "targetWidth": 1440,
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "page": "remediasi-result",
+    "targetWidth": 1366,
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  {
+    "page": "remediasi-result",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "remediasi-result",
+    "targetWidth": 768,
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "remediasi-result",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "remediasi-result",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "remediasi-initial",
+    "targetWidth": 1440,
+    "scrollWidth": 1449,
+    "width": 1449
+  },
+  {
+    "page": "remediasi-initial",
+    "targetWidth": 1366,
+    "scrollWidth": 1376,
+    "width": 1376
+  },
+  {
+    "page": "remediasi-initial",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "remediasi-initial",
+    "targetWidth": 768,
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "remediasi-initial",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "remediasi-initial",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "reader",
+    "targetWidth": 1440,
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "page": "reader",
+    "targetWidth": 1366,
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  {
+    "page": "reader",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "reader",
+    "targetWidth": 768,
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "reader",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "reader",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "evaluasi",
+    "phase": "after-fix",
+    "targetWidth": 1440,
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "page": "evaluasi",
+    "phase": "after-fix",
+    "targetWidth": 1366,
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  {
+    "page": "evaluasi",
+    "phase": "after-fix",
+    "targetWidth": 1024,
+    "scrollWidth": 1024,
+    "width": 1024
+  },
+  {
+    "page": "evaluasi",
+    "phase": "after-fix",
+    "targetWidth": 768,
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "evaluasi",
+    "phase": "after-fix",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "evaluasi",
+    "phase": "after-fix",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  }
+]

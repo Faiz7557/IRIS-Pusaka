@@ -1,0 +1,10 @@
+{
+ "theta_e": 0.01,
+ "epsilon": 0.02,
+ "rho": 0.1,
+ "locked": true,
+ "locked_at": "2026-10-12 12:38:31",
+ "calibrated_on": "30 grafik dev",
+ "aturan": "θe terkecil (≥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) ≥ 0,98 pada grafik dev",
+ "riwayat": "v1: Fk 0,937 pada δ=0 → ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+}

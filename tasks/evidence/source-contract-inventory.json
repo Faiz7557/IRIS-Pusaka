@@ -1,0 +1,385 @@
+{
+  "Prototype\\web\\demo.html": {
+    "bytes": 11523,
+    "lines": 195,
+    "static_ids": [
+      "isi",
+      "pick",
+      "run",
+      "reset",
+      "st",
+      "inj-lbl",
+      "mut",
+      "h-a",
+      "a-call",
+      "a-verdict",
+      "a-text",
+      "a-slip",
+      "h-b",
+      "b-call",
+      "b-verdict",
+      "b-reasons",
+      "b-text",
+      "b-slip",
+      "b-fk",
+      "legend",
+      "h-img",
+      "img-call",
+      "img-slot",
+      "h-score",
+      "score",
+      "h-truth",
+      "truth",
+      "t12",
+      "t12-body"
+    ],
+    "duplicate_static_ids": [],
+    "external_scripts": [
+      "common.js"
+    ],
+    "image_count": 0,
+    "lazy_images": 0,
+    "missing_alt_images": 0,
+    "images": []
+  },
+  "Prototype\\web\\dengar.html": {
+    "bytes": 14037,
+    "lines": 241,
+    "static_ids": [
+      "isi",
+      "doc",
+      "go",
+      "st",
+      "voice-ctl",
+      "stage",
+      "h-moment",
+      "m-call",
+      "m-img",
+      "m-before",
+      "m-play-a",
+      "m-after",
+      "m-play-s",
+      "tally",
+      "h-a",
+      "p-a",
+      "tr-a",
+      "h-s",
+      "p-s",
+      "tr-s"
+    ],
+    "duplicate_static_ids": [],
+    "external_scripts": [
+      "common.js"
+    ],
+    "image_count": 0,
+    "lazy_images": 0,
+    "missing_alt_images": 0,
+    "images": []
+  },
+  "Prototype\\web\\evaluasi.html": {
+    "bytes": 9523,
+    "lines": 107,
+    "static_ids": [
+      "isi",
+      "empty",
+      "res"
+    ],
+    "duplicate_static_ids": [],
+    "external_scripts": [
+      "common.js"
+    ],
+    "image_count": 0,
+    "lazy_images": 0,
+    "missing_alt_images": 0,
+    "images": []
+  },
+  "Prototype\\web\\index.html": {
+    "bytes": 17063,
+    "lines": 264,
+    "static_ids": [
+      "isi",
+      "h-pilih",
+      "sampel",
+      "up",
+      "file",
+      "file-lbl",
+      "up-btn",
+      "prog",
+      "hasil",
+      "h-hasil",
+      "nama",
+      "h-kat",
+      "pages",
+      "tally",
+      "h-vp",
+      "vtrail",
+      "vera",
+      "h-out",
+      "out",
+      "timing",
+      "els",
+      "detail",
+      "h-detail"
+    ],
+    "duplicate_static_ids": [],
+    "external_scripts": [
+      "common.js"
+    ],
+    "image_count": 0,
+    "lazy_images": 0,
+    "missing_alt_images": 0,
+    "images": []
+  },
+  "Prototype\\tasks\\reference\\pet-template\\index.html": {
+    "bytes": 96333,
+    "lines": 1388,
+    "static_ids": [
+      "nav",
+      "menu",
+      "main",
+      "opening",
+      "opening-title",
+      "rooms",
+      "rooms-title",
+      "letters",
+      "letters-title",
+      "day",
+      "day-title",
+      "sitters",
+      "sitters-title",
+      "courtyard",
+      "courtyard-title",
+      "visit",
+      "visit-title",
+      "quiet",
+      "quiet-title",
+      "faq",
+      "faq-title",
+      "contact",
+      "contact-title",
+      "footer"
+    ],
+    "duplicate_static_ids": [],
+    "external_scripts": [
+      "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js",
+      "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js",
+      "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js",
+      "https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"
+    ],
+    "image_count": 30,
+    "lazy_images": 29,
+    "missing_alt_images": 0,
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1601850844626-3d1650562a43?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8YmxhY2slMjBjYXQlMjBsb29raW5nJTIwdXB8ZW58MXwxfHx8MTc5MTI5ODkzMHww&ixlib=rb-4.1.0&auto=format&fit=crop&w=530&q=60",
+        "alt": "A black cat in profile against a warm terracotta wall",
+        "loading": null,
+        "width": "1600",
+        "height": "2000"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1680428789174-a09a0c8a45a5?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Y2F0JTIwd2luZG93JTIwc2lsbHxlbnwxfDF8fHwxNzkxMjk4OTMxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=200&q=60",
+        "alt": "A cat on the outside sill of a window among potted plants",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2843"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1661258580619-8b6d93b02083?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2F0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzkxMjk4OTMyfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=280&q=60",
+        "alt": "A white cat looking out between open shutters",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1067"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1707084889603-c84a0ae3eb5e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8Y2F0JTIwd2luZG93JTIwc2lsbHxlbnwxfDF8fHwxNzkxMjk4OTMxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=200&q=60",
+        "alt": "A tabby cat sitting upright on a window sill",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1876"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1664731638140-8d58cd3d8c23?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Y2F0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzkxMjk4OTMyfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=280&q=60",
+        "alt": "A ginger cat in a lit window beside a lamp",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1067"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1780062611008-5c9e5029293b?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OHx8Y2F0JTIwd2luZG93JTIwc2lsbHxlbnwxfDF8fHwxNzkxMjk4OTMxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=200&q=60",
+        "alt": "A white and grey cat sitting on a window ledge",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2133"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1681741179058-e8a7a7cf77a9?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8Y2F0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzkxMjk4OTMyfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A ginger cat on a window ledge looking out at the city",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1067"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1687417960535-46e2faed40c1?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Y2F0JTIwb24lMjBzaGVsZnxlbnwxfDF8fHwxNzkxMjk4OTMzfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A cat sitting on a shelf in a tall wooden shelving unit",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2844"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1663022374632-385813867095?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2F0JTIwaW4lMjBib3h8ZW58MXwwfHx8MTc5MTI5ODkzNHww&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A kitten peeking over the edge of a box",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1067"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1714965577457-af3fedbcd8b8?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MTV8fGNhdCUyMHN1bmJhdGhpbmd8ZW58MXwxfHx8MTc5MTI5ODk0MXww&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A black cat dozing in the sun",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2133"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1613064504039-bb89104af499?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2F0JTIwc2xlZXBpbmd8ZW58MXwxfHx8MTc5MTI5ODkzN3ww&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A Siamese cat asleep across a yellow cushion",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2400"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1649365231622-d774ce10a140?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2F0JTIwc3VuYmF0aGluZ3xlbnwxfDF8fHwxNzkxMjk4OTQxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A ginger and white cat resting on a stone wall at sunset",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2400"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1764576504536-dbdfa4cb1d9a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8Y2F0JTIwZWF0aW5nJTIwYm93bHxlbnwxfDF8fHwxNzkxMjk4OTM1fDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A ginger cat eating dry food from a bowl",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2400"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1599798361719-5149b29830c5?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8Y2F0JTIwbG9va2luZyUyMG91dCUyMHdpbmRvd3xlbnwxfDB8fHwxNzkxMjk4OTMyfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=670&q=60",
+        "alt": "A tortoiseshell cat on a window sill looking out",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1067"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1708979346051-e809d2059b32?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8Y2F0JTIwcGxheWluZyUyMHRveXxlbnwxfDF8fHwxNzkxMjk4OTM1fDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A cat crouching to pounce on a striped toy",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2400"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1697716759638-7db291129c7d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8Y2F0JTIwc2xlZXBpbmd8ZW58MXwxfHx8MTc5MTI5ODkzN3ww&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A tabby cat asleep on a red chair cushion",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2133"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1715962148526-560cf2da2aa9?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2F0JTIwYmVpbmclMjBicnVzaGVkfGVufDF8MXx8fDE3OTEyOTg5MzZ8MA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A hand stroking a long-haired cat's head",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2400"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1759455024831-ef131a04c6fb?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8Y2F0JTIwbmlnaHQlMjBkYXJrfGVufDF8MXx8fDE3OTEyOTg5Mzh8MA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A black cat's yellow eyes in the dark",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2000"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1776715823253-d0ea2eb4b319?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OHx8d29tYW4lMjBob2xkaW5nJTIwY2F0fGVufDF8MXx8fDE3OTEyOTg5Mzl8MA&ixlib=rb-4.1.0&auto=format&fit=crop&w=310&q=60",
+        "alt": "Noor in a grey coat with a calico cat on her lap",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2492"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1751402985454-b0d819ad972c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8bWFuJTIwaG9sZGluZyUyMGNhdHxlbnwxfDF8fHwxNzkxMjk4OTQwfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=310&q=60",
+        "alt": "Jasper holding a small kitten to his chin",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2844"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1772723246509-63d23da29f6a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MTB8fHdvbWFuJTIwaG9sZGluZyUyMGNhdHxlbnwxfDF8fHwxNzkxMjk4OTM5fDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=310&q=60",
+        "alt": "Ilse holding a tabby cat against a red wall",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2399"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1774513149166-5b10650e45ba?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OXx8bWFuJTIwaG9sZGluZyUyMGNhdHxlbnwxfDF8fHwxNzkxMjk4OTQwfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=310&q=60",
+        "alt": "Daan holding a black and white cat by a window",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2134"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1767371051716-c060c61f73f3?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Z3JlZW4lMjBjb3VydHlhcmQlMjBicmljayUyMGhvdXNlc3xlbnwxfDB8fHwxNzkxMjk5MDAxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1190&q=60",
+        "alt": "The courtyard: two brick wings, a lawn and trees",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1065"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1767371051716-c060c61f73f3?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Z3JlZW4lMjBjb3VydHlhcmQlMjBicmljayUyMGhvdXNlc3xlbnwxfDB8fHwxNzkxMjk5MDAxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1190&q=60",
+        "alt": "",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1065"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1767371051716-c060c61f73f3?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Z3JlZW4lMjBjb3VydHlhcmQlMjBicmljayUyMGhvdXNlc3xlbnwxfDB8fHwxNzkxMjk5MDAxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1190&q=60",
+        "alt": "",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1065"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1767371051716-c060c61f73f3?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Z3JlZW4lMjBjb3VydHlhcmQlMjBicmljayUyMGhvdXNlc3xlbnwxfDB8fHwxNzkxMjk5MDAxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1190&q=60",
+        "alt": "",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1065"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1767371051716-c060c61f73f3?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Z3JlZW4lMjBjb3VydHlhcmQlMjBicmljayUyMGhvdXNlc3xlbnwxfDB8fHwxNzkxMjk5MDAxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1190&q=60",
+        "alt": "",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1065"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1767371051716-c060c61f73f3?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Z3JlZW4lMjBjb3VydHlhcmQlMjBicmljayUyMGhvdXNlc3xlbnwxfDB8fHwxNzkxMjk5MDAxfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1190&q=60",
+        "alt": "",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1065"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1733516858066-324f793bec01?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8YmlyZCUyMGZlZWRlciUyMGdhcmRlbnxlbnwxfDB8fHwxNzkxMjk5MDAwfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "Two sparrows on a bird feeder",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "1067"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1608228279688-495f6a3861a1?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8YmxhY2slMjBjYXQlMjBwZWVraW5nfGVufDF8MXx8fDE3OTEyOTg5MzB8MA&ixlib=rb-4.1.0&auto=format&fit=crop&w=600&q=60",
+        "alt": "A black cat peeking out from behind a wooden post",
+        "loading": "lazy",
+        "width": "1600",
+        "height": "2133"
+      }
+    ]
+  }
+}

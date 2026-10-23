@@ -1,0 +1,18 @@
+{
+  "python_tests": 26,
+  "javascript_suites": [
+    "test_frontend.cjs",
+    "test_speech.cjs",
+    "test_motion.cjs"
+  ],
+  "all_passed": true,
+  "playwright_browser_checks": 5,
+  "responsive_layouts": 16,
+  "test_environment": "Microsoft Playwright, headless Chrome; localhost:8019",
+  "scope": "Revisi Last/Prototype only; backend/shared controls/speech and business scripts preserved",
+  "unverified": [
+    "NVDA",
+    "physical touch devices",
+    "new live paid audio synthesis"
+  ]
+}

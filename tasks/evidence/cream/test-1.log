@@ -1,0 +1,24 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+test_rejected_image_not_narrated_as_pending (test_output.ReaderTests.test_rejected_image_not_narrated_as_pending) ... ok
+test_standalone_semantics_and_status_provenance (test_output.ReaderTests.test_standalone_semantics_and_status_provenance) ... ok
+test_assembly_failure_keeps_old_state_and_outputs (test_review.ReviewTransactionTests.test_assembly_failure_keeps_old_state_and_outputs) ... ok
+test_invalid_version_pointer_does_not_escape_job (test_review.ReviewTransactionTests.test_invalid_version_pointer_does_not_escape_job) ... ok
+test_old_version_survives_next_publication (test_review.ReviewTransactionTests.test_old_version_survives_next_publication) ... ok
+test_pointer_save_failure_does_not_publish_staged_outputs (test_review.ReviewTransactionTests.test_pointer_save_failure_does_not_publish_staged_outputs) ... ok
+test_two_concurrent_decisions_both_survive (test_review.ReviewTransactionTests.test_two_concurrent_decisions_both_survive) ... ok
+test_unknown_element_and_blank_vector_alt_are_rejected (test_review.ReviewTransactionTests.test_unknown_element_and_blank_vector_alt_are_rejected) ... ok
+test_delete_active_job_is_409 (test_upload.ApiBoundaryTests.test_delete_active_job_is_409) ... ok
+test_encrypted_or_too_many_pages_is_rejected (test_upload.ApiBoundaryTests.test_encrypted_or_too_many_pages_is_rejected) ... ok
+test_forged_pdf_is_rejected_before_processing (test_upload.ApiBoundaryTests.test_forged_pdf_is_rejected_before_processing) ... ok
+test_oversize_pdf_is_rejected (test_upload.ApiBoundaryTests.test_oversize_pdf_is_rejected) ... ok
+test_unknown_review_target_is_404 (test_upload.ApiBoundaryTests.test_unknown_review_target_is_404) ... ok
+test_valid_pdf_starts_once (test_upload.ApiBoundaryTests.test_valid_pdf_starts_once) ... ok
+test_api_returns_actionable_error_without_provider_response (test_voice.VoiceTests.test_api_returns_actionable_error_without_provider_response) ... ok
+test_audio_cached_and_voice_change_invalidates_cache (test_voice.VoiceTests.test_audio_cached_and_voice_change_invalidates_cache) ... ok
+test_failed_download_never_leaves_playable_cache (test_voice.VoiceTests.test_failed_download_never_leaves_playable_cache) ... ok
+test_invalid_vlm_response_holds_element (test_voice.VoiceTests.test_invalid_vlm_response_holds_element) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.842s
+
+OK

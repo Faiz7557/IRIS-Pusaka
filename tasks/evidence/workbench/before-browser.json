@@ -1,0 +1,28 @@
+{
+  "demo.html": {
+    "title": "Demo Gerbang · SIMAK",
+    "width": {
+      "client": 1440,
+      "scroll": 1440
+    }
+  },
+  "dengar.html": {
+    "title": "Dengar: sebelum / sesudah · SIMAK",
+    "width": {
+      "client": 1440,
+      "scroll": 1440
+    }
+  },
+  "evaluasi.html": {
+    "title": "Evaluasi · SIMAK",
+    "width": {
+      "client": 1440,
+      "scroll": 1440
+    }
+  },
+  "tableWheel": {
+    "before": 297,
+    "after": 297
+  },
+  "errors": []
+}

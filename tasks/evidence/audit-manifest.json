@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Jakarta",
+  "status": "planning-only",
+  "user_decisions": [
+    "Strong template visual adaptation for accessible SIMAK",
+    "Competition demo first, all core flows remain functional"
+  ],
+  "parent_viewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "screenshots": [
+    "current-demo-desktop.png",
+    "current-demo-mobile.png",
+    "current-dengar-desktop.png",
+    "current-dengar-mobile.png",
+    "current-evaluasi-desktop.png",
+    "current-evaluasi-mobile.png",
+    "current-output-desktop.png",
+    "current-output-mobile.png",
+    "current-remediasi-desktop.png",
+    "current-remediasi-mobile.png"
+  ],
+  "implementation_tasks": 19,
+  "existing_demo_grafik_query": "verified in web/demo.html:97-105",
+  "detector": "attempted once, unavailable; not passed",
+  "source_sha256_at_handoff": {
+    "web/common.js": "4cd842a78cc3cf0ce81143dd46ea956c830d7de27b1b5b70f591b8242ed646dc",
+    "web/demo.html": "65e38ad5a0529cf2644b936f2d8c600d3e7f43c6c85979772800fec1474b2632",
+    "web/dengar.html": "9ddad4ffa7572516e8a78decd989c895ba7a9ce5426ce2385f3c5dd05a08dfd4",
+    "web/evaluasi.html": "0605bb1c8f6a9f74e61956dca7332c1b5ba23d2d8cb8ecb61dc27c7fc455e3e8",
+    "web/fonts.css": "24f08991e58fcffdafe0055c4c5db8781013bd39605186e47a938e8c7dc26f17",
+    "web/index.html": "fec86b201c2afd74bf2897dea715e812b85293897cc9efd43e2604a1396cdca2",
+    "web/style.css": "915622eab63d90ad32e794c6827ddf7b5436bd5bcc323f8ff83aad525e76b15c",
+    "app.py": "07642a4e25d712c59b864636fa35e5a4796f887e1d86684cf8230a7aa83ba541",
+    "simak/pipeline.py": "7cb627cfdea302014540081bd529dd3c9c62b1ac0c75b3bd49f4961f099a4f43",
+    "simak/output.py": "d4038ace29d8e4a54408196b20e1b2e2a788b86a3488f97acde735c8c48f0fcc"
+  },
+  "verification": [
+    "plan/todo links resolve",
+    "19 tasks present and not falsely marked implemented",
+    "evidence JSON parses",
+    "design PNG dimensions and SVG syntax validated",
+    "visual diagram inspected and one batch of text-fit corrections applied"
+  ]
+}

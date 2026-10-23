@@ -1,0 +1,29 @@
+[
+  {
+    "route": "/",
+    "documentWidth": 390,
+    "height": 844,
+    "mainTop": 239.3125,
+    "primaryTop": 1258.3125,
+    "width": 390
+  },
+  {
+    "route": "/demo.html",
+    "documentWidth": 390,
+    "height": 844,
+    "runTop": 723.46875,
+    "width": 390
+  },
+  {
+    "route": "/evaluasi.html",
+    "documentWidth": 390,
+    "height": 844,
+    "width": 390
+  },
+  {
+    "route": "/dengar.html",
+    "documentWidth": 390,
+    "height": 844,
+    "width": 390
+  }
+]

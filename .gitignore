@@ -1,0 +1,32 @@
+# Sesi pemrosesan dan berkas sementara
+work/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+
+# Alat pihak ketiga yang diunduh ulang (lihat README: Persiapan)
+tools/
+
+# Suara Satya: dipakai dengan izin untuk prototipe/demo, tidak untuk disebarkan
+data/voice/
+cache/audio/
+
+# Materi kuliah nyata dari Common Crawl: tidak disebarluaskan (hanya metadata cc.json)
+data/cc/*.pdf
+
+# Sementara dari halaman keputusan desain
+.impeccable/questions/
+
+# Pengaturan agen, dependensi UI test, dan keluaran mesin lokal
+.claude/
+.court/
+.impeccable/
+node_modules/
+playwright-report/
+test-results/
+*.stdout.log
+*.stderr.log
+before-fluid.zip

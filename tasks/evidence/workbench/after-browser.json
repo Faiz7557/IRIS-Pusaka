@@ -1,0 +1,125 @@
+{
+  "checks": [
+    {
+      "test": "table/padding wheel scroll",
+      "before": 94,
+      "after": 420
+    },
+    {
+      "test": "demo run, mutation, reset and source claim",
+      "passed": true
+    },
+    {
+      "test": "listen transcript, controls, nested scroll and edge handoff",
+      "passed": true
+    },
+    {
+      "test": "results, exports, queue selection and review controls",
+      "passed": true
+    },
+    {
+      "test": "mobile menu/focus, illustration overlays, reduced motion",
+      "passed": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 320,
+      "route": "demo.html",
+      "client": 320,
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "dengar.html?job=e507189d17",
+      "client": 320,
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "evaluasi.html",
+      "client": 320,
+      "scroll": 320
+    },
+    {
+      "width": 320,
+      "route": "index.html?job=e507189d17",
+      "client": 320,
+      "scroll": 320
+    },
+    {
+      "width": 390,
+      "route": "demo.html",
+      "client": 390,
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "dengar.html?job=e507189d17",
+      "client": 390,
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "evaluasi.html",
+      "client": 390,
+      "scroll": 390
+    },
+    {
+      "width": 390,
+      "route": "index.html?job=e507189d17",
+      "client": 390,
+      "scroll": 390
+    },
+    {
+      "width": 768,
+      "route": "demo.html",
+      "client": 768,
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "dengar.html?job=e507189d17",
+      "client": 768,
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "evaluasi.html",
+      "client": 768,
+      "scroll": 768
+    },
+    {
+      "width": 768,
+      "route": "index.html?job=e507189d17",
+      "client": 768,
+      "scroll": 768
+    },
+    {
+      "width": 1440,
+      "route": "demo.html",
+      "client": 1440,
+      "scroll": 1440
+    },
+    {
+      "width": 1440,
+      "route": "dengar.html?job=e507189d17",
+      "client": 1440,
+      "scroll": 1440
+    },
+    {
+      "width": 1440,
+      "route": "evaluasi.html",
+      "client": 1440,
+      "scroll": 1440
+    },
+    {
+      "width": 1440,
+      "route": "index.html?job=e507189d17",
+      "client": 1440,
+      "scroll": 1440
+    }
+  ],
+  "job": "e507189d17",
+  "errors": []
+}

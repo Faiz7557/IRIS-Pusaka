@@ -1,0 +1,163 @@
+{
+  "completed": {
+    "title": "Fixture sintetis UI SIMAK",
+    "file": "fixture.pdf",
+    "pages": 1,
+    "elements": [
+      {
+        "kind": "heading",
+        "level": 1,
+        "text": "Materi sintetis",
+        "id": "h",
+        "page": 1
+      },
+      {
+        "kind": "paragraph",
+        "text": "Bukti fixture, bukan hasil evaluasi baru.",
+        "id": "p",
+        "page": 1
+      },
+      {
+        "kind": "table",
+        "id": "tab",
+        "page": 1,
+        "rows": [
+          [
+            "Kategori",
+            "Nilai"
+          ],
+          [
+            "A",
+            "10"
+          ],
+          [
+            "B",
+            "20"
+          ]
+        ]
+      },
+      {
+        "id": "e0",
+        "kind": "image",
+        "page": 1,
+        "jenis": "grafik",
+        "status": "terbit_otomatis",
+        "checks": {},
+        "reasons": [],
+        "draft": "Draf sintetis yang belum diverifikasi.",
+        "alt_final": "Uraian yang disetujui ULD.",
+        "alt_auto": "Kategori B bernilai 20.",
+        "table": [
+          {
+            "kategori": "A",
+            "nilai": 10
+          },
+          {
+            "kategori": "B",
+            "nilai": 20
+          }
+        ],
+        "ext": {
+          "satuan": "unit",
+          "label_x": "Kategori",
+          "label_y": "Nilai"
+        }
+      },
+      {
+        "id": "e1",
+        "kind": "image",
+        "page": 1,
+        "jenis": "figur vektor",
+        "status": "antrean",
+        "checks": {},
+        "reasons": [
+          "Data vektor belum diverifikasi."
+        ],
+        "draft": "",
+        "alt_final": "Uraian yang disetujui ULD.",
+        "vektor": true
+      },
+      {
+        "id": "e2",
+        "kind": "image",
+        "page": 1,
+        "jenis": "diagram",
+        "status": "disetujui",
+        "checks": {},
+        "reasons": [],
+        "draft": "Draf sintetis yang belum diverifikasi.",
+        "alt_final": "Uraian yang disetujui ULD."
+      },
+      {
+        "id": "e3",
+        "kind": "image",
+        "page": 1,
+        "jenis": "diagram",
+        "status": "diubah",
+        "checks": {},
+        "reasons": [],
+        "draft": "Draf sintetis yang belum diverifikasi.",
+        "alt_final": "Uraian yang disetujui ULD."
+      },
+      {
+        "id": "e4",
+        "kind": "image",
+        "page": 1,
+        "jenis": "diagram",
+        "status": "ditolak",
+        "checks": {},
+        "reasons": [],
+        "draft": "Draf sintetis yang belum diverifikasi.",
+        "alt_final": "Uraian yang disetujui ULD."
+      },
+      {
+        "id": "e5",
+        "kind": "image",
+        "page": 1,
+        "jenis": "diagram",
+        "status": "dekoratif",
+        "checks": {},
+        "reasons": [],
+        "draft": "Draf sintetis yang belum diverifikasi.",
+        "alt_final": "Uraian yang disetujui ULD."
+      }
+    ],
+    "timing": {
+      "struktur_s": 1,
+      "total_s": 2
+    },
+    "manifest": {
+      "model": "fixture"
+    },
+    "report": {}
+  },
+  "processing": {
+    "tahap": "gambar",
+    "pesan": "Gambar 1/2 selesai"
+  },
+  "empty": {
+    "tahap": "selesai",
+    "state": {
+      "title": "Fixture sintetis UI SIMAK",
+      "file": "fixture.pdf",
+      "pages": 1,
+      "elements": [],
+      "timing": {
+        "struktur_s": 1,
+        "total_s": 2
+      },
+      "manifest": {
+        "model": "fixture"
+      },
+      "report": {}
+    }
+  },
+  "failed": {
+    "tahap": "gagal",
+    "pesan": "Fixture gagal"
+  },
+  "partial": {
+    "ada": true,
+    "G3": null
+  }
+}

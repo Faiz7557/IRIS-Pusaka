@@ -1,0 +1,157 @@
+[
+  {
+    "asset": "assets/evidence.svg",
+    "status": 200,
+    "bytes": 940
+  },
+  {
+    "asset": "assets/listening.svg",
+    "status": 200,
+    "bytes": 821
+  },
+  {
+    "asset": "assets/material.svg",
+    "status": 200,
+    "bytes": 1142
+  },
+  {
+    "asset": "assets/reading.svg",
+    "status": 200,
+    "bytes": 666
+  },
+  {
+    "asset": "assets/step-1.svg",
+    "status": 200,
+    "bytes": 525
+  },
+  {
+    "asset": "assets/step-2.svg",
+    "status": 200,
+    "bytes": 601
+  },
+  {
+    "asset": "assets/step-3.svg",
+    "status": 200,
+    "bytes": 434
+  },
+  {
+    "asset": "assets/step-4.svg",
+    "status": 200,
+    "bytes": 306
+  },
+  {
+    "asset": "assets/step-5.svg",
+    "status": 200,
+    "bytes": 624
+  },
+  {
+    "asset": "assets/step-6.svg",
+    "status": 200,
+    "bytes": 538
+  },
+  {
+    "asset": "common.js",
+    "status": 200,
+    "bytes": 16025
+  },
+  {
+    "asset": "favicon.svg",
+    "status": 200,
+    "bytes": 216
+  },
+  {
+    "asset": "fluid.css",
+    "status": 200,
+    "bytes": 12751
+  },
+  {
+    "asset": "fonts.css",
+    "status": 200,
+    "bytes": 2728
+  },
+  {
+    "asset": "fonts/AtkinsonHyperlegibleMono-normal-latin-ext.woff2",
+    "status": 200,
+    "bytes": 10740
+  },
+  {
+    "asset": "fonts/AtkinsonHyperlegibleMono-normal-latin.woff2",
+    "status": 200,
+    "bytes": 17752
+  },
+  {
+    "asset": "fonts/AtkinsonHyperlegibleNext-italic-latin-ext.woff2",
+    "status": 200,
+    "bytes": 20132
+  },
+  {
+    "asset": "fonts/AtkinsonHyperlegibleNext-italic-latin.woff2",
+    "status": 200,
+    "bytes": 37644
+  },
+  {
+    "asset": "fonts/AtkinsonHyperlegibleNext-normal-latin-ext.woff2",
+    "status": 200,
+    "bytes": 19092
+  },
+  {
+    "asset": "fonts/AtkinsonHyperlegibleNext-normal-latin.woff2",
+    "status": 200,
+    "bytes": 33996
+  },
+  {
+    "asset": "fonts/Gabarito-latin.woff2",
+    "status": 200,
+    "bytes": 34236
+  },
+  {
+    "asset": "fonts/RethinkSans-latin.woff2",
+    "status": 200,
+    "bytes": 35676
+  },
+  {
+    "asset": "motion.js",
+    "status": 200,
+    "bytes": 7378
+  },
+  {
+    "asset": "sill-scenes.js",
+    "status": 200,
+    "bytes": 11392
+  },
+  {
+    "asset": "sill.css",
+    "status": 200,
+    "bytes": 32706
+  },
+  {
+    "asset": "speech.js",
+    "status": 200,
+    "bytes": 5583
+  },
+  {
+    "asset": "style.css",
+    "status": 200,
+    "bytes": 20916
+  },
+  {
+    "asset": "vendor/ScrollTrigger.min.js",
+    "status": 200,
+    "bytes": 44157
+  },
+  {
+    "asset": "vendor/SplitText.min.js",
+    "status": 200,
+    "bytes": 7247
+  },
+  {
+    "asset": "vendor/gsap.min.js",
+    "status": 200,
+    "bytes": 72435
+  },
+  {
+    "asset": "vendor/lenis.min.js",
+    "status": 200,
+    "bytes": 18815
+  }
+]

@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+
+
+renderRail('evaluasi.html');
+const pct=p=>p===null||p===undefined?'—':(100*p).toLocaleString('id-ID',{maximumFractionDigits:1})+'%';
+const count=x=>x&&x.k!==undefined&&x.n!==undefined?x.k+'/'+x.n:'—';
+const ci=x=>x?.ci95?.[0]!==null&&x?.ci95?.[0]!==undefined?pct(x.ci95[0])+' – '+pct(x.ci95[1]):'Belum tersedia';
+const num=v=>v===null||v===undefined?'—':Number(v).toLocaleString('id-ID',{maximumFractionDigits:2});
+const row=(l,x)=>`<tr><th scope="row">${esc(l)}</th><td class="n">${pct(x?.p)}<span class="ci-in">${count(x)} · IK 95%: ${ci(x)}</span></td><td class="n kn">${count(x)}</td><td class="n ci ci-col">${ci(x)}</td></tr>`;
+const HEAD='<thead><tr><th scope="col">Ukuran</th><th scope="col" class="n">Nilai</th><th scope="col" class="n kn">k/n</th><th scope="col" class="n ci-col">IK 95% Wilson</th></tr></thead>';
+const table=(caption,body,head=HEAD)=>`<div class="twrap" tabindex="0" role="region" aria-label="${esc(caption)}"><table><caption>${esc(caption)}</caption>${head}<tbody>${body}</tbody></table></div>`;
+const verdict=(ok,label)=>ok===undefined||ok===null?'<span class="stamp pending">Dilaporkan</span>':`<span class="stamp ${ok?'':'fail'}">${icon(ok?'check':'cross')}${ok?'Lulus':'Tidak lulus'}${label?' · '+esc(label):''}</span>`;
+const card=(id,title,ok,criterion,inner)=>`<article class="card gate" aria-labelledby="h-${id}"><div class="card-head"><h2 id="h-${id}">${id} · ${esc(title)}</h2></div><div class="card-body">${inner}</div><div class="slip">${verdict(ok,id==='G1'?'G1 biasa':'')}<span class="crit">${esc(criterion||'Kriteria belum tersedia')}</span></div></article>`;
+async function load(){
+ $('#loading').classList.remove('hide');$('#retry').classList.add('hide');$('#load-msg').textContent='Memuat hasil evaluasi…';
+ try{
+  const r=await requestJson('/api/evaluasi');
+  if(r.ada===false){$('#load-msg').textContent='Belum ada hasil evaluasi tersimpan. Jalankan evaluasi dari lingkungan proyek, lalu muat kembali halaman ini.';$('#retry').classList.remove('hide');return;}
+  const g=r.G3;
+  let html='<section class="eval-lead" aria-label="Empat ukuran yang perlu dibaca bersama">'+[
+   [count(g?.D_fk_terbit),'klaim terbit cocok dengan tabel acuan · set sintetis','G3'],
+   [count(g?.injeksi_tertahan),'deskripsi dengan injeksi yang berhasil ditahan','G3'],
+   [count(g?.D_R_beban_tinjauan),'grafik membutuhkan tinjauan ULD','G3'],
+   [count(r.G1?.D_ketat),'dokumen lulus G1 ketat · penanda tahan belum dianggap uraian bermakna','G1']
+  ].map(([v,l,id])=>`<article class="eval-stat"><b>${v}</b><p>${esc(l)}</p><p><a href="#h-${id}">Lihat ukuran dan interval</a></p></article>`).join('')+'</section>';
+  if(g){
+   const MUT={ubah_angka:'Ubah satu angka',tukar_label:'Tukar label–nilai',turunan_salah:'Angka turunan salah',tren_salah:'Tren dibalik'};
+   html+=card('G3','Kesetiaan angka',g.lulus,r.kriteria?.G3,`<div class="versus"><div><h3>SIMAK · klaim pada keluaran terbit</h3><div class="fig-big">${count(g.D_fk_terbit)}</div><p class="fig-label">cocok dengan tabel acuan; ${num(g.D_angka_keliru_terbit)} angka keliru terbit</p></div><div><h3>VLM langsung · pemeriksa pola</h3><div class="fig-big red">${num(g.B2_angka_keliru_terbit)}</div><p class="fig-label">angka keliru pada ${count(g.B2_grafik_dengan_angka_keliru)} grafik. Unit ini berbeda dari jumlah klaim SIMAK.</p></div></div>${table('Kesetiaan dan biaya tinjauan',row('D · klaim setia (Fk)',g.D_fk_terbit)+row('D · grafik terbit otomatis',g.D_terbit)+row('D · beban tinjauan R',g.D_R_beban_tinjauan)+row('B2 · angka setia (perkiraan pola, diaudit)',g.B2_fk_perkiraan)+row('B2 · grafik dengan angka keliru',g.B2_grafik_dengan_angka_keliru))}<details><summary>Hasil seluruh jenis injeksi</summary>${table('Injeksi yang tertahan',Object.entries(g.injeksi_per_jenis||{}).map(([k,v])=>row(MUT[k]||k,v)).join('')+row('Seluruh injeksi',g.injeksi_tertahan))}<p class="note">Pada run ini, satu tukar label tidak tertahan karena selisih nilai di bawah toleransi ε. Kecocokan pada tabel bukan bukti kebenaran independen terhadap seluruh grafik nyata.</p></details>`);
+  }
+  html+='<div class="cols">';
+  if(r.G1){html+=card('G1','Struktur dan metadata',r.G1.lulus,r.kriteria?.G1,table('Dokumen uji sintetis',['B0','B1','D'].map(k=>row(k+' · lulus G1 biasa',r.G1[k])).join('')+row('D · lulus G1 ketat',r.G1.D_ketat)+row('D · lulus veraPDF penuh',r.G1.veraPDF_lulus_D))+'<p class="note">G1 biasa dapat menghitung penanda menunggu tinjauan sebagai alt bermakna. G1 ketat menganggapnya belum lengkap. Lulus struktur bukan berarti seluruh deskripsi selesai.</p><details><summary>Aturan gagal per dokumen</summary>'+table('Aturan PDF/UA-1 yang gagal',(r.G1_per_dokumen||[]).map(d=>`<tr><th scope="row">${esc(d.file)}</th><td class="n">${num(d.B0?.aturan_gagal)}</td><td class="n">${num(d.B1?.aturan_gagal)}</td><td class="n">${num(d.D?.aturan_gagal)}</td></tr>`).join(''),'<thead><tr><th scope="col">Dokumen</th><th scope="col">B0</th><th scope="col">B1</th><th scope="col">D</th></tr></thead>')+'</details>');}
+  if(r.G4){const q=r.G4;html+=card('G4','Kesetaraan informasi',q.lulus,r.kriteria?.G4,`<div class="fig-big">${q.Q_D===null||q.Q_D===undefined?'—':Number(q.Q_D).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:2})}</div><p class="fig-label">Rasio Q untuk SIMAK. B2: ${num(q.Q_B2)}.</p>${table('Akurasi menjawab dari konteks',row('Tabel data (acuan)',q.tabel)+row('Teks alt SIMAK',q.D)+row('Teks alt B2',q.B2))}<p class="note">Pertanyaan dibangkitkan dari tabel dan dijawab model hanya dari konteks. Q = akurasi alt / akurasi tabel. Ini bukan hasil penelitian pengalaman mahasiswa.</p>`);}
+  html+='</div>';
+  if(r.G6_ringan){const q=r.G6_ringan;html+=card('G6','Dokumen nyata · evaluasi ringan',null,q.sumber,table('Dokumen nyata · '+num(q.berhasil)+'/'+num(q.dokumen)+' diproses',row('B0 · lulus G1',q.G1_B0)+row('B1 · lulus G1',q.G1_B1)+row('D · lulus G1',q.G1_D)+(q.G1_D_ketat?row('D · lulus G1 ketat',q.G1_D_ketat):'')+row('D · lulus veraPDF penuh',q.veraPDF_lulus_D)+row('Beban tinjauan R',q.R_beban_tinjauan))+'<p class="note">G6 ringan dipisahkan dari set sintetis. Figur vektor tanpa ekstraksi terverifikasi ditahan; hasil ringan ini tidak menggantikan evaluasi G6 penuh.</p><details><summary>Hasil setiap dokumen nyata</summary>'+table('Per dokumen nyata',(q.per_dokumen||[]).map(d=>`<tr><th scope="row">${esc(d.file)}<span class="small muted"> ${esc(d.domain||'')}</span></th>${d.galat?`<td colspan="5">${esc(d.galat)}</td>`:`<td class="n">${num(d.halaman)}</td><td class="n">${num(d.gambar)}</td><td class="n">${num(d.figur_vektor_ditahan)}</td><td class="n">${num(d.antrean)}</td><td>${num(d.B0?.aturan_gagal)} → ${num(d.B1?.aturan_gagal)} → ${num(d.D?.aturan_gagal)}</td>`}</tr>`).join(''),'<thead><tr><th scope="col">Dokumen</th><th scope="col">Hlm</th><th scope="col">Gambar</th><th scope="col">Vektor</th><th scope="col">Ditahan</th><th scope="col">Aturan gagal B0→B1→D</th></tr></thead>')+'</details>');}
+  const absent=[['G2','G2'],['G5','G5'],['G6','G6 penuh'],['G7','G7']].filter(([key])=>!r[key]).map(([,label])=>label);
+  html+=`<article class="card"><div class="card-head"><h2>Ruang yang belum dibuktikan.</h2></div><div class="card-body"><p>${absent.length?esc(absent.join(', '))+' belum dilaporkan sebagai evaluasi penuh pada hasil ini.':'Lihat cakupan masing-masing gerbang pada manifes.'}</p><p>Demo suara merupakan simulasi. Pengujian pembaca layar dan keterlibatan pengguna perlu dilaporkan tersendiri.</p></div></article><article class="card" aria-labelledby="h-man"><div class="card-head"><h2 id="h-man">Manifes run</h2><span class="callno">${esc(r.waktu||'Waktu belum tersedia')}</span></div><div class="card-body"><details><summary>Model, ambang, perintah, dan data</summary><pre class="manifest">${esc(JSON.stringify({manifest:r.manifest,ambang:r.ambang,data:r.data},null,2))}</pre></details></div></article>`;
+  $('#res').innerHTML=html;$('#res').classList.remove('hide');$('#loading').classList.add('hide');
+ }catch(e){$('#load-msg').textContent=e.message;$('#retry').classList.remove('hide');}
+}
+$('#retry').onclick=load;load();

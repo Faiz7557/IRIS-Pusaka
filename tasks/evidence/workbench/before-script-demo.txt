@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+
+
+
+renderRail('demo.html');
+const SHORT = {ubah_angka:'Ubah satu angka',tukar_label:'Tukar label–nilai',turunan_salah:'Ubah selisih',tren_salah:'Balik tren'};
+let CID=null, BASE=null, SCORE={n:0,b2:0,d:0}, GRAPHS=[], BUSY=false;
+$('#legend').innerHTML=checkLegend();
+function setBusy(on,msg) {
+ BUSY=on; $('#st').textContent=msg||''; $('#st').classList.toggle('busy',on);
+ $('#pick').disabled=on||!GRAPHS.length; $('#run').disabled=on||!GRAPHS.some(g=>g.id===$('#pick').value&&(g.luring||g.vlm_aktif));
+ document.querySelectorAll('#mut button,#reset').forEach(b=>b.disabled=on||!BASE);
+ $('#retry').classList.add('hide');
+}
+function preview() {
+ const g=GRAPHS.find(g=>g.id===$('#pick').value);
+ if(!g)return;
+ $('#img-slot').innerHTML=`<img class="chart-img" src="/api/grafik/${encodeURIComponent(g.id)}.png" alt="${esc('Grafik sumber: '+g.judul)}" width="800" height="400">`;
+ $('#img-call').textContent=g.id;
+}
+async function init() {
+ setBusy(true,'Memuat pilihan grafik…');
+ try {
+  const [g,m]=await Promise.all([requestJson('/api/demo/grafik'),requestJson('/api/demo/mutasi')]);
+  GRAPHS=g; const usable=c=>c.luring||c.vlm_aktif;
+  $('#pick').innerHTML=g.map(c=>`<option value="${esc(c.id)}" ${usable(c)?'':'disabled'}>${esc(c.id+' · '+c.judul)}${c.label_nilai?'':' (tanpa label nilai)'}${usable(c)?'':' (cache belum siap)'}</option>`).join('');
+  const want=new URLSearchParams(location.search).get('grafik');
+  const ok=id=>g.some(c=>c.id===id&&usable(c));
+  $('#pick').value=ok(want)?want:ok('syn043')?'syn043':(g.find(usable)||g[0]||{}).id;
+  $('#mut').innerHTML=Object.entries(m).map(([k,v])=>`<button class="btn-inject" data-k="${esc(k)}" title="${esc(v)}" disabled>${icon('inject')}${esc(SHORT[k]||v)}</button>`).join('');
+  $('#mut').querySelectorAll('button').forEach(b=>b.onclick=()=>inject(b.dataset.k));
+  preview();score();setBusy(false,g.some(usable)?'Jalankan grafik, lalu pilih jenis kesalahan.':'Belum ada grafik yang siap. Siapkan cache atau sambungkan VLM.');
+  if(want&&ok(want)) await run();
+ }catch(e){setBusy(false,e.message);$('#retry').classList.remove('hide');}
+}
+$('#retry').onclick=init;
+$('#pick').onchange=()=>{
+ BASE=null;CID=null;preview();SCORE={n:0,b2:0,d:0};score();
+ for(const side of ['a','b']) {$('#'+side+'-verdict').className='verdict v-idle';$('#'+side+'-verdict').textContent='Grafik baru · belum dijalankan';$('#'+side+'-text').textContent='Jalankan grafik yang dipilih.';}
+ $('#a-focus').textContent='Grafik berubah. Jalankan untuk melihat keluaran baru.';$('#b-focus').textContent='Belum ada klaim pada grafik yang dipilih.';
+ $('#b-reasons').innerHTML='';$('#truth').innerHTML='<tbody><tr><td>Jalankan untuk memuat acuan grafik ini.</td></tr></tbody>';$('#t12').hidden=true;
+ $('#a-slip').innerHTML='<span class="stamp pending">Belum dijalankan</span>';$('#b-slip').innerHTML='<span class="stamp pending">Belum diperiksa</span>';$('#b-fk').textContent='';
+ setBusy(false,'Pilihan berubah; baseline sebelumnya tidak berlaku.');
+};
+async function run() {
+ if(BUSY)return;CID=$('#pick').value;BASE=null;setBusy(true,'Memproses deskripsi B2 dan ekstraksi ganda…');
+ try {
+  BASE=await requestJson('/api/demo/jalankan/'+encodeURIComponent(CID),{method:'POST'});
+  SCORE={n:0,b2:0,d:0};
+  $('#truth').innerHTML='<caption>Nilai acuan '+esc(CID)+'</caption><thead><tr><th scope="col">Kategori</th><th scope="col" class="n">Nilai acuan</th></tr></thead><tbody>'+BASE.truth.map(r=>`<tr data-row="${esc(norm(r.kategori))}"><th scope="row">${esc(r.kategori)}</th><td class="n">${fmtId(r.nilai)}</td></tr>`).join('')+'</tbody>';
+  show(BASE.simak,BASE.b2,null);score();setBusy(false,'Baseline siap. Pilih satu jenis kesalahan untuk menguji gerbang.');
+  announce('Dua keluaran siap. Pilih klaim atau suntik kesalahan.');
+ }catch(e){BASE=null;setBusy(false,e.message);announce(e.message);}
+}
+$('#run').onclick=run;
+$('#reset').onclick=()=>{if(!BASE||BUSY)return;show(BASE.simak,BASE.b2,null);$('#st').textContent='Deskripsi baseline dikembalikan; skor sesi tetap.';announce('Deskripsi baseline dikembalikan.');};
+function show(el, b2, mut) {
+  const bad = b2.marks.filter(m => m.verdict !== 'setia' && m.start >= 0);
+  const av = $('#a-verdict');
+  av.className = 'verdict ' + (bad.length ? 'v-bad' : 'v-pub');
+  av.innerHTML = icon(bad.length ? 'alert' : 'check') + (bad.length ? `Terbit · ${bad.length} angka keliru sampai ke mahasiswa` : 'Terbit · angka cocok (kali ini)');
+  let t = b2.text, out = '', pos = 0;
+  b2.marks.filter(m => m.start >= 0).sort((a, b) => a.start - b.start).forEach(m => {
+    if (m.start < pos) return;
+    out += esc(t.slice(pos, m.start));
+    out += `<span class="mk ${m.verdict}" title="${esc(m.note || 'cocok dengan tabel acuan')}">${esc(t.slice(m.start, m.end))}</span>`;
+    pos = m.end;
+  });
+  $('#a-text').innerHTML = out + esc(t.slice(pos));
+  $('#a-text').classList.remove('empty');
+  $('#a-slip').innerHTML = '<span class="slip-label">Slip pemeriksaan</span><span class="stamp fail">' + icon('cross') + 'Tidak diperiksa · tetap terbit</span>';
+
+  const pub = el.status === 'terbit_otomatis';
+  const bv = $('#b-verdict');
+  bv.className = 'verdict ' + (pub ? 'v-pub' : 'v-hold');
+  bv.innerHTML = icon(pub ? 'check' : 'hold') + (pub ? 'Terbit · lolos semua pemeriksaan' : 'Ditahan · masuk antrean tinjauan ULD');
+  $('#b-reasons').innerHTML = (el.reasons || []).map(r => `<li>${icon('cross')}<span>${esc(r)}</span></li>`).join('');
+  $('#b-text').innerHTML = el.seg ? segHtml(el.seg, el.claim_detail) : esc(el.draft || '');
+  $('#b-text').classList.remove('empty');
+  const slip = $('#b-slip');
+  slip.innerHTML = '<span class="slip-label">Slip pemeriksaan</span>' + checkStamps(el.checks, nowStamp()) +
+    (pub ? '' : `<span class="stamp hold" style="--i:5">${icon('hold')}ULD · menunggu</span>`);
+  pressSlip(slip);
+  $('#t12').hidden = !el.T1; if (el.T1) $('#t12-body').innerHTML = t1t2(el);
+  const f = BASE.simak_vs_truth;
+  $('#a-call').textContent = `B2·${CID}`;
+  $('#b-call').textContent = `SIMAK·${CID}·hlm 1`;
+  $('#b-fk').textContent = !mut && f ? `${f.detail.filter(d => d.ok).length} dari ${f.detail.length} klaim setia pada tabel acuan.` : 'Deskripsi bermutasi, diperiksa ulang oleh gerbang.';
+  const mark = bad[0];
+  $('#a-focus').textContent = mark ? '…' + b2.text.slice(Math.max(0, mark.start - 45), Math.min(b2.text.length, mark.end + 65)) + '…' : 'Pemeriksa tidak menemukan angka keliru pada keluaran ini. B2 tetap menerbitkan tanpa gerbang.';
+  const segment = el.seg?.find(s => s.injected) || el.seg?.find(s => s.claim !== undefined && s.claim !== null);
+  const detail = segment && el.claim_detail?.[segment.claim];
+  $('#b-focus').innerHTML = segment ? `<b>${esc(detail ? detail.e + ' · ' + (MEASURE[detail.m] || detail.m) : 'Klaim terpilih')}</b>${segHtml([segment], el.claim_detail)} <span class="small">— pilih angka untuk menyorot sumber tabel.</span>` : esc(el.reasons?.[0] || 'Belum ada klaim angka yang dapat diperiksa otomatis.');
+  $('#comparison-status').textContent = `VLM langsung: terbit${bad.length ? ', ' + bad.length + ' angka ditandai keliru' : ''}. SIMAK: ${pub ? 'terbit setelah pemeriksaan' : 'ditahan untuk tinjauan'}.`;
+  bindClaims(document.querySelector('main'));
+}
+
+async function inject(k) {
+ if(!CID||!BASE||BUSY)return;
+ setBusy(true,'Menyuntik kesalahan dan memeriksa ulang…');
+ try {
+  const j=await requestJson('/api/demo/suntik/'+encodeURIComponent(CID),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jenis:k,seed:SCORE.n})});
+  SCORE.n++;SCORE.b2++;if(j.simak.status!=='terbit_otomatis')SCORE.d++;
+  show(j.simak,j.b2,j.mutasi);score();setBusy(false,'Disuntik: '+j.mutasi);announce($('#comparison-status').textContent);
+ }catch(e){setBusy(false,e.message);announce(e.message);}
+}
+function score(){ $('#score').innerHTML=[[SCORE.n,'','injeksi dilakukan'],[SCORE.b2,'red','injeksi tetap terbit di B2'],[SCORE.d,'vio','injeksi ditahan SIMAK']].map(([n,c,l])=>`<div><span class="n ${c}">${n}</span><span>${l}</span></div>`).join(''); }
+init();

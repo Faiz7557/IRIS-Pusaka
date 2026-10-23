@@ -1,0 +1,59 @@
+{
+  "method": "WCAG sRGB relative luminance; source hex only, no browser compositing",
+  "pairs": [
+    {
+      "foreground": "#cf6224",
+      "background": "#0b0a0a",
+      "ratio": 5.109,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#cf6224",
+      "background": "#f4f1ee",
+      "ratio": 3.44,
+      "AA_normal": false
+    },
+    {
+      "foreground": "#5a3cd4",
+      "background": "#f4f1ee",
+      "ratio": 6.156,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#bca59d",
+      "background": "#0b0a0a",
+      "ratio": 8.481,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#1F4D3A",
+      "background": "#EEF4F0",
+      "ratio": 8.636,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#47524C",
+      "background": "#F3F6F4",
+      "ratio": 7.483,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#1F6B45",
+      "background": "#E2F1E7",
+      "ratio": 5.534,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#4A2C8C",
+      "background": "#EEE8FA",
+      "ratio": 8.649,
+      "AA_normal": true
+    },
+    {
+      "foreground": "#2F5BA8",
+      "background": "#FFFFFF",
+      "ratio": 6.598,
+      "AA_normal": true
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "page": "remediasi",
+    "targetWidth": 1440,
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "page": "remediasi",
+    "targetWidth": 1366,
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  {
+    "page": "remediasi",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "remediasi",
+    "targetWidth": 768,
+    "scrollWidth": 767,
+    "width": 767
+  },
+  {
+    "page": "remediasi",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "remediasi",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 1440,
+    "scrollWidth": 1439,
+    "width": 1439
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 1366,
+    "scrollWidth": 1365,
+    "width": 1365
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 768,
+    "scrollWidth": 767,
+    "width": 767
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "dengar",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "demo",
+    "targetWidth": 1440,
+    "scrollWidth": 1439,
+    "width": 1439
+  },
+  {
+    "page": "demo",
+    "targetWidth": 1366,
+    "scrollWidth": 1365,
+    "width": 1365
+  },
+  {
+    "page": "demo",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "demo",
+    "targetWidth": 768,
+    "scrollWidth": 767,
+    "width": 767
+  },
+  {
+    "page": "demo",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "demo",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 1440,
+    "scrollWidth": 1439,
+    "width": 1439
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 1366,
+    "scrollWidth": 1365,
+    "width": 1365
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 768,
+    "scrollWidth": 767,
+    "width": 767
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "evaluasi",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "reader",
+    "targetWidth": 1440,
+    "scrollWidth": 1439,
+    "width": 1439
+  },
+  {
+    "page": "reader",
+    "targetWidth": 1366,
+    "scrollWidth": 1365,
+    "width": 1365
+  },
+  {
+    "page": "reader",
+    "targetWidth": 1024,
+    "scrollWidth": 1023,
+    "width": 1023
+  },
+  {
+    "page": "reader",
+    "targetWidth": 768,
+    "scrollWidth": 767,
+    "width": 767
+  },
+  {
+    "page": "reader",
+    "targetWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "page": "reader",
+    "targetWidth": 320,
+    "scrollWidth": 320,
+    "width": 320
+  }
+]
