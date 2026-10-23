@@ -1,0 +1,14 @@
+{
+  "scope": "Local browser and API on synthetic documents",
+  "completed": [
+    "upload/sample processing",
+    "chart baseline and injection",
+    "ULD edit and save",
+    "PDF and HTML publication",
+    "listen context",
+    "evaluation tables",
+    "ElevenLabs short playback"
+  ],
+  "target_projector_rehearsal": false,
+  "runbook": "../../demo-runbook.md"
+}

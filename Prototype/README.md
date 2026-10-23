@@ -4,16 +4,25 @@ Prototipe *Sistem Ilustrasi Materi Aksesibel untuk Kuliah* (proposal ICC 2026, t
 Masukannya PDF materi kuliah apa adanya. Keluarannya PDF bertag (PDF/UA-1) dan HTML aksesibel dengan
 mode dengar. Setiap deskripsi grafik **terverifikasi terhadap tabel data atau ditahan** di antrean tinjauan ULD.
 
+## Pembaruan antarmuka dan suara — 23 Oktober 2026
+
+Latar aplikasi cream. Halaman pengantar mengadaptasi seluruh urutan dan motion Sill: pembuka lima panel, jendela, fitur yang mengembang, proses horizontal, gerbang, panel menyatu, prinsip dan formulir. Empat halaman memakai palet/typografi yang sama, dengan transisi navigasi serta menu ponsel. Library dan font di-host lokal; preferensi reduced motion tetap dihormati. ElevenLabs menjadi pilihan awal saat tersedia, dengan pilihan peramban tetap dapat dipakai. Detail desain dan bukti: [tasks/implementation-fluid.md](tasks/implementation-fluid.md); perbaikan domain/suara sebelumnya: [tasks/implementation-cream.md](tasks/implementation-cream.md). Panduan presentasi: [tasks/demo-runbook.md](tasks/demo-runbook.md).
+
+Pembuka: `/?jelajah=1#opening`. Langsung ke unggah: `/index.html?mulai=1#contact`. Tombol Mulai melewati sesi lama tanpa menghapus hasilnya. Navigasi Remediasi/Dengar tetap membawa sesi aktif bila ada.
+
 ## Menjalankan
 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+# Windows: ./run.ps1
+# Alternatif, memakai interpreter environment aktif:
 python data/make_synth.py 90          # set sintetis: 90 grafik + 6 dokumen PDF
-python -m uvicorn app:app --port 8000 # buka http://localhost:8000
+python -m uvicorn app:app --port 8017 # buka http://localhost:8017
 ```
 
 Key API disimpan di environment variable `GEMINI_API_KEY`, ditambah `GEMINI_API_KEY_2`, `_3`, … untuk
-rotasi kuota. Jangan menaruh key di berkas mana pun di repo ini.
+rotasi kuota. Konfigurasi lokal dapat disimpan pada `.env.local` (diabaikan Git), mengikuti `.env.example`; environment sistem memiliki prioritas. Jangan memasukkan key ke source, frontend, atau commit.
 
 ### Persiapan alat (folder `tools/`, tidak ikut di repo)
 
@@ -22,14 +31,10 @@ rotasi kuota. Jangan menaruh key di berkas mana pun di repo ini.
    `setup/verapdf-auto-install.xml` dengan path absolute folder `tools` kamu **memakai garis miring**
    (mis. `C:/proyek/Prototype/tools`), lalu `java -jar verapdf-izpack-installer-*.jar setup/verapdf-auto-install.xml`.
    Berhasil bila `tools/verapdf/bin/` memuat `cli-*.jar` dan `gui-*.jar`.
-2. **Suara.** Bawaan: **Web Speech API** peramban dengan suara bahasa Indonesia (`id-ID`, mis. Microsoft Andika
-   di Windows/Edge). Berjalan lokal, tanpa key, juga saat HTML keluaran dibuka langsung dari disk. Bila peramban
-   tidak punya suara `id-ID`, pasang paket suara Indonesia di pengaturan sistem operasi.
-   Opsional: suara manusia **ElevenLabs** (berbayar per karakter). Buat suara dari rekaman (dengan izin pemilik
-   suara), lalu atur `ELEVENLABS_API_KEY` dan `ELEVENLABS_VOICE_ID` (opsional `ELEVENLABS_MODEL`, bawaan
-   `eleven_multilingual_v2`); pilihan "Manusia (ElevenLabs)" baru muncul setelah keduanya diatur. Teks yang
-   dibacakan dengan suara ini dikirim ke ElevenLabs. Jalur lama edge-tts + OpenVoice tidak dipakai aplikasi
-   (`requirements-suara.txt`).
+2. **Suara.** Atur `ELEVENLABS_API_KEY` dan `ELEVENLABS_VOICE_ID` dalam environment atau `.env.local`. Model bawaan `eleven_multilingual_v2`. Aplikasi dan HTML hasil yang dibuka lewat server otomatis memilih ElevenLabs saat dikonfigurasi; pilihan suara peramban yang sengaja disimpan pengguna tetap dihormati. Teks yang diputar dikirim ke ElevenLabs. Audio dibuat saat diminta, lalu di-cache, tanpa pembuatan massal di latar.
+   Pilihan **Peramban (id-ID)** tetap tersedia, juga untuk HTML yang dibuka langsung dari disk tanpa server. Ketersediaan suara Indonesia mengikuti perangkat. Pemutar memotong teks panjang dan menghentikan bagian berikutnya ketika pengguna menekan Jeda/berpindah halaman.
+
+Server lokal memakai **satu worker**. Unggah PDF berlapis teks maksimal **20 MiB, 200 halaman**; PDF pindai/PPT belum didukung langsung. Berkas sesi tetap tersimpan sampai pengguna menekan Hapus sesi; belum ada retensi berkala. Query `?job=<id>` membawa konteks antara Remediasi dan Dengar; Demo menerima `?grafik=syn043`.
 
 ### Demo luring (tanpa internet dan tanpa key)
 
@@ -64,7 +69,7 @@ python -m eval.evaluate uji         # set uji tertahan, sekali → eval/results.
 | **Remediasi & Tinjauan** (`/`) | Unggah PDF atau pilih contoh. Menampilkan veraPDF B0/B1/D, G1, beban tinjauan R, antrean ULD (setujui/ubah/tolak/dekoratif) dengan T1 vs T2 dan klaim yang bisa diklik ke sumbernya |
 | **Demo Gerbang** (`/demo.html`) | B2 (VLM langsung) vs SIMAK pada grafik yang sama. Tombol *suntik kesalahan* (ubah angka, tukar label, angka turunan, tren) menunjukkan B2 tetap terbit sementara SIMAK menahan |
 | **Evaluasi** (`/evaluasi.html`) | G1, G3, G4 dengan selang Wilson 95%, injeksi per jenis, dan manifes run |
-| **Keluaran HTML** | HTML semantik `lang="id"`, penanda status per gambar, tabel data grafik, mode dengar Web Speech id-ID (ElevenLabs opsional) |
+| **Keluaran HTML** | HTML semantik `lang="id"`, penanda status per gambar, tabel data grafik, mode dengar ElevenLabs saat server siap, atau suara peramban id-ID |
 
 ## Pemetaan ke proposal
 

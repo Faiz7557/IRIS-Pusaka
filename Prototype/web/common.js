@@ -52,17 +52,16 @@ function currentJob() { try { return sessionStorage.getItem('simak-job'); } catc
 
 // Nama fungsi dipertahankan untuk empat pemanggil yang sudah ada.
 function renderRail(current) {
-  const items = [['dengar.html', 'Dengar', 'ear'], ['demo.html', 'Demo Gerbang', 'layers'], ['index.html', 'Remediasi', 'doc'], ['evaluasi.html', 'Evaluasi', 'chart']];
-  document.querySelector('.rail').innerHTML = `
-    <a class="wordmark" href="/" aria-label="SIMAK · beranda remediasi"><b>SIMAK<span class="brand-dot" aria-hidden="true">.</span></b></a>
-    <nav class="nav" aria-label="Navigasi utama">${items.map(([h, l, i]) =>
-      `<a href="${h}" ${['dengar.html', 'index.html'].includes(h) ? `data-job-link="${h}"` : ''} ${h === current ? 'aria-current="page"' : ''}>${icon(i)}${l}</a>`).join('')}</nav>
-    <details class="vc" id="vc" hidden><summary>${icon('mic')}<span>Perintah suara</span></summary>
-      <button type="button" id="vc-btn" aria-pressed="false">${icon('mic')}<span>Perintah suara</span></button>
-      <p id="vc-st" role="status" aria-live="polite">Mikrofon aktif setelah Anda menekan tombol. Ucapkan nama tindakan atau halaman.</p>
-    </details>`;
-  VoiceCmd.init();
-  rememberJob(currentJob());
+  const items = [['index.html','Remediasi','doc'],['dengar.html','Dengar','ear'],['demo.html','Verifikasi','layers'],['evaluasi.html','Bukti','chart']];
+  const links = items.map(([h,l,i])=>`<a href="${h}" ${['index.html','dengar.html'].includes(h)?`data-job-link="${h}"`:''} ${h===current?'aria-current="page"':''}>${icon(i)}${l}</a>`).join('');
+  document.querySelector('.rail').innerHTML=`<a class="wordmark" href="index.html?jelajah=1#opening" aria-label="SIMAK · kenali aplikasi"><b>SIMAK<span class="brand-dot" aria-hidden="true">.</span></b></a>
+    <nav class="nav" aria-label="Navigasi utama">${links}<a class="nav-start" href="index.html?mulai=1#contact">Mulai dari PDF</a></nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu ${icon('layers')}</button>
+    <details class="vc" id="vc" hidden><summary aria-label="Perintah suara">${icon('mic')}<span>Perintah suara</span></summary><button type="button" id="vc-btn" aria-pressed="false">${icon('mic')}<span>Perintah suara</span></button><p id="vc-st" role="status" aria-live="polite">Aktifkan mikrofon, lalu ucapkan nama tindakan atau halaman.</p></details>
+    <div class="nav-menu" id="site-menu" hidden role="dialog" aria-modal="true" aria-label="Menu SIMAK" data-lenis-prevent><div class="nav-menu-head"><b class="wordmark">SIMAK.</b><button class="nav-close" id="nav-close" type="button">Tutup ${icon('cross')}</button></div><ul>
+      <li><a class="m-surface" href="index.html?jelajah=1#opening">Kenali SIMAK</a></li><li><a class="m-surface-3" href="dengar.html" data-job-link="dengar.html">Dengar</a></li><li><a class="m-surface-7" href="demo.html">Verifikasi</a></li><li><a class="m-surface-4" href="evaluasi.html">Bukti</a></li><li><a class="m-surface-8 nav-menu-work" href="index.html" data-job-link="index.html">Ruang remediasi</a></li><li><a class="m-surface-2" href="index.html?mulai=1#contact">Mulai dari PDF</a></li>
+    </ul></div>`;
+  VoiceCmd.init();rememberJob(currentJob());
 }
 
 const STATUS = {
@@ -133,86 +132,22 @@ function announce(msg) {
 }
 
 // ---------------------------------------------------------------- suara (mode dengar)
-// Bawaan: Web Speech API peramban dengan suara id-ID (lokal, tanpa key, Bab III.B). Opsional: suara manusia
-// ElevenLabs dari server, hanya bila server dikonfigurasi (ELEVENLABS_API_KEY dan ELEVENLABS_VOICE_ID).
-const idVoice = () => (window.speechSynthesis ? speechSynthesis.getVoices() : []).find(v => /^id[-_]/i.test(v.lang));
-const Voice = {
-  pref: {suara: 'peramban', kecepatan: 0, nada: 0},
-  audio: null, utter: null, ctl: null,
-  load() { try { Object.assign(this.pref, JSON.parse(localStorage.getItem('simak-suara') || '{}')); } catch (e) {} },
-  save() { try { localStorage.setItem('simak-suara', JSON.stringify(this.pref)); } catch (e) {} },
-  speaking() { return !!this.audio || !!(window.speechSynthesis && speechSynthesis.speaking); },
-  stop() {
-    if (this.ctl) this.ctl.abort();
-    this.ctl = null;
-    if (this.audio) { this.audio.pause(); URL.revokeObjectURL(this.audio.src); this.audio = null; }
-    if (this.utter) { this.utter = null; speechSynthesis.cancel(); }
-  },
-  // Mengucapkan teks; onend dipanggil saat selesai, onerror bila suara gagal.
-  async speak(text, onend, onerror, onstart) {
-    this.stop();
-    const p = this.pref;
-    if (p.suara !== 'eleven') {
-      if (!window.speechSynthesis) { onerror ? onerror(new Error('Web Speech API tidak tersedia')) : onend && onend(); return; }
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'id-ID'; u.rate = Math.max(0.5, 1 + p.kecepatan / 100);
-      const v = idVoice(); if (v) u.voice = v;
-      u.onend = () => { if (this.utter === u) { this.utter = null; onend && onend(); } };
-      u.onerror = e => { if (this.utter === u && e.error !== 'canceled' && e.error !== 'interrupted') { this.utter = null; onerror ? onerror(e) : onend && onend(); } };
-      this.utter = u;
-      speechSynthesis.speak(u);
-      onstart && onstart();
-      return;
-    }
-    const ctl = new AbortController(); this.ctl = ctl;
-    try {
-      const r = await fetch('/api/suara', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: ctl.signal,
-        body: JSON.stringify({teks: text, suara: p.suara, kecepatan: p.kecepatan, nada: p.nada})});
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      const url = URL.createObjectURL(await r.blob());
-      if (this.ctl !== ctl) return;
-      const a = new Audio(url); this.audio = a;
-      a.onended = () => { URL.revokeObjectURL(url); if (this.audio === a) { this.audio = null; onend && onend(); } };
-      await a.play();
-      onstart && onstart();
-    } catch (e) {
-      if (e.name === 'AbortError') return;
-      onerror ? onerror(e) : onend && onend();
-    }
-  },
-  prefetch(texts) {
-    if (this.pref.suara !== 'eleven') return;
-    fetch('/api/suara/siapkan', {method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({teks: texts.filter(Boolean), suara: this.pref.suara, kecepatan: this.pref.kecepatan, nada: this.pref.nada})}).catch(() => {});
-  },
-  // Kontrol pilihan suara, kecepatan, dan nada; onchange dipanggil setelah pengguna mengubahnya.
-  controls(el, onchange) {
-    const opt = (v, l, cur) => `<option value="${v}" ${String(cur) === String(v) ? 'selected' : ''}>${l}</option>`;
-    el.innerHTML = `
-      <label class="lbl" for="v-suara" style="min-width:0">Suara</label>
-      <select id="v-suara">${opt('peramban', 'Peramban (id-ID)', this.pref.suara)}</select>
-      <label class="lbl" for="v-cepat" style="min-width:0">Kecepatan</label>
-      <select id="v-cepat">${[-20, -10, 0, 10, 20, 35].map(v => opt(v, (v > 0 ? '+' : '') + v + '%', this.pref.kecepatan)).join('')}</select>
-      <button type="button" id="v-coba">${icon('play')}Coba suara</button><span class="voice-note small" id="voice-note" role="status"></span>`;
-    const upd = () => {
-      this.pref = {suara: el.querySelector('#v-suara').value, kecepatan: +el.querySelector('#v-cepat').value, nada: 0};
-      this.save(); this.stop(); onchange && onchange();
-      el.querySelector('#voice-note').textContent = this.pref.suara === 'eleven' ? 'Teks yang diputar dikirim ke ElevenLabs.' : 'Suara peramban; ketersediaan id-ID mengikuti perangkat.';
-    };
-    // Suara ElevenLabs hanya ditawarkan bila server sudah dikonfigurasi; selain itu tetap suara peramban.
-    fetch('/api/suara/daftar').then(r => r.json()).then(list => {
-      if (!list.some(s => s.id === 'eleven')) throw 0;
-      el.querySelector('#v-suara').insertAdjacentHTML('beforeend', opt('eleven', 'Manusia (ElevenLabs)', this.pref.suara));
-    }).catch(() => { if (this.pref.suara === 'eleven') { this.pref.suara = 'peramban'; this.save(); } });
-    if (window.speechSynthesis && !idVoice()) speechSynthesis.onvoiceschanged = () => {
-      if (!idVoice()) el.querySelector('#v-coba').insertAdjacentHTML('afterend', '<span class="lbl" role="alert">Peramban ini belum memiliki suara bahasa Indonesia.</span>');
-      speechSynthesis.onvoiceschanged = null;
-    };
-    el.querySelectorAll('select').forEach(s => s.onchange = upd);
-    el.querySelector('#v-coba').onclick = () => { onchange && onchange(); this.speak('Halo, saya membacakan materi kuliah untuk Anda.', null, () => { el.querySelector('#voice-note').textContent = 'Suara gagal diputar. Gunakan teks atau periksa suara id-ID di perangkat.'; }); };
-  },
+const Voice = new SimakSpeech();
+Voice.prefetch = () => {}; // ElevenLabs hanya dibuat saat pengguna menekan Putar.
+Voice.controls = function(el, onchange) {
+  el.innerHTML = `<label class="lbl" for="v-suara">Suara</label><select id="v-suara" disabled><option value="peramban">Menyiapkan suara…</option></select>
+    <label class="lbl" for="v-cepat">Kecepatan</label><select id="v-cepat">${[-20,-10,0,10,20].map(v=>`<option value="${v}" ${v===this.pref.kecepatan?'selected':''}>${v===0?'Normal':(v>0?'+':'')+v+'%'}</option>`).join('')}</select>
+    <button type="button" id="v-coba" disabled>${icon('play')}Coba suara</button><span class="voice-note small" id="voice-note" role="status"></span>`;
+  const sel=el.querySelector('#v-suara'), note=el.querySelector('#voice-note'), test=el.querySelector('#v-coba');
+  const describe=()=>{note.textContent=this.pref.suara==='eleven'?'ElevenLabs · teks yang diputar dikirim ke layanan suara.':'Suara peramban · bahasa Indonesia mengikuti perangkat.';};
+  const update=()=>{this.stop();onchange?.();this.pref.suara=sel.value;this.pref.kecepatan=+el.querySelector('#v-cepat').value;this.save();describe();};
+  sel.onchange=el.querySelector('#v-cepat').onchange=update;
+  this.ready.then(()=>{
+    sel.innerHTML='<option value="peramban">Peramban (id-ID)</option>'+(this.available?'<option value="eleven">ElevenLabs · suara pilihan</option>':'');
+    sel.value=this.pref.suara;sel.disabled=false;test.disabled=false;describe();
+  });
+  test.onclick=()=>{onchange?.();note.textContent='Menyiapkan audio…';this.speak('Halo, saya membacakan materi kuliah untuk Anda.',describe,e=>{note.textContent=e.message;},()=>{note.textContent='Memutar contoh suara…';});};
 };
-Voice.load();
 
 // ---------------------------------------------------------------- perintah suara
 // Pengenalan ucapan bawaan peramban (Web Speech API): tanpa API key. Ucapan dicocokkan dengan nama tombol dan

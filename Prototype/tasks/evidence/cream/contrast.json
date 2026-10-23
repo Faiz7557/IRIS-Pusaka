@@ -1,0 +1,70 @@
+{
+  "final_pairs": {
+    "ink/cream": {
+      "foreground": "#0b0a0a",
+      "background": "#f6efdf",
+      "ratio": 17.26,
+      "normal_AA": true
+    },
+    "muted/cream": {
+      "foreground": "#514c49",
+      "background": "#f6efdf",
+      "ratio": 7.392,
+      "normal_AA": true
+    },
+    "ink/orange": {
+      "foreground": "#0b0a0a",
+      "background": "#cf6224",
+      "ratio": 5.109,
+      "normal_AA": true
+    },
+    "paper/violet": {
+      "foreground": "#fffaf0",
+      "background": "#5a3cd4",
+      "ratio": 6.658,
+      "normal_AA": true
+    },
+    "ok/mint": {
+      "foreground": "#185c3a",
+      "background": "#e4f2e9",
+      "ratio": 6.909,
+      "normal_AA": true
+    },
+    "held/yellow": {
+      "foreground": "#624000",
+      "background": "#fff0c2",
+      "ratio": 8.21,
+      "normal_AA": true
+    },
+    "error/blush": {
+      "foreground": "#a51d2d",
+      "background": "#fce6e8",
+      "ratio": 6.264,
+      "normal_AA": true
+    },
+    "focus/cream": {
+      "foreground": "#1457c5",
+      "background": "#f6efdf",
+      "ratio": 5.73,
+      "normal_AA": true
+    }
+  },
+  "removed_pairs": {
+    "muted/sage": {
+      "foreground": "#514c49",
+      "background": "#80a89b",
+      "ratio": 3.223,
+      "normal_AA": false
+    },
+    "error/taupe": {
+      "foreground": "#a51d2d",
+      "background": "#bca59d",
+      "ratio": 3.201,
+      "normal_AA": false
+    }
+  },
+  "corrections": {
+    "muted/sage": ".side-b .callno now uses ink",
+    "error/taupe": ".out-actions .btn-danger now uses blush background"
+  }
+}

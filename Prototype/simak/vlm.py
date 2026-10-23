@@ -127,7 +127,8 @@ def _cached(key: str, model: str, fn):
     path = CACHE / f"{key}.json"
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
-    for attempt in range(14):
+    attempts = max(1, min(6, int(os.environ.get("SIMAK_VLM_ATTEMPTS", "4"))))
+    for attempt in range(attempts):
         _throttle(model)
         try:
             out = fn()
@@ -135,10 +136,10 @@ def _cached(key: str, model: str, fn):
         except QuotaHabis:
             raise
         except Exception as e:  # 429/503/jaringan: tunggu sesuai retryDelay lalu ulang
-            if attempt == 13:
+            if attempt == attempts - 1:
                 raise
             m = re.search(r"retry in ([\d.]+)s", str(e))
-            time.sleep(float(m.group(1)) + 1 if m else min(60, 3 * 2 ** attempt))
+            time.sleep(min(15, float(m.group(1)) + 1) if m else min(15, 3 * 2 ** attempt))
     path.write_text(json.dumps(out, ensure_ascii=False), encoding="utf-8")
     return out
 

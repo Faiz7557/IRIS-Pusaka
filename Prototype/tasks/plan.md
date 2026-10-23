@@ -1,3 +1,5 @@
+> Catatan historis sebelum implementasi cream. Status terkini dan hasil uji ada pada `tasks/implementation-cream.md` (relatif root Prototype). Temuan lama perlu dibaca sesuai versi sumbernya.
+
 # Rencana perombakan UI/UX SIMAK dari template Sill
 
 Tanggal: 23 Oktober 2026, WIB. Status: **rancangan untuk diskusi; implementasi aplikasi belum dimulai**.

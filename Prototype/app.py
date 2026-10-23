@@ -315,7 +315,7 @@ def _synth(teks: str, suara: str, kecepatan: int, nada: int, prioritas: bool = T
     if prioritas:
         _interactive[0] += 1
     try:
-        with _voice_lock:  # konverter OpenVoice tidak aman dipakai bersamaan
+        with _voice_lock:  # serialisasi penulisan cache audio
             return voice.synthesize(teks, speaker=suara, rate=f"{kecepatan:+d}%", pitch=f"{nada:+d}Hz")
     finally:
         if prioritas:
@@ -347,12 +347,16 @@ def suara_daftar():
 
 @app.post("/api/suara")
 def suara(body: Suara):
+    from simak import voice
     if body.suara not in SUARA or not body.teks.strip() or len(body.teks) > 4000:
         raise HTTPException(400, "Teks atau suara tidak valid")
     try:
         f = _synth(body.teks, body.suara, max(-50, min(50, body.kecepatan)), max(-50, min(50, body.nada)))
-    except Exception as e:
-        raise HTTPException(503, f"Suara tidak dapat dibuat: {type(e).__name__}")
+    except voice.VoiceError as e:
+        raise HTTPException(503, str(e))
+    except Exception:
+        logging.exception("Pembuatan audio gagal")
+        raise HTTPException(503, "Suara tidak dapat dibuat. Coba lagi atau pilih suara peramban.")
     return FileResponse(f, media_type="audio/mpeg")
 
 

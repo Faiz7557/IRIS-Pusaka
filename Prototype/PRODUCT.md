@@ -20,7 +20,7 @@ The value is not a smarter AI but a guarantee: every description is either verif
 
 ## Operating Context
 
-Pages: Remediasi & Tinjauan (upload, veraPDF B0/B1/D, review queue), Demo Gerbang (B2 vs SIMAK side by side with error injection), Evaluasi (G1/G3/G4/G6 with Wilson intervals), and the generated accessible HTML output with listen mode (Web Speech, id-ID). Runs locally (FastAPI) during the demo; VLM responses for demo charts are cached.
+Pages: Remediasi & Tinjauan (upload, veraPDF B0/B1/D, review queue), Demo Gerbang (B2 vs SIMAK side by side with error injection), Evaluasi (G1/G3/G4/G6 with Wilson intervals), and the generated accessible HTML output with listen mode (ElevenLabs when configured, browser id-ID fallback). Runs locally (FastAPI) during the demo; VLM responses for demo charts are cached.
 
 ## Capabilities and Constraints
 
@@ -31,11 +31,11 @@ Pages: Remediasi & Tinjauan (upload, veraPDF B0/B1/D, review queue), Demo Gerban
 
 ## Brand Commitments
 
-Product name SIMAK; team IRIS (Universitas Airlangga). No binding colors or logo: the visual identity is free to define.
+Product name SIMAK; team IRIS (Universitas Airlangga). Cream ground (#f6efdf), warm paper (#fffaf0), orange/violet/sage/taupe panels, Gabarito headings, Rethink Sans interface and Atkinson reader/mono. Sill's complete section composition and scroll choreography are adapted to document/data/audio illustrations. Copy is short and professional; evidence and capability limits stay factual. See DESIGN.md and tasks/fluid-design-plan.md.
 
 ## Evidence on Hand
 
-Real evaluation results in eval/results.json (frozen 12 Oct 2026), audit in eval/audit_b2.md, synthetic charts in data/synth, six real lecture PDFs from Common Crawl in data/cc (not to be redistributed). No user testing with blind students yet (G7 deferred); do not imply it happened.
+Real evaluation results in eval/results.json (run 2, 23 Oct 2026; run 1 archived from 12 Oct), audit in eval/audit_b2.md, synthetic charts in data/synth, six real lecture PDFs from Common Crawl in data/cc (not to be redistributed). No user testing with blind students yet (G7 deferred); do not imply it happened.
 
 ## Product Principles
 

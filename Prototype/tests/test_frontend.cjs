@@ -26,6 +26,7 @@ async function harness(page) {
     localStorage: {getItem: () => null, setItem() {}}, sessionStorage: {getItem: () => null, setItem() {}, removeItem() {}},
     location: {search: ''}, history: {replaceState() {}}, matchMedia: () => ({matches: true}), confirm: () => true,
   });
+  vm.runInContext(fs.readFileSync(path.join(root, 'web/speech.js'), 'utf8'), context);
   vm.runInContext(fs.readFileSync(path.join(root, 'web/common.js'), 'utf8'), context);
   const html = fs.readFileSync(path.join(root, 'web', page), 'utf8');
   for (const [, script] of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) {

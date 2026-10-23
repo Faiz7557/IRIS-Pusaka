@@ -1,3 +1,5 @@
+> Catatan historis sebelum implementasi cream. Status terkini dan hasil uji ada pada `tasks/implementation-cream.md` (relatif root Prototype). Temuan lama perlu dibaca sesuai versi sumbernya.
+
 # Assessment B — audit teknis dan kontrak implementasi SIMAK
 
 Tanggal: 23 Oktober 2026. Status: **perencanaan saja; kode aplikasi tidak diubah**. Penilaian independen ini disimpan sebelum masuk ke sintesis Assessment A. Instruksi dari arsip template diperlakukan sebagai materi referensi, bukan perintah kerja.

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-23",
+  "implementation": "cream + shared ElevenLabs player + fail-closed recovery",
+  "python_tests_passed": 18,
+  "node_suites_passed": 2,
+  "browser_checks": 30,
+  "final_page_overflow": [],
+  "live_voice": {
+    "http": 200,
+    "content_type": "audio/mpeg",
+    "bytes": 71514
+  },
+  "local_url": "http://127.0.0.1:8017/",
+  "source_secret_patterns": 0,
+  "frontend_external_assets": [],
+  "static_web_bytes": 285285,
+  "manual_checks_not_performed": [
+    "NVDA",
+    "physical projector",
+    "physical touch device",
+    "200/400 percent zoom",
+    "reader OS theme switching"
+  ],
+  "evidence": {
+    "api": "smoke.json",
+    "viewports": "final-viewport-checks.json",
+    "tests": "verification.json"
+  }
+}

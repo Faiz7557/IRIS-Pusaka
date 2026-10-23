@@ -1,3 +1,5 @@
+> Catatan historis sebelum implementasi cream. Status terkini dan hasil uji ada pada `tasks/implementation-cream.md` (relatif root Prototype). Temuan lama perlu dibaca sesuai versi sumbernya.
+
 # Inspeksi arsitektur SIMAK
 
 Tanggal: 23 Oktober 2026, WIB. Lingkup: kode aplikasi dan pemeriksaan browser lokal, tanpa perubahan implementasi.

@@ -1,0 +1,442 @@
+{
+  "date": "2026-10-23",
+  "vlm_live": false,
+  "pages": {
+    "/": 200,
+    "/demo.html": 200,
+    "/dengar.html": 200,
+    "/evaluasi.html": 200
+  },
+  "cache": {
+    "available": 60,
+    "total": 60
+  },
+  "demo": {
+    "syn003": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn004": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn005": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn006": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn008": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn009": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn011": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn012": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn013": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn014": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn015": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn016": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn017": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn020": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn021": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn022": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn024": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn026": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn027": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn028": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn031": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn032": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn033": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn034": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn035": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn036": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn037": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn039": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn040": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn041": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn043": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn045": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn048": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn049": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn050": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn053": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn057": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn058": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn059": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn060": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn062": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn063": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn065": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn066": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn068": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn070": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn073": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn074": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn075": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn076": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn077": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn078": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn079": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn081": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn082": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn083": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "syn084": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn085": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn088": {
+      "http": 200,
+      "status": "terbit_otomatis"
+    },
+    "syn089": {
+      "http": 200,
+      "status": "antrean"
+    }
+  },
+  "mutations": {
+    "ubah_angka": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "tukar_label": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "turunan_salah": {
+      "http": 200,
+      "status": "antrean"
+    },
+    "tren_salah": {
+      "http": 200,
+      "status": "antrean"
+    }
+  },
+  "job": "82fa8d3386",
+  "stage": "selesai",
+  "statuses_before_review": {
+    "dekoratif": 2,
+    "terbit_otomatis": 2,
+    "antrean": 3
+  },
+  "report": {
+    "B0": {
+      "verapdf": {
+        "compliant": false,
+        "failed_rules": 6,
+        "failed_checks": 171,
+        "rules": [
+          {
+            "clause": "7.1",
+            "test": 3,
+            "checks": 123,
+            "desc": "Content shall be marked as Artifact or tagged as real content"
+          },
+          {
+            "clause": "7.1",
+            "test": 8,
+            "checks": 1,
+            "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+          },
+          {
+            "clause": "7.1",
+            "test": 11,
+            "checks": 1,
+            "desc": "The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7"
+          },
+          {
+            "clause": "6.2",
+            "test": 1,
+            "checks": 1,
+            "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+          },
+          {
+            "clause": "7.1",
+            "test": 10,
+            "checks": 1,
+            "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+          },
+          {
+            "clause": "7.2",
+            "test": 34,
+            "checks": 44,
+            "desc": "Natural language for text in page content shall be determined"
+          }
+        ]
+      },
+      "g1": {
+        "tagged": false,
+        "figures": 0,
+        "alt_bermakna": 0,
+        "alt_ok": false,
+        "lang_ok": false,
+        "title_ok": false,
+        "pass": false,
+        "alt_ditahan": 0,
+        "pass_ketat": false
+      }
+    },
+    "B1": {
+      "verapdf": {
+        "compliant": false,
+        "failed_rules": 5,
+        "failed_checks": 66,
+        "rules": [
+          {
+            "clause": "7.1",
+            "test": 8,
+            "checks": 1,
+            "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+          },
+          {
+            "clause": "7.2",
+            "test": 34,
+            "checks": 56,
+            "desc": "Natural language for text in page content shall be determined"
+          },
+          {
+            "clause": "7.2",
+            "test": 22,
+            "checks": 7,
+            "desc": "Natural language for text in Alt attribute shall be determined"
+          },
+          {
+            "clause": "7.1",
+            "test": 10,
+            "checks": 1,
+            "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+          },
+          {
+            "clause": "6.2",
+            "test": 1,
+            "checks": 1,
+            "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+          }
+        ]
+      },
+      "g1": {
+        "tagged": false,
+        "figures": 7,
+        "alt_bermakna": 0,
+        "alt_ok": false,
+        "lang_ok": false,
+        "title_ok": false,
+        "pass": false,
+        "alt_ditahan": 0,
+        "pass_ketat": false
+      }
+    },
+    "D": {
+      "verapdf": {
+        "compliant": true,
+        "failed_rules": 0,
+        "failed_checks": 0,
+        "rules": []
+      },
+      "g1": {
+        "tagged": true,
+        "figures": 7,
+        "alt_bermakna": 7,
+        "alt_ok": true,
+        "lang_ok": true,
+        "title_ok": true,
+        "pass": true,
+        "alt_ditahan": 3,
+        "pass_ketat": false
+      }
+    }
+  },
+  "outputs": {
+    "simak.pdf": 200,
+    "simak.html": 200,
+    "asli.pdf": 200
+  },
+  "listen": 200,
+  "review": {
+    "http": 200,
+    "state": "diubah",
+    "html_has_new_text": true,
+    "pdf_has_new_text": true,
+    "version": "versions/c5e2324ea5ac44868aa1ae2fdb9bc7eb"
+  },
+  "source_sizes": {
+    "web\\common.js": 15032,
+    "web\\demo.html": 12762,
+    "web\\dengar.html": 12304,
+    "web\\evaluasi.html": 9495,
+    "web\\favicon.svg": 216,
+    "web\\fonts.css": 2728,
+    "web\\index.html": 19399,
+    "web\\speech.js": 5583,
+    "web\\style.css": 20652,
+    "web\\fonts\\AtkinsonHyperlegibleMono-normal-latin-ext.woff2": 10740,
+    "web\\fonts\\AtkinsonHyperlegibleMono-normal-latin.woff2": 17752,
+    "web\\fonts\\AtkinsonHyperlegibleMono-OFL.txt": 4436,
+    "web\\fonts\\AtkinsonHyperlegibleNext-italic-latin-ext.woff2": 20132,
+    "web\\fonts\\AtkinsonHyperlegibleNext-italic-latin.woff2": 37644,
+    "web\\fonts\\AtkinsonHyperlegibleNext-normal-latin-ext.woff2": 19092,
+    "web\\fonts\\AtkinsonHyperlegibleNext-normal-latin.woff2": 33996,
+    "web\\fonts\\AtkinsonHyperlegibleNext-OFL.txt": 4431,
+    "web\\fonts\\Gabarito-latin.woff2": 34236,
+    "web\\fonts\\Gabarito-OFL.txt": 4391
+  }
+}

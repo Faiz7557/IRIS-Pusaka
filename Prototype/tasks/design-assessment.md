@@ -1,3 +1,5 @@
+> Catatan historis sebelum implementasi cream. Status terkini dan hasil uji ada pada `tasks/implementation-cream.md` (relatif root Prototype). Temuan lama perlu dibaca sesuai versi sumbernya.
+
 # Assessment A — Tinjauan desain independen SIMAK × Sill
 
 **Metode:** assessment desain/UX independen, tanpa membaca keluaran detector atau assessment teknis. Tanggal tinjauan: 23 Oktober 2026, Asia/Jakarta. Laporan ini merupakan masukan Assessment A untuk sintesis induk, bukan audit kepatuhan.

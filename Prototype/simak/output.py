@@ -1,4 +1,4 @@
-"""OUT-01/OUT-02: HTML aksesibel dengan penanda status dan mode dengar (Web Speech API, id-ID)."""
+"""OUT-01/OUT-02: HTML mandiri dengan status dan pemutar ElevenLabs/peramban bersama."""
 import base64
 import html
 from pathlib import Path
@@ -10,18 +10,18 @@ _FONT_FACE = ("@font-face{font-family:'Atkinson Hyperlegible Next';font-weight:2
               "src:url(data:font/woff2;base64," + base64.b64encode(_FONT.read_bytes()).decode() + ") format('woff2')}"
               ) if _FONT.exists() else ""
 
-# Dunia kartu katalog yang sama dengan antarmuka ULD; mengikuti preferensi terang/gelap pembaca.
+# Permukaan baca cream; mengikuti preferensi terang/gelap pembaca.
 CSS = """
-:root{--rail:#0b0a0a;--rail-ink:#f4f1ee;--bg:#f4f1ee;--card:#fff;--fg:#0b0a0a;--muted:#514c49;--line:#b5aaa3;
+:root{--rail:#f6efdf;--rail-ink:#0b0a0a;--bar-hover:#e6dcc8;--bg:#f6efdf;--card:#fffaf0;--fg:#0b0a0a;--muted:#514c49;--line:#b5aaa3;
 --ruling:#d8d1cc;--brand:#cf6224;--red:#a51d2d;--redbg:#fce6e8;--ok:#185c3a;--okbg:#e4f2e9;--hold:#624000;--h1:#fff0c2;--h2:#f4dfa2;--acc:#1457c5;--hl:#fff0a6}
-@media(prefers-color-scheme:dark){:root{--bg:#181615;--card:#24201d;--fg:#f4f1ee;--muted:#cbbdb3;--line:#78685c;--ruling:#55483e;--red:#ffafb7;--redbg:#4d2027;--ok:#9bdfb7;--okbg:#173a29;--hold:#f3cf79;--h1:#3e2e12;--h2:#544016;--acc:#a9c9ff;--hl:#504115}}
+@media(prefers-color-scheme:dark){:root{--rail:#181615;--rail-ink:#f4f1ee;--bar-hover:#38302b;--bg:#181615;--card:#24201d;--fg:#f4f1ee;--muted:#cbbdb3;--line:#78685c;--ruling:#55483e;--red:#ffafb7;--redbg:#4d2027;--ok:#9bdfb7;--okbg:#173a29;--hold:#f3cf79;--h1:#3e2e12;--h2:#544016;--acc:#a9c9ff;--hl:#504115}}
 *{box-sizing:border-box}html{scroll-padding-top:140px}body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.7 'Atkinson Hyperlegible Next','Segoe UI',system-ui,sans-serif}
 ::selection{background:var(--hl);color:var(--fg)}:focus-visible{outline:3px solid var(--acc);outline-offset:3px;box-shadow:0 0 0 5px var(--bg)}*{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:8px;background:var(--card);padding:8px 12px;z-index:9;font-weight:700}
 main{max-width:48rem;margin:0 auto;padding:1.5rem 20px 6rem}h1{font-size:2rem;line-height:1.2;font-weight:800;letter-spacing:-.025em}h2{font-size:1.45rem;line-height:1.25}h1,h2,h3{text-wrap:balance;scroll-margin-top:140px}
 .bar{position:sticky;top:0;z-index:5;background:var(--rail);color:var(--rail-ink);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .bar b{font-weight:800;letter-spacing:-.02em;margin-right:6px}.bar button,.bar select,.bar summary{font-family:inherit;font-size:15px;font-weight:700;line-height:1.2;min-height:44px;min-width:44px;padding:10px 12px;border:1px solid #bca59d;border-radius:2px;background:transparent;color:var(--rail-ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
-.bar button:hover{background:#38302b}.bar button#play{background:var(--brand);color:#0b0a0a;border-color:var(--brand)}.bar select option{color:#0b0a0a;background:#f4f1ee}.bar label{font-size:15px;display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}.bar :focus-visible{outline-color:#fff;box-shadow:none}.bar .st{font-size:14px;flex:1 1 100%}.bar .st:empty{display:none}.settings[open]{flex:1 1 100%}.settings>div{display:flex;flex-wrap:wrap;gap:12px;padding-top:10px}.settings summary{list-style:none}.settings p{font-size:14px;margin:0;max-width:65ch}
+.bar button:hover{background:var(--bar-hover)}.bar button#play{background:var(--fg);color:var(--card);border-color:var(--fg)}.bar select option{color:#0b0a0a;background:#f4f1ee}.bar label{font-size:15px;display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}.bar :focus-visible{outline-color:var(--acc);box-shadow:none}.bar .st{font-size:14px;flex:1 1 100%}.bar .st:empty{display:none}.settings[open]{flex:1 1 100%}.settings>div{display:flex;flex-wrap:wrap;gap:12px;padding-top:10px}.settings summary{list-style:none}.settings p{font-size:14px;margin:0;max-width:65ch}
 .icon{width:1.1em;height:1.1em;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .notice{border:1px solid var(--line);border-top:5px solid var(--brand);padding:18px 20px;background:var(--card);font-size:16px;margin:1rem 0 1.5rem}
 figure{margin:1.75rem 0;background:var(--card);border:1px solid var(--line);border-radius:2px;overflow:hidden}figure>img{max-width:100%;height:auto;display:block;margin:1rem auto;background:#fff}figcaption{padding:0 20px 18px;font-size:18px}.stamp{display:inline-block;margin:16px 20px 0;border:1px solid currentColor;border-radius:2px;padding:5px 10px;font-size:15px;font-weight:700}.s-ok{color:var(--ok);background:var(--okbg)}.s-hold{color:var(--hold);background:var(--h1)}.s-reject{color:var(--red);background:var(--redbg)}
@@ -30,33 +30,22 @@ table{border-collapse:collapse;width:100%;font-size:16px;font-variant-numeric:ta
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 """
 
-JS = """
-const blocks=[...document.querySelectorAll('[data-say]')];let i=0,playing=false,audio=null,ctl=null,utter=null;
+# Sumber pemutar yang sama ditanam agar HTML tetap mandiri tanpa server.
+SPEECH_JS = (Path(__file__).resolve().parent.parent / "web" / "speech.js").read_text(encoding="utf-8")
+JS = SPEECH_JS + """
+const blocks=[...document.querySelectorAll('[data-say]')];let i=0,playing=false;
 const st=document.getElementById('st'),selR=document.getElementById('rate'),selV=document.getElementById('voice');
-try{const p=JSON.parse(localStorage.getItem('simak-suara')||'{}');if(p.kecepatan!==undefined)selR.value=p.kecepatan}catch(e){}
-// Bawaan: Web Speech API peramban (id-ID), berjalan lokal walau berkas dibuka langsung dari disk.
-// Suara manusia ElevenLabs ditawarkan hanya bila halaman dibuka lewat aplikasi SIMAK yang sudah dikonfigurasi.
-const idVoice=()=>(window.speechSynthesis?speechSynthesis.getVoices():[]).find(v=>/^id[-_]/i.test(v.lang));
-fetch('/api/suara/daftar').then(r=>{if(!r.ok)throw 0;return r.json()}).then(l=>{if(l.some(s=>s.id==='eleven'))selV.add(new Option('Manusia (ElevenLabs)','eleven'))}).catch(()=>{});
-if(!window.speechSynthesis)st.textContent='Peramban ini tidak mendukung Web Speech API.';
-function save(){try{localStorage.setItem('simak-suara',JSON.stringify({suara:selV.value,kecepatan:+selR.value,nada:0}))}catch(e){}}
-function stopAll(){if(ctl)ctl.abort();ctl=null;if(audio){audio.pause();URL.revokeObjectURL(audio.src);audio=null}if(utter){utter=null;speechSynthesis.cancel()}}
+const reader=new SimakSpeech();selV.disabled=true;
+reader.ready.then(()=>{if(reader.available)selV.add(new Option('ElevenLabs · suara pilihan','eleven'));selV.value=reader.pref.suara;selR.value=reader.pref.kecepatan;selV.disabled=false;});
+function stopAll(){reader.stop()}
 function mark(){blocks.forEach(b=>b.classList.remove('speaking'));const b=blocks[i];if(b){b.classList.add('speaking');b.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}}
-function next(){if(playing){i++;speak()}}
-function fail(){playing=false;st.textContent='Suara gagal diputar; periksa suara bahasa Indonesia di peramban atau pengaturan ElevenLabs di server.'}
-async function speak(){stopAll();if(!blocks.length){playing=false;st.textContent='Dokumen tidak memiliki bagian yang dapat dibacakan.';return}if(i>=blocks.length){i=Math.max(0,blocks.length-1);playing=false;st.textContent='Selesai dibacakan';return}
-mark();const text=blocks[i].dataset.say,rate=+selR.value;st.textContent='Membacakan bagian '+(i+1)+' dari '+blocks.length;
-if(selV.value!=='eleven'){if(!window.speechSynthesis)return fail();const u=new SpeechSynthesisUtterance(text);u.lang='id-ID';u.rate=Math.max(.5,1+rate/100);
-const v=idVoice();if(v)u.voice=v;u.onend=()=>{if(utter===u){utter=null;next()}};u.onerror=e=>{if(utter===u&&e.error!=='canceled'&&e.error!=='interrupted'){utter=null;fail()}};
-utter=u;speechSynthesis.speak(u);return}
-const c=new AbortController();ctl=c;
-try{const r=await fetch('/api/suara',{method:'POST',headers:{'Content-Type':'application/json'},signal:c.signal,body:JSON.stringify({teks:text,suara:'eleven',kecepatan:rate,nada:0})});
-if(!r.ok)throw new Error(r.status);const url=URL.createObjectURL(await r.blob());if(ctl!==c)return;
-const a=new Audio(url);audio=a;a.onended=()=>{URL.revokeObjectURL(url);if(audio===a){audio=null;next()}};await a.play()}
-catch(e){if(e.name!=='AbortError')fail()}}
-selR.onchange=selV.onchange=()=>{save();stopAll();if(playing)speak()};
-document.getElementById('play').onclick=()=>{playing=true;speak()};
-document.getElementById('pause').onclick=()=>{playing=false;stopAll();st.textContent='Dijeda pada bagian '+(i+1)};
+function fail(e){playing=false;st.textContent=e.message+' Teks tetap tersedia.';document.getElementById('play').setAttribute('aria-pressed','false');}
+function speak(){stopAll();if(!blocks.length){playing=false;st.textContent='Dokumen tidak memiliki bagian yang dapat dibacakan.';return}if(i>=blocks.length){i=Math.max(0,blocks.length-1);playing=false;st.textContent='Selesai dibacakan';document.getElementById('play').setAttribute('aria-pressed','false');return}
+mark();st.textContent='Menyiapkan bagian '+(i+1)+' dari '+blocks.length;
+reader.speak(blocks[i].dataset.say,()=>{if(playing){i++;speak()}},fail,()=>{st.textContent='Membacakan bagian '+(i+1)+' dari '+blocks.length;});}
+selR.onchange=selV.onchange=()=>{stopAll();reader.pref.suara=selV.value;reader.pref.kecepatan=+selR.value;reader.save();if(playing)speak()};
+document.getElementById('play').onclick=()=>{if(i>=blocks.length-1&&st.textContent==='Selesai dibacakan')i=0;playing=true;document.getElementById('play').setAttribute('aria-pressed','true');speak()};
+document.getElementById('pause').onclick=()=>{playing=false;stopAll();document.getElementById('play').setAttribute('aria-pressed','false');st.textContent=blocks.length?'Dijeda pada bagian '+(i+1):'Dokumen kosong';};
 document.getElementById('prev').onclick=()=>{i=Math.max(0,i-1);if(playing)speak();else mark()};
 document.getElementById('next').onclick=()=>{i=Math.min(blocks.length-1,i+1);if(playing)speak();else mark()};
 blocks.forEach((b,k)=>b.addEventListener('dblclick',()=>{i=k;playing=true;speak()}));
@@ -142,10 +131,10 @@ def build_html(state: dict, alt_for) -> str:
     return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(state['title'])}</title>
 <style>{_FONT_FACE}{CSS}</style></head><body><a class="skip" href="#isi">Lompat ke isi</a>
-<div class="bar" role="region" aria-label="Mode dengar"><b>SIMAK</b>
-<button id="play">{_ic('play')}Putar</button><button id="pause">{_ic('pause')}Jeda</button>
+<div class="bar" role="region" aria-label="Mode dengar"><b>SIMAK.</b>
+<button id="play" aria-pressed="false">{_ic('play')}Putar</button><button id="pause">{_ic('pause')}Jeda</button>
 <button id="prev" aria-label="Bagian sebelumnya">{_ic('prev')}</button><button id="next" aria-label="Bagian berikutnya">{_ic('next')}</button>
 <details class="settings"><summary>Pengaturan suara</summary><div><label>Suara <select id="voice"><option value="peramban" selected>Peramban (id-ID)</option></select></label>
-<label>Kecepatan <select id="rate"><option value="-20">−20%</option><option value="-10">−10%</option><option value="0" selected>normal</option><option value="10">+10%</option><option value="20">+20%</option><option value="35">+35%</option></select></label><p>Suara Indonesia mengikuti perangkat. Jika memilih ElevenLabs, teks yang diputar dikirim ke layanan itu.</p></div></details>
+<label>Kecepatan <select id="rate"><option value="-20">−20%</option><option value="-10">−10%</option><option value="0" selected>normal</option><option value="10">+10%</option><option value="20">+20%</option></select></label><p>ElevenLabs dipilih otomatis saat server siap. Teks yang diputar dikirim ke layanan suara. Pilih Peramban untuk suara perangkat atau saat membaca tanpa server.</p></div></details>
 <span class="st" id="st" aria-live="polite"></span></div>
 <main id="isi">{notice}{''.join(parts)}</main><script>{JS}</script></body></html>"""

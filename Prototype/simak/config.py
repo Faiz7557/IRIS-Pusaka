@@ -8,7 +8,10 @@ import json
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env.local", override=False)
 DATA = ROOT / "data"
 WORK = ROOT / "work"          # sesi sementara (dihapus per sesi)
 CACHE = ROOT / "cache"        # cache respons VLM untuk dokumen demo

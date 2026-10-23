@@ -2,6 +2,7 @@ fastapi
 uvicorn
 python-multipart
 pydantic
+python-dotenv
 google-genai
 pymupdf==1.28.2           # versi Lampiran D; diuji end-to-end dari clone bersih 21 Okt
 pikepdf

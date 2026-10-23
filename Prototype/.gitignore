@@ -2,6 +2,10 @@
 work/
 __pycache__/
 *.pyc
+.venv/
+.env
+.env.*
+!.env.example
 
 # Alat pihak ketiga yang diunduh ulang (lihat README: Persiapan)
 tools/

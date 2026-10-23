@@ -5,6 +5,7 @@ tinjauan, dan perakit keluaran memakai satu model data.
 """
 import hashlib
 import json
+import logging
 import shutil
 import threading
 import uuid
@@ -153,6 +154,11 @@ def process_or_hold(el: dict, th: dict) -> dict:
     except vlm.QuotaHabis as e:
         el.update(jenis=el.get("jenis", "gambar"), status="antrean", checks={},
                   reasons=[f"VLM tidak tersedia ({e}); ditahan untuk tinjauan ULD"])
+        return el
+    except Exception:
+        logging.exception("Analisis gambar gagal; elemen %s ditahan", el.get("id"))
+        el.update(jenis=el.get("jenis", "gambar"), status="antrean", checks={},
+                  reasons=["Respons analisis gambar tidak tersedia atau tidak valid; ditahan untuk tinjauan ULD"])
         return el
 
 

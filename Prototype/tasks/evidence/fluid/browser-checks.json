@@ -1,0 +1,19 @@
+{
+  "viewportWidths": [
+    321,
+    390,
+    768,
+    1300,
+    1440
+  ],
+  "horizontalOverflow": "none after footer fix (up to 1px fractional rounding on mobile)",
+  "scenes": "opening, rooms, day, courtyard, contact observed; forward/back scrolling",
+  "job": "3295d0696f",
+  "sample": "materi_01",
+  "result": "completed, 0 pin spacers while results visible; one scene restored on new document",
+  "navigation": "mobile menu, Escape focus, Dengar navigation",
+  "listen": "comparison transcript ready",
+  "demo": "run completed",
+  "consoleErrors": [],
+  "reducedMotion": "unit lifecycle harness; no OS preference change"
+}
