@@ -70,6 +70,8 @@ def _remediated(state: dict) -> list[dict]:
                 body, note = el["alt_auto"], "dihasilkan otomatis, angka terverifikasi"
             elif st in ("disetujui", "diubah"):
                 body, note = el["alt_final"], "disetujui ULD"
+            elif st == "ditolak":
+                body, note = "Deskripsi ditolak ULD; uraian belum tersedia.", "ditolak ULD"
             else:
                 body, note = (f"{(el.get('jenis') or 'gambar').capitalize()}, menunggu tinjauan "
                               "Unit Layanan Disabilitas."), "ditahan, belum diverifikasi"

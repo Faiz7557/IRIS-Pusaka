@@ -1,0 +1,38 @@
+[
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/demo.html"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/dengar.html"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/evaluasi.html"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/api/sampel"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/api/demo/grafik"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/api/demo/mutasi"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/api/evaluasi"
+  },
+  {
+    "error": "An attempt was made to access a socket in a way forbidden by its access permissions. (127.0.0.1:8000)",
+    "path": "/api/suara/daftar"
+  }
+]

@@ -1,107 +1,41 @@
 <!doctype html>
-<html lang="id">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Evaluasi · SIMAK</title>
-<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="style.css">
-<style>
-.versus { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5); }
-.versus > div { border: 1.5px solid var(--line-soft); border-radius: var(--radius); padding: var(--s4); }
-.versus .fig-big.red { color: var(--red-ink); }
-.versus h3 { font-size: var(--t-md); margin-bottom: var(--s3); }
-.cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5); margin-top: var(--s5); align-items: start; }
-@media (max-width: 1000px) { .versus, .cols { grid-template-columns: 1fr; } }
-#res > * + * { margin-top: var(--s5); }
-.cols > .gate { margin-top: 0; }
-.crit { font-size: var(--t-sm); color: var(--ink-2); }
-.ci { color: var(--ink-2); font-size: var(--t-xs); white-space: nowrap; }
-.ci-in { display: none; }
-@media (max-width: 600px) {
-  .ci-col { display: none; }
-  .ci-in { display: block; color: var(--ink-2); font-size: var(--t-xs); white-space: nowrap; }
-  #res tbody th { min-width: 9ch; }
-}
-.note { font-size: var(--t-sm); color: var(--ink-2); max-width: 75ch; }
-pre.manifest { font: 400 var(--t-xs)/1.5 var(--f-num); white-space: pre-wrap; margin: 0; color: var(--ink-2); }
-</style>
-</head>
-<body>
-<a class="skip" href="#isi">Lompat ke isi</a>
-<div class="shell">
-<aside class="rail"></aside>
-<main id="isi">
-  <header class="page-head">
-    <h1>Evaluasi pada set uji tertahan</h1>
-    <p>Ambang disetel pada set pengembangan, lalu dikunci sebelum set uji dibuka. Proporsi dilaporkan dengan selang kepercayaan Wilson 95% (pers. 8). Gerbang yang gagal dilaporkan apa adanya.</p>
-  </header>
-  <div id="empty" class="card hide"><div class="card-body"><p>Belum ada hasil. Jalankan <span class="num">python -m eval.evaluate kalibrasi</span> lalu <span class="num">python -m eval.evaluate uji</span>.</p></div></div>
-  <div id="res" class="hide"></div>
-</main>
-</div>
-<script src="common.js"></script>
-<script>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evaluasi · SIMAK</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="preload" href="fonts/Gabarito-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts.css?v=sill-20261023"><link rel="stylesheet" href="style.css?v=sill-20261023"></head>
+<body><a class="skip" href="#isi">Lompat ke isi</a><div class="shell"><header class="rail"></header><main id="isi" tabindex="-1"><header class="page-head compact"><h1>Bukti, beserta batasnya.</h1><p>Hasil evaluasi tersimpan pada set uji yang dipisahkan dari pengembangan. Angka, beban tinjauan, dan kegagalan dilaporkan bersama. Halaman ini tidak menjalankan evaluasi baru.</p></header><div class="card" id="loading"><div class="card-body"><p id="load-msg" role="status" aria-live="polite">Memuat hasil evaluasi…</p><button class="hide" id="retry">Coba lagi</button></div></div><div id="res" class="hide"></div><footer class="footer"><span>SIMAK · IRIS, Universitas Airlangga</span><a href="demo.html">Coba satu grafik di Demo Gerbang</a></footer></main></div><script src="common.js?v=sill-20261023"></script><script>
 renderRail('evaluasi.html');
-const pct = p => p === null || p === undefined ? '–' : (100 * p).toLocaleString('id-ID', {maximumFractionDigits: 1}) + '%';
-const ci = x => x && x.ci95 && x.ci95[0] !== null ? `${pct(x.ci95[0])} – ${pct(x.ci95[1])}` : '';
-const row = (l, x) => `<tr><th scope="row">${l}</th><td class="n">${x ? pct(x.p) : '–'}<span class="ci-in">${ci(x)}</span></td><td class="n kn">${x ? x.k + '/' + x.n : ''}</td><td class="n ci ci-col">${ci(x)}</td></tr>`;
-const HEAD = '<thead><tr><th scope="col">Ukuran</th><th scope="col" class="n">Nilai</th><th scope="col" class="n kn">k/n</th><th scope="col" class="n ci-col">IK 95% Wilson</th></tr></thead>';
-const verdictStamp = ok => `<span class="stamp ${ok ? '' : 'fail'}">${icon(ok ? 'check' : 'cross')}${ok ? 'Lulus' : 'Tidak lulus'}</span>`;
-const gateCard = (id, title, ok, crit, inner) => `
-  <article class="card gate" aria-labelledby="h-${id}">
-    <div class="card-head"><h2 id="h-${id}">${id} · ${title}</h2><span class="meta">kriteria terkunci</span></div>
-    <div class="card-body">${inner}</div>
-    <div class="slip"><span class="slip-label">Putusan</span>${ok === null ? '<span class="stamp pending">dilaporkan</span>' : verdictStamp(ok)}<span class="crit">${esc(crit)}</span></div>
-  </article>`;
-
-(async () => {
-  const r = await (await fetch('/api/evaluasi')).json();
-  if (r.ada === false) { $('#empty').classList.remove('hide'); return; }
-  const G3 = r.G3, MUT = {ubah_angka: 'Ubah satu angka', tukar_label: 'Tukar pasangan label–nilai', turunan_salah: 'Angka turunan salah', tren_salah: 'Label tren dibalik'};
-  let html = gateCard('G3', 'Kesetiaan angka', G3.lulus, r.kriteria.G3, `
-    <div class="versus">
-      <div><h3>Sisi B · SIMAK (D)</h3><div class="fig-big">${G3.D_fk_terbit.k}/${G3.D_fk_terbit.n}</div>
-        <p class="fig-label">klaim setia pada keluaran terbit · angka keliru terbit: <b class="num">${G3.D_angka_keliru_terbit}</b></p></div>
-      <div><h3>Sisi A · VLM langsung (B2)</h3><div class="fig-big red">${G3.B2_angka_keliru_terbit}</div>
-        <p class="fig-label">angka keliru terbit, pada ${G3.B2_grafik_dengan_angka_keliru.k} dari ${G3.B2_grafik_dengan_angka_keliru.n} grafik</p></div>
-    </div>
-    <table style="margin-top:var(--s5)"><caption>Kesetiaan dan biaya tinjauan</caption>${HEAD}<tbody>
-      ${row('D · klaim setia pada keluaran terbit (Fk)', G3.D_fk_terbit)}
-      ${row('D · grafik terbit otomatis', G3.D_terbit)}
-      ${row('D · beban tinjauan R', G3.D_R_beban_tinjauan)}
-      ${row('B2 · angka setia (pemeriksa pola, diaudit)', G3.B2_fk_perkiraan)}
-      ${row('B2 · grafik dengan ≥ 1 angka keliru', G3.B2_grafik_dengan_angka_keliru)}
-    </tbody></table>
-    <table style="margin-top:var(--s5)"><caption>Deskripsi yang sengaja diubah dan tertahan</caption>${HEAD}<tbody>
-      ${Object.entries(G3.injeksi_per_jenis).map(([k, x]) => row(MUT[k] || k, x)).join('')}
-      ${row('<b>Seluruh injeksi</b>', G3.injeksi_tertahan)}
-    </tbody></table>
-    <p class="note">Satu tukar label tidak tertahan karena kedua nilai berselisih di bawah toleransi ε; kesalahan di bawah ε tidak terdeteksi menurut definisi pers. (5).</p>`);
-  html += '<div class="cols">' + gateCard('G1', 'Struktur dan metadata', r.G1.lulus, r.kriteria.G1, `
-    <table><caption>Dokumen uji sintetis</caption>${HEAD}<tbody>${['B0', 'B1', 'D'].map(k => row(k + ' · dokumen lulus G1', r.G1[k])).join('')}${r.G1.D_ketat ? row('D · lulus G1 ketat (penanda tahan = belum bermakna)', r.G1.D_ketat) : ''}${row('D · lulus veraPDF penuh', r.G1.veraPDF_lulus_D)}</tbody></table>
-    ${r.G1.D_ketat ? '' : '<p class="note">G1 ketat belum tersedia pada run ini; dihitung pada run evaluasi berikutnya.</p>'}
-    <table style="margin-top:var(--s4)"><caption>Aturan PDF/UA-1 yang gagal per dokumen</caption><thead><tr><th scope="col">Dokumen</th><th scope="col" class="n">B0</th><th scope="col" class="n">B1</th><th scope="col" class="n">D</th></tr></thead><tbody>
-    ${r.G1_per_dokumen.map(d => `<tr><th scope="row" class="num">${esc(d.file)}</th><td class="n">${d.B0.aturan_gagal}</td><td class="n">${d.B1.aturan_gagal}</td><td class="n">${d.D.aturan_gagal}</td></tr>`).join('')}</tbody></table>`)
-    + gateCard('G4', 'Kesetaraan informasi', r.G4.lulus, r.kriteria.G4, `
-    <div class="fig-big">${(r.G4.Q_D ?? 0).toLocaleString('id-ID', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
-    <p class="fig-label">rasio Q untuk SIMAK; B2: ${(r.G4.Q_B2 ?? 0).toLocaleString('id-ID', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-    <table style="margin-top:var(--s4)"><caption>Akurasi menjawab dari konteks</caption>${HEAD}<tbody>${row('Dari tabel data (acuan)', r.G4.tabel)}${row('Dari teks alt SIMAK', r.G4.D)}${row('Dari teks alt B2', r.G4.B2)}</tbody></table>
-    <p class="note" style="margin-top:var(--s3)">Pertanyaan dibangkitkan otomatis dari tabel acuan, lalu dijawab model hanya dari konteks yang diberikan. Q = Acc<sub>alt</sub> / Acc<sub>tabel</sub>.</p>`) + '</div>';
-  if (r.G6_ringan) {
-    const g6 = r.G6_ringan;
-    html += gateCard('G6', 'Dokumen nyata (ringan)', null, g6.sumber, `
-      <table><caption>${g6.berhasil}/${g6.dokumen} dokumen diproses · berkas tidak disebarluaskan</caption>${HEAD}<tbody>
-      ${row('B0 · lulus G1', g6.G1_B0)}${row('B1 · lulus G1', g6.G1_B1)}${row('D · lulus G1', g6.G1_D)}${g6.G1_D_ketat ? row('D · lulus G1 ketat', g6.G1_D_ketat) : ''}${row('D · lulus veraPDF penuh', g6.veraPDF_lulus_D)}${row('Beban tinjauan R', g6.R_beban_tinjauan)}</tbody></table>
-      <table style="margin-top:var(--s4)"><caption>Per dokumen</caption><thead><tr><th scope="col">Dokumen</th><th scope="col" class="n">Hlm</th><th scope="col" class="n">Gambar</th><th scope="col" class="n">Figur vektor</th><th scope="col" class="n">Ditahan</th><th scope="col" class="n">Aturan gagal B0 → B1 → D</th></tr></thead><tbody>
-      ${g6.per_dokumen.map(d => d.galat ? `<tr><th scope="row">${esc(d.file)}</th><td colspan="5" class="muted">${esc(d.galat)}</td></tr>` :
-        `<tr><th scope="row"><span class="num">${esc(d.file)}</span> <span class="muted small">${esc(d.domain)}</span></th><td class="n">${d.halaman}</td><td class="n">${d.gambar}</td><td class="n">${d.figur_vektor_ditahan ?? '–'}</td><td class="n">${d.antrean}</td><td class="n">${d.B0.aturan_gagal} → ${d.B1.aturan_gagal} → ${d.D.aturan_gagal}</td></tr>`).join('')}</tbody></table>
-      <p class="note" style="margin-top:var(--s3)">Pada materi nyata sebagian besar gambar adalah figur vektor dari Word atau PowerPoint; semuanya ditahan (fail-closed) dan dihitung dalam R.</p>`);
+const pct=p=>p===null||p===undefined?'—':(100*p).toLocaleString('id-ID',{maximumFractionDigits:1})+'%';
+const count=x=>x&&x.k!==undefined&&x.n!==undefined?x.k+'/'+x.n:'—';
+const ci=x=>x?.ci95?.[0]!==null&&x?.ci95?.[0]!==undefined?pct(x.ci95[0])+' – '+pct(x.ci95[1]):'Belum tersedia';
+const num=v=>v===null||v===undefined?'—':Number(v).toLocaleString('id-ID',{maximumFractionDigits:2});
+const row=(l,x)=>`<tr><th scope="row">${esc(l)}</th><td class="n">${pct(x?.p)}<span class="ci-in">${count(x)} · IK 95%: ${ci(x)}</span></td><td class="n kn">${count(x)}</td><td class="n ci ci-col">${ci(x)}</td></tr>`;
+const HEAD='<thead><tr><th scope="col">Ukuran</th><th scope="col" class="n">Nilai</th><th scope="col" class="n kn">k/n</th><th scope="col" class="n ci-col">IK 95% Wilson</th></tr></thead>';
+const table=(caption,body,head=HEAD)=>`<div class="twrap" tabindex="0" role="region" aria-label="${esc(caption)}"><table><caption>${esc(caption)}</caption>${head}<tbody>${body}</tbody></table></div>`;
+const verdict=(ok,label)=>ok===undefined||ok===null?'<span class="stamp pending">Dilaporkan</span>':`<span class="stamp ${ok?'':'fail'}">${icon(ok?'check':'cross')}${ok?'Lulus':'Tidak lulus'}${label?' · '+esc(label):''}</span>`;
+const card=(id,title,ok,criterion,inner)=>`<article class="card gate" aria-labelledby="h-${id}"><div class="card-head"><h2 id="h-${id}">${id} · ${esc(title)}</h2></div><div class="card-body">${inner}</div><div class="slip">${verdict(ok,id==='G1'?'G1 biasa':'')}<span class="crit">${esc(criterion||'Kriteria belum tersedia')}</span></div></article>`;
+async function load(){
+ $('#loading').classList.remove('hide');$('#retry').classList.add('hide');$('#load-msg').textContent='Memuat hasil evaluasi…';
+ try{
+  const r=await requestJson('/api/evaluasi');
+  if(r.ada===false){$('#load-msg').textContent='Belum ada hasil evaluasi tersimpan. Jalankan evaluasi dari lingkungan proyek, lalu muat kembali halaman ini.';$('#retry').classList.remove('hide');return;}
+  const g=r.G3;
+  let html='<section class="eval-lead" aria-label="Empat ukuran yang perlu dibaca bersama">'+[
+   [count(g?.D_fk_terbit),'klaim terbit cocok dengan tabel acuan · set sintetis','G3'],
+   [count(g?.injeksi_tertahan),'deskripsi dengan injeksi yang berhasil ditahan','G3'],
+   [count(g?.D_R_beban_tinjauan),'grafik membutuhkan tinjauan ULD','G3'],
+   [count(r.G1?.D_ketat),'dokumen lulus G1 ketat · penanda tahan belum dianggap uraian bermakna','G1']
+  ].map(([v,l,id])=>`<article class="eval-stat"><b>${v}</b><p>${esc(l)}</p><p><a href="#h-${id}">Lihat ukuran dan interval</a></p></article>`).join('')+'</section>';
+  if(g){
+   const MUT={ubah_angka:'Ubah satu angka',tukar_label:'Tukar label–nilai',turunan_salah:'Angka turunan salah',tren_salah:'Tren dibalik'};
+   html+=card('G3','Kesetiaan angka',g.lulus,r.kriteria?.G3,`<div class="versus"><div><h3>SIMAK · klaim pada keluaran terbit</h3><div class="fig-big">${count(g.D_fk_terbit)}</div><p class="fig-label">cocok dengan tabel acuan; ${num(g.D_angka_keliru_terbit)} angka keliru terbit</p></div><div><h3>VLM langsung · pemeriksa pola</h3><div class="fig-big red">${num(g.B2_angka_keliru_terbit)}</div><p class="fig-label">angka keliru pada ${count(g.B2_grafik_dengan_angka_keliru)} grafik. Unit ini berbeda dari jumlah klaim SIMAK.</p></div></div>${table('Kesetiaan dan biaya tinjauan',row('D · klaim setia (Fk)',g.D_fk_terbit)+row('D · grafik terbit otomatis',g.D_terbit)+row('D · beban tinjauan R',g.D_R_beban_tinjauan)+row('B2 · angka setia (perkiraan pola, diaudit)',g.B2_fk_perkiraan)+row('B2 · grafik dengan angka keliru',g.B2_grafik_dengan_angka_keliru))}<details><summary>Hasil seluruh jenis injeksi</summary>${table('Injeksi yang tertahan',Object.entries(g.injeksi_per_jenis||{}).map(([k,v])=>row(MUT[k]||k,v)).join('')+row('Seluruh injeksi',g.injeksi_tertahan))}<p class="note">Pada run ini, satu tukar label tidak tertahan karena selisih nilai di bawah toleransi ε. Kecocokan pada tabel bukan bukti kebenaran independen terhadap seluruh grafik nyata.</p></details>`);
   }
-  html += `<article class="card gate" aria-labelledby="h-man"><div class="card-head"><h2 id="h-man">Manifes run</h2><span class="callno">${esc(r.waktu)}</span></div>
-    <div class="card-body"><details><summary>Model, perintah, ambang, dan data</summary><pre class="manifest">${esc(JSON.stringify({manifest: r.manifest, ambang: r.ambang, data: r.data}, null, 1))}</pre></details></div></article>`;
-  html = html.replace(/<table([^>]*)><caption>([^<]*)<\/caption>/g, (m, a, c) => `<div class="twrap" tabindex="0" role="region" aria-label="${c}"><table${a}><caption>${c}</caption>`).replace(/<\/table>/g, '</table></div>');
-  $('#res').innerHTML = html;
-  $('#res').classList.remove('hide');
-})();
-</script>
-</body>
-</html>
+  html+='<div class="cols">';
+  if(r.G1){html+=card('G1','Struktur dan metadata',r.G1.lulus,r.kriteria?.G1,table('Dokumen uji sintetis',['B0','B1','D'].map(k=>row(k+' · lulus G1 biasa',r.G1[k])).join('')+row('D · lulus G1 ketat',r.G1.D_ketat)+row('D · lulus veraPDF penuh',r.G1.veraPDF_lulus_D))+'<p class="note">G1 biasa dapat menghitung penanda menunggu tinjauan sebagai alt bermakna. G1 ketat menganggapnya belum lengkap. Lulus struktur bukan berarti seluruh deskripsi selesai.</p><details><summary>Aturan gagal per dokumen</summary>'+table('Aturan PDF/UA-1 yang gagal',(r.G1_per_dokumen||[]).map(d=>`<tr><th scope="row">${esc(d.file)}</th><td class="n">${num(d.B0?.aturan_gagal)}</td><td class="n">${num(d.B1?.aturan_gagal)}</td><td class="n">${num(d.D?.aturan_gagal)}</td></tr>`).join(''),'<thead><tr><th scope="col">Dokumen</th><th scope="col">B0</th><th scope="col">B1</th><th scope="col">D</th></tr></thead>')+'</details>');}
+  if(r.G4){const q=r.G4;html+=card('G4','Kesetaraan informasi',q.lulus,r.kriteria?.G4,`<div class="fig-big">${q.Q_D===null||q.Q_D===undefined?'—':Number(q.Q_D).toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:2})}</div><p class="fig-label">Rasio Q untuk SIMAK. B2: ${num(q.Q_B2)}.</p>${table('Akurasi menjawab dari konteks',row('Tabel data (acuan)',q.tabel)+row('Teks alt SIMAK',q.D)+row('Teks alt B2',q.B2))}<p class="note">Pertanyaan dibangkitkan dari tabel dan dijawab model hanya dari konteks. Q = akurasi alt / akurasi tabel. Ini bukan hasil penelitian pengalaman mahasiswa.</p>`);}
+  html+='</div>';
+  if(r.G6_ringan){const q=r.G6_ringan;html+=card('G6','Dokumen nyata · evaluasi ringan',null,q.sumber,table('Dokumen nyata · '+num(q.berhasil)+'/'+num(q.dokumen)+' diproses',row('B0 · lulus G1',q.G1_B0)+row('B1 · lulus G1',q.G1_B1)+row('D · lulus G1',q.G1_D)+(q.G1_D_ketat?row('D · lulus G1 ketat',q.G1_D_ketat):'')+row('D · lulus veraPDF penuh',q.veraPDF_lulus_D)+row('Beban tinjauan R',q.R_beban_tinjauan))+'<p class="note">G6 ringan dipisahkan dari set sintetis. Figur vektor tanpa ekstraksi terverifikasi ditahan; hasil ringan ini tidak menggantikan evaluasi G6 penuh.</p><details><summary>Hasil setiap dokumen nyata</summary>'+table('Per dokumen nyata',(q.per_dokumen||[]).map(d=>`<tr><th scope="row">${esc(d.file)}<span class="small muted"> ${esc(d.domain||'')}</span></th>${d.galat?`<td colspan="5">${esc(d.galat)}</td>`:`<td class="n">${num(d.halaman)}</td><td class="n">${num(d.gambar)}</td><td class="n">${num(d.figur_vektor_ditahan)}</td><td class="n">${num(d.antrean)}</td><td>${num(d.B0?.aturan_gagal)} → ${num(d.B1?.aturan_gagal)} → ${num(d.D?.aturan_gagal)}</td>`}</tr>`).join(''),'<thead><tr><th scope="col">Dokumen</th><th scope="col">Hlm</th><th scope="col">Gambar</th><th scope="col">Vektor</th><th scope="col">Ditahan</th><th scope="col">Aturan gagal B0→B1→D</th></tr></thead>')+'</details>');}
+  const absent=[['G2','G2'],['G5','G5'],['G6','G6 penuh'],['G7','G7']].filter(([key])=>!r[key]).map(([,label])=>label);
+  html+=`<article class="card"><div class="card-head"><h2>Ruang yang belum dibuktikan.</h2></div><div class="card-body"><p>${absent.length?esc(absent.join(', '))+' belum dilaporkan sebagai evaluasi penuh pada hasil ini.':'Lihat cakupan masing-masing gerbang pada manifes.'}</p><p>Demo suara merupakan simulasi. Pengujian pembaca layar dan keterlibatan pengguna perlu dilaporkan tersendiri.</p></div></article><article class="card" aria-labelledby="h-man"><div class="card-head"><h2 id="h-man">Manifes run</h2><span class="callno">${esc(r.waktu||'Waktu belum tersedia')}</span></div><div class="card-body"><details><summary>Model, ambang, perintah, dan data</summary><pre class="manifest">${esc(JSON.stringify({manifest:r.manifest,ambang:r.ambang,data:r.data},null,2))}</pre></details></div></article>`;
+  $('#res').innerHTML=html;$('#res').classList.remove('hide');$('#loading').classList.add('hide');
+ }catch(e){$('#load-msg').textContent=e.message;$('#retry').classList.remove('hide');}
+}
+$('#retry').onclick=load;load();
+</script></body></html>

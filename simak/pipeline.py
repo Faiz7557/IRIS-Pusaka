@@ -6,6 +6,8 @@ tinjauan, dan perakit keluaran memakai satu model data.
 import hashlib
 import json
 import shutil
+import threading
+import uuid
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -14,6 +16,26 @@ import fitz
 
 from . import chart, gate, pdfa11y, vlm
 from .config import thresholds
+
+_LOCKS = {}
+_LOCKS_GUARD = threading.Lock()
+
+
+def job_lock(job: Path):
+    # shortcut: penguncian satu proses; gunakan transaksi lintas proses sebelum menambah worker.
+    with _LOCKS_GUARD:
+        return _LOCKS.setdefault(str(job.resolve()), threading.RLock())
+
+
+def output_path(job: Path, name: str) -> Path:
+    if name == "asli.pdf" or not (job / "state.json").exists():
+        return job / name
+    version = load(job).get("output_version")
+    if version and not (version.startswith("versions/") and len(Path(version).parts) == 2
+                        and all(c in "0123456789abcdef" for c in Path(version).name)):
+        raise ValueError("Versi keluaran tidak valid")
+    return (job / version if version else job) / name
+
 
 DRAFT_PROMPT = (
     "Tuliskan draf teks alternatif berbahasa Indonesia (maksimal 3 kalimat) untuk gambar ini "
@@ -259,48 +281,67 @@ def run(pdf_path: Path, job: Path, progress=lambda *a: None) -> dict:
     return state
 
 
-def assemble(job: Path, state: dict):
+def assemble(job: Path, state: dict, output: Path | None = None):
     from .output import build_html
+    output = output or job
     state["_job"] = str(job)
     alts_by_page: dict[int, list] = {}
     for e in state["elements"]:
         if e["kind"] == "image" and not e.get("campuran"):
             alts_by_page.setdefault(e["page"], []).append(alt_for(e))
-    state["patch"] = pdfa11y.patch(_struct_src(job), job / "simak.pdf", state["title"], alts_by_page, HELD_FIGURE_ALT)
+    state["patch"] = pdfa11y.patch(_struct_src(job), output / "simak.pdf", state["title"], alts_by_page, HELD_FIGURE_ALT)
     for e in state["elements"]:  # status mengikuti isi PDF: halaman tidak cocok berarti ditahan
         if e["kind"] == "image" and e["page"] in state["patch"]["halaman_tidak_cocok"] and e["status"] == "terbit_otomatis":
             e["status"] = "antrean"
             e.setdefault("reasons", []).append("Halaman memuat figur yang tidak dapat dipasangkan dengan citra; "
                                                "ditahan agar deskripsi tidak terpasang pada gambar lain")
-    (job / "simak.html").write_text(build_html(state, alt_for), encoding="utf-8")
+    (output / "simak.html").write_text(build_html(state, alt_for), encoding="utf-8")
 
 
 def save(job: Path, state: dict):
-    (job / "state.json").write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
+    tmp = job / f"state_{uuid.uuid4().hex}.tmp"
+    try:
+        tmp.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
+        tmp.replace(job / "state.json")
+    finally:
+        tmp.unlink(missing_ok=True)
 
 
 def load(job: Path) -> dict:
-    return json.loads((job / "state.json").read_text(encoding="utf-8"))
+    with job_lock(job):
+        return json.loads((job / "state.json").read_text(encoding="utf-8"))
 
 
 def review(job: Path, el_id: str, aksi: str, alt: str = "") -> dict:
-    """REV-01: keputusan ULD — setujui, ubah, tolak, atau tandai dekoratif."""
-    state = load(job)
-    el = next(e for e in state["elements"] if e["id"] == el_id)
-    if aksi == "setujui":
-        el["alt_final"] = alt or el.get("alt_auto") or el.get("draft", "")
-        if not el["alt_final"].strip():  # figur vektor tidak punya draf: ULD wajib menulis deskripsinya
-            raise ValueError("Teks alternatif tidak boleh kosong")
-        el["status"] = "disetujui"
-    elif aksi == "ubah":
-        el["alt_final"], el["status"] = alt, "diubah"
-    elif aksi == "tolak":
-        el["status"] = "ditolak"
-    elif aksi == "dekoratif":
-        el["status"] = "dekoratif"
-    el.setdefault("log", []).append({"aksi": aksi, "waktu": time.strftime("%Y-%m-%d %H:%M:%S")})
-    assemble(job, state)
-    rep = state.setdefault("report", {})
-    rep["D"] = {"verapdf": pdfa11y.verapdf(job / "simak.pdf"), "g1": pdfa11y.g1_audit(job / "simak.pdf")}
-    save(job, state)
-    return el
+    """Terbitkan satu versi PDF/HTML/state; versi sebelumnya tetap utuh jika perakitan gagal."""
+    with job_lock(job):
+        state = load(job)
+        el = next((e for e in state["elements"] if e["id"] == el_id and e["kind"] == "image"), None)
+        if el is None:
+            raise LookupError("Elemen tinjauan tidak ditemukan")
+        if aksi not in ("setujui", "ubah", "tolak", "dekoratif"):
+            raise ValueError("Keputusan tidak dikenal")
+        alt = alt.strip()
+        if aksi in ("setujui", "ubah"):
+            text = alt if aksi == "ubah" else alt or el.get("alt_auto") or el.get("draft", "")
+            if not text.strip():
+                raise ValueError("Teks alternatif tidak boleh kosong")
+            el["alt_final"] = text
+            el["status"] = "diubah" if aksi == "ubah" else "disetujui"
+        else:
+            el["status"] = "ditolak" if aksi == "tolak" else "dekoratif"
+        el.setdefault("log", []).append({"aksi": aksi, "waktu": time.strftime("%Y-%m-%d %H:%M:%S")})
+        versions = job / "versions"
+        versions.mkdir(exist_ok=True)
+        output = versions / uuid.uuid4().hex
+        output.mkdir()
+        try:
+            assemble(job, state, output)
+            state.setdefault("report", {})["D"] = {"verapdf": pdfa11y.verapdf(output / "simak.pdf"),
+                                                   "g1": pdfa11y.g1_audit(output / "simak.pdf")}
+            state["output_version"] = "versions/" + output.name
+            save(job, state)  # satu pointer atomik menerbitkan ketiga berkas sebagai versi yang sama
+        except Exception:
+            shutil.rmtree(output)
+            raise
+        return el

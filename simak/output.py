@@ -12,42 +12,22 @@ _FONT_FACE = ("@font-face{font-family:'Atkinson Hyperlegible Next';font-weight:2
 
 # Dunia kartu katalog yang sama dengan antarmuka ULD; mengikuti preferensi terang/gelap pembaca.
 CSS = """
-:root{--rail:#1F4D3A;--rail-ink:#EEF4F0;--bg:#F3F6F4;--card:#fff;--fg:#1B1F1D;--muted:#47524C;--line:#C9D4CE;
---ruling:#DCE6F3;--red:#B3261E;--ok:#1F6B45;--okbg:#E2F1E7;--hold:#4A2C8C;--h1:#EEE8FA;--h2:#E0D5F5;--acc:#2F5BA8;--hl:#FFF0A6}
-@media (prefers-color-scheme:dark){:root{--bg:#141816;--card:#1C211E;--fg:#E8EFEA;--muted:#A9B6AE;--line:#33403A;
---ruling:#2A3540;--ok:#7FD3A3;--okbg:#17321F;--hold:#CDBAF7;--h1:#2A2140;--h2:#33284F;--acc:#9DBBF2;--hl:#4B4312}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.7 "Atkinson Hyperlegible Next","Segoe UI",system-ui,sans-serif}
-::selection{background:var(--h2)}:focus-visible{outline:3px solid var(--acc);outline-offset:2px;border-radius:3px}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--card);padding:8px 12px;z-index:9;font-weight:700}
-main{max-width:46rem;margin:0 auto;padding:1.5rem 16px 6rem}
-h1{font-size:2rem;line-height:1.2;font-weight:800}h2{font-size:1.45rem;line-height:1.25}h1,h2,h3{text-wrap:balance}
-.bar{position:sticky;top:0;z-index:5;background:var(--rail);color:var(--rail-ink);padding:.6rem 16px;
-display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
-.bar b{font-weight:800;letter-spacing:.02em;margin-right:.5rem}
-.bar button,.bar select{font-family:inherit;font-weight:700;font-size:15px;line-height:1.2;min-height:44px;padding:.45rem .85rem;border:1.5px solid rgba(238,244,240,.4);
-border-radius:4px;background:transparent;color:var(--rail-ink);cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
-.bar button:hover{background:rgba(0,0,0,.18)}.bar button#play{background:var(--rail-ink);color:var(--rail)}
-.bar select option{color:#1B1F1D}.bar label{font-size:15px;display:inline-flex;gap:.4rem;align-items:center}
-.bar :focus-visible{outline-color:var(--rail-ink)}
-.bar .st{font-size:14px;opacity:.9}
+:root{--rail:#0b0a0a;--rail-ink:#f4f1ee;--bg:#f4f1ee;--card:#fff;--fg:#0b0a0a;--muted:#514c49;--line:#b5aaa3;
+--ruling:#d8d1cc;--brand:#cf6224;--red:#a51d2d;--redbg:#fce6e8;--ok:#185c3a;--okbg:#e4f2e9;--hold:#624000;--h1:#fff0c2;--h2:#f4dfa2;--acc:#1457c5;--hl:#fff0a6}
+@media(prefers-color-scheme:dark){:root{--bg:#181615;--card:#24201d;--fg:#f4f1ee;--muted:#cbbdb3;--line:#78685c;--ruling:#55483e;--red:#ffafb7;--redbg:#4d2027;--ok:#9bdfb7;--okbg:#173a29;--hold:#f3cf79;--h1:#3e2e12;--h2:#544016;--acc:#a9c9ff;--hl:#504115}}
+*{box-sizing:border-box}html{scroll-padding-top:140px}body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.7 'Atkinson Hyperlegible Next','Segoe UI',system-ui,sans-serif}
+::selection{background:var(--hl);color:var(--fg)}:focus-visible{outline:3px solid var(--acc);outline-offset:3px;box-shadow:0 0 0 5px var(--bg)}*{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:8px;background:var(--card);padding:8px 12px;z-index:9;font-weight:700}
+main{max-width:48rem;margin:0 auto;padding:1.5rem 20px 6rem}h1{font-size:2rem;line-height:1.2;font-weight:800;letter-spacing:-.025em}h2{font-size:1.45rem;line-height:1.25}h1,h2,h3{text-wrap:balance;scroll-margin-top:140px}
+.bar{position:sticky;top:0;z-index:5;background:var(--rail);color:var(--rail-ink);padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.bar b{font-weight:800;letter-spacing:-.02em;margin-right:6px}.bar button,.bar select,.bar summary{font-family:inherit;font-size:15px;font-weight:700;line-height:1.2;min-height:44px;min-width:44px;padding:10px 12px;border:1px solid #bca59d;border-radius:2px;background:transparent;color:var(--rail-ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.bar button:hover{background:#38302b}.bar button#play{background:var(--brand);color:#0b0a0a;border-color:var(--brand)}.bar select option{color:#0b0a0a;background:#f4f1ee}.bar label{font-size:15px;display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}.bar :focus-visible{outline-color:#fff;box-shadow:none}.bar .st{font-size:14px;flex:1 1 100%}.bar .st:empty{display:none}.settings[open]{flex:1 1 100%}.settings>div{display:flex;flex-wrap:wrap;gap:12px;padding-top:10px}.settings summary{list-style:none}.settings p{font-size:14px;margin:0;max-width:65ch}
 .icon{width:1.1em;height:1.1em;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.notice{background:var(--card);border:1.5px solid var(--line);border-radius:4px;padding:.9rem 1.1rem;font-size:16px;margin:1rem 0 1.5rem}
-figure{margin:1.75rem 0;background:var(--card);border:1.5px solid var(--line);border-radius:4px;overflow:hidden}
-figure::before{content:"";display:block;height:5px;background:var(--red)}
-figure>img{max-width:100%;height:auto;display:block;margin:1rem auto;background:#fff}
-figcaption{padding:0 1.1rem 1rem;font-size:17px}
-.stamp{display:inline-block;margin:1rem 1.1rem 0;border:2.5px solid currentColor;border-radius:3px;padding:.2rem .6rem;
-font-size:15px;font-weight:800;letter-spacing:.02em;transform:rotate(-1.5deg)}
-.s-ok{color:var(--ok)}.s-hold{color:var(--hold);border-style:dashed;
-background:repeating-linear-gradient(135deg,var(--h1) 0 8px,var(--h2) 8px 16px)}
-table{border-collapse:collapse;margin:.6rem 0;font-size:16px;font-variant-numeric:tabular-nums}
-caption{text-align:left;font-weight:700;color:var(--muted);padding-bottom:.3rem}
-th,td{border-bottom:1.5px solid var(--ruling);padding:.35rem .7rem;text-align:left}thead th{border-bottom:2px solid var(--fg)}
-details summary{cursor:pointer;color:var(--acc);font-weight:700;padding:.3rem 0}
-.speaking{background:var(--hl);outline:3px solid var(--hl);border-radius:3px}
-img.deco{height:1.6em;width:auto}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.notice{border:1px solid var(--line);border-top:5px solid var(--brand);padding:18px 20px;background:var(--card);font-size:16px;margin:1rem 0 1.5rem}
+figure{margin:1.75rem 0;background:var(--card);border:1px solid var(--line);border-radius:2px;overflow:hidden}figure>img{max-width:100%;height:auto;display:block;margin:1rem auto;background:#fff}figcaption{padding:0 20px 18px;font-size:18px}.stamp{display:inline-block;margin:16px 20px 0;border:1px solid currentColor;border-radius:2px;padding:5px 10px;font-size:15px;font-weight:700}.s-ok{color:var(--ok);background:var(--okbg)}.s-hold{color:var(--hold);background:var(--h1)}.s-reject{color:var(--red);background:var(--redbg)}
+table{border-collapse:collapse;width:100%;font-size:16px;font-variant-numeric:tabular-nums}caption{text-align:left;font-weight:700;color:var(--muted);padding-bottom:8px}th,td{border-bottom:1px solid var(--ruling);padding:8px 10px;text-align:left}thead th{border-bottom:2px solid var(--fg)}.twrap{overflow:auto;margin:1rem 0;max-width:100%}details summary{cursor:pointer;color:var(--acc);font-weight:700;padding:10px 0;min-height:44px}.speaking{background:var(--hl);outline:2px solid var(--acc);outline-offset:3px}img.deco{height:1.6em;width:auto}
+@media(max-width:500px){.bar{padding:8px 10px;gap:6px}.bar b{font-size:16px}.bar button{padding:10px;font-size:14px}.bar summary{font-size:14px}.bar .settings{flex:1 1 100%}main{padding:1rem 16px 4rem}h1{font-size:1.7rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 """
 
 JS = """
@@ -60,11 +40,11 @@ const idVoice=()=>(window.speechSynthesis?speechSynthesis.getVoices():[]).find(v
 fetch('/api/suara/daftar').then(r=>{if(!r.ok)throw 0;return r.json()}).then(l=>{if(l.some(s=>s.id==='eleven'))selV.add(new Option('Manusia (ElevenLabs)','eleven'))}).catch(()=>{});
 if(!window.speechSynthesis)st.textContent='Peramban ini tidak mendukung Web Speech API.';
 function save(){try{localStorage.setItem('simak-suara',JSON.stringify({suara:selV.value,kecepatan:+selR.value,nada:0}))}catch(e){}}
-function stopAll(){if(ctl)ctl.abort();ctl=null;if(audio){audio.pause();audio=null}if(utter){utter=null;speechSynthesis.cancel()}}
+function stopAll(){if(ctl)ctl.abort();ctl=null;if(audio){audio.pause();URL.revokeObjectURL(audio.src);audio=null}if(utter){utter=null;speechSynthesis.cancel()}}
 function mark(){blocks.forEach(b=>b.classList.remove('speaking'));const b=blocks[i];if(b){b.classList.add('speaking');b.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}}
 function next(){if(playing){i++;speak()}}
 function fail(){playing=false;st.textContent='Suara gagal diputar; periksa suara bahasa Indonesia di peramban atau pengaturan ElevenLabs di server.'}
-async function speak(){stopAll();if(i>=blocks.length){playing=false;st.textContent='Selesai dibacakan';return}
+async function speak(){stopAll();if(!blocks.length){playing=false;st.textContent='Dokumen tidak memiliki bagian yang dapat dibacakan.';return}if(i>=blocks.length){i=Math.max(0,blocks.length-1);playing=false;st.textContent='Selesai dibacakan';return}
 mark();const text=blocks[i].dataset.say,rate=+selR.value;st.textContent='Membacakan bagian '+(i+1)+' dari '+blocks.length;
 if(selV.value!=='eleven'){if(!window.speechSynthesis)return fail();const u=new SpeechSynthesisUtterance(text);u.lang='id-ID';u.rate=Math.max(.5,1+rate/100);
 const v=idVoice();if(v)u.voice=v;u.onend=()=>{if(utter===u){utter=null;next()}};u.onerror=e=>{if(utter===u&&e.error!=='canceled'&&e.error!=='interrupted'){utter=null;fail()}};
@@ -80,6 +60,7 @@ document.getElementById('pause').onclick=()=>{playing=false;stopAll();st.textCon
 document.getElementById('prev').onclick=()=>{i=Math.max(0,i-1);if(playing)speak();else mark()};
 document.getElementById('next').onclick=()=>{i=Math.min(blocks.length-1,i+1);if(playing)speak();else mark()};
 blocks.forEach((b,k)=>b.addEventListener('dblclick',()=>{i=k;playing=true;speak()}));
+window.addEventListener('pagehide',()=>{playing=false;stopAll()});
 """
 
 
@@ -98,13 +79,13 @@ def esc(s) -> str:
 def _data_table(el) -> str:
     sat = el["ext"].get("satuan") or ""
     rows = "".join(f"<tr><th scope='row'>{esc(r['kategori'])}</th><td>{fmt(r['nilai'])}</td></tr>" for r in el["table"])
-    return (f"<details><summary>Tabel data grafik</summary><table><caption>Data yang mendasari grafik"
+    return (f"<details><summary>Tabel data grafik</summary><div class='twrap' tabindex='0' role='region' aria-label='Tabel data grafik'><table><caption>Data yang mendasari grafik"
             f"{' (' + esc(sat) + ')' if sat else ''}</caption><thead><tr><th scope='col'>{esc(el['ext'].get('label_x') or 'Kategori')}</th>"
             f"<th scope='col'>{esc(el['ext'].get('label_y') or 'Nilai')}</th></tr></thead><tbody>{rows}</tbody></table></details>")
 
 
 def build_html(state: dict, alt_for) -> str:
-    parts, n_ok, n_wait, fig_no, tab_no = [], 0, 0, 0, 0
+    parts, n_ok, n_wait, n_reject, fig_no, tab_no = [], 0, 0, 0, 0, 0
     for el in state["elements"]:
         k = el["kind"]
         if k == "heading":
@@ -120,8 +101,8 @@ def build_html(state: dict, alt_for) -> str:
                                             for j, c in enumerate(r)) + "</tr>" for r in rows[1:])
             say = f"Tabel {tab_no}, {len(rows) - 1} baris. Kolom: {', '.join(rows[0])}. " + " ".join(
                 f"Baris {i + 1}: " + "; ".join(f"{h} {c}" for h, c in zip(rows[0], r)) + "." for i, r in enumerate(rows[1:]))
-            parts.append(f"<table data-say='{esc(say)}'><caption>Tabel {tab_no}</caption><thead><tr>{head}</tr></thead>"
-                         f"<tbody>{body}</tbody></table>")
+            parts.append(f"<div class='twrap' tabindex='0' role='region' aria-label='Tabel {tab_no}'><table data-say='{esc(say)}'><caption>Tabel {tab_no}</caption><thead><tr>{head}</tr></thead>"
+                         f"<tbody>{body}</tbody></table></div>")
         elif k == "image":
             img_path = Path(state.get("_job", "")) / "img" / f"{el['id']}.png"
             src = ""
@@ -140,9 +121,14 @@ def build_html(state: dict, alt_for) -> str:
                 say = f"Gambar {fig_no}. {el['alt_auto']}"
             elif st in ("disetujui", "diubah"):
                 n_ok += 1
-                badge = "<span class='stamp s-ok'>Disetujui ULD</span>"
+                badge = "<span class='stamp s-ok'>" + ("Diubah dan disetujui ULD" if st == "diubah" else "Disetujui ULD") + "</span>"
                 body = f"<p>{esc(el['alt_final'])}</p>" + (_data_table(el) if el.get("table") else "")
                 say = f"Gambar {fig_no}. {el['alt_final']}"
+            elif st == "ditolak":
+                n_reject += 1
+                badge = "<span class='stamp s-reject'>Ditolak ULD · deskripsi belum tersedia</span>"
+                body = "<p>Deskripsi ditolak ULD. Gambar ini belum memiliki uraian yang dapat dipercaya.</p>"
+                say = f"Gambar {fig_no}. Deskripsi ditolak Unit Layanan Disabilitas; uraian belum tersedia."
             else:
                 n_wait += 1
                 badge = "<span class='stamp s-hold'>Menunggu tinjauan ULD</span>"
@@ -151,7 +137,7 @@ def build_html(state: dict, alt_for) -> str:
             parts.append(f"<figure data-say='{esc(say)}'>{badge}<img src='{src}' alt='{esc(alt)}'>"
                          f"<figcaption><strong>Gambar {fig_no}.</strong> {body}</figcaption></figure>")
     notice = (f"<div class='notice' role='note'>Dokumen ini diremediasi oleh SIMAK. {n_ok} gambar memiliki deskripsi "
-              f"terverifikasi atau disetujui ULD; {n_wait} gambar menunggu tinjauan. Deskripsi berlabel "
+              f"terverifikasi atau disetujui ULD; {n_wait} gambar menunggu tinjauan; {n_reject} deskripsi ditolak. Deskripsi berlabel "
               f"<em>dihasilkan otomatis</em> dibangun dari tabel data dengan statistik yang dihitung kode.</div>")
     return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(state['title'])}</title>
@@ -159,7 +145,7 @@ def build_html(state: dict, alt_for) -> str:
 <div class="bar" role="region" aria-label="Mode dengar"><b>SIMAK</b>
 <button id="play">{_ic('play')}Putar</button><button id="pause">{_ic('pause')}Jeda</button>
 <button id="prev" aria-label="Bagian sebelumnya">{_ic('prev')}</button><button id="next" aria-label="Bagian berikutnya">{_ic('next')}</button>
-<label>Suara <select id="voice"><option value="peramban" selected>Peramban (id-ID)</option></select></label>
-<label>Kecepatan <select id="rate"><option value="-20">−20%</option><option value="-10">−10%</option><option value="0" selected>normal</option><option value="10">+10%</option><option value="20">+20%</option><option value="35">+35%</option></select></label>
+<details class="settings"><summary>Pengaturan suara</summary><div><label>Suara <select id="voice"><option value="peramban" selected>Peramban (id-ID)</option></select></label>
+<label>Kecepatan <select id="rate"><option value="-20">−20%</option><option value="-10">−10%</option><option value="0" selected>normal</option><option value="10">+10%</option><option value="20">+20%</option><option value="35">+35%</option></select></label><p>Suara Indonesia mengikuti perangkat. Jika memilih ElevenLabs, teks yang diputar dikirim ke layanan itu.</p></div></details>
 <span class="st" id="st" aria-live="polite"></span></div>
 <main id="isi">{notice}{''.join(parts)}</main><script>{JS}</script></body></html>"""

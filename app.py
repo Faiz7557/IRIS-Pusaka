@@ -3,14 +3,17 @@
 Jalankan:  python -m uvicorn app:app --port 8000
 Titik akhir mengikuti rancangan: POST /api/unggah, GET /api/pekerjaan/{id},
 POST /api/tinjau/{id}/{el}, GET /keluaran/{id}/simak.html|simak.pdf.
-Dokumen diproses per sesi di work/ dan dihapus saat sesi dihapus atau kedaluwarsa.
+Dokumen diproses per sesi di work/ dan dihapus melalui tindakan Hapus sesi; tidak ada cleanup berkala.
 """
 import json
+import logging
 import shutil
 import threading
 import time
 import uuid
 from pathlib import Path
+
+import fitz
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, Response
@@ -24,16 +27,9 @@ app = FastAPI(title="SIMAK")
 WEB = ROOT / "web"
 JOBS: dict[str, dict] = {}
 SYN = DATA / "synth"
-SESSION_TTL = 6 * 3600
-
-
-def _cleanup():
-    for d in WORK.glob("job_*"):
-        if time.time() - d.stat().st_mtime > SESSION_TTL:
-            shutil.rmtree(d, ignore_errors=True)
-
-
-_cleanup()
+MAX_UPLOAD = 20 * 1024 * 1024
+MAX_PAGES = 200
+_ACTIVE = threading.BoundedSemaphore(1)
 
 
 def _job_dir(jid: str) -> Path:
@@ -43,17 +39,29 @@ def _job_dir(jid: str) -> Path:
 
 
 def _start(pdf: Path, name: str) -> str:
+    if not _ACTIVE.acquire(blocking=False):
+        raise HTTPException(409, "Satu dokumen sedang diproses. Tunggu selesai sebelum memulai dokumen lain.")
     jid = uuid.uuid4().hex[:10]
     job = _job_dir(jid)
-    job.mkdir(parents=True)
-    shutil.copy(pdf, job / "asli.pdf")
-    JOBS[jid] = {"tahap": "antre", "pesan": "Menunggu", "nama": name, "mulai": time.time()}
+    try:
+        job.mkdir(parents=True)
+        shutil.copy(pdf, job / "asli.pdf")
+        JOBS[jid] = {"tahap": "antre", "pesan": "Menunggu", "nama": name, "mulai": time.time()}
+    except Exception:
+        _ACTIVE.release()
+        raise
 
     def work():
         try:
-            pipeline.run(job / "asli.pdf", job, lambda t, m: JOBS[jid].update(tahap=t, pesan=m))
-        except Exception as e:  # dilaporkan ke antarmuka, tidak disembunyikan
-            JOBS[jid].update(tahap="gagal", pesan=f"{type(e).__name__}: {e}")
+            with pipeline.job_lock(job):
+                state = pipeline.run(job / "asli.pdf", job, lambda t, m: JOBS[jid].update(tahap=t, pesan=m))
+                state["file"] = name
+                pipeline.save(job, state)
+        except Exception:
+            logging.exception("Pemrosesan SIMAK gagal: %s", jid)
+            JOBS[jid].update(tahap="gagal", pesan="Dokumen gagal diproses. Periksa format PDF, lalu coba dokumen lain.")
+        finally:
+            _ACTIVE.release()
     threading.Thread(target=work, daemon=True).start()
     return jid
 
@@ -82,9 +90,23 @@ def proses_sampel(name: str):
 
 @app.post("/api/unggah")
 async def unggah(file: UploadFile = File(...)):
-    data = await file.read()
+    data = bytearray()
+    while chunk := await file.read(1024 * 1024):
+        data.extend(chunk)
+        if len(data) > MAX_UPLOAD:
+            raise HTTPException(413, "Berkas melebihi batas 20 MiB. Pilih PDF yang lebih kecil.")
     if not data.startswith(b"%PDF"):
         raise HTTPException(400, "Berkas bukan PDF")
+    try:
+        with fitz.open(stream=bytes(data), filetype="pdf") as doc:
+            if doc.needs_pass:
+                raise HTTPException(400, "PDF terkunci. Unggah salinan tanpa kata sandi.")
+            if not 1 <= doc.page_count <= MAX_PAGES:
+                raise HTTPException(400, "PDF harus memuat 1 hingga 200 halaman.")
+    except HTTPException:
+        raise
+    except Exception:
+        raise HTTPException(400, "PDF tidak dapat dibuka. Simpan ulang sebagai PDF yang valid.")
     tmp = WORK / f"up_{uuid.uuid4().hex}.pdf"
     tmp.write_bytes(data)
     try:
@@ -140,6 +162,8 @@ def tinjau(jid: str, el: str, body: Tinjau):
         raise HTTPException(400, "Teks alternatif tidak boleh kosong")
     try:
         return pipeline.review(_job_dir(jid), el, body.aksi, body.alt.strip())
+    except (FileNotFoundError, LookupError):
+        raise HTTPException(404, "Sesi atau elemen tinjauan tidak ditemukan")
     except ValueError as e:
         raise HTTPException(400, str(e))
 
@@ -148,17 +172,27 @@ def tinjau(jid: str, el: str, body: Tinjau):
 def keluaran(jid: str, name: str):
     if name not in ("simak.html", "simak.pdf", "asli.pdf"):
         raise HTTPException(404)
-    f = _job_dir(jid) / name
-    if not f.exists():
-        raise HTTPException(404)
-    return FileResponse(f, filename=None if name.endswith("html") else f"{name}")
+    job = _job_dir(jid)
+    with pipeline.job_lock(job):
+        f = pipeline.output_path(job, name)
+        if not f.is_file():
+            raise HTTPException(404, "Keluaran belum tersedia atau sesi telah dihapus")
+        headers = {} if name.endswith("html") else {"Content-Disposition": f'attachment; filename="{name}"'}
+        return Response(f.read_bytes(), media_type="text/html" if name.endswith("html") else "application/pdf", headers=headers)
 
 
 @app.delete("/api/pekerjaan/{jid}")
 def hapus(jid: str):
-    shutil.rmtree(_job_dir(jid), ignore_errors=True)
-    JOBS.pop(jid, None)
+    job = _job_dir(jid)
+    if JOBS.get(jid, {}).get("tahap") not in (None, "selesai", "gagal"):
+        raise HTTPException(409, "Dokumen masih diproses. Tunggu selesai sebelum menghapus sesi.")
+    with pipeline.job_lock(job):
+        if not job.exists():
+            raise HTTPException(404, "Sesi tidak ditemukan")
+        shutil.rmtree(job)
+        JOBS.pop(jid, None)
     return {"dihapus": True}
+
 
 
 # ------------------------------------------------------------------ demo adversarial

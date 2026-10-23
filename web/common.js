@@ -1,4 +1,4 @@
-// Komponen bersama antarmuka SIMAK (dunia: kartu katalog perpustakaan).
+// Komponen bersama SIMAK: panel editorial dan bukti yang dapat ditelusuri.
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const cap = s => s ? s[0].toUpperCase() + s.slice(1) : '';
 const fmtId = v => typeof v === 'string' ? v : Number(v).toLocaleString('id-ID', {maximumFractionDigits: 2});
@@ -32,27 +32,37 @@ const ICON_PATHS = {
 };
 const icon = (name, label) => `<svg class="icon" viewBox="0 0 24 24" ${label ? `role="img" aria-label="${esc(label)}"` : 'aria-hidden="true"'}>${ICON_PATHS[name] || ''}</svg>`;
 
-// Rail: wordmark, navigasi, dan satu angka bukti dari evaluasi beku.
+async function requestJson(url, options) {
+  let r;
+  try { r = await fetch(url, options); }
+  catch (e) { if (e.name === 'AbortError') throw e; throw new Error('Koneksi ke SIMAK terputus. Periksa server lalu coba lagi.'); }
+  const data = await r.json().catch(() => null);
+  if (!r.ok) {
+    const e = new Error(typeof data?.detail === 'string' ? data.detail : `Permintaan gagal (${r.status}). Coba lagi.`);
+    e.status = r.status; throw e;
+  }
+  if (data === null) throw new Error('Respons server tidak dapat dibaca. Coba periksa status lagi.');
+  return data;
+}
+function rememberJob(jid) {
+  try { jid ? sessionStorage.setItem('simak-job', jid) : sessionStorage.removeItem('simak-job'); } catch (e) {}
+  document.querySelectorAll('[data-job-link]').forEach(a => { a.href = a.dataset.jobLink + (jid ? '?job=' + encodeURIComponent(jid) : ''); });
+}
+function currentJob() { try { return sessionStorage.getItem('simak-job'); } catch (e) { return null; } }
+
+// Nama fungsi dipertahankan untuk empat pemanggil yang sudah ada.
 function renderRail(current) {
-  const items = [['demo.html', 'Demo Gerbang', 'layers'], ['dengar.html', 'Dengar', 'ear'], ['index.html', 'Remediasi', 'doc'], ['evaluasi.html', 'Evaluasi', 'chart']];
-  const rail = document.querySelector('.rail');
-  rail.innerHTML = `
-    <a class="wordmark" href="demo.html"><b>SIMAK</b><span>Sistem Ilustrasi Materi Aksesibel untuk Kuliah</span></a>
+  const items = [['dengar.html', 'Dengar', 'ear'], ['demo.html', 'Demo Gerbang', 'layers'], ['index.html', 'Remediasi', 'doc'], ['evaluasi.html', 'Evaluasi', 'chart']];
+  document.querySelector('.rail').innerHTML = `
+    <a class="wordmark" href="/" aria-label="SIMAK · beranda remediasi"><b>SIMAK<span class="brand-dot" aria-hidden="true">.</span></b></a>
     <nav class="nav" aria-label="Navigasi utama">${items.map(([h, l, i]) =>
-      `<a href="${h}" ${h === current ? 'aria-current="page"' : ''}>${icon(i)}${l}</a>`).join('')}</nav>
-    <div class="vc" id="vc" hidden>
+      `<a href="${h}" ${['dengar.html', 'index.html'].includes(h) ? `data-job-link="${h}"` : ''} ${h === current ? 'aria-current="page"' : ''}>${icon(i)}${l}</a>`).join('')}</nav>
+    <details class="vc" id="vc" hidden><summary>${icon('mic')}<span>Perintah suara</span></summary>
       <button type="button" id="vc-btn" aria-pressed="false">${icon('mic')}<span>Perintah suara</span></button>
-      <p id="vc-st" role="status" aria-live="polite">Ucapkan nama tombol, mis. "Bandingkan" atau "Evaluasi".</p>
-    </div>
-    <div class="rail-proof" id="rail-proof" hidden></div>`;
+      <p id="vc-st" role="status" aria-live="polite">Mikrofon aktif setelah Anda menekan tombol. Ucapkan nama tindakan atau halaman.</p>
+    </details>`;
   VoiceCmd.init();
-  fetch('/api/evaluasi').then(r => r.json()).then(r => {
-    if (!r || r.ada === false || !r.G3) return;
-    const f = r.G3.D_fk_terbit;
-    const el = document.getElementById('rail-proof');
-    el.innerHTML = `<div class="fig">${f.k}/${f.n}</div><p>angka yang terbit otomatis setia pada tabel acuan, set uji tertahan</p>`;
-    el.hidden = false;
-  }).catch(() => {});
+  rememberJob(currentJob());
 }
 
 const STATUS = {
@@ -75,10 +85,8 @@ const checkStamps = (checks, when) => Object.entries(checks || {}).map(([k, v], 
 const checkLegend = () => Object.entries(CHECKS).map(([k, v]) => `<b class="num">${k}</b> ${v}`).join(' · ');
 
 function pressSlip(slip) {
-  if (!slip) return;
-  slip.classList.remove('pressing');
-  void slip.offsetWidth;
-  slip.classList.add('pressing');
+  if (!slip || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  slip.animate?.([{backgroundColor: '#fff0c2'}, {backgroundColor: 'transparent'}], {duration: 220});
 }
 
 const MEASURE = {nilai: 'nilai', maksimum: 'maksimum', minimum: 'minimum', selisih: 'selisih', rerata: 'rerata',
@@ -137,7 +145,7 @@ const Voice = {
   stop() {
     if (this.ctl) this.ctl.abort();
     this.ctl = null;
-    if (this.audio) { this.audio.pause(); this.audio = null; }
+    if (this.audio) { this.audio.pause(); URL.revokeObjectURL(this.audio.src); this.audio = null; }
     if (this.utter) { this.utter = null; speechSynthesis.cancel(); }
   },
   // Mengucapkan teks; onend dipanggil saat selesai, onerror bila suara gagal.
@@ -185,10 +193,11 @@ const Voice = {
       <select id="v-suara">${opt('peramban', 'Peramban (id-ID)', this.pref.suara)}</select>
       <label class="lbl" for="v-cepat" style="min-width:0">Kecepatan</label>
       <select id="v-cepat">${[-20, -10, 0, 10, 20, 35].map(v => opt(v, (v > 0 ? '+' : '') + v + '%', this.pref.kecepatan)).join('')}</select>
-      <button type="button" id="v-coba">${icon('play')}Coba suara</button>`;
+      <button type="button" id="v-coba">${icon('play')}Coba suara</button><span class="voice-note small" id="voice-note" role="status"></span>`;
     const upd = () => {
       this.pref = {suara: el.querySelector('#v-suara').value, kecepatan: +el.querySelector('#v-cepat').value, nada: 0};
       this.save(); this.stop(); onchange && onchange();
+      el.querySelector('#voice-note').textContent = this.pref.suara === 'eleven' ? 'Teks yang diputar dikirim ke ElevenLabs.' : 'Suara peramban; ketersediaan id-ID mengikuti perangkat.';
     };
     // Suara ElevenLabs hanya ditawarkan bila server sudah dikonfigurasi; selain itu tetap suara peramban.
     fetch('/api/suara/daftar').then(r => r.json()).then(list => {
@@ -200,7 +209,7 @@ const Voice = {
       speechSynthesis.onvoiceschanged = null;
     };
     el.querySelectorAll('select').forEach(s => s.onchange = upd);
-    el.querySelector('#v-coba').onclick = () => this.speak('Halo, saya membacakan materi kuliah untuk Anda. Nilai tertinggi pada Juli, yaitu 1.452 kunjungan.');
+    el.querySelector('#v-coba').onclick = () => { onchange && onchange(); this.speak('Halo, saya membacakan materi kuliah untuk Anda.', null, () => { el.querySelector('#voice-note').textContent = 'Suara gagal diputar. Gunakan teks atau periksa suara id-ID di perangkat.'; }); };
   },
 };
 Voice.load();
@@ -290,7 +299,8 @@ const VoiceCmd = {
     if (!(window.SpeechRecognition || window.webkitSpeechRecognition)) return;  // peramban tanpa dukungan: sembunyikan
     box.hidden = false;
     document.getElementById('vc-btn').onclick = () => this.on ? this.stop() : this.start();
-    let was = false; try { was = localStorage.getItem('simak-perintah') === '1'; } catch (e) {}
-    if (was) this.start();  // izin mikrofon yang sudah diberikan berlaku lagi tanpa klik
+
   },
 };
+
+window.addEventListener('pagehide', () => { Voice.stop(); VoiceCmd.stop(); });
