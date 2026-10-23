@@ -1,0 +1,275 @@
+{
+ "grid": [
+  {
+   "theta_e": 0.0,
+   "terbit": 25,
+   "fk_rerata": 0.9374667554667555
+  },
+  {
+   "theta_e": 0.002,
+   "terbit": 26,
+   "fk_rerata": 0.9350641879488033
+  },
+  {
+   "theta_e": 0.005,
+   "terbit": 26,
+   "fk_rerata": 0.9350641879488033
+  },
+  {
+   "theta_e": 0.01,
+   "terbit": 26,
+   "fk_rerata": 0.9350641879488033
+  },
+  {
+   "theta_e": 0.015,
+   "terbit": 26,
+   "fk_rerata": 0.9350641879488033
+  },
+  {
+   "theta_e": 0.02,
+   "terbit": 26,
+   "fk_rerata": 0.9350641879488033
+  },
+  {
+   "theta_e": 0.03,
+   "terbit": 27,
+   "fk_rerata": 0.931771212326768
+  },
+  {
+   "theta_e": 0.05,
+   "terbit": 27,
+   "fk_rerata": 0.931771212326768
+  },
+  {
+   "theta_e": 0.08,
+   "terbit": 27,
+   "fk_rerata": 0.931771212326768
+  },
+  {
+   "theta_e": 0.12,
+   "terbit": 27,
+   "fk_rerata": 0.931771212326768
+  }
+ ],
+ "per_grafik": [
+  {
+   "id": "syn000",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn001",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn002",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.7777777777777778,
+   "label": false
+  },
+  {
+   "id": "syn007",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn010",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn018",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn019",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn023",
+   "delta": 0.0019230769230769232,
+   "axis": true,
+   "fk": 0.875,
+   "label": false
+  },
+  {
+   "id": "syn025",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn029",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": false
+  },
+  {
+   "id": "syn030",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn038",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.75,
+   "label": false
+  },
+  {
+   "id": "syn042",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn044",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.8571428571428571,
+   "label": false
+  },
+  {
+   "id": "syn046",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn047",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": false
+  },
+  {
+   "id": "syn051",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn052",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn054",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.8461538461538461,
+   "label": true
+  },
+  {
+   "id": "syn055",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.8181818181818182,
+   "label": true
+  },
+  {
+   "id": "syn056",
+   "delta": 0.02982731554160134,
+   "axis": true,
+   "fk": 0.8461538461538461,
+   "label": false
+  },
+  {
+   "id": "syn061",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn064",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn067",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn069",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn071",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.8,
+   "label": false
+  },
+  {
+   "id": "syn072",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 1.0,
+   "label": true
+  },
+  {
+   "id": "syn080",
+   "delta": 0.0,
+   "axis": false,
+   "fk": 1.0,
+   "label": false
+  },
+  {
+   "id": "syn086",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.7692307692307693,
+   "label": false
+  },
+  {
+   "id": "syn087",
+   "delta": 0.0,
+   "axis": true,
+   "fk": 0.8181818181818182,
+   "label": true
+  }
+ ],
+ "terkunci": {
+  "theta_e": 0.0,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:32:19",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "θe terbesar dengan rerata Fk (vs acuan) ≥ 0,98 pada grafik dev yang terbit"
+ }
+}

@@ -1,0 +1,1600 @@
+{
+ "title": "Pertemuan 6: Statistika Deskriptif dan Visualisasi Data",
+ "file": "materi_04.pdf",
+ "tagged_input": false,
+ "elements": [
+  {
+   "kind": "heading",
+   "level": 1,
+   "page": 1,
+   "text": "Pertemuan 6: Statistika Deskriptif dan Visualisasi Data",
+   "id": "e000"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    98.08000000000004,
+    95.0,
+    126.08000000000004
+   ],
+   "odl_id": 2,
+   "hash": "4172b371a443968ef914364398aa2608",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e001",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Mata kuliah Statistika Dasar, semester gasal",
+   "id": "e002"
+  },
+  {
+   "kind": "heading",
+   "level": 2,
+   "page": 1,
+   "text": "1. Pendahuluan",
+   "id": "e003"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Statistika deskriptif membantu kita meringkas data sebelum melakukan inferensi. Pada pertemuan ini kita membahas ukuran pemusatan, ukuran penyebaran, dan cara membaca graﬁk dengan benar.",
+   "id": "e004"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Tabel berikut merangkum hasil kuis mingguan. Gunakan tabel ini untuk berlatih menghitung rerata dan simpangan baku secara manual sebelum memakai perangkat lunak.",
+   "id": "e005"
+  },
+  {
+   "kind": "table",
+   "page": 1,
+   "rows": [
+    [
+     "Nama",
+     "Kuis 1",
+     "Kuis 2"
+    ],
+    [
+     "Mahasiswa A",
+     "84",
+     "61"
+    ],
+    [
+     "Mahasiswa B",
+     "65",
+     "71"
+    ],
+    [
+     "Mahasiswa C",
+     "90",
+     "97"
+    ],
+    [
+     "Mahasiswa D",
+     "59",
+     "52"
+    ],
+    [
+     "Mahasiswa E",
+     "83",
+     "66"
+    ]
+   ],
+   "source": "pymupdf",
+   "id": "e006"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Graﬁk batang cocok untuk membandingkan kategori, sedangkan graﬁk garis cocok untuk memperlihatkan perubahan menurut waktu. Perhatikan selalu satuan dan skala pada sumbu nilai.",
+   "id": "e007"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    455.58,
+    447.0,
+    693.08
+   ],
+   "odl_id": 91,
+   "hash": "c94ba8187fd1a55cc3e82a431ad2bb37",
+   "area": 0.180143316233857,
+   "decorative": false,
+   "id": "e008",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Anggaran riset per unit (2025)",
+    "label_x": "Unit",
+    "label_y": "Anggaran (juta rupiah)",
+    "satuan": "juta rupiah",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "FEB",
+     "nilai": 620.0
+    },
+    {
+     "kategori": "FIB",
+     "nilai": 1020.0
+    },
+    {
+     "kategori": "FST",
+     "nilai": 1280.0
+    },
+    {
+     "kategori": "FT",
+     "nilai": 1080.0
+    },
+    {
+     "kategori": "LPPM",
+     "nilai": 520.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "FEB",
+     "nilai": 620.0
+    },
+    {
+     "kategori": "FIB",
+     "nilai": 1020.0
+    },
+    {
+     "kategori": "FST",
+     "nilai": 1280.0
+    },
+    {
+     "kategori": "FT",
+     "nilai": 1080.0
+    },
+    {
+     "kategori": "LPPM",
+     "nilai": 520.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "FEB",
+     "nilai": 620.0
+    },
+    {
+     "kategori": "FIB",
+     "nilai": 1020.0
+    },
+    {
+     "kategori": "FST",
+     "nilai": 1280.0
+    },
+    {
+     "kategori": "FT",
+     "nilai": 1080.0
+    },
+    {
+     "kategori": "LPPM",
+     "nilai": 520.0
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": false,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Anggaran riset per unit (2025)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Unit dan sumbu nilai Anggaran (juta rupiah). "
+    },
+    {
+     "text": "Grafik memuat 5 kategori, dari FEB sampai LPPM. "
+    },
+    {
+     "text": "Nilai tertinggi pada FST, yaitu "
+    },
+    {
+     "text": "1.280",
+     "claim": 0
+    },
+    {
+     "text": " juta rupiah; terendah pada LPPM, yaitu "
+    },
+    {
+     "text": "520",
+     "claim": 1
+    },
+    {
+     "text": " juta rupiah. Selisih keduanya "
+    },
+    {
+     "text": "760",
+     "claim": 2
+    },
+    {
+     "text": " juta rupiah, dan rerata seluruh kategori "
+    },
+    {
+     "text": "904,0",
+     "claim": 3
+    },
+    {
+     "text": " juta rupiah. "
+    },
+    {
+     "text": "Urutan dari tertinggi: FST, FT, FIB, FEB, LPPM. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "FEB "
+    },
+    {
+     "text": "620",
+     "claim": 4
+    },
+    {
+     "text": " juta rupiah; "
+    },
+    {
+     "text": "FIB "
+    },
+    {
+     "text": "1.020",
+     "claim": 5
+    },
+    {
+     "text": " juta rupiah; "
+    },
+    {
+     "text": "FST "
+    },
+    {
+     "text": "1.280",
+     "claim": 6
+    },
+    {
+     "text": " juta rupiah; "
+    },
+    {
+     "text": "FT "
+    },
+    {
+     "text": "1.080",
+     "claim": 7
+    },
+    {
+     "text": " juta rupiah; "
+    },
+    {
+     "text": "LPPM "
+    },
+    {
+     "text": "520",
+     "claim": 8
+    },
+    {
+     "text": " juta rupiah."
+    }
+   ],
+   "claims": [
+    {
+     "e": "FST",
+     "m": "maksimum",
+     "v": 1280.0
+    },
+    {
+     "e": "LPPM",
+     "m": "minimum",
+     "v": 520.0
+    },
+    {
+     "e": "FST|LPPM",
+     "m": "selisih",
+     "v": 760.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 904.0
+    },
+    {
+     "e": "FEB",
+     "m": "nilai",
+     "v": 620.0
+    },
+    {
+     "e": "FIB",
+     "m": "nilai",
+     "v": 1020.0
+    },
+    {
+     "e": "FST",
+     "m": "nilai",
+     "v": 1280.0
+    },
+    {
+     "e": "FT",
+     "m": "nilai",
+     "v": 1080.0
+    },
+    {
+     "e": "LPPM",
+     "m": "nilai",
+     "v": 520.0
+    }
+   ],
+   "D": [
+    {
+     "e": "FST",
+     "m": "maksimum",
+     "v": 1280.0
+    },
+    {
+     "e": "LPPM",
+     "m": "minimum",
+     "v": 520.0
+    },
+    {
+     "e": "FST|LPPM",
+     "m": "selisih",
+     "v": 760.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 904.0
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 4520.0
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Anggaran riset per unit (2025)”, dengan sumbu kategori Unit dan sumbu nilai Anggaran (juta rupiah). Grafik memuat 5 kategori, dari FEB sampai LPPM. Nilai tertinggi pada FST, yaitu 1.280 juta rupiah; terendah pada LPPM, yaitu 520 juta rupiah. Selisih keduanya 760 juta rupiah, dan rerata seluruh kategori 904,0 juta rupiah. Urutan dari tertinggi: FST, FT, FIB, FEB, LPPM. Rincian nilai: FEB 620 juta rupiah; FIB 1.020 juta rupiah; FST 1.280 juta rupiah; FT 1.080 juta rupiah; LPPM 520 juta rupiah.",
+   "claim_detail": [
+    {
+     "e": "FST",
+     "m": "maksimum",
+     "v": 1280.0,
+     "ok": true,
+     "ref": 1280.0
+    },
+    {
+     "e": "LPPM",
+     "m": "minimum",
+     "v": 520.0,
+     "ok": true,
+     "ref": 520.0
+    },
+    {
+     "e": "FST|LPPM",
+     "m": "selisih",
+     "v": 760.0,
+     "ok": true,
+     "ref": 760.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 904.0,
+     "ok": true,
+     "ref": 904.0
+    },
+    {
+     "e": "FEB",
+     "m": "nilai",
+     "v": 620.0,
+     "ok": true,
+     "ref": 620.0
+    },
+    {
+     "e": "FIB",
+     "m": "nilai",
+     "v": 1020.0,
+     "ok": true,
+     "ref": 1020.0
+    },
+    {
+     "e": "FST",
+     "m": "nilai",
+     "v": 1280.0,
+     "ok": true,
+     "ref": 1280.0
+    },
+    {
+     "e": "FT",
+     "m": "nilai",
+     "v": 1080.0,
+     "ok": true,
+     "ref": 1080.0
+    },
+    {
+     "e": "LPPM",
+     "m": "nilai",
+     "v": 520.0,
+     "ok": true,
+     "ref": 520.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "reasons": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Gambar 1. Anggaran riset per unit (2025)",
+   "id": "e009"
+  },
+  {
+   "kind": "heading",
+   "level": 3,
+   "page": 1,
+   "text": "2. Membaca graﬁk",
+   "id": "e010"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Data berikut berasal dari contoh ilustratif dan tidak mewakili statistik resmi. Mahasiswa diminta mengidentiﬁkasi nilai tertinggi, nilai terendah, serta pola umum pada setiap graﬁk.",
+   "id": "e011"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 96,
+   "hash": "9a91261e5859a39de60b3646e65ff7be",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e012",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+    "label_x": "Tahun",
+    "label_y": "Jumlah (orang)",
+    "satuan": "orang",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "2018",
+     "nilai": 227.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 208.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 135.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 39.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 40.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "2018",
+     "nilai": 227.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 208.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 135.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 39.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 40.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "2018",
+     "nilai": 227.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 208.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 135.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 39.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 40.0
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Mahasiswa disabilitas terdaftar per tahun (2020)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). "
+    },
+    {
+     "text": "Grafik memuat 5 kategori, dari 2018 sampai 2022. "
+    },
+    {
+     "text": "Nilai tertinggi pada 2018, yaitu "
+    },
+    {
+     "text": "227",
+     "claim": 0
+    },
+    {
+     "text": " orang; terendah pada 2021, yaitu "
+    },
+    {
+     "text": "39",
+     "claim": 1
+    },
+    {
+     "text": " orang. Selisih keduanya "
+    },
+    {
+     "text": "188",
+     "claim": 2
+    },
+    {
+     "text": " orang, dan rerata seluruh kategori "
+    },
+    {
+     "text": "129,8",
+     "claim": 3
+    },
+    {
+     "text": " orang. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "turun",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "-217",
+     "claim": 5
+    },
+    {
+     "text": " orang dari 2018 ke 2022. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "2018 "
+    },
+    {
+     "text": "227",
+     "claim": 6
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2019 "
+    },
+    {
+     "text": "208",
+     "claim": 7
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2020 "
+    },
+    {
+     "text": "135",
+     "claim": 8
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2021 "
+    },
+    {
+     "text": "39",
+     "claim": 9
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2022 "
+    },
+    {
+     "text": "40",
+     "claim": 10
+    },
+    {
+     "text": " orang."
+    }
+   ],
+   "claims": [
+    {
+     "e": "2018",
+     "m": "maksimum",
+     "v": 227.0
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 39.0
+    },
+    {
+     "e": "2018|2021",
+     "m": "selisih",
+     "v": 188.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 129.8
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": -217.2
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 227.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 208.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 135.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 39.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 40.0
+    }
+   ],
+   "D": [
+    {
+     "e": "2018",
+     "m": "maksimum",
+     "v": 227.0
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 39.0
+    },
+    {
+     "e": "2018|2021",
+     "m": "selisih",
+     "v": 188.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 129.8
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 649.0
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": -217.2
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan",
+     "v": -187.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Mahasiswa disabilitas terdaftar per tahun (2020)”, dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). Grafik memuat 5 kategori, dari 2018 sampai 2022. Nilai tertinggi pada 2018, yaitu 227 orang; terendah pada 2021, yaitu 39 orang. Selisih keduanya 188 orang, dan rerata seluruh kategori 129,8 orang. Secara keseluruhan tren turun: garis regresi berubah sekitar -217 orang dari 2018 ke 2022. Rincian nilai: 2018 227 orang; 2019 208 orang; 2020 135 orang; 2021 39 orang; 2022 40 orang.",
+   "claim_detail": [
+    {
+     "e": "2018",
+     "m": "maksimum",
+     "v": 227.0,
+     "ok": true,
+     "ref": 227.0
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 39.0,
+     "ok": true,
+     "ref": 39.0
+    },
+    {
+     "e": "2018|2021",
+     "m": "selisih",
+     "v": 188.0,
+     "ok": true,
+     "ref": 188.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 129.8,
+     "ok": true,
+     "ref": 129.8
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun",
+     "ok": true,
+     "ref": "turun"
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": -217.2,
+     "ok": true,
+     "ref": -217.2
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 227.0,
+     "ok": true,
+     "ref": 227.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 208.0,
+     "ok": true,
+     "ref": 208.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 135.0,
+     "ok": true,
+     "ref": 135.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 39.0,
+     "ok": true,
+     "ref": 39.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 40.0,
+     "ok": true,
+     "ref": 40.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 2. Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "id": "e013"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    328.70000000000005,
+    447.0,
+    480.7
+   ],
+   "odl_id": 99,
+   "hash": "56d0c72c8cc43fe73748ae0a3c26bcae",
+   "area": 0.11529172238966841,
+   "decorative": false,
+   "id": "e014",
+   "jenis": "diagram",
+   "draft": "Diagram alir yang menggambarkan tahapan dalam statistika inferensial. Urutannya dimulai dari populasi, kemudian diambil sampel, dihitung nilai statistiknya, dan diakhiri dengan proses inferensi.",
+   "checks": {},
+   "reasons": [
+    "Diagram nondata tidak memiliki pemeriksaan otomatis (K = ∅)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 3. Alur dari populasi ke inferensi",
+   "id": "e015"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "3. Ukuran pemusatan Rerata sampel dideﬁnisikan sebagai berikut.",
+   "id": "e016"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    566.7,
+    307.0,
+    614.7
+   ],
+   "odl_id": 103,
+   "hash": "0a181fd54d6d75cd8d3d4cfe8ead43f8",
+   "area": 0.022994470947523903,
+   "decorative": false,
+   "id": "e017",
+   "jenis": "rumus",
+   "draft": "LaTeX: \\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\nUcapan: x bar sama dengan satu per n dikali sigma x sub i dari i sama dengan satu sampai n.\nGambar ini menunjukkan rumus matematika untuk menghitung rata-rata sampel.",
+   "checks": {},
+   "reasons": [
+    "Rumus: pengenal kedua belum tersedia, ditahan (fail-closed)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Regresi linear sederhana memodelkan hubungan antara variabel bebas x dan variabel terikat y. Koeﬁsien kemiringan menunjukkan besarnya perubahan y untuk setiap kenaikan satu satuan x.",
+   "id": "e018"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "4. Latihan Perhatikan graﬁk berikut dan tentukan kategori dengan nilai tertinggi.",
+   "id": "e019"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 106,
+   "hash": "35233cf2bb36c6c9fd0e019f3883912e",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e020",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "area",
+    "judul": "Mahasiswa disabilitas terdaftar per tahun (2022)",
+    "label_x": "Tahun",
+    "label_y": "Jumlah (orang)",
+    "satuan": "orang",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "2018",
+     "nilai": 167.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 228.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 195.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 190.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 180.0
+    },
+    {
+     "kategori": "2023",
+     "nilai": 174.0
+    },
+    {
+     "kategori": "2024",
+     "nilai": 161.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "2018",
+     "nilai": 167.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 228.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 195.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 190.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 180.0
+    },
+    {
+     "kategori": "2023",
+     "nilai": 173.0
+    },
+    {
+     "kategori": "2024",
+     "nilai": 161.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "2018",
+     "nilai": 167.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 228.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 195.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 190.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 180.0
+    },
+    {
+     "kategori": "2023",
+     "nilai": 174.0
+    },
+    {
+     "kategori": "2024",
+     "nilai": 161.0
+    }
+   ],
+   "delta": 0.0021321961620469083,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": false,
+   "seg": [
+    {
+     "text": "Grafik area "
+    },
+    {
+     "text": "berjudul “Mahasiswa disabilitas terdaftar per tahun (2022)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). "
+    },
+    {
+     "text": "Grafik memuat 7 kategori, dari 2018 sampai 2024. "
+    },
+    {
+     "text": "Nilai tertinggi pada 2019, yaitu "
+    },
+    {
+     "text": "228",
+     "claim": 0
+    },
+    {
+     "text": " orang; terendah pada 2024, yaitu "
+    },
+    {
+     "text": "161",
+     "claim": 1
+    },
+    {
+     "text": " orang. Selisih keduanya "
+    },
+    {
+     "text": "67",
+     "claim": 2
+    },
+    {
+     "text": " orang, dan rerata seluruh kategori "
+    },
+    {
+     "text": "185,0",
+     "claim": 3
+    },
+    {
+     "text": " orang. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "turun",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "-30",
+     "claim": 5
+    },
+    {
+     "text": " orang dari 2018 ke 2024. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "2018 "
+    },
+    {
+     "text": "167",
+     "claim": 6
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2019 "
+    },
+    {
+     "text": "228",
+     "claim": 7
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2020 "
+    },
+    {
+     "text": "195",
+     "claim": 8
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2021 "
+    },
+    {
+     "text": "190",
+     "claim": 9
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2022 "
+    },
+    {
+     "text": "180",
+     "claim": 10
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2023 "
+    },
+    {
+     "text": "174",
+     "claim": 11
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2024 "
+    },
+    {
+     "text": "161",
+     "claim": 12
+    },
+    {
+     "text": " orang."
+    }
+   ],
+   "claims": [
+    {
+     "e": "2019",
+     "m": "maksimum",
+     "v": 228.0
+    },
+    {
+     "e": "2024",
+     "m": "minimum",
+     "v": 161.0
+    },
+    {
+     "e": "2019|2024",
+     "m": "selisih",
+     "v": 67.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 185.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    },
+    {
+     "e": "2018|2024",
+     "m": "perubahan_terfit",
+     "v": -30.214285714285715
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 167.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 228.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 195.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 190.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 180.0
+    },
+    {
+     "e": "2023",
+     "m": "nilai",
+     "v": 174.0
+    },
+    {
+     "e": "2024",
+     "m": "nilai",
+     "v": 161.0
+    }
+   ],
+   "D": [
+    {
+     "e": "2019",
+     "m": "maksimum",
+     "v": 228.0
+    },
+    {
+     "e": "2024",
+     "m": "minimum",
+     "v": 161.0
+    },
+    {
+     "e": "2019|2024",
+     "m": "selisih",
+     "v": 67.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 185.0
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 1295.0
+    },
+    {
+     "e": "2018|2024",
+     "m": "perubahan_terfit",
+     "v": -30.214285714285715
+    },
+    {
+     "e": "2018|2024",
+     "m": "perubahan",
+     "v": -6.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    }
+   ],
+   "alt_auto": "Grafik area berjudul “Mahasiswa disabilitas terdaftar per tahun (2022)”, dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). Grafik memuat 7 kategori, dari 2018 sampai 2024. Nilai tertinggi pada 2019, yaitu 228 orang; terendah pada 2024, yaitu 161 orang. Selisih keduanya 67 orang, dan rerata seluruh kategori 185,0 orang. Secara keseluruhan tren turun: garis regresi berubah sekitar -30 orang dari 2018 ke 2024. Rincian nilai: 2018 167 orang; 2019 228 orang; 2020 195 orang; 2021 190 orang; 2022 180 orang; 2023 174 orang; 2024 161 orang.",
+   "claim_detail": [
+    {
+     "e": "2019",
+     "m": "maksimum",
+     "v": 228.0,
+     "ok": true,
+     "ref": 228.0
+    },
+    {
+     "e": "2024",
+     "m": "minimum",
+     "v": 161.0,
+     "ok": true,
+     "ref": 161.0
+    },
+    {
+     "e": "2019|2024",
+     "m": "selisih",
+     "v": 67.0,
+     "ok": true,
+     "ref": 67.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 185.0,
+     "ok": true,
+     "ref": 185.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun",
+     "ok": true,
+     "ref": "turun"
+    },
+    {
+     "e": "2018|2024",
+     "m": "perubahan_terfit",
+     "v": -30.214285714285715,
+     "ok": true,
+     "ref": -30.214285714285715
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 167.0,
+     "ok": true,
+     "ref": 167.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 228.0,
+     "ok": true,
+     "ref": 228.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 195.0,
+     "ok": true,
+     "ref": 195.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 190.0,
+     "ok": true,
+     "ref": 190.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 180.0,
+     "ok": true,
+     "ref": 180.0
+    },
+    {
+     "e": "2023",
+     "m": "nilai",
+     "v": 174.0,
+     "ok": true,
+     "ref": 174.0
+    },
+    {
+     "e": "2024",
+     "m": "nilai",
+     "v": 161.0,
+     "ok": true,
+     "ref": 161.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "reasons": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Gambar 4. Mahasiswa disabilitas terdaftar per tahun (2022)",
+   "id": "e021"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    327.6,
+    95.0,
+    355.6
+   ],
+   "odl_id": 109,
+   "hash": "5a6f6f5d8ec878fdb39ee82d8937e68b",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e022",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Akhir materi",
+   "id": "e023"
+  }
+ ],
+ "thresholds": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "Î¸e terkecil (â‰¥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) â‰¥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada Î´=0 â†’ ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ },
+ "manifest": {
+  "model_t1": "gemma-4-26b-a4b-it",
+  "model_t2": "gemma-4-26b-a4b-it",
+  "model_b2": "gemma-4-26b-a4b-it",
+  "model_qa": "gemma-4-26b-a4b-it",
+  "thinking": "bawaan (Gemma) / minimal (Gemini)",
+  "temperature": 0,
+  "prompt_t1": "a2db0023d821",
+  "prompt_t2": "bbe13c6a83dc",
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
+ },
+ "pages": 3,
+ "timing": {
+  "struktur_s": 1.22,
+  "total_s": 7.22
+ },
+ "_job": "C:\\Uner\\Lomba\\Campus Data Week\\Final\\Prototype\\work\\contoh_materi_04",
+ "patch": {
+  "figures": 7,
+  "alt_filled": 7,
+  "figur_ditahan": 0,
+  "figur_tambahan": 0,
+  "halaman_tidak_cocok": [],
+  "th_cells": 0
+ },
+ "report": {
+  "B0": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 6,
+    "failed_checks": 171,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 11,
+      "checks": 1,
+      "desc": "The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 44,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 3,
+      "checks": 123,
+      "desc": "Content shall be marked as Artifact or tagged as real content"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 0,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "B1": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 5,
+    "failed_checks": 66,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 56,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.2",
+      "test": 22,
+      "checks": 7,
+      "desc": "Natural language for text in Alt attribute shall be determined"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 7,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "D": {
+   "verapdf": {
+    "compliant": true,
+    "failed_rules": 0,
+    "failed_checks": 0,
+    "rules": []
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 7,
+    "alt_bermakna": 7,
+    "alt_ok": true,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": true,
+    "alt_ditahan": 4,
+    "pass_ketat": false
+   }
+  }
+ }
+}

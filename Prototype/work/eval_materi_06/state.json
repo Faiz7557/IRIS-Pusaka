@@ -1,0 +1,1836 @@
+{
+ "title": "Pertemuan 8: Statistika Deskriptif dan Visualisasi Data",
+ "file": "materi_06.pdf",
+ "tagged_input": false,
+ "elements": [
+  {
+   "kind": "heading",
+   "level": 1,
+   "page": 1,
+   "text": "Pertemuan 8: Statistika Deskriptif dan Visualisasi Data",
+   "id": "e000"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    98.08000000000004,
+    95.0,
+    126.08000000000004
+   ],
+   "odl_id": 2,
+   "hash": "4172b371a443968ef914364398aa2608",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e001",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Mata kuliah Statistika Dasar, semester gasal",
+   "id": "e002"
+  },
+  {
+   "kind": "heading",
+   "level": 2,
+   "page": 1,
+   "text": "1. Pendahuluan",
+   "id": "e003"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Statistika deskriptif membantu kita meringkas data sebelum melakukan inferensi. Pada pertemuan ini kita membahas ukuran pemusatan, ukuran penyebaran, dan cara membaca graﬁk dengan benar.",
+   "id": "e004"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Tabel berikut merangkum hasil kuis mingguan. Gunakan tabel ini untuk berlatih menghitung rerata dan simpangan baku secara manual sebelum memakai perangkat lunak.",
+   "id": "e005"
+  },
+  {
+   "kind": "table",
+   "page": 1,
+   "rows": [
+    [
+     "Nama",
+     "Kuis 1",
+     "Kuis 2"
+    ],
+    [
+     "Mahasiswa A",
+     "89",
+     "61"
+    ],
+    [
+     "Mahasiswa B",
+     "70",
+     "53"
+    ],
+    [
+     "Mahasiswa C",
+     "90",
+     "94"
+    ],
+    [
+     "Mahasiswa D",
+     "89",
+     "89"
+    ],
+    [
+     "Mahasiswa E",
+     "74",
+     "60"
+    ]
+   ],
+   "source": "pymupdf",
+   "id": "e006"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Graﬁk batang cocok untuk membandingkan kategori, sedangkan graﬁk garis cocok untuk memperlihatkan perubahan menurut waktu. Perhatikan selalu satuan dan skala pada sumbu nilai.",
+   "id": "e007"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    455.58,
+    447.0,
+    693.08
+   ],
+   "odl_id": 91,
+   "hash": "cc29090885d5970ab27efb3326c31ab4",
+   "area": 0.180143316233857,
+   "decorative": false,
+   "id": "e008",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Persentase penduduk miskin per provinsi (2023)",
+    "label_x": "Provinsi",
+    "label_y": "Persentase (%)",
+    "satuan": "%",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "NTT",
+     "nilai": 27.5
+    },
+    {
+     "kategori": "Maluku",
+     "nilai": 29.2
+    },
+    {
+     "kategori": "Jatim",
+     "nilai": 22.0
+    },
+    {
+     "kategori": "Jateng",
+     "nilai": 17.4
+    },
+    {
+     "kategori": "Sumut",
+     "nilai": 9.4
+    },
+    {
+     "kategori": "Jabar",
+     "nilai": 13.8
+    },
+    {
+     "kategori": "Papua",
+     "nilai": 3.8
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "NTT",
+     "nilai": 27.5
+    },
+    {
+     "kategori": "Maluku",
+     "nilai": 29.2
+    },
+    {
+     "kategori": "Jatim",
+     "nilai": 22.0
+    },
+    {
+     "kategori": "Jateng",
+     "nilai": 17.4
+    },
+    {
+     "kategori": "Sumut",
+     "nilai": 9.4
+    },
+    {
+     "kategori": "Jabar",
+     "nilai": 13.8
+    },
+    {
+     "kategori": "Papua",
+     "nilai": 3.8
+    }
+   ],
+   "table": [
+    {
+     "kategori": "NTT",
+     "nilai": 27.5
+    },
+    {
+     "kategori": "Maluku",
+     "nilai": 29.2
+    },
+    {
+     "kategori": "Jatim",
+     "nilai": 22.0
+    },
+    {
+     "kategori": "Jateng",
+     "nilai": 17.4
+    },
+    {
+     "kategori": "Sumut",
+     "nilai": 9.4
+    },
+    {
+     "kategori": "Jabar",
+     "nilai": 13.8
+    },
+    {
+     "kategori": "Papua",
+     "nilai": 3.8
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Persentase penduduk miskin per provinsi (2023)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Provinsi dan sumbu nilai Persentase (%). "
+    },
+    {
+     "text": "Grafik memuat 7 kategori, dari NTT sampai Papua. "
+    },
+    {
+     "text": "Nilai tertinggi pada Maluku, yaitu "
+    },
+    {
+     "text": "29,2",
+     "claim": 0
+    },
+    {
+     "text": " %; terendah pada Papua, yaitu "
+    },
+    {
+     "text": "3,8",
+     "claim": 1
+    },
+    {
+     "text": " %. Selisih keduanya "
+    },
+    {
+     "text": "25,4",
+     "claim": 2
+    },
+    {
+     "text": " %, dan rerata seluruh kategori "
+    },
+    {
+     "text": "17,6",
+     "claim": 3
+    },
+    {
+     "text": " %. "
+    },
+    {
+     "text": "Urutan dari tertinggi: Maluku, NTT, Jatim, Jateng, Jabar, Sumut, Papua. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "NTT "
+    },
+    {
+     "text": "27,5",
+     "claim": 4
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "Maluku "
+    },
+    {
+     "text": "29,2",
+     "claim": 5
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "Jatim "
+    },
+    {
+     "text": "22,0",
+     "claim": 6
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "Jateng "
+    },
+    {
+     "text": "17,4",
+     "claim": 7
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "Sumut "
+    },
+    {
+     "text": "9,4",
+     "claim": 8
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "Jabar "
+    },
+    {
+     "text": "13,8",
+     "claim": 9
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "Papua "
+    },
+    {
+     "text": "3,8",
+     "claim": 10
+    },
+    {
+     "text": " %."
+    }
+   ],
+   "claims": [
+    {
+     "e": "Maluku",
+     "m": "maksimum",
+     "v": 29.2
+    },
+    {
+     "e": "Papua",
+     "m": "minimum",
+     "v": 3.8
+    },
+    {
+     "e": "Maluku|Papua",
+     "m": "selisih",
+     "v": 25.4
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 17.585714285714285
+    },
+    {
+     "e": "NTT",
+     "m": "nilai",
+     "v": 27.5
+    },
+    {
+     "e": "Maluku",
+     "m": "nilai",
+     "v": 29.2
+    },
+    {
+     "e": "Jatim",
+     "m": "nilai",
+     "v": 22.0
+    },
+    {
+     "e": "Jateng",
+     "m": "nilai",
+     "v": 17.4
+    },
+    {
+     "e": "Sumut",
+     "m": "nilai",
+     "v": 9.4
+    },
+    {
+     "e": "Jabar",
+     "m": "nilai",
+     "v": 13.8
+    },
+    {
+     "e": "Papua",
+     "m": "nilai",
+     "v": 3.8
+    }
+   ],
+   "D": [
+    {
+     "e": "Maluku",
+     "m": "maksimum",
+     "v": 29.2
+    },
+    {
+     "e": "Papua",
+     "m": "minimum",
+     "v": 3.8
+    },
+    {
+     "e": "Maluku|Papua",
+     "m": "selisih",
+     "v": 25.4
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 17.585714285714285
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 123.1
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Persentase penduduk miskin per provinsi (2023)”, dengan sumbu kategori Provinsi dan sumbu nilai Persentase (%). Grafik memuat 7 kategori, dari NTT sampai Papua. Nilai tertinggi pada Maluku, yaitu 29,2 %; terendah pada Papua, yaitu 3,8 %. Selisih keduanya 25,4 %, dan rerata seluruh kategori 17,6 %. Urutan dari tertinggi: Maluku, NTT, Jatim, Jateng, Jabar, Sumut, Papua. Rincian nilai: NTT 27,5 %; Maluku 29,2 %; Jatim 22,0 %; Jateng 17,4 %; Sumut 9,4 %; Jabar 13,8 %; Papua 3,8 %.",
+   "claim_detail": [
+    {
+     "e": "Maluku",
+     "m": "maksimum",
+     "v": 29.2,
+     "ok": true,
+     "ref": 29.2
+    },
+    {
+     "e": "Papua",
+     "m": "minimum",
+     "v": 3.8,
+     "ok": true,
+     "ref": 3.8
+    },
+    {
+     "e": "Maluku|Papua",
+     "m": "selisih",
+     "v": 25.4,
+     "ok": true,
+     "ref": 25.4
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 17.585714285714285,
+     "ok": true,
+     "ref": 17.585714285714285
+    },
+    {
+     "e": "NTT",
+     "m": "nilai",
+     "v": 27.5,
+     "ok": true,
+     "ref": 27.5
+    },
+    {
+     "e": "Maluku",
+     "m": "nilai",
+     "v": 29.2,
+     "ok": true,
+     "ref": 29.2
+    },
+    {
+     "e": "Jatim",
+     "m": "nilai",
+     "v": 22.0,
+     "ok": true,
+     "ref": 22.0
+    },
+    {
+     "e": "Jateng",
+     "m": "nilai",
+     "v": 17.4,
+     "ok": true,
+     "ref": 17.4
+    },
+    {
+     "e": "Sumut",
+     "m": "nilai",
+     "v": 9.4,
+     "ok": true,
+     "ref": 9.4
+    },
+    {
+     "e": "Jabar",
+     "m": "nilai",
+     "v": 13.8,
+     "ok": true,
+     "ref": 13.8
+    },
+    {
+     "e": "Papua",
+     "m": "nilai",
+     "v": 3.8,
+     "ok": true,
+     "ref": 3.8
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Gambar 1. Persentase penduduk miskin per provinsi (2023)",
+   "id": "e009"
+  },
+  {
+   "kind": "heading",
+   "level": 3,
+   "page": 1,
+   "text": "2. Membaca graﬁk",
+   "id": "e010"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Data berikut berasal dari contoh ilustratif dan tidak mewakili statistik resmi. Mahasiswa diminta mengidentiﬁkasi nilai tertinggi, nilai terendah, serta pola umum pada setiap graﬁk.",
+   "id": "e011"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 96,
+   "hash": "f776c5b5ebe3c7ada84afe8b89286ebd",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e012",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Kunjungan perpustakaan per bulan (2025)",
+    "label_x": "Bulan",
+    "label_y": "Kunjungan (kali)",
+    "satuan": "kali",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "Jan",
+     "nilai": 270.0
+    },
+    {
+     "kategori": "Feb",
+     "nilai": 550.0
+    },
+    {
+     "kategori": "Mar",
+     "nilai": 310.0
+    },
+    {
+     "kategori": "Apr",
+     "nilai": 390.0
+    },
+    {
+     "kategori": "Mei",
+     "nilai": 590.0
+    },
+    {
+     "kategori": "Jun",
+     "nilai": 670.0
+    },
+    {
+     "kategori": "Jul",
+     "nilai": 520.0
+    },
+    {
+     "kategori": "Agu",
+     "nilai": 560.0
+    },
+    {
+     "kategori": "Sep",
+     "nilai": 550.0
+    },
+    {
+     "kategori": "Okt",
+     "nilai": 565.0
+    },
+    {
+     "kategori": "Nov",
+     "nilai": 500.0
+    },
+    {
+     "kategori": "Des",
+     "nilai": 390.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "Jan",
+     "nilai": 270.0
+    },
+    {
+     "kategori": "Feb",
+     "nilai": 545.0
+    },
+    {
+     "kategori": "Mar",
+     "nilai": 310.0
+    },
+    {
+     "kategori": "Apr",
+     "nilai": 390.0
+    },
+    {
+     "kategori": "Mei",
+     "nilai": 590.0
+    },
+    {
+     "kategori": "Jun",
+     "nilai": 665.0
+    },
+    {
+     "kategori": "Jul",
+     "nilai": 520.0
+    },
+    {
+     "kategori": "Agu",
+     "nilai": 558.0
+    },
+    {
+     "kategori": "Sep",
+     "nilai": 548.0
+    },
+    {
+     "kategori": "Okt",
+     "nilai": 565.0
+    },
+    {
+     "kategori": "Nov",
+     "nilai": 500.0
+    },
+    {
+     "kategori": "Des",
+     "nilai": 390.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "Jan",
+     "nilai": 270.0
+    },
+    {
+     "kategori": "Feb",
+     "nilai": 550.0
+    },
+    {
+     "kategori": "Mar",
+     "nilai": 310.0
+    },
+    {
+     "kategori": "Apr",
+     "nilai": 390.0
+    },
+    {
+     "kategori": "Mei",
+     "nilai": 590.0
+    },
+    {
+     "kategori": "Jun",
+     "nilai": 670.0
+    },
+    {
+     "kategori": "Jul",
+     "nilai": 520.0
+    },
+    {
+     "kategori": "Agu",
+     "nilai": 560.0
+    },
+    {
+     "kategori": "Sep",
+     "nilai": 550.0
+    },
+    {
+     "kategori": "Okt",
+     "nilai": 565.0
+    },
+    {
+     "kategori": "Nov",
+     "nilai": 500.0
+    },
+    {
+     "kategori": "Des",
+     "nilai": 390.0
+    }
+   ],
+   "delta": 0.002916666666666667,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": false,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Kunjungan perpustakaan per bulan (2025)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Bulan dan sumbu nilai Kunjungan (kali). "
+    },
+    {
+     "text": "Grafik memuat 12 kategori, dari Jan sampai Des. "
+    },
+    {
+     "text": "Nilai tertinggi pada Jun, yaitu "
+    },
+    {
+     "text": "670",
+     "claim": 0
+    },
+    {
+     "text": " kali; terendah pada Jan, yaitu "
+    },
+    {
+     "text": "270",
+     "claim": 1
+    },
+    {
+     "text": " kali. Selisih keduanya "
+    },
+    {
+     "text": "400",
+     "claim": 2
+    },
+    {
+     "text": " kali, dan rerata seluruh kategori "
+    },
+    {
+     "text": "488,8",
+     "claim": 3
+    },
+    {
+     "text": " kali. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "naik",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "124",
+     "claim": 5
+    },
+    {
+     "text": " kali dari Jan ke Des. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "Jan "
+    },
+    {
+     "text": "270",
+     "claim": 6
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Feb "
+    },
+    {
+     "text": "550",
+     "claim": 7
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Mar "
+    },
+    {
+     "text": "310",
+     "claim": 8
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Apr "
+    },
+    {
+     "text": "390",
+     "claim": 9
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Mei "
+    },
+    {
+     "text": "590",
+     "claim": 10
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Jun "
+    },
+    {
+     "text": "670",
+     "claim": 11
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Jul "
+    },
+    {
+     "text": "520",
+     "claim": 12
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Agu "
+    },
+    {
+     "text": "560",
+     "claim": 13
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Sep "
+    },
+    {
+     "text": "550",
+     "claim": 14
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Okt "
+    },
+    {
+     "text": "565",
+     "claim": 15
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Nov "
+    },
+    {
+     "text": "500",
+     "claim": 16
+    },
+    {
+     "text": " kali; "
+    },
+    {
+     "text": "Des "
+    },
+    {
+     "text": "390",
+     "claim": 17
+    },
+    {
+     "text": " kali."
+    }
+   ],
+   "claims": [
+    {
+     "e": "Jun",
+     "m": "maksimum",
+     "v": 670.0
+    },
+    {
+     "e": "Jan",
+     "m": "minimum",
+     "v": 270.0
+    },
+    {
+     "e": "Jun|Jan",
+     "m": "selisih",
+     "v": 400.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 488.75
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik"
+    },
+    {
+     "e": "Jan|Des",
+     "m": "perubahan_terfit",
+     "v": 123.65384615384616
+    },
+    {
+     "e": "Jan",
+     "m": "nilai",
+     "v": 270.0
+    },
+    {
+     "e": "Feb",
+     "m": "nilai",
+     "v": 550.0
+    },
+    {
+     "e": "Mar",
+     "m": "nilai",
+     "v": 310.0
+    },
+    {
+     "e": "Apr",
+     "m": "nilai",
+     "v": 390.0
+    },
+    {
+     "e": "Mei",
+     "m": "nilai",
+     "v": 590.0
+    },
+    {
+     "e": "Jun",
+     "m": "nilai",
+     "v": 670.0
+    },
+    {
+     "e": "Jul",
+     "m": "nilai",
+     "v": 520.0
+    },
+    {
+     "e": "Agu",
+     "m": "nilai",
+     "v": 560.0
+    },
+    {
+     "e": "Sep",
+     "m": "nilai",
+     "v": 550.0
+    },
+    {
+     "e": "Okt",
+     "m": "nilai",
+     "v": 565.0
+    },
+    {
+     "e": "Nov",
+     "m": "nilai",
+     "v": 500.0
+    },
+    {
+     "e": "Des",
+     "m": "nilai",
+     "v": 390.0
+    }
+   ],
+   "D": [
+    {
+     "e": "Jun",
+     "m": "maksimum",
+     "v": 670.0
+    },
+    {
+     "e": "Jan",
+     "m": "minimum",
+     "v": 270.0
+    },
+    {
+     "e": "Jun|Jan",
+     "m": "selisih",
+     "v": 400.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 488.75
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 5865.0
+    },
+    {
+     "e": "Jan|Des",
+     "m": "perubahan_terfit",
+     "v": 123.65384615384616
+    },
+    {
+     "e": "Jan|Des",
+     "m": "perubahan",
+     "v": 120.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik"
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Kunjungan perpustakaan per bulan (2025)”, dengan sumbu kategori Bulan dan sumbu nilai Kunjungan (kali). Grafik memuat 12 kategori, dari Jan sampai Des. Nilai tertinggi pada Jun, yaitu 670 kali; terendah pada Jan, yaitu 270 kali. Selisih keduanya 400 kali, dan rerata seluruh kategori 488,8 kali. Secara keseluruhan tren naik: garis regresi berubah sekitar 124 kali dari Jan ke Des. Rincian nilai: Jan 270 kali; Feb 550 kali; Mar 310 kali; Apr 390 kali; Mei 590 kali; Jun 670 kali; Jul 520 kali; Agu 560 kali; Sep 550 kali; Okt 565 kali; Nov 500 kali; Des 390 kali.",
+   "claim_detail": [
+    {
+     "e": "Jun",
+     "m": "maksimum",
+     "v": 670.0,
+     "ok": true,
+     "ref": 670.0
+    },
+    {
+     "e": "Jan",
+     "m": "minimum",
+     "v": 270.0,
+     "ok": true,
+     "ref": 270.0
+    },
+    {
+     "e": "Jun|Jan",
+     "m": "selisih",
+     "v": 400.0,
+     "ok": true,
+     "ref": 400.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 488.75,
+     "ok": true,
+     "ref": 488.75
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik",
+     "ok": true,
+     "ref": "naik"
+    },
+    {
+     "e": "Jan|Des",
+     "m": "perubahan_terfit",
+     "v": 123.65384615384616,
+     "ok": true,
+     "ref": 123.65384615384616
+    },
+    {
+     "e": "Jan",
+     "m": "nilai",
+     "v": 270.0,
+     "ok": true,
+     "ref": 270.0
+    },
+    {
+     "e": "Feb",
+     "m": "nilai",
+     "v": 550.0,
+     "ok": true,
+     "ref": 550.0
+    },
+    {
+     "e": "Mar",
+     "m": "nilai",
+     "v": 310.0,
+     "ok": true,
+     "ref": 310.0
+    },
+    {
+     "e": "Apr",
+     "m": "nilai",
+     "v": 390.0,
+     "ok": true,
+     "ref": 390.0
+    },
+    {
+     "e": "Mei",
+     "m": "nilai",
+     "v": 590.0,
+     "ok": true,
+     "ref": 590.0
+    },
+    {
+     "e": "Jun",
+     "m": "nilai",
+     "v": 670.0,
+     "ok": true,
+     "ref": 670.0
+    },
+    {
+     "e": "Jul",
+     "m": "nilai",
+     "v": 520.0,
+     "ok": true,
+     "ref": 520.0
+    },
+    {
+     "e": "Agu",
+     "m": "nilai",
+     "v": 560.0,
+     "ok": true,
+     "ref": 560.0
+    },
+    {
+     "e": "Sep",
+     "m": "nilai",
+     "v": 550.0,
+     "ok": true,
+     "ref": 550.0
+    },
+    {
+     "e": "Okt",
+     "m": "nilai",
+     "v": 565.0,
+     "ok": true,
+     "ref": 565.0
+    },
+    {
+     "e": "Nov",
+     "m": "nilai",
+     "v": 500.0,
+     "ok": true,
+     "ref": 500.0
+    },
+    {
+     "e": "Des",
+     "m": "nilai",
+     "v": 390.0,
+     "ok": true,
+     "ref": 390.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "reasons": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 2. Kunjungan perpustakaan per bulan (2025)",
+   "id": "e013"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    328.70000000000005,
+    447.0,
+    480.7
+   ],
+   "odl_id": 99,
+   "hash": "56d0c72c8cc43fe73748ae0a3c26bcae",
+   "area": 0.11529172238966841,
+   "decorative": false,
+   "id": "e014",
+   "jenis": "diagram",
+   "draft": "Diagram alir yang menggambarkan tahapan dalam statistika inferensial. Urutannya dimulai dari populasi, kemudian diambil sampel, dihitung nilai statistiknya, dan diakhiri dengan proses inferensi.",
+   "checks": {},
+   "reasons": [
+    "Diagram nondata tidak memiliki pemeriksaan otomatis (K = ∅)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 3. Alur dari populasi ke inferensi",
+   "id": "e015"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "3. Ukuran pemusatan Rerata sampel dideﬁnisikan sebagai berikut.",
+   "id": "e016"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    566.7,
+    307.0,
+    614.7
+   ],
+   "odl_id": 103,
+   "hash": "31d26032898f707bfcfc900205723816",
+   "area": 0.022994470947523903,
+   "decorative": false,
+   "id": "e017",
+   "jenis": "rumus",
+   "draft": "LaTeX: \\hat{\\beta} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\nUcapan: Beta topi sama dengan jumlah dari x i dikurangi x bar dikali y i dikurangi y bar, dibagi dengan jumlah dari x i dikurangi x bar kuadrat.\nGambar ini menunjukkan rumus estimasi koefisien regresi linear sederhana.",
+   "checks": {},
+   "reasons": [
+    "Rumus: pengenal kedua belum tersedia, ditahan (fail-closed)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Regresi linear sederhana memodelkan hubungan antara variabel bebas x dan variabel terikat y. Koeﬁsien kemiringan menunjukkan besarnya perubahan y untuk setiap kenaikan satu satuan x.",
+   "id": "e018"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "4. Latihan Perhatikan graﬁk berikut dan tentukan kategori dengan nilai tertinggi.",
+   "id": "e019"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 106,
+   "hash": "b285fd61134e4c79a23792f9880b6cd6",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e020",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+    "label_x": "Tahun",
+    "label_y": "Jumlah (orang)",
+    "satuan": "orang",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "2018",
+     "nilai": 116.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 206.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 145.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 282.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 232.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "2018",
+     "nilai": 116.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 206.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 145.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 282.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 232.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "2018",
+     "nilai": 116.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 206.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 145.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 282.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 232.0
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Mahasiswa disabilitas terdaftar per tahun (2020)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). "
+    },
+    {
+     "text": "Grafik memuat 5 kategori, dari 2018 sampai 2022. "
+    },
+    {
+     "text": "Nilai tertinggi pada 2021, yaitu "
+    },
+    {
+     "text": "282",
+     "claim": 0
+    },
+    {
+     "text": " orang; terendah pada 2018, yaitu "
+    },
+    {
+     "text": "116",
+     "claim": 1
+    },
+    {
+     "text": " orang. Selisih keduanya "
+    },
+    {
+     "text": "166",
+     "claim": 2
+    },
+    {
+     "text": " orang, dan rerata seluruh kategori "
+    },
+    {
+     "text": "196,2",
+     "claim": 3
+    },
+    {
+     "text": " orang. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "naik",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "123",
+     "claim": 5
+    },
+    {
+     "text": " orang dari 2018 ke 2022. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "2018 "
+    },
+    {
+     "text": "116",
+     "claim": 6
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2019 "
+    },
+    {
+     "text": "206",
+     "claim": 7
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2020 "
+    },
+    {
+     "text": "145",
+     "claim": 8
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2021 "
+    },
+    {
+     "text": "282",
+     "claim": 9
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2022 "
+    },
+    {
+     "text": "232",
+     "claim": 10
+    },
+    {
+     "text": " orang."
+    }
+   ],
+   "claims": [
+    {
+     "e": "2021",
+     "m": "maksimum",
+     "v": 282.0
+    },
+    {
+     "e": "2018",
+     "m": "minimum",
+     "v": 116.0
+    },
+    {
+     "e": "2021|2018",
+     "m": "selisih",
+     "v": 166.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 196.2
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik"
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": 123.2
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 116.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 206.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 145.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 282.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 232.0
+    }
+   ],
+   "D": [
+    {
+     "e": "2021",
+     "m": "maksimum",
+     "v": 282.0
+    },
+    {
+     "e": "2018",
+     "m": "minimum",
+     "v": 116.0
+    },
+    {
+     "e": "2021|2018",
+     "m": "selisih",
+     "v": 166.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 196.2
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 981.0
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": 123.2
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan",
+     "v": 116.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik"
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Mahasiswa disabilitas terdaftar per tahun (2020)”, dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). Grafik memuat 5 kategori, dari 2018 sampai 2022. Nilai tertinggi pada 2021, yaitu 282 orang; terendah pada 2018, yaitu 116 orang. Selisih keduanya 166 orang, dan rerata seluruh kategori 196,2 orang. Secara keseluruhan tren naik: garis regresi berubah sekitar 123 orang dari 2018 ke 2022. Rincian nilai: 2018 116 orang; 2019 206 orang; 2020 145 orang; 2021 282 orang; 2022 232 orang.",
+   "claim_detail": [
+    {
+     "e": "2021",
+     "m": "maksimum",
+     "v": 282.0,
+     "ok": true,
+     "ref": 282.0
+    },
+    {
+     "e": "2018",
+     "m": "minimum",
+     "v": 116.0,
+     "ok": true,
+     "ref": 116.0
+    },
+    {
+     "e": "2021|2018",
+     "m": "selisih",
+     "v": 166.0,
+     "ok": true,
+     "ref": 166.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 196.2,
+     "ok": true,
+     "ref": 196.2
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik",
+     "ok": true,
+     "ref": "naik"
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": 123.2,
+     "ok": true,
+     "ref": 123.2
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 116.0,
+     "ok": true,
+     "ref": 116.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 206.0,
+     "ok": true,
+     "ref": 206.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 145.0,
+     "ok": true,
+     "ref": 145.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 282.0,
+     "ok": true,
+     "ref": 282.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 232.0,
+     "ok": true,
+     "ref": 232.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Gambar 4. Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "id": "e021"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    327.6,
+    95.0,
+    355.6
+   ],
+   "odl_id": 109,
+   "hash": "5a6f6f5d8ec878fdb39ee82d8937e68b",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e022",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Akhir materi",
+   "id": "e023"
+  }
+ ],
+ "thresholds": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "Î¸e terkecil (â‰¥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) â‰¥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada Î´=0 â†’ ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ },
+ "manifest": {
+  "model_t1": "gemma-4-26b-a4b-it",
+  "model_t2": "gemma-4-26b-a4b-it",
+  "model_b2": "gemma-4-26b-a4b-it",
+  "model_qa": "gemma-4-26b-a4b-it",
+  "thinking": "bawaan (Gemma) / minimal (Gemini)",
+  "temperature": 0,
+  "prompt_t1": "a2db0023d821",
+  "prompt_t2": "bbe13c6a83dc",
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
+ },
+ "pages": 3,
+ "timing": {
+  "struktur_s": 3.02,
+  "total_s": 29.87
+ },
+ "_job": "C:\\Uner\\Lomba\\Campus Data Week\\Final\\Prototype\\work\\eval_materi_06",
+ "patch": {
+  "figures": 7,
+  "alt_filled": 7,
+  "figur_ditahan": 0,
+  "figur_tambahan": 0,
+  "halaman_tidak_cocok": [],
+  "th_cells": 0
+ },
+ "report": {
+  "B0": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 6,
+    "failed_checks": 171,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 11,
+      "checks": 1,
+      "desc": "The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 44,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 3,
+      "checks": 123,
+      "desc": "Content shall be marked as Artifact or tagged as real content"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 0,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "B1": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 5,
+    "failed_checks": 66,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 56,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.2",
+      "test": 22,
+      "checks": 7,
+      "desc": "Natural language for text in Alt attribute shall be determined"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 7,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "D": {
+   "verapdf": {
+    "compliant": true,
+    "failed_rules": 0,
+    "failed_checks": 0,
+    "rules": []
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 7,
+    "alt_bermakna": 7,
+    "alt_ok": true,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": true,
+    "alt_ditahan": 3,
+    "pass_ketat": false
+   }
+  }
+ }
+}

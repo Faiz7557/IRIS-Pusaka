@@ -1,0 +1,367 @@
+{
+  "file name" : "asli.pdf",
+  "number of pages" : 18,
+  "author" : "adin",
+  "title" : "Executive Summary IFEST Teen Tensors",
+  "creation date" : "D:20260928071405+00'00'",
+  "modification date" : "D:20260928071405+00'00'",
+  "kids" : [ {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 1,
+    "page number" : 1,
+    "bounding box" : [ 474.48, 724.41, 595.92, 842.49 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile1.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 3,
+    "page number" : 1,
+    "bounding box" : [ 21.12, 416.49, 574.56, 539.85 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile2.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 4,
+    "page number" : 1,
+    "bounding box" : [ 49.71, 437.651, 545.759, 515.756 ],
+    "font" : "Telegraf-Bold",
+    "font size" : 81.36,
+    "text color" : "[0.8314, 0.9569, 0.9333]",
+    "content" : "NYAMBUNG"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 5,
+    "page number" : 1,
+    "bounding box" : [ 48.0, 294.33, 568.56, 431.61 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile3.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 17,
+    "page number" : 1,
+    "bounding box" : [ 76.8, 260.25, 521.76, 300.81 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile4.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 16,
+    "page number" : 1,
+    "bounding box" : [ 77.165, 262.251, 518.333, 300.299 ],
+    "font" : "Barlow-Regular",
+    "font size" : 14.826,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "Tema: Tech for Human Connections Sub-tema: Accessibility (utama) dan Receiver & Provider (pendukung)"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 2,
+    "page number" : 1,
+    "bounding box" : [ -0.24, -0.39, 595.92, 236.25 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile5.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 9,
+    "page number" : 1,
+    "bounding box" : [ 216.24, 129.21, 371.04, 166.65 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile6.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 8,
+    "page number" : 1,
+    "bounding box" : [ 218.74, 134.358, 366.226, 165.964 ],
+    "font" : "Barlow-Bold",
+    "font size" : 26.339,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "PPPPrrrrooooppppoooosssseeeedddd BBBByyyy"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 6,
+    "page number" : 1,
+    "bounding box" : [ 127.353, 75.418, 468.137, 134.885 ],
+    "font" : "Barlow-Bold",
+    "font size" : 49.556,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "TTTEEEEEENNN TTTEEENNNSSSOOORRRSSS"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 7,
+    "page number" : 1,
+    "bounding box" : [ 121.2, 74.49, 473.04, 134.49 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile7.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 10,
+    "page number" : 1,
+    "bounding box" : [ 39.336, 15.724, 551.238, 73.218 ],
+    "font" : "Barlow-Regular",
+    "font size" : 20.573,
+    "text color" : "[0.0, 0.0, 0.0]",
+    "content" : "TTTiiimmmoootttiiiuuusss PPPaaatttrrriiiccckkk RRRaaappphhhaaaeeelll AAAnnngggeeelllooo BBBooonnnfffiiillliiiooo RRReeennnaaatttooo MMMiiikkkaaaeeelll AAAllleeexxxaaannndddeeerrr AAAdddiiinnndddaaa SSSeeekkkaaarrriiinnnggg"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 11,
+    "page number" : 1,
+    "bounding box" : [ 36.0, 47.13, 189.12, 72.57 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile8.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 13,
+    "page number" : 1,
+    "bounding box" : [ 412.08, 47.13, 554.64, 72.57 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile9.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 12,
+    "page number" : 1,
+    "bounding box" : [ 227.04, 43.29, 370.32, 72.57 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile10.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 15,
+    "page number" : 1,
+    "bounding box" : [ 318.72, 10.41, 469.68, 39.69 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile11.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 14,
+    "page number" : 1,
+    "bounding box" : [ 106.56, 14.25, 262.56, 39.69 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile12.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 18,
+    "page number" : 2,
+    "bounding box" : [ 40.42, 792.78, 278.952, 808.285 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "11.. LLaattaarr BBeellaakkaanngg ddaann AAnnaalliissiiss MMaassaallaahh"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 19,
+    "page number" : 2,
+    "bounding box" : [ 40.42, 489.87, 297.481, 505.374 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "11..11 LLaayyaannaann yyaanngg llaannggkkaa ddaann ttiiddaakk mmeerraattaa"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 20,
+    "page number" : 2,
+    "bounding box" : [ 40.42, 147.807, 404.027, 163.311 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "11..22 EEmmppaatt hhaammbbaattaann yyaanngg mmeemmbbuuaatt AAAACC ggaaggaall ddii IInnddoonneessiiaa"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 21,
+    "page number" : 3,
+    "bounding box" : [ 40.42, 422.72, 149.824, 438.224 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "11..33.. AAkkaarr MMaassaallaahh"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 22,
+    "page number" : 3,
+    "bounding box" : [ 40.42, 82.776, 97.231, 98.281 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "22.. TTuujjuuaann"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 23,
+    "page number" : 4,
+    "bounding box" : [ 40.42, 554.66, 219.723, 586.871 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "33.. SSoolluussii yyaanngg DDiittaawwaarrkkaann 33..11 CCaarraa ssoolluussii iinnii ddiittuurruunnkkaann"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 24,
+    "page number" : 4,
+    "bounding box" : [ 40.42, 220.734, 205.321, 236.239 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "33..22 EEmmppaatt kkoommppoonneenn ssoolluussii"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 25,
+    "page number" : 5,
+    "bounding box" : [ 40.472, 538.254, 254.508, 553.758 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "33..33 AArrssiitteekkttuurr ddaann kkeeppuuttuussaann tteekknniiss"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 26,
+    "page number" : 5,
+    "bounding box" : [ 40.901, 259.999, 244.392, 275.503 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "33..44 RReennccaannaa rreeaalliissaassii ddii HHaacckk DDaayy"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 29,
+    "page number" : 6,
+    "bounding box" : [ 40.42, 552.712, 278.172, 568.217 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "33..55 EEttiikkaa,, bbaattaassaann,, ddaann rreennccaannaa vvaalliiddaassii"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 28,
+    "page number" : 6,
+    "bounding box" : [ 40.42, 212.761, 332.719, 324.168 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile13.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 27,
+    "page number" : 6,
+    "bounding box" : [ 40.42, 196.941, 332.719, 308.348 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile14.png"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 30,
+    "page number" : 7,
+    "bounding box" : [ -10.783, -19.589, 605.97, 862.176 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile15.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 31,
+    "page number" : 7,
+    "bounding box" : [ 40.42, 787.109, 131.534, 802.613 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "DDaaffttaarr PPuussttaakkaa"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 32,
+    "page number" : 8,
+    "bounding box" : [ 43.629, 763.267, 213.185, 799.778 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann LLaammppiirraann 11.. IIddeennttiittaass vviissuuaall"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 33,
+    "page number" : 8,
+    "bounding box" : [ 43.629, 444.965, 332.676, 460.469 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann 22.. AAlluurr ppeemmaassaannggaann aawwaall,, eennaamm llaayyaarr"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 34,
+    "page number" : 10,
+    "bounding box" : [ 48.164, 507.386, 314.924, 522.89 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann 33.. PPeemmaakkaaiiaann hhaarriiaann ssiissii kkeelluuaarrggaa"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 35,
+    "page number" : 12,
+    "bounding box" : [ 46.814, 384.755, 341.199, 400.259 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann 44.. HHaallaammaann kkaatteeggoorrii ddaann ppeennuuttuupp mmiissii"
+  }, {
+    "type" : "image",
+    "pdfua_tag" : "Figure",
+    "id" : 37,
+    "page number" : 13,
+    "bounding box" : [ 103.335, 226.915, 491.982, 615.561 ],
+    "alt_source" : "missing",
+    "source" : "asli_images/imageFile16.png"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 36,
+    "page number" : 13,
+    "bounding box" : [ 44.585, 455.445, 372.023, 470.949 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann 55.. PPeerrkkeemmbbaannggaann ddaann ppeennggeelloollaaaann kkoossaakkaattaa"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 38,
+    "page number" : 16,
+    "bounding box" : [ 49.324, 763.117, 353.053, 778.622 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann 66.. PPeenngghhuubbuunngg tteerraappiiss ddaann bbeerrbbaaggii ddaattaa"
+  }, {
+    "type" : "paragraph",
+    "pdfua_tag" : "P",
+    "id" : 39,
+    "page number" : 16,
+    "bounding box" : [ 50.538, 377.875, 358.525, 393.379 ],
+    "font" : "TimesNewRomanPS-BoldMT",
+    "font size" : 14.0,
+    "text color" : "[]",
+    "content" : "LLaammppiirraann 77.. PPaappaann ppaannttaauu tteerraappiiss,, aannttaarrmmuukkaa wweebb"
+  } ]
+}

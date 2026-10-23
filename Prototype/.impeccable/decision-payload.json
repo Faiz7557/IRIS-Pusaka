@@ -1,0 +1,129 @@
+{
+  "title": "Pilih dunia visual SIMAK",
+  "question": "Undian menetapkan Kartu Katalog Perpustakaan. Pertahankan, ambil alternatif, atau undi ulang.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Kartu Katalog Perpustakaan",
+      "kicker": "THE ROLL",
+      "lineage": "Kartu katalog dan slip tanggal kembali di perpustakaan kampus Indonesia",
+      "thesis": "Setiap elemen dokumen adalah satu kartu katalog bernomor; setiap pemeriksaan gerbang dan keputusan ULD adalah cap bertanggal di slipnya.",
+      "palette": ["#1F4D3A", "#F3F6F4", "#5B3FA0", "#B3261E", "#1B1F1D"],
+      "materials": ["kartu indeks bergaris merah-biru", "tinta cap ungu", "sampul buckram hijau"],
+      "viewport": "Rail buckram hijau di kiri; area kerja putih dingin; kartu elemen dengan nomor panggil (SIMAK·e014·hlm 2) dan kolom cap: cF, cδ, cA, cL, lalu cap ULD bertanggal.",
+      "risk": "Bisa terasa kuno bila tipografinya ragu-ragu; kartu harus tetap komponen web standar, bukan kostum kertas.",
+      "raised": [
+        {"from": "challenger-exposure", "raise": "Status ditahan dibawa pola arsir + teks, tidak hanya warna, sehingga terbaca tanpa warna (buta warna, proyektor pudar)."},
+        {"from": "challenger-bitmap", "raise": "Skala tipe ketat dengan angka bukti setinggi poster (440/440) agar terbaca dari kursi juri."},
+        {"from": "challenger-zoo", "raise": "Bidang warna datar dengan komitmen penuh untuk rail dan status; tanpa gradien, tanpa glow."},
+        {"from": "challenger-fac", "raise": "Nomor katalog tunggal per elemen dipakai konsisten di semua halaman: demo, antrean, PDF, evaluasi."},
+        {"from": "challenger-jcard", "raise": "Demo Gerbang dibagi dua bagian yang benar-benar setara: B2 dan SIMAK, sisi A dan sisi B."},
+        {"from": "challenger-wall", "raise": "Saat satu elemen ditinjau, antrean lain meredup; fokus ULD tidak terpecah."}
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "label": "Legalisir: Sesuai dengan Aslinya",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Ritual legalisir fotokopi ijazah di kampus Indonesia",
+      "thesis": "Deskripsi yang terbit adalah salinan yang dilegalisir: dicap 'sesuai dengan aslinya' terhadap tabel data, atau tidak dicap sama sekali.",
+      "palette": ["#3E2C7A", "#FAFAF7", "#1D3F8F", "#B3261E", "#16161A"],
+      "materials": ["cap ungu bulat", "paraf tinta biru", "nomor register"],
+      "viewport": "Header ungu tua; setiap deskripsi grafik menerima cap bulat 'SESUAI DENGAN ASLINYA' saat lolos gerbang, atau tetap tanpa cap dengan label ditahan.",
+      "risk": "Familiar bagi juri Indonesia dan paling langsung; cap bisa jadi ornamen bila dipakai berlebihan.",
+      "html": ".impeccable/mocks/decision/model-pick.html"
+    },
+    {
+      "id": "challenger-exposure",
+      "label": "Exposure Record",
+      "verdict": "declined",
+      "lineage": "Catatan pencahayaan kamar gelap",
+      "thesis": "Wilayah diberi arsir dan delta stop; dua arsir bersilang menandai konflik.",
+      "palette": ["#2B2B2B", "#E9E9E9", "#C2185B"],
+      "materials": ["kertas kalkir", "arsir"],
+      "viewport": "Lembar tembus pandang bertumpuk di atas tangga zona.",
+      "case": "Juri dan staf ULD tidak mengenali dunia kamar gelap; kejelasan produk turun.",
+      "risk": "Terbaca sebagai kostum fotografi.",
+      "kept": "Konflik terbaca tanpa warna: status ditahan membawa pola arsir."
+    },
+    {
+      "id": "challenger-bitmap",
+      "label": "Emigre Bitmap Specimen",
+      "verdict": "declined",
+      "lineage": "Spesimen huruf bitmap Emigre",
+      "thesis": "Huruf piksel kasar pada skala poster.",
+      "palette": ["#FFFFFF", "#000000", "#FF3B00"],
+      "materials": ["piksel", "halftone"],
+      "viewport": "Judul berpiksel menjulang di atas kolom rapat.",
+      "case": "Estetika resolusi rendah bertentangan dengan keterbacaan untuk pengguna low vision.",
+      "risk": "Mengorbankan aksesibilitas.",
+      "kept": "Satu skala tipe yang ketat, angka bukti setinggi poster."
+    },
+    {
+      "id": "challenger-zoo",
+      "label": "Peta Kebun Binatang",
+      "verdict": "declined",
+      "lineage": "Peta panduan taman",
+      "thesis": "Area sebagai lobus warna datar.",
+      "palette": ["#8ED462", "#F5F1E4", "#FF705D", "#2BA0FF"],
+      "materials": ["warna datar", "garis pantai SVG"],
+      "viewport": "Satu lobus mendominasi layar.",
+      "case": "Terlalu bermain untuk alat layanan disabilitas; tata letak organik menyulitkan tugas.",
+      "risk": "Terbaca sebagai brosur wisata.",
+      "kept": "Komitmen penuh pada bidang warna datar."
+    },
+    {
+      "id": "challenger-fac",
+      "label": "Katalog Factory Records",
+      "verdict": "declined",
+      "lineage": "Identitas katalog FAC",
+      "thesis": "Setiap artefak diberi nomor katalog.",
+      "palette": ["#111111", "#FFFFFF", "#E63946"],
+      "materials": ["hitam matte", "garis pulsar"],
+      "viewport": "Nomor FAC sebagai satu-satunya judul.",
+      "case": "Label disandikan warna bertentangan dengan status yang harus eksplisit.",
+      "risk": "Menyembunyikan arti di balik kode.",
+      "kept": "Penomoran tunggal yang konsisten untuk setiap elemen."
+    },
+    {
+      "id": "challenger-jcard",
+      "label": "J-card Kaset",
+      "verdict": "declined",
+      "lineage": "Sampul kaset mixtape",
+      "thesis": "Sisi A dan sisi B sebagai dua bagian tegas.",
+      "palette": ["#1E40AF", "#FFFFFF", "#C8102E"],
+      "materials": ["tinta bolpoin", "kertas bergaris"],
+      "viewport": "Kartu terlipat dengan daftar lagu.",
+      "case": "Tulisan tangan dan nostalgia tidak membawa pesan verifikasi.",
+      "risk": "Terbaca sebagai kerajinan nostalgia.",
+      "kept": "Dua bagian setara dalam Demo Gerbang."
+    },
+    {
+      "id": "challenger-wall",
+      "label": "Dinding Katalog Streaming",
+      "verdict": "declined",
+      "lineage": "Baris poster layanan streaming",
+      "thesis": "Ubin yang difokuskan membesar, sisanya meredup.",
+      "palette": ["#0B0B0F", "#FFFFFF", "#E50914"],
+      "materials": ["poster penuh", "baris geser"],
+      "viewport": "Baris ubin horizontal.",
+      "case": "Gulir horizontal menyulitkan tinjauan berurutan dengan keyboard dan pembaca layar.",
+      "risk": "Terbaca sebagai hiburan.",
+      "kept": "Fokus meredupkan sisa antrean."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code"},
+  "canon": true,
+  "canonCard": {
+    "label": "Standar kategori",
+    "thesis": "Dasbor admin SaaS yang bersih, dieksekusi rapi.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB", "#F3F4F6"],
+    "materials": ["grid bersih", "kartu putih", "badge status"],
+    "viewport": "Sidebar abu, header, kartu statistik, tabel antrean.",
+    "risk": "Tidak bisa dibedakan dari produk lain; juri melupakannya.",
+    "html": ".impeccable/mocks/decision/canon.html"
+  },
+  "steer": true
+}

@@ -1,0 +1,1102 @@
+{
+ "waktu": "2026-10-23 01:39:38",
+ "manifest": {
+  "model_t1": "gemma-4-26b-a4b-it",
+  "model_t2": "gemma-4-26b-a4b-it",
+  "model_b2": "gemma-4-26b-a4b-it",
+  "model_qa": "gemma-4-26b-a4b-it",
+  "thinking": "bawaan (Gemma) / minimal (Gemini)",
+  "temperature": 0,
+  "prompt_t1": "a2db0023d821",
+  "prompt_t2": "bbe13c6a83dc",
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
+ },
+ "ambang": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "Î¸e terkecil (â‰¥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) â‰¥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada Î´=0 â†’ ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ },
+ "data": {
+  "grafik_uji": 60,
+  "dokumen_uji": 4,
+  "hash_charts_json": "94ae1b4caa6f",
+  "seed": 20260930
+ },
+ "kriteria": {
+  "G1": "≥90% dokumen uji bebas kegagalan teks alt, bahasa, judul; lebih baik dari B1",
+  "G3": "Fk ≥ 0,98 pada keluaran terbit; ≥ 0,90 deskripsi yang diubah tertahan",
+  "G4": "Q ≥ 0,80"
+ },
+ "G1": {
+  "B0": {
+   "k": 0,
+   "n": 4,
+   "p": 0.0,
+   "ci95": [
+    0.0,
+    0.4899
+   ]
+  },
+  "B1": {
+   "k": 0,
+   "n": 4,
+   "p": 0.0,
+   "ci95": [
+    0.0,
+    0.4899
+   ]
+  },
+  "D": {
+   "k": 4,
+   "n": 4,
+   "p": 1.0,
+   "ci95": [
+    0.5101,
+    1.0
+   ]
+  },
+  "D_ketat": {
+   "k": 0,
+   "n": 4,
+   "p": 0.0,
+   "ci95": [
+    0.0,
+    0.4899
+   ]
+  },
+  "veraPDF_lulus_D": {
+   "k": 4,
+   "n": 4,
+   "p": 1.0,
+   "ci95": [
+    0.5101,
+    1.0
+   ]
+  },
+  "lulus": true
+ },
+ "G1_per_dokumen": [
+  {
+   "file": "materi_03.pdf",
+   "B0": {
+    "aturan_gagal": 6,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "B1": {
+    "aturan_gagal": 5,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "D": {
+    "aturan_gagal": 0,
+    "g1_lulus": true,
+    "g1_ketat": false
+   },
+   "detik": 39.87,
+   "halaman": 3
+  },
+  {
+   "file": "materi_04.pdf",
+   "B0": {
+    "aturan_gagal": 6,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "B1": {
+    "aturan_gagal": 5,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "D": {
+    "aturan_gagal": 0,
+    "g1_lulus": true,
+    "g1_ketat": false
+   },
+   "detik": 34.02,
+   "halaman": 3
+  },
+  {
+   "file": "materi_05.pdf",
+   "B0": {
+    "aturan_gagal": 6,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "B1": {
+    "aturan_gagal": 5,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "D": {
+    "aturan_gagal": 0,
+    "g1_lulus": true,
+    "g1_ketat": false
+   },
+   "detik": 43.9,
+   "halaman": 3
+  },
+  {
+   "file": "materi_06.pdf",
+   "B0": {
+    "aturan_gagal": 6,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "B1": {
+    "aturan_gagal": 5,
+    "g1_lulus": false,
+    "g1_ketat": false
+   },
+   "D": {
+    "aturan_gagal": 0,
+    "g1_lulus": true,
+    "g1_ketat": false
+   },
+   "detik": 29.87,
+   "halaman": 3
+  }
+ ],
+ "G3": {
+  "D_fk_terbit": {
+   "k": 440,
+   "n": 440,
+   "p": 1.0,
+   "ci95": [
+    0.9913,
+    1.0
+   ]
+  },
+  "D_terbit": {
+   "k": 40,
+   "n": 60,
+   "p": 0.6667,
+   "ci95": [
+    0.5406,
+    0.7727
+   ]
+  },
+  "D_R_beban_tinjauan": {
+   "k": 20,
+   "n": 60,
+   "p": 0.3333,
+   "ci95": [
+    0.2273,
+    0.4594
+   ]
+  },
+  "B2_fk_perkiraan": {
+   "k": 566,
+   "n": 583,
+   "p": 0.9708,
+   "ci95": [
+    0.9538,
+    0.9817
+   ]
+  },
+  "B2_terbit": {
+   "k": 60,
+   "n": 60,
+   "p": 1.0,
+   "ci95": [
+    0.9398,
+    1.0
+   ]
+  },
+  "B2_grafik_dengan_angka_keliru": {
+   "k": 7,
+   "n": 60,
+   "p": 0.1167,
+   "ci95": [
+    0.0577,
+    0.2218
+   ]
+  },
+  "D_angka_keliru_terbit": 0,
+  "B2_angka_keliru_terbit": 17,
+  "injeksi_tertahan": {
+   "k": 137,
+   "n": 138,
+   "p": 0.9928,
+   "ci95": [
+    0.9601,
+    0.9987
+   ]
+  },
+  "injeksi_per_jenis": {
+   "ubah_angka": {
+    "k": 40,
+    "n": 40,
+    "p": 1.0,
+    "ci95": [
+     0.9124,
+     1.0
+    ]
+   },
+   "tukar_label": {
+    "k": 39,
+    "n": 40,
+    "p": 0.975,
+    "ci95": [
+     0.8712,
+     0.9956
+    ]
+   },
+   "turunan_salah": {
+    "k": 40,
+    "n": 40,
+    "p": 1.0,
+    "ci95": [
+     0.9124,
+     1.0
+    ]
+   },
+   "tren_salah": {
+    "k": 18,
+    "n": 18,
+    "p": 1.0,
+    "ci95": [
+     0.8241,
+     1.0
+    ]
+   }
+  },
+  "lulus": true
+ },
+ "G4": {
+  "tabel": {
+   "k": 80,
+   "n": 80,
+   "p": 1.0,
+   "ci95": [
+    0.9542,
+    1.0
+   ]
+  },
+  "D": {
+   "k": 80,
+   "n": 80,
+   "p": 1.0,
+   "ci95": [
+    0.9542,
+    1.0
+   ]
+  },
+  "B2": {
+   "k": 79,
+   "n": 80,
+   "p": 0.9875,
+   "ci95": [
+    0.9325,
+    0.9978
+   ]
+  },
+  "Q_D": 1.0,
+  "Q_B2": 0.9875,
+  "lulus": true
+ },
+ "per_grafik": [
+  {
+   "id": "syn003",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 14,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn004",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn005",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn006",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn008",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn009",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn011",
+   "jenis": "batang_horizontal",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 0.75,
+   "b2_angka": 9,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn012",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn013",
+   "jenis": "area",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn014",
+   "jenis": "area",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.01279317697228145,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 5,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn015",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn016",
+   "jenis": "area",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn017",
+   "jenis": "area",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn020",
+   "jenis": "titik",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0008333333333333334,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 12,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn021",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn022",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn024",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn026",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn027",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 13,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn028",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 7,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn031",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn032",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 0.875,
+   "b2_angka": 7,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn033",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 7,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn034",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn035",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn036",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn037",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 12,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn039",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn040",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 6,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn041",
+   "jenis": "batang_horizontal",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn043",
+   "jenis": "area",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 14,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn045",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn048",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn049",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn050",
+   "jenis": "titik",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 0.8181818181818182,
+   "b2_angka": 7,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn053",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn057",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn058",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn059",
+   "jenis": "titik",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.005154639175257732,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 6,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn060",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn062",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0026041666666666114,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 8,
+   "b2_keliru": 6
+  },
+  {
+   "id": "syn063",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 12,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn065",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn066",
+   "jenis": "garis",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn068",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 0.1111111111111111,
+   "b2_angka": 7,
+   "b2_keliru": 6
+  },
+  {
+   "id": "syn070",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn073",
+   "jenis": "area",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn074",
+   "jenis": "area",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn075",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 10,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn076",
+   "jenis": "area",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn077",
+   "jenis": "area",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 0.9230769230769231,
+   "b2_angka": 11,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn078",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn079",
+   "jenis": "batang_horizontal",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 11,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn081",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 13,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn082",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn083",
+   "jenis": "batang",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0027287993282955497,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 16,
+   "b2_keliru": 1
+  },
+  {
+   "id": "syn084",
+   "jenis": "batang",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn085",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 9,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn088",
+   "jenis": "titik",
+   "label_nilai": true,
+   "status": "terbit_otomatis",
+   "delta": 0.0,
+   "fk_vs_acuan": 1.0,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  },
+  {
+   "id": "syn089",
+   "jenis": "titik",
+   "label_nilai": false,
+   "status": "antrean",
+   "delta": 0.0,
+   "fk_vs_acuan": 0.8333333333333334,
+   "b2_angka": 8,
+   "b2_keliru": 0
+  }
+ ],
+ "G6_ringan": {
+  "sumber": "Common Crawl CC-MAIN-2026-39, seed 20260930, bingkai stratum A = 57",
+  "dokumen": 6,
+  "berhasil": 6,
+  "G1_B0": {
+   "k": 0,
+   "n": 6,
+   "p": 0.0,
+   "ci95": [
+    0.0,
+    0.3903
+   ]
+  },
+  "G1_B1": {
+   "k": 0,
+   "n": 6,
+   "p": 0.0,
+   "ci95": [
+    0.0,
+    0.3903
+   ]
+  },
+  "G1_D": {
+   "k": 6,
+   "n": 6,
+   "p": 1.0,
+   "ci95": [
+    0.6097,
+    1.0
+   ]
+  },
+  "veraPDF_lulus_D": {
+   "k": 2,
+   "n": 6,
+   "p": 0.3333,
+   "ci95": [
+    0.0968,
+    0.7
+   ]
+  },
+  "R_beban_tinjauan": {
+   "k": 18,
+   "n": 18,
+   "p": 1.0,
+   "ci95": [
+    0.8241,
+    1.0
+   ]
+  },
+  "per_dokumen": [
+   {
+    "file": "cc_01_its.pdf",
+    "domain": "its.ac.id",
+    "halaman": 10,
+    "bertag_asli": false,
+    "gambar": 1,
+    "dekoratif": 0,
+    "figur_vektor_ditahan": 1,
+    "antrean": 1,
+    "terbit_otomatis": 0,
+    "B0": {
+     "aturan_gagal": 5,
+     "g1_lulus": false
+    },
+    "B1": {
+     "aturan_gagal": 6,
+     "g1_lulus": false
+    },
+    "D": {
+     "aturan_gagal": 2,
+     "g1_lulus": true
+    },
+    "detik": 11.97
+   },
+   {
+    "file": "cc_02_its.pdf",
+    "domain": "its.ac.id",
+    "halaman": 6,
+    "bertag_asli": false,
+    "gambar": 1,
+    "dekoratif": 0,
+    "figur_vektor_ditahan": 1,
+    "antrean": 1,
+    "terbit_otomatis": 0,
+    "B0": {
+     "aturan_gagal": 5,
+     "g1_lulus": false
+    },
+    "B1": {
+     "aturan_gagal": 5,
+     "g1_lulus": false
+    },
+    "D": {
+     "aturan_gagal": 1,
+     "g1_lulus": true
+    },
+    "detik": 11.24
+   },
+   {
+    "file": "cc_03_unair.pdf",
+    "domain": "unair.ac.id",
+    "halaman": 192,
+    "bertag_asli": true,
+    "gambar": 14,
+    "dekoratif": 1,
+    "figur_vektor_ditahan": 13,
+    "antrean": 13,
+    "terbit_otomatis": 0,
+    "B0": {
+     "aturan_gagal": 10,
+     "g1_lulus": false
+    },
+    "B1": {
+     "aturan_gagal": 10,
+     "g1_lulus": false
+    },
+    "D": {
+     "aturan_gagal": 6,
+     "g1_lulus": true
+    },
+    "detik": 37.83
+   },
+   {
+    "file": "cc_04_uny.pdf",
+    "domain": "uny.ac.id",
+    "halaman": 2,
+    "bertag_asli": false,
+    "gambar": 2,
+    "dekoratif": 0,
+    "figur_vektor_ditahan": 0,
+    "antrean": 2,
+    "terbit_otomatis": 0,
+    "B0": {
+     "aturan_gagal": 6,
+     "g1_lulus": false
+    },
+    "B1": {
+     "aturan_gagal": 5,
+     "g1_lulus": false
+    },
+    "D": {
+     "aturan_gagal": 0,
+     "g1_lulus": true
+    },
+    "detik": 17.45
+   },
+   {
+    "file": "cc_05_unej.pdf",
+    "domain": "unej.ac.id",
+    "halaman": 158,
+    "bertag_asli": true,
+    "gambar": 0,
+    "dekoratif": 0,
+    "figur_vektor_ditahan": 0,
+    "antrean": 0,
+    "terbit_otomatis": 0,
+    "B0": {
+     "aturan_gagal": 7,
+     "g1_lulus": false
+    },
+    "B1": {
+     "aturan_gagal": 7,
+     "g1_lulus": false
+    },
+    "D": {
+     "aturan_gagal": 5,
+     "g1_lulus": true
+    },
+    "detik": 43.0
+   },
+   {
+    "file": "cc_06_uny.pdf",
+    "domain": "uny.ac.id",
+    "halaman": 1,
+    "bertag_asli": true,
+    "gambar": 1,
+    "dekoratif": 0,
+    "figur_vektor_ditahan": 0,
+    "antrean": 1,
+    "terbit_otomatis": 0,
+    "B0": {
+     "aturan_gagal": 3,
+     "g1_lulus": false
+    },
+    "B1": {
+     "aturan_gagal": 3,
+     "g1_lulus": false
+    },
+    "D": {
+     "aturan_gagal": 0,
+     "g1_lulus": true
+    },
+    "detik": 6.47
+   }
+  ]
+ }
+}

@@ -1,0 +1,1511 @@
+{
+ "title": "Pertemuan 5: Statistika Deskriptif dan Visualisasi Data",
+ "file": "materi_03.pdf",
+ "tagged_input": false,
+ "elements": [
+  {
+   "kind": "heading",
+   "level": 1,
+   "page": 1,
+   "text": "Pertemuan 5: Statistika Deskriptif dan Visualisasi Data",
+   "id": "e000"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    98.08000000000004,
+    95.0,
+    126.08000000000004
+   ],
+   "odl_id": 2,
+   "hash": "4172b371a443968ef914364398aa2608",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e001",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Mata kuliah Statistika Dasar, semester gasal",
+   "id": "e002"
+  },
+  {
+   "kind": "heading",
+   "level": 2,
+   "page": 1,
+   "text": "1. Pendahuluan",
+   "id": "e003"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Statistika deskriptif membantu kita meringkas data sebelum melakukan inferensi. Pada pertemuan ini kita membahas ukuran pemusatan, ukuran penyebaran, dan cara membaca graﬁk dengan benar.",
+   "id": "e004"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Tabel berikut merangkum hasil kuis mingguan. Gunakan tabel ini untuk berlatih menghitung rerata dan simpangan baku secara manual sebelum memakai perangkat lunak.",
+   "id": "e005"
+  },
+  {
+   "kind": "table",
+   "page": 1,
+   "rows": [
+    [
+     "Nama",
+     "Kuis 1",
+     "Kuis 2"
+    ],
+    [
+     "Mahasiswa A",
+     "97",
+     "59"
+    ],
+    [
+     "Mahasiswa B",
+     "81",
+     "70"
+    ],
+    [
+     "Mahasiswa C",
+     "87",
+     "67"
+    ],
+    [
+     "Mahasiswa D",
+     "91",
+     "59"
+    ],
+    [
+     "Mahasiswa E",
+     "62",
+     "83"
+    ]
+   ],
+   "source": "pymupdf",
+   "id": "e006"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Graﬁk batang cocok untuk membandingkan kategori, sedangkan graﬁk garis cocok untuk memperlihatkan perubahan menurut waktu. Perhatikan selalu satuan dan skala pada sumbu nilai.",
+   "id": "e007"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    455.58,
+    447.0,
+    693.08
+   ],
+   "odl_id": 91,
+   "hash": "01681adc633b2eb3da9f13fb2d623d01",
+   "area": 0.180143316233857,
+   "decorative": false,
+   "id": "e008",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "lainnya",
+    "judul": "Skor rata-rata ujian per kelas (2024)",
+    "label_x": "Kelas",
+    "label_y": "Skor",
+    "satuan": "",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "Kelas A",
+     "nilai": 76.3
+    },
+    {
+     "kategori": "Kelas E",
+     "nilai": 56.2
+    },
+    {
+     "kategori": "Kelas C",
+     "nilai": 92.7
+    },
+    {
+     "kategori": "Kelas B",
+     "nilai": 88.2
+    },
+    {
+     "kategori": "Kelas D",
+     "nilai": 85.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "Kelas A",
+     "nilai": 76.3
+    },
+    {
+     "kategori": "Kelas E",
+     "nilai": 56.2
+    },
+    {
+     "kategori": "Kelas C",
+     "nilai": 92.7
+    },
+    {
+     "kategori": "Kelas B",
+     "nilai": 88.2
+    },
+    {
+     "kategori": "Kelas D",
+     "nilai": 85.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "Kelas A",
+     "nilai": 76.3
+    },
+    {
+     "kategori": "Kelas E",
+     "nilai": 56.2
+    },
+    {
+     "kategori": "Kelas C",
+     "nilai": 92.7
+    },
+    {
+     "kategori": "Kelas B",
+     "nilai": 88.2
+    },
+    {
+     "kategori": "Kelas D",
+     "nilai": 85.0
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik "
+    },
+    {
+     "text": "berjudul “Skor rata-rata ujian per kelas (2024)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Kelas dan sumbu nilai Skor. "
+    },
+    {
+     "text": "Grafik memuat 5 kategori, dari Kelas A sampai Kelas D. "
+    },
+    {
+     "text": "Nilai tertinggi pada Kelas C, yaitu "
+    },
+    {
+     "text": "92,7",
+     "claim": 0
+    },
+    {
+     "text": "; terendah pada Kelas E, yaitu "
+    },
+    {
+     "text": "56,2",
+     "claim": 1
+    },
+    {
+     "text": ". Selisih keduanya "
+    },
+    {
+     "text": "36,5",
+     "claim": 2
+    },
+    {
+     "text": ", dan rerata seluruh kategori "
+    },
+    {
+     "text": "79,7",
+     "claim": 3
+    },
+    {
+     "text": ". "
+    },
+    {
+     "text": "Urutan dari tertinggi: Kelas C, Kelas B, Kelas D, Kelas A, Kelas E. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "Kelas A "
+    },
+    {
+     "text": "76,3",
+     "claim": 4
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Kelas E "
+    },
+    {
+     "text": "56,2",
+     "claim": 5
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Kelas C "
+    },
+    {
+     "text": "92,7",
+     "claim": 6
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Kelas B "
+    },
+    {
+     "text": "88,2",
+     "claim": 7
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Kelas D "
+    },
+    {
+     "text": "85,0",
+     "claim": 8
+    },
+    {
+     "text": "."
+    }
+   ],
+   "claims": [
+    {
+     "e": "Kelas C",
+     "m": "maksimum",
+     "v": 92.7
+    },
+    {
+     "e": "Kelas E",
+     "m": "minimum",
+     "v": 56.2
+    },
+    {
+     "e": "Kelas C|Kelas E",
+     "m": "selisih",
+     "v": 36.5
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 79.67999999999999
+    },
+    {
+     "e": "Kelas A",
+     "m": "nilai",
+     "v": 76.3
+    },
+    {
+     "e": "Kelas E",
+     "m": "nilai",
+     "v": 56.2
+    },
+    {
+     "e": "Kelas C",
+     "m": "nilai",
+     "v": 92.7
+    },
+    {
+     "e": "Kelas B",
+     "m": "nilai",
+     "v": 88.2
+    },
+    {
+     "e": "Kelas D",
+     "m": "nilai",
+     "v": 85.0
+    }
+   ],
+   "D": [
+    {
+     "e": "Kelas C",
+     "m": "maksimum",
+     "v": 92.7
+    },
+    {
+     "e": "Kelas E",
+     "m": "minimum",
+     "v": 56.2
+    },
+    {
+     "e": "Kelas C|Kelas E",
+     "m": "selisih",
+     "v": 36.5
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 79.67999999999999
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 398.4
+    }
+   ],
+   "alt_auto": "Grafik berjudul “Skor rata-rata ujian per kelas (2024)”, dengan sumbu kategori Kelas dan sumbu nilai Skor. Grafik memuat 5 kategori, dari Kelas A sampai Kelas D. Nilai tertinggi pada Kelas C, yaitu 92,7; terendah pada Kelas E, yaitu 56,2. Selisih keduanya 36,5, dan rerata seluruh kategori 79,7. Urutan dari tertinggi: Kelas C, Kelas B, Kelas D, Kelas A, Kelas E. Rincian nilai: Kelas A 76,3; Kelas E 56,2; Kelas C 92,7; Kelas B 88,2; Kelas D 85,0.",
+   "claim_detail": [
+    {
+     "e": "Kelas C",
+     "m": "maksimum",
+     "v": 92.7,
+     "ok": true,
+     "ref": 92.7
+    },
+    {
+     "e": "Kelas E",
+     "m": "minimum",
+     "v": 56.2,
+     "ok": true,
+     "ref": 56.2
+    },
+    {
+     "e": "Kelas C|Kelas E",
+     "m": "selisih",
+     "v": 36.5,
+     "ok": true,
+     "ref": 36.5
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 79.67999999999999,
+     "ok": true,
+     "ref": 79.67999999999999
+    },
+    {
+     "e": "Kelas A",
+     "m": "nilai",
+     "v": 76.3,
+     "ok": true,
+     "ref": 76.3
+    },
+    {
+     "e": "Kelas E",
+     "m": "nilai",
+     "v": 56.2,
+     "ok": true,
+     "ref": 56.2
+    },
+    {
+     "e": "Kelas C",
+     "m": "nilai",
+     "v": 92.7,
+     "ok": true,
+     "ref": 92.7
+    },
+    {
+     "e": "Kelas B",
+     "m": "nilai",
+     "v": 88.2,
+     "ok": true,
+     "ref": 88.2
+    },
+    {
+     "e": "Kelas D",
+     "m": "nilai",
+     "v": 85.0,
+     "ok": true,
+     "ref": 85.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Gambar 1. Skor rata-rata ujian per kelas (2024)",
+   "id": "e009"
+  },
+  {
+   "kind": "heading",
+   "level": 3,
+   "page": 1,
+   "text": "2. Membaca graﬁk",
+   "id": "e010"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Data berikut berasal dari contoh ilustratif dan tidak mewakili statistik resmi. Mahasiswa diminta mengidentiﬁkasi nilai tertinggi, nilai terendah, serta pola umum pada setiap graﬁk.",
+   "id": "e011"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 96,
+   "hash": "7cf280856dbf30c62a81cfa00a95fefb",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e012",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Rata-rata IPK lulusan per program studi (2022)",
+    "label_x": "Program studi",
+    "label_y": "IPK",
+    "satuan": "",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "Kimia",
+     "nilai": 3.8
+    },
+    {
+     "kategori": "Manajemen",
+     "nilai": 3.8
+    },
+    {
+     "kategori": "Akuntansi",
+     "nilai": 3.3
+    },
+    {
+     "kategori": "Biologi",
+     "nilai": 3.85
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "Kimia",
+     "nilai": 3.8
+    },
+    {
+     "kategori": "Manajemen",
+     "nilai": 3.8
+    },
+    {
+     "kategori": "Akuntansi",
+     "nilai": 3.3
+    },
+    {
+     "kategori": "Biologi",
+     "nilai": 3.85
+    }
+   ],
+   "table": [
+    {
+     "kategori": "Kimia",
+     "nilai": 3.8
+    },
+    {
+     "kategori": "Manajemen",
+     "nilai": 3.8
+    },
+    {
+     "kategori": "Akuntansi",
+     "nilai": 3.3
+    },
+    {
+     "kategori": "Biologi",
+     "nilai": 3.85
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": false,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Rata-rata IPK lulusan per program studi (2022)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Program studi dan sumbu nilai IPK. "
+    },
+    {
+     "text": "Grafik memuat 4 kategori, dari Kimia sampai Biologi. "
+    },
+    {
+     "text": "Nilai tertinggi pada Biologi, yaitu "
+    },
+    {
+     "text": "3,85",
+     "claim": 0
+    },
+    {
+     "text": "; terendah pada Akuntansi, yaitu "
+    },
+    {
+     "text": "3,30",
+     "claim": 1
+    },
+    {
+     "text": ". Selisih keduanya "
+    },
+    {
+     "text": "0,55",
+     "claim": 2
+    },
+    {
+     "text": ", dan rerata seluruh kategori "
+    },
+    {
+     "text": "3,69",
+     "claim": 3
+    },
+    {
+     "text": ". "
+    },
+    {
+     "text": "Urutan dari tertinggi: Biologi, Kimia, Manajemen, Akuntansi. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "Kimia "
+    },
+    {
+     "text": "3,80",
+     "claim": 4
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Manajemen "
+    },
+    {
+     "text": "3,80",
+     "claim": 5
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Akuntansi "
+    },
+    {
+     "text": "3,30",
+     "claim": 6
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "Biologi "
+    },
+    {
+     "text": "3,85",
+     "claim": 7
+    },
+    {
+     "text": "."
+    }
+   ],
+   "claims": [
+    {
+     "e": "Biologi",
+     "m": "maksimum",
+     "v": 3.85
+    },
+    {
+     "e": "Akuntansi",
+     "m": "minimum",
+     "v": 3.3
+    },
+    {
+     "e": "Biologi|Akuntansi",
+     "m": "selisih",
+     "v": 0.5500000000000003
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 3.6874999999999996
+    },
+    {
+     "e": "Kimia",
+     "m": "nilai",
+     "v": 3.8
+    },
+    {
+     "e": "Manajemen",
+     "m": "nilai",
+     "v": 3.8
+    },
+    {
+     "e": "Akuntansi",
+     "m": "nilai",
+     "v": 3.3
+    },
+    {
+     "e": "Biologi",
+     "m": "nilai",
+     "v": 3.85
+    }
+   ],
+   "D": [
+    {
+     "e": "Biologi",
+     "m": "maksimum",
+     "v": 3.85
+    },
+    {
+     "e": "Akuntansi",
+     "m": "minimum",
+     "v": 3.3
+    },
+    {
+     "e": "Biologi|Akuntansi",
+     "m": "selisih",
+     "v": 0.5500000000000003
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 3.6874999999999996
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 14.749999999999998
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Rata-rata IPK lulusan per program studi (2022)”, dengan sumbu kategori Program studi dan sumbu nilai IPK. Grafik memuat 4 kategori, dari Kimia sampai Biologi. Nilai tertinggi pada Biologi, yaitu 3,85; terendah pada Akuntansi, yaitu 3,30. Selisih keduanya 0,55, dan rerata seluruh kategori 3,69. Urutan dari tertinggi: Biologi, Kimia, Manajemen, Akuntansi. Rincian nilai: Kimia 3,80; Manajemen 3,80; Akuntansi 3,30; Biologi 3,85.",
+   "claim_detail": [
+    {
+     "e": "Biologi",
+     "m": "maksimum",
+     "v": 3.85,
+     "ok": true,
+     "ref": 3.85
+    },
+    {
+     "e": "Akuntansi",
+     "m": "minimum",
+     "v": 3.3,
+     "ok": true,
+     "ref": 3.3
+    },
+    {
+     "e": "Biologi|Akuntansi",
+     "m": "selisih",
+     "v": 0.5500000000000003,
+     "ok": true,
+     "ref": 0.5500000000000003
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 3.6874999999999996,
+     "ok": true,
+     "ref": 3.6874999999999996
+    },
+    {
+     "e": "Kimia",
+     "m": "nilai",
+     "v": 3.8,
+     "ok": true,
+     "ref": 3.8
+    },
+    {
+     "e": "Manajemen",
+     "m": "nilai",
+     "v": 3.8,
+     "ok": true,
+     "ref": 3.8
+    },
+    {
+     "e": "Akuntansi",
+     "m": "nilai",
+     "v": 3.3,
+     "ok": true,
+     "ref": 3.3
+    },
+    {
+     "e": "Biologi",
+     "m": "nilai",
+     "v": 3.85,
+     "ok": true,
+     "ref": 3.85
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": false,
+    "cA": true
+   },
+   "reasons": [
+    "Nilai tidak tercetak pada grafik: angka hasil perkiraan skala, tidak dapat diverifikasi"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 2. Rata-rata IPK lulusan per program studi (2022)",
+   "id": "e013"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    328.70000000000005,
+    447.0,
+    480.7
+   ],
+   "odl_id": 99,
+   "hash": "56d0c72c8cc43fe73748ae0a3c26bcae",
+   "area": 0.11529172238966841,
+   "decorative": false,
+   "id": "e014",
+   "jenis": "diagram",
+   "draft": "Diagram alir yang menggambarkan tahapan dalam statistika inferensial. Urutannya dimulai dari populasi, kemudian diambil sampel, dihitung nilai statistiknya, dan diakhiri dengan proses inferensi.",
+   "checks": {},
+   "reasons": [
+    "Diagram nondata tidak memiliki pemeriksaan otomatis (K = ∅)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 3. Alur dari populasi ke inferensi",
+   "id": "e015"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "3. Ukuran pemusatan Rerata sampel dideﬁnisikan sebagai berikut.",
+   "id": "e016"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    566.7,
+    307.0,
+    614.7
+   ],
+   "odl_id": 103,
+   "hash": "31d26032898f707bfcfc900205723816",
+   "area": 0.022994470947523903,
+   "decorative": false,
+   "id": "e017",
+   "jenis": "rumus",
+   "draft": "LaTeX: \\hat{\\beta} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}\nUcapan: Beta topi sama dengan jumlah dari x i dikurangi x bar dikali y i dikurangi y bar, dibagi dengan jumlah dari x i dikurangi x bar kuadrat.\nGambar ini menunjukkan rumus estimasi koefisien regresi linear sederhana.",
+   "checks": {},
+   "reasons": [
+    "Rumus: pengenal kedua belum tersedia, ditahan (fail-closed)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Regresi linear sederhana memodelkan hubungan antara variabel bebas x dan variabel terikat y. Koeﬁsien kemiringan menunjukkan besarnya perubahan y untuk setiap kenaikan satu satuan x.",
+   "id": "e018"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "4. Latihan Perhatikan graﬁk berikut dan tentukan kategori dengan nilai tertinggi.",
+   "id": "e019"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 106,
+   "hash": "4f9739a35f6a826262b1ff7315c49382",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e020",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "area",
+    "judul": "Tingkat kelulusan tepat waktu per angkatan (2024)",
+    "label_x": "Angkatan",
+    "label_y": "Persentase (%)",
+    "satuan": "%",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "2015",
+     "nilai": 70.3
+    },
+    {
+     "kategori": "2016",
+     "nilai": 76.5
+    },
+    {
+     "kategori": "2017",
+     "nilai": 66.0
+    },
+    {
+     "kategori": "2018",
+     "nilai": 64.7
+    },
+    {
+     "kategori": "2019",
+     "nilai": 58.1
+    },
+    {
+     "kategori": "2020",
+     "nilai": 50.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 46.6
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "2015",
+     "nilai": 70.3
+    },
+    {
+     "kategori": "2016",
+     "nilai": 76.5
+    },
+    {
+     "kategori": "2017",
+     "nilai": 66.0
+    },
+    {
+     "kategori": "2018",
+     "nilai": 64.7
+    },
+    {
+     "kategori": "2019",
+     "nilai": 58.1
+    },
+    {
+     "kategori": "2020",
+     "nilai": 50.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 46.6
+    }
+   ],
+   "table": [
+    {
+     "kategori": "2015",
+     "nilai": 70.3
+    },
+    {
+     "kategori": "2016",
+     "nilai": 76.5
+    },
+    {
+     "kategori": "2017",
+     "nilai": 66.0
+    },
+    {
+     "kategori": "2018",
+     "nilai": 64.7
+    },
+    {
+     "kategori": "2019",
+     "nilai": 58.1
+    },
+    {
+     "kategori": "2020",
+     "nilai": 50.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 46.6
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik area "
+    },
+    {
+     "text": "berjudul “Tingkat kelulusan tepat waktu per angkatan (2024)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Angkatan dan sumbu nilai Persentase (%). "
+    },
+    {
+     "text": "Grafik memuat 7 kategori, dari 2015 sampai 2021. "
+    },
+    {
+     "text": "Nilai tertinggi pada 2016, yaitu "
+    },
+    {
+     "text": "76,5",
+     "claim": 0
+    },
+    {
+     "text": " %; terendah pada 2021, yaitu "
+    },
+    {
+     "text": "46,6",
+     "claim": 1
+    },
+    {
+     "text": " %. Selisih keduanya "
+    },
+    {
+     "text": "29,9",
+     "claim": 2
+    },
+    {
+     "text": " %, dan rerata seluruh kategori "
+    },
+    {
+     "text": "61,7",
+     "claim": 3
+    },
+    {
+     "text": " %. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "turun",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "-28,3",
+     "claim": 5
+    },
+    {
+     "text": " % dari 2015 ke 2021. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "2015 "
+    },
+    {
+     "text": "70,3",
+     "claim": 6
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2016 "
+    },
+    {
+     "text": "76,5",
+     "claim": 7
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2017 "
+    },
+    {
+     "text": "66,0",
+     "claim": 8
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2018 "
+    },
+    {
+     "text": "64,7",
+     "claim": 9
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2019 "
+    },
+    {
+     "text": "58,1",
+     "claim": 10
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2020 "
+    },
+    {
+     "text": "50,0",
+     "claim": 11
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2021 "
+    },
+    {
+     "text": "46,6",
+     "claim": 12
+    },
+    {
+     "text": " %."
+    }
+   ],
+   "claims": [
+    {
+     "e": "2016",
+     "m": "maksimum",
+     "v": 76.5
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 46.6
+    },
+    {
+     "e": "2016|2021",
+     "m": "selisih",
+     "v": 29.9
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 61.74285714285715
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan_terfit",
+     "v": -28.285714285714285
+    },
+    {
+     "e": "2015",
+     "m": "nilai",
+     "v": 70.3
+    },
+    {
+     "e": "2016",
+     "m": "nilai",
+     "v": 76.5
+    },
+    {
+     "e": "2017",
+     "m": "nilai",
+     "v": 66.0
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 64.7
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 58.1
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 50.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 46.6
+    }
+   ],
+   "D": [
+    {
+     "e": "2016",
+     "m": "maksimum",
+     "v": 76.5
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 46.6
+    },
+    {
+     "e": "2016|2021",
+     "m": "selisih",
+     "v": 29.9
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 61.74285714285715
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 432.20000000000005
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan_terfit",
+     "v": -28.285714285714285
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan",
+     "v": -23.699999999999996
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    }
+   ],
+   "alt_auto": "Grafik area berjudul “Tingkat kelulusan tepat waktu per angkatan (2024)”, dengan sumbu kategori Angkatan dan sumbu nilai Persentase (%). Grafik memuat 7 kategori, dari 2015 sampai 2021. Nilai tertinggi pada 2016, yaitu 76,5 %; terendah pada 2021, yaitu 46,6 %. Selisih keduanya 29,9 %, dan rerata seluruh kategori 61,7 %. Secara keseluruhan tren turun: garis regresi berubah sekitar -28,3 % dari 2015 ke 2021. Rincian nilai: 2015 70,3 %; 2016 76,5 %; 2017 66,0 %; 2018 64,7 %; 2019 58,1 %; 2020 50,0 %; 2021 46,6 %.",
+   "claim_detail": [
+    {
+     "e": "2016",
+     "m": "maksimum",
+     "v": 76.5,
+     "ok": true,
+     "ref": 76.5
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 46.6,
+     "ok": true,
+     "ref": 46.6
+    },
+    {
+     "e": "2016|2021",
+     "m": "selisih",
+     "v": 29.9,
+     "ok": true,
+     "ref": 29.9
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 61.74285714285715,
+     "ok": true,
+     "ref": 61.74285714285715
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun",
+     "ok": true,
+     "ref": "turun"
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan_terfit",
+     "v": -28.285714285714285,
+     "ok": true,
+     "ref": -28.285714285714285
+    },
+    {
+     "e": "2015",
+     "m": "nilai",
+     "v": 70.3,
+     "ok": true,
+     "ref": 70.3
+    },
+    {
+     "e": "2016",
+     "m": "nilai",
+     "v": 76.5,
+     "ok": true,
+     "ref": 76.5
+    },
+    {
+     "e": "2017",
+     "m": "nilai",
+     "v": 66.0,
+     "ok": true,
+     "ref": 66.0
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 64.7,
+     "ok": true,
+     "ref": 64.7
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 58.1,
+     "ok": true,
+     "ref": 58.1
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 50.0,
+     "ok": true,
+     "ref": 50.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 46.6,
+     "ok": true,
+     "ref": 46.6
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Gambar 4. Tingkat kelulusan tepat waktu per angkatan (2024)",
+   "id": "e021"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    327.6,
+    95.0,
+    355.6
+   ],
+   "odl_id": 109,
+   "hash": "5a6f6f5d8ec878fdb39ee82d8937e68b",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e022",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Akhir materi",
+   "id": "e023"
+  }
+ ],
+ "thresholds": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "Î¸e terkecil (â‰¥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) â‰¥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada Î´=0 â†’ ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ },
+ "manifest": {
+  "model_t1": "gemma-4-26b-a4b-it",
+  "model_t2": "gemma-4-26b-a4b-it",
+  "model_b2": "gemma-4-26b-a4b-it",
+  "model_qa": "gemma-4-26b-a4b-it",
+  "thinking": "bawaan (Gemma) / minimal (Gemini)",
+  "temperature": 0,
+  "prompt_t1": "a2db0023d821",
+  "prompt_t2": "bbe13c6a83dc",
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
+ },
+ "pages": 3,
+ "timing": {
+  "struktur_s": 1.49,
+  "total_s": 8.65
+ },
+ "_job": "C:\\Uner\\Lomba\\Campus Data Week\\Final\\Prototype\\work\\contoh_materi_03",
+ "patch": {
+  "figures": 7,
+  "alt_filled": 7,
+  "figur_ditahan": 0,
+  "figur_tambahan": 0,
+  "halaman_tidak_cocok": [],
+  "th_cells": 0
+ },
+ "report": {
+  "B0": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 6,
+    "failed_checks": 171,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 11,
+      "checks": 1,
+      "desc": "The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 44,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 3,
+      "checks": 123,
+      "desc": "Content shall be marked as Artifact or tagged as real content"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 0,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "B1": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 5,
+    "failed_checks": 66,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 56,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.2",
+      "test": 22,
+      "checks": 7,
+      "desc": "Natural language for text in Alt attribute shall be determined"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 7,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "D": {
+   "verapdf": {
+    "compliant": true,
+    "failed_rules": 0,
+    "failed_checks": 0,
+    "rules": []
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 7,
+    "alt_bermakna": 7,
+    "alt_ok": true,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": true,
+    "alt_ditahan": 3,
+    "pass_ketat": false
+   }
+  }
+ }
+}

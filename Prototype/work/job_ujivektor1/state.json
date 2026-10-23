@@ -1,0 +1,2319 @@
+{
+ "title": "Executive Summary IFEST Teen Tensors",
+ "file": "Executive Summary IFEST Teen Tensors.pdf",
+ "tagged_input": true,
+ "elements": [
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    474.48,
+    -0.2400000000000091,
+    595.92,
+    117.84000000000003
+   ],
+   "odl_id": 1,
+   "hash": "f74795df1b92fe2dd00e507f8761292e",
+   "area": 0.028590076508811634,
+   "decorative": false,
+   "id": "e000",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    21.12,
+    302.4,
+    574.56,
+    425.76
+   ],
+   "odl_id": 3,
+   "hash": "bed280b52f0eff85acf45a18b9ca59ee",
+   "area": 0.13612005625450002,
+   "decorative": false,
+   "id": "e001",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "NYAMBUNG",
+   "id": "e002"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    48.0,
+    410.64,
+    568.56,
+    547.9200000000001
+   ],
+   "odl_id": 5,
+   "hash": "d8f7f3ebd54f35dbb4794dc815e018ae",
+   "area": 0.14248045021544045,
+   "decorative": false,
+   "id": "e003",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    76.8,
+    541.44,
+    521.76,
+    582.0
+   ],
+   "odl_id": 17,
+   "hash": "662dc260ea4b52cef25611bebdc3caa3",
+   "area": 0.03598289755535164,
+   "decorative": false,
+   "id": "e004",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Tema: Tech for Human Connections Sub-tema: Accessibility (utama) dan Receiver & Provider (pendukung)",
+   "id": "e005"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    -0.24,
+    606.0,
+    595.92,
+    842.64
+   ],
+   "odl_id": 2,
+   "hash": "192903cbaec4e2cda042eccb2ad1141a",
+   "area": 0.2812731030368009,
+   "decorative": false,
+   "id": "e006",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    216.24,
+    675.6,
+    371.04,
+    713.04
+   ],
+   "odl_id": 9,
+   "hash": "693a3b56cf6cc812777f7ac234575746",
+   "area": 0.01155537412158417,
+   "decorative": false,
+   "id": "e007",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "PPPPrrrrooooppppoooosssseeeedddd BBBByyyy",
+   "id": "e008"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "TTTEEEEEENNN TTTEEENNNSSSOOORRRSSS",
+   "id": "e009"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    121.2,
+    707.76,
+    473.04,
+    767.76
+   ],
+   "odl_id": 7,
+   "hash": "e4ea9c6eaf044305c38cf152e3e96962",
+   "area": 0.04208949130948723,
+   "decorative": false,
+   "id": "e010",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "VLM: gambar dekoratif"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "TTTiiimmmoootttiiiuuusss PPPaaatttrrriiiccckkk RRRaaappphhhaaaeeelll AAAnnngggeeelllooo BBBooonnnfffiiillliiiooo RRReeennnaaatttooo MMMiiikkkaaaeeelll AAAllleeexxxaaannndddeeerrr AAAdddiiinnndddaaa SSSeeekkkaaarrriiinnnggg",
+   "id": "e011"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    36.0,
+    769.6800000000001,
+    189.12,
+    795.12
+   ],
+   "odl_id": 11,
+   "hash": "9ca61aefb53b5ddffcd0e583886f559a",
+   "area": 0.007766516011672567,
+   "decorative": true,
+   "id": "e012",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    412.08,
+    769.6800000000001,
+    554.64,
+    795.12
+   ],
+   "odl_id": 13,
+   "hash": "829dcf2582f74cb6d81df8eeab0eb70f",
+   "area": 0.007230894217764114,
+   "decorative": true,
+   "id": "e013",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    227.04,
+    769.6800000000001,
+    370.32,
+    798.96
+   ],
+   "odl_id": 12,
+   "hash": "192d8a35edd347f66e4b9802685e3ff1",
+   "area": 0.008364382019195607,
+   "decorative": true,
+   "id": "e014",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    318.72,
+    802.56,
+    469.68,
+    831.84
+   ],
+   "odl_id": 15,
+   "hash": "0782e0204fbe114ccd9e54f427f8c36f",
+   "area": 0.008812724103976644,
+   "decorative": true,
+   "id": "e015",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    106.56,
+    802.56,
+    262.56,
+    828.0
+   ],
+   "odl_id": 14,
+   "hash": "5fae2d0b3bf0071b0d052a0db50e1a30",
+   "area": 0.007912594682738543,
+   "decorative": true,
+   "id": "e016",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "11.. LLaattaarr BBeellaakkaanngg ddaann AAnnaalliissiiss MMaassaallaahh",
+   "id": "e017"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "11..11 LLaayyaannaann yyaanngg llaannggkkaa ddaann ttiiddaakk mmeerraattaa",
+   "id": "e018"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "11..22 EEmmppaatt hhaammbbaattaann yyaanngg mmeemmbbuuaatt AAAACC ggaaggaall ddii IInnddoonneessiiaa",
+   "id": "e019"
+  },
+  {
+   "id": "v00200",
+   "kind": "image",
+   "page": 2,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00201",
+   "kind": "image",
+   "page": 2,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00202",
+   "kind": "image",
+   "page": 2,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00203",
+   "kind": "image",
+   "page": 2,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "diubah",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ],
+   "alt_final": "Uji kartu figur: ilustrasi peta Indonesia dengan penanda lokasi.",
+   "log": [
+    {
+     "aksi": "ubah",
+     "waktu": "2026-10-23 14:12:47"
+    }
+   ]
+  },
+  {
+   "id": "v00204",
+   "kind": "image",
+   "page": 2,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00205",
+   "kind": "image",
+   "page": 2,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "11..33.. AAkkaarr MMaassaallaahh",
+   "id": "e020"
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "22.. TTuujjuuaann",
+   "id": "e021"
+  },
+  {
+   "id": "v00300",
+   "kind": "image",
+   "page": 3,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00301",
+   "kind": "image",
+   "page": 3,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00302",
+   "kind": "image",
+   "page": 3,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00303",
+   "kind": "image",
+   "page": 3,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00304",
+   "kind": "image",
+   "page": 3,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 4,
+   "text": "33.. SSoolluussii yyaanngg DDiittaawwaarrkkaann 33..11 CCaarraa ssoolluussii iinnii ddiittuurruunnkkaann",
+   "id": "e022"
+  },
+  {
+   "kind": "paragraph",
+   "page": 4,
+   "text": "33..22 EEmmppaatt kkoommppoonneenn ssoolluussii",
+   "id": "e023"
+  },
+  {
+   "id": "v00400",
+   "kind": "image",
+   "page": 4,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00401",
+   "kind": "image",
+   "page": 4,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00402",
+   "kind": "image",
+   "page": 4,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00403",
+   "kind": "image",
+   "page": 4,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 5,
+   "text": "33..33 AArrssiitteekkttuurr ddaann kkeeppuuttuussaann tteekknniiss",
+   "id": "e024"
+  },
+  {
+   "kind": "paragraph",
+   "page": 5,
+   "text": "33..44 RReennccaannaa rreeaalliissaassii ddii HHaacckk DDaayy",
+   "id": "e025"
+  },
+  {
+   "id": "v00500",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00501",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00502",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00503",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00504",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00505",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00506",
+   "kind": "image",
+   "page": 5,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 6,
+   "text": "33..55 EEttiikkaa,, bbaattaassaann,, ddaann rreennccaannaa vvaalliiddaassii",
+   "id": "e026"
+  },
+  {
+   "kind": "image",
+   "page": 6,
+   "bbox": [
+    40.42,
+    518.082,
+    332.719,
+    629.489
+   ],
+   "odl_id": 28,
+   "hash": "7c80d751efae6a01c3686fb967bfd230",
+   "area": 0.06492575725480434,
+   "decorative": false,
+   "id": "e027",
+   "jenis": "diagram",
+   "draft": "Diagram ini menampilkan dua alur proses: F2 Alur pemasangan awal dan F3 Alur misi modeling harian. Alur pemasangan awal mencakup langkah pemasangan aplikasi, pemilihan rutinitas, pembentukan papan awal, perekaman suara, hingga munculnya misi hari pertama. Alur misi modeling harian terdiri dari notifikasi rutinitas, mikro-pelajaran 60 detik, pemodelan oleh orang tua, konfirmasi satu ketukan, dan penyesuaian kesulitan secara bertahap.",
+   "checks": {},
+   "reasons": [
+    "Diagram nondata tidak memiliki pemeriksaan otomatis (K = ∅)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "image",
+   "page": 6,
+   "bbox": [
+    40.42,
+    533.902,
+    332.719,
+    645.309
+   ],
+   "odl_id": 27,
+   "hash": "8f67cc515a4b7e34a4cccf4ea7d78161",
+   "area": 0.06492575725480428,
+   "decorative": false,
+   "id": "e028",
+   "jenis": "diagram",
+   "draft": "Diagram ini menunjukkan dua alur proses aplikasi, yaitu alur pemasangan awal (F2) dan alur misi modeling harian (F3). Alur F2 terdiri dari lima langkah mulai dari instalasi aplikasi hingga munculnya misi pertama dengan target waktu di bawah sepuluh menit. Alur F3 terdiri dari lima langkah mulai dari notifikasi hingga penyesuaian kesulitan dengan target waktu di bawah lima menit.",
+   "checks": {},
+   "reasons": [
+    "Diagram nondata tidak memiliki pemeriksaan otomatis (K = ∅)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "id": "v00600",
+   "kind": "image",
+   "page": 6,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-1 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00601",
+   "kind": "image",
+   "page": 6,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-2 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00602",
+   "kind": "image",
+   "page": 6,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-3 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00603",
+   "kind": "image",
+   "page": 6,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-4 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00604",
+   "kind": "image",
+   "page": 6,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-5 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 7,
+   "bbox": [
+    -10.783,
+    -19.926000000000045,
+    605.97,
+    861.8389999999999
+   ],
+   "odl_id": 30,
+   "hash": "0832060cc7e9a66d2259c2089ce73447",
+   "area": 1.084279736382421,
+   "decorative": false,
+   "id": "e029",
+   "jenis": "tabel",
+   "draft": "Halaman daftar pustaka yang berisi berbagai referensi dari jurnal ilmiah, artikel berita, dan undang-undang. Topik referensi mencakup autisme, terapi wicara, serta aplikasi komunikasi augmentatif dan alternatif (AAC). Daftar disusun secara alfabetis berdasarkan nama penulis atau instansi.",
+   "checks": {},
+   "reasons": [
+    "Tabel-citra: struktur belum diverifikasi, perlu tinjauan"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 7,
+   "text": "DDaaffttaarr PPuussttaakkaa",
+   "id": "e030"
+  },
+  {
+   "id": "v00700",
+   "kind": "image",
+   "page": 7,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-1 dari 4 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00701",
+   "kind": "image",
+   "page": 7,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-2 dari 4 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00702",
+   "kind": "image",
+   "page": 7,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-3 dari 4 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v00703",
+   "kind": "image",
+   "page": 7,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-4 dari 4 pada halaman ini)"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 8,
+   "text": "LLaammppiirraann LLaammppiirraann 11.. IIddeennttiittaass vviissuuaall",
+   "id": "e031"
+  },
+  {
+   "kind": "paragraph",
+   "page": 8,
+   "text": "LLaammppiirraann 22.. AAlluurr ppeemmaassaannggaann aawwaall,, eennaamm llaayyaarr",
+   "id": "e032"
+  },
+  {
+   "id": "v00800",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00801",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00802",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00803",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00804",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00805",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00806",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00807",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00808",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00809",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00810",
+   "kind": "image",
+   "page": 8,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00900",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00901",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00902",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00903",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00904",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00905",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v00906",
+   "kind": "image",
+   "page": 9,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 10,
+   "text": "LLaammppiirraann 33.. PPeemmaakkaaiiaann hhaarriiaann ssiissii kkeelluuaarrggaa",
+   "id": "e033"
+  },
+  {
+   "id": "v01000",
+   "kind": "image",
+   "page": 10,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01001",
+   "kind": "image",
+   "page": 10,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01002",
+   "kind": "image",
+   "page": 10,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01003",
+   "kind": "image",
+   "page": 10,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01004",
+   "kind": "image",
+   "page": 10,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01005",
+   "kind": "image",
+   "page": 10,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01100",
+   "kind": "image",
+   "page": 11,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01101",
+   "kind": "image",
+   "page": 11,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01102",
+   "kind": "image",
+   "page": 11,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01103",
+   "kind": "image",
+   "page": 11,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01104",
+   "kind": "image",
+   "page": 11,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01105",
+   "kind": "image",
+   "page": 11,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 12,
+   "text": "LLaammppiirraann 44.. HHaallaammaann kkaatteeggoorrii ddaann ppeennuuttuupp mmiissii",
+   "id": "e034"
+  },
+  {
+   "id": "v01200",
+   "kind": "image",
+   "page": 12,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01201",
+   "kind": "image",
+   "page": 12,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01202",
+   "kind": "image",
+   "page": 12,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01203",
+   "kind": "image",
+   "page": 12,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01204",
+   "kind": "image",
+   "page": 12,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01205",
+   "kind": "image",
+   "page": 12,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "image",
+   "page": 13,
+   "bbox": [
+    103.335,
+    226.68899999999996,
+    491.982,
+    615.335
+   ],
+   "odl_id": 37,
+   "hash": "7a38891df6e69015eff2596fc65601bf",
+   "area": 0.30115268284170466,
+   "decorative": false,
+   "id": "e035",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Riwayat dan perkembangan (C1)",
+    "label_x": "pekan",
+    "label_y": "kata unik per pekan",
+    "satuan": "",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "pekan 1",
+     "nilai": 11.0
+    },
+    {
+     "kategori": "pekan 2",
+     "nilai": 22.0
+    },
+    {
+     "kategori": "pekan 3",
+     "nilai": 33.0
+    },
+    {
+     "kategori": "pekan 4",
+     "nilai": 44.0
+    },
+    {
+     "kategori": "pekan 5",
+     "nilai": 55.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "11 kata",
+     "nilai": 11.0
+    },
+    {
+     "kategori": "berbeda yang Arka pakai",
+     "nilai": 20.0
+    },
+    {
+     "kategori": "Angka naik atau turun itu",
+     "nilai": 30.0
+    },
+    {
+     "kategori": "terapis adalah arah dalam",
+     "nilai": 40.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "pekan 1",
+     "nilai": 11.0
+    },
+    {
+     "kategori": "pekan 2",
+     "nilai": 22.0
+    },
+    {
+     "kategori": "pekan 3",
+     "nilai": 33.0
+    },
+    {
+     "kategori": "pekan 4",
+     "nilai": 44.0
+    },
+    {
+     "kategori": "pekan 5",
+     "nilai": 55.0
+    }
+   ],
+   "delta": 1.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Riwayat dan perkembangan (C1)”, "
+    },
+    {
+     "text": "dengan sumbu kategori pekan dan sumbu nilai kata unik per pekan. "
+    },
+    {
+     "text": "Grafik memuat 5 kategori, dari pekan 1 sampai pekan 5. "
+    },
+    {
+     "text": "Nilai tertinggi pada pekan 5, yaitu "
+    },
+    {
+     "text": "55",
+     "claim": 0
+    },
+    {
+     "text": "; terendah pada pekan 1, yaitu "
+    },
+    {
+     "text": "11",
+     "claim": 1
+    },
+    {
+     "text": ". Selisih keduanya "
+    },
+    {
+     "text": "44",
+     "claim": 2
+    },
+    {
+     "text": ", dan rerata seluruh kategori "
+    },
+    {
+     "text": "33,0",
+     "claim": 3
+    },
+    {
+     "text": ". "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "naik",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "44",
+     "claim": 5
+    },
+    {
+     "text": " dari pekan 1 ke pekan 5. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "pekan 1 "
+    },
+    {
+     "text": "11",
+     "claim": 6
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "pekan 2 "
+    },
+    {
+     "text": "22",
+     "claim": 7
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "pekan 3 "
+    },
+    {
+     "text": "33",
+     "claim": 8
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "pekan 4 "
+    },
+    {
+     "text": "44",
+     "claim": 9
+    },
+    {
+     "text": "; "
+    },
+    {
+     "text": "pekan 5 "
+    },
+    {
+     "text": "55",
+     "claim": 10
+    },
+    {
+     "text": "."
+    }
+   ],
+   "claims": [
+    {
+     "e": "pekan 5",
+     "m": "maksimum",
+     "v": 55.0
+    },
+    {
+     "e": "pekan 1",
+     "m": "minimum",
+     "v": 11.0
+    },
+    {
+     "e": "pekan 5|pekan 1",
+     "m": "selisih",
+     "v": 44.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 33.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik"
+    },
+    {
+     "e": "pekan 1|pekan 5",
+     "m": "perubahan_terfit",
+     "v": 44.0
+    },
+    {
+     "e": "pekan 1",
+     "m": "nilai",
+     "v": 11.0
+    },
+    {
+     "e": "pekan 2",
+     "m": "nilai",
+     "v": 22.0
+    },
+    {
+     "e": "pekan 3",
+     "m": "nilai",
+     "v": 33.0
+    },
+    {
+     "e": "pekan 4",
+     "m": "nilai",
+     "v": 44.0
+    },
+    {
+     "e": "pekan 5",
+     "m": "nilai",
+     "v": 55.0
+    }
+   ],
+   "D": [
+    {
+     "e": "pekan 5",
+     "m": "maksimum",
+     "v": 55.0
+    },
+    {
+     "e": "pekan 1",
+     "m": "minimum",
+     "v": 11.0
+    },
+    {
+     "e": "pekan 5|pekan 1",
+     "m": "selisih",
+     "v": 44.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 33.0
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 165.0
+    },
+    {
+     "e": "pekan 1|pekan 5",
+     "m": "perubahan_terfit",
+     "v": 44.0
+    },
+    {
+     "e": "pekan 1|pekan 5",
+     "m": "perubahan",
+     "v": 44.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik"
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Riwayat dan perkembangan (C1)”, dengan sumbu kategori pekan dan sumbu nilai kata unik per pekan. Grafik memuat 5 kategori, dari pekan 1 sampai pekan 5. Nilai tertinggi pada pekan 5, yaitu 55; terendah pada pekan 1, yaitu 11. Selisih keduanya 44, dan rerata seluruh kategori 33,0. Secara keseluruhan tren naik: garis regresi berubah sekitar 44 dari pekan 1 ke pekan 5. Rincian nilai: pekan 1 11; pekan 2 22; pekan 3 33; pekan 4 44; pekan 5 55.",
+   "claim_detail": [
+    {
+     "e": "pekan 5",
+     "m": "maksimum",
+     "v": 55.0,
+     "ok": true,
+     "ref": 55.0
+    },
+    {
+     "e": "pekan 1",
+     "m": "minimum",
+     "v": 11.0,
+     "ok": true,
+     "ref": 11.0
+    },
+    {
+     "e": "pekan 5|pekan 1",
+     "m": "selisih",
+     "v": 44.0,
+     "ok": true,
+     "ref": 44.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 33.0,
+     "ok": true,
+     "ref": 33.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "naik",
+     "ok": true,
+     "ref": "naik"
+    },
+    {
+     "e": "pekan 1|pekan 5",
+     "m": "perubahan_terfit",
+     "v": 44.0,
+     "ok": true,
+     "ref": 44.0
+    },
+    {
+     "e": "pekan 1",
+     "m": "nilai",
+     "v": 11.0,
+     "ok": true,
+     "ref": 11.0
+    },
+    {
+     "e": "pekan 2",
+     "m": "nilai",
+     "v": 22.0,
+     "ok": true,
+     "ref": 22.0
+    },
+    {
+     "e": "pekan 3",
+     "m": "nilai",
+     "v": 33.0,
+     "ok": true,
+     "ref": 33.0
+    },
+    {
+     "e": "pekan 4",
+     "m": "nilai",
+     "v": 44.0,
+     "ok": true,
+     "ref": 44.0
+    },
+    {
+     "e": "pekan 5",
+     "m": "nilai",
+     "v": 55.0,
+     "ok": true,
+     "ref": 55.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": false,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [
+    "Dua ekstraksi tidak konsisten: δ = 1.000 > θe = 0.01"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 13,
+   "text": "LLaammppiirraann 55.. PPeerrkkeemmbbaannggaann ddaann ppeennggeelloollaaaann kkoossaakkaattaa",
+   "id": "e036"
+  },
+  {
+   "id": "v01300",
+   "kind": "image",
+   "page": 13,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-1 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v01301",
+   "kind": "image",
+   "page": 13,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-2 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v01302",
+   "kind": "image",
+   "page": 13,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-3 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v01303",
+   "kind": "image",
+   "page": 13,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-4 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v01304",
+   "kind": "image",
+   "page": 13,
+   "vektor": true,
+   "campuran": true,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD",
+    "Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML",
+    "Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat (figur ke-5 dari 5 pada halaman ini)"
+   ]
+  },
+  {
+   "id": "v01400",
+   "kind": "image",
+   "page": 14,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01401",
+   "kind": "image",
+   "page": 14,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01402",
+   "kind": "image",
+   "page": 14,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01403",
+   "kind": "image",
+   "page": 14,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01404",
+   "kind": "image",
+   "page": 14,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01405",
+   "kind": "image",
+   "page": 14,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01500",
+   "kind": "image",
+   "page": 15,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01501",
+   "kind": "image",
+   "page": 15,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01502",
+   "kind": "image",
+   "page": 15,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01503",
+   "kind": "image",
+   "page": 15,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01504",
+   "kind": "image",
+   "page": 15,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01505",
+   "kind": "image",
+   "page": 15,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 16,
+   "text": "LLaammppiirraann 66.. PPeenngghhuubbuunngg tteerraappiiss ddaann bbeerrbbaaggii ddaattaa",
+   "id": "e037"
+  },
+  {
+   "kind": "paragraph",
+   "page": 16,
+   "text": "LLaammppiirraann 77.. PPaappaann ppaannttaauu tteerraappiiss,, aannttaarrmmuukkaa wweebb",
+   "id": "e038"
+  },
+  {
+   "id": "v01600",
+   "kind": "image",
+   "page": 16,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01601",
+   "kind": "image",
+   "page": 16,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01602",
+   "kind": "image",
+   "page": 16,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01603",
+   "kind": "image",
+   "page": 16,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01604",
+   "kind": "image",
+   "page": 16,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01605",
+   "kind": "image",
+   "page": 16,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01700",
+   "kind": "image",
+   "page": 17,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01701",
+   "kind": "image",
+   "page": 17,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01702",
+   "kind": "image",
+   "page": 17,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01703",
+   "kind": "image",
+   "page": 17,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01704",
+   "kind": "image",
+   "page": 17,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01705",
+   "kind": "image",
+   "page": 17,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01800",
+   "kind": "image",
+   "page": 18,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01801",
+   "kind": "image",
+   "page": 18,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01802",
+   "kind": "image",
+   "page": 18,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01803",
+   "kind": "image",
+   "page": 18,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  },
+  {
+   "id": "v01804",
+   "kind": "image",
+   "page": 18,
+   "vektor": true,
+   "campuran": false,
+   "jenis": "figur",
+   "status": "antrean",
+   "checks": {},
+   "reasons": [
+    "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); ditahan untuk ULD"
+   ]
+  }
+ ],
+ "thresholds": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "Î¸e terkecil (â‰¥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) â‰¥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada Î´=0 â†’ ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ },
+ "manifest": {
+  "model_t1": "gemma-4-26b-a4b-it",
+  "model_t2": "gemma-4-26b-a4b-it",
+  "model_b2": "gemma-4-26b-a4b-it",
+  "model_qa": "gemma-4-26b-a4b-it",
+  "thinking": "bawaan (Gemma) / minimal (Gemini)",
+  "temperature": 0,
+  "prompt_t1": "a2db0023d821",
+  "prompt_t2": "bbe13c6a83dc",
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
+ },
+ "pages": 18,
+ "timing": {
+  "struktur_s": 3.27,
+  "total_s": 33.98
+ },
+ "_job": "C:\\Uner\\Lomba\\Campus Data Week\\Final\\Prototype\\work\\job_ujivektor1",
+ "patch": {
+  "figures": 113,
+  "alt_filled": 113,
+  "figur_ditahan": 26,
+  "figur_tambahan": 14,
+  "halaman_tidak_cocok": [
+   1,
+   6,
+   7,
+   13
+  ],
+  "th_cells": 0
+ },
+ "report": {
+  "B0": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 1,
+    "failed_checks": 113,
+    "rules": [
+     {
+      "clause": "7.3",
+      "test": 1,
+      "checks": 113,
+      "desc": "Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 113,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "B1": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 1,
+    "failed_checks": 113,
+    "rules": [
+     {
+      "clause": "7.3",
+      "test": 1,
+      "checks": 113,
+      "desc": "Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 113,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "D": {
+   "verapdf": {
+    "compliant": true,
+    "failed_rules": 0,
+    "failed_checks": 0,
+    "rules": []
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 113,
+    "alt_bermakna": 113,
+    "alt_ok": true,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": true,
+    "alt_ditahan": 112,
+    "pass_ketat": false
+   }
+  }
+ }
+}

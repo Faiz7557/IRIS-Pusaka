@@ -1,0 +1,4 @@
+impeccable: could not download engine 0.1.11 from https://github.com/pbakaus/impeccable/releases/download/engine-v0.1.11/impeccable-windows-x64.exe; check network access and the release URL. 
+Engine 0.1.11 setup needs network access and write permission to "C:\Uner\Lomba\Campus Data Week\Final\Prototype\tasks\evidence\impeccable-cache\bin\0.1.11". 
+Run this launcher ("C:\Users\Faiz Iqbal\.agents\skills\impeccable\scripts\impeccable.cmd") with engine-probe in a terminal that has those permissions, then retry the original command. 
+Alternatively, set IMPECCABLE_HOME to a writable cache location, or IMPECCABLE_BIN to a preinstalled engine binary. 

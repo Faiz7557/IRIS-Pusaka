@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+google-genai
+pymupdf==1.28.2           # versi Lampiran D; diuji end-to-end dari clone bersih 21 Okt
+pikepdf
+opendataloader-pdf==2.5.11
+numpy
+matplotlib
+# Mode dengar bawaan memakai Web Speech API di peramban (tanpa dependensi Python).
+# Jalur suara lama edge-tts + OpenVoice (tidak dipakai aplikasi): requirements-suara.txt

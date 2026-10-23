@@ -1,0 +1,87 @@
+{
+  "method": "WCAG sRGB relative luminance; proposed pairs, not whole-app compliance",
+  "palette": {
+    "ink": "#0b0a0a",
+    "paper": "#f4f1ee",
+    "orange": "#cf6224",
+    "violet": "#5a3cd4",
+    "sage": "#80a89b",
+    "taupe": "#bca59d",
+    "muted": "#514c49",
+    "error": "#a51d2d",
+    "error-bg": "#fce6e8",
+    "hold": "#624000",
+    "hold-bg": "#fff0c2",
+    "verified": "#185c3a",
+    "verified-bg": "#e4f2e9",
+    "focus": "#1457c5"
+  },
+  "pairs": [
+    {
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 17.57,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "ink",
+      "background": "orange",
+      "ratio": 5.11,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "paper",
+      "background": "orange",
+      "ratio": 3.44,
+      "normalTextAA": false
+    },
+    {
+      "foreground": "paper",
+      "background": "violet",
+      "ratio": 6.16,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "ink",
+      "background": "sage",
+      "ratio": 7.53,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "ink",
+      "background": "taupe",
+      "ratio": 8.48,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 7.53,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "error",
+      "background": "error-bg",
+      "ratio": 6.26,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "hold",
+      "background": "hold-bg",
+      "ratio": 8.21,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "verified",
+      "background": "verified-bg",
+      "ratio": 6.91,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "focus",
+      "background": "paper",
+      "ratio": 5.83,
+      "normalTextAA": true
+    }
+  ]
+}

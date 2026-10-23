@@ -1,0 +1,1 @@
+{"jenis": "grafik", "jenis_grafik": "batang", "banyak_seri": 1, "judul": "Skor rata-rata ujian per kelas (2022)", "label_x": "Kelas", "label_y": "Skor", "satuan": "", "tik_min": 0, "tik_max": 100, "data": [{"kategori": "Kelas B", "nilai": 87}, {"kategori": "Kelas A", "nilai": 88}, {"kategori": "Kelas E", "nilai": 69}, {"kategori": "Kelas D", "nilai": 77}]}

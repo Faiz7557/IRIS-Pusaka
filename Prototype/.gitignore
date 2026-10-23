@@ -1,0 +1,17 @@
+# Sesi pemrosesan dan berkas sementara
+work/
+__pycache__/
+*.pyc
+
+# Alat pihak ketiga yang diunduh ulang (lihat README: Persiapan)
+tools/
+
+# Suara Satya: dipakai dengan izin untuk prototipe/demo, tidak untuk disebarkan
+data/voice/
+cache/audio/
+
+# Materi kuliah nyata dari Common Crawl: tidak disebarluaskan (hanya metadata cc.json)
+data/cc/*.pdf
+
+# Sementara dari halaman keputusan desain
+.impeccable/questions/

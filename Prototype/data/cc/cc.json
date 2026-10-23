@@ -1,0 +1,44 @@
+{
+ "crawl": "CC-MAIN-2026-39",
+ "seed": 20260930,
+ "domain_dicoba": 20,
+ "bingkai_stratum_A": 57,
+ "sampel": [
+  {
+   "file": "cc_01_its.pdf",
+   "url": "https://www.its.ac.id/instrumentasi/wp-content/uploads/sites/54/2024/08/RPS-Proposal-PAS.Tr_.-.doc.pdf",
+   "domain": "its.ac.id",
+   "bytes": 125330
+  },
+  {
+   "file": "cc_02_its.pdf",
+   "url": "https://www.its.ac.id/instrumentasi/wp-content/uploads/sites/54/2024/08/RPS-Sistem-Kontrol-Terdistribusi.docx.pdf",
+   "domain": "its.ac.id",
+   "bytes": 120067
+  },
+  {
+   "file": "cc_03_unair.pdf",
+   "url": "https://pspa.ff.unair.ac.id/files/content/1718104872-6-Module-Handbook.pdf",
+   "domain": "unair.ac.id",
+   "bytes": 4117462
+  },
+  {
+   "file": "cc_04_uny.pdf",
+   "url": "https://akademik.uny.ac.id/sites/akademik.uny.ac.id/files/15.%20SOP%20Layanan%20Cuti%20Kuliah.pdf",
+   "domain": "uny.ac.id",
+   "bytes": 373781
+  },
+  {
+   "file": "cc_05_unej.pdf",
+   "url": "https://biologi.mipa.unej.ac.id/wp-content/uploads/2025/12/Appendics-2.1a-Module-Handbook-Biology.pdf",
+   "domain": "unej.ac.id",
+   "bytes": 2190881
+  },
+  {
+   "file": "cc_06_uny.pdf",
+   "url": "https://uny.ac.id/sites/default/files/2026-04/Pemberitahuan%20Perkuliahan%20selama%20UTBK-SNBT%202026.pdf",
+   "domain": "uny.ac.id",
+   "bytes": 359266
+  }
+ ]
+}

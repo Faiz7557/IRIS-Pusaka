@@ -1,0 +1,42 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+INFO:     127.0.0.1:60774 - "GET /api/evaluasi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54681 - "GET /api/demo/grafik HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54681 - "GET /api/demo/mutasi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54694 - "GET /demo.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53160 - "GET /demo.html?ui=sill20261023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53160 - "GET /fonts/Gabarito-latin.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53160 - "GET /api/evaluasi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53160 - "GET /favicon.svg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61177 - "GET /demo.html?ui=sill20261023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61177 - "GET /fonts.css?v=sill-20261023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58677 - "GET /style.css?v=sill-20261023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55919 - "GET /common.js?v=sill-20261023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61177 - "GET /api/demo/mutasi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58677 - "GET /api/demo/grafik HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65353 - "POST /api/demo/jalankan/syn043 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58774 - "POST /api/demo/suntik/syn043 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53858 - "POST /api/demo/suntik/syn043 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53858 - "POST /api/demo/suntik/syn043 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53858 - "POST /api/demo/suntik/syn043 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53858 - "GET /index.html?ui=sill20261023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51111 - "GET /fonts.css?v=sill-20261023 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53858 - "GET /fonts/Gabarito-latin.woff2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60177 - "GET /common.js?v=sill-20261023 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:65195 - "GET /style.css?v=sill-20261023 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:65195 - "GET /api/sampel HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "POST /api/sampel/materi_01.pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+Consider using the pymupdf_layout package for a greatly improved page layout analysis.
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61635 - "GET /api/pekerjaan/662f37b52d/img/e014 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62785 - "GET /api/pekerjaan/662f37b52d/img/e017 HTTP/1.1" 200 OK

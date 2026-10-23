@@ -1,0 +1,1630 @@
+{
+ "title": "Pertemuan 7: Statistika Deskriptif dan Visualisasi Data",
+ "file": "materi_05.pdf",
+ "tagged_input": false,
+ "elements": [
+  {
+   "kind": "heading",
+   "level": 1,
+   "page": 1,
+   "text": "Pertemuan 7: Statistika Deskriptif dan Visualisasi Data",
+   "id": "e000"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    98.08000000000004,
+    95.0,
+    126.08000000000004
+   ],
+   "odl_id": 2,
+   "hash": "4172b371a443968ef914364398aa2608",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e001",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Mata kuliah Statistika Dasar, semester gasal",
+   "id": "e002"
+  },
+  {
+   "kind": "heading",
+   "level": 2,
+   "page": 1,
+   "text": "1. Pendahuluan",
+   "id": "e003"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Statistika deskriptif membantu kita meringkas data sebelum melakukan inferensi. Pada pertemuan ini kita membahas ukuran pemusatan, ukuran penyebaran, dan cara membaca graﬁk dengan benar.",
+   "id": "e004"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Tabel berikut merangkum hasil kuis mingguan. Gunakan tabel ini untuk berlatih menghitung rerata dan simpangan baku secara manual sebelum memakai perangkat lunak.",
+   "id": "e005"
+  },
+  {
+   "kind": "table",
+   "page": 1,
+   "rows": [
+    [
+     "Nama",
+     "Kuis 1",
+     "Kuis 2"
+    ],
+    [
+     "Mahasiswa A",
+     "62",
+     "70"
+    ],
+    [
+     "Mahasiswa B",
+     "97",
+     "89"
+    ],
+    [
+     "Mahasiswa C",
+     "87",
+     "92"
+    ],
+    [
+     "Mahasiswa D",
+     "82",
+     "99"
+    ],
+    [
+     "Mahasiswa E",
+     "83",
+     "85"
+    ]
+   ],
+   "source": "pymupdf",
+   "id": "e006"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Graﬁk batang cocok untuk membandingkan kategori, sedangkan graﬁk garis cocok untuk memperlihatkan perubahan menurut waktu. Perhatikan selalu satuan dan skala pada sumbu nilai.",
+   "id": "e007"
+  },
+  {
+   "kind": "image",
+   "page": 1,
+   "bbox": [
+    67.0,
+    455.58,
+    447.0,
+    693.08
+   ],
+   "odl_id": 91,
+   "hash": "ccb69728dfc3cb618aa5eb730fee0f88",
+   "area": 0.180143316233857,
+   "decorative": false,
+   "id": "e008",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang",
+    "judul": "Mahasiswa disabilitas terdaftar per tahun (2020)",
+    "label_x": "Tahun",
+    "label_y": "Jumlah (orang)",
+    "satuan": "orang",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "2018",
+     "nilai": 227.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 208.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 135.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 39.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 40.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "2018",
+     "nilai": 227.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 208.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 135.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 39.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 40.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "2018",
+     "nilai": 227.0
+    },
+    {
+     "kategori": "2019",
+     "nilai": 208.0
+    },
+    {
+     "kategori": "2020",
+     "nilai": 135.0
+    },
+    {
+     "kategori": "2021",
+     "nilai": 39.0
+    },
+    {
+     "kategori": "2022",
+     "nilai": 40.0
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik batang "
+    },
+    {
+     "text": "berjudul “Mahasiswa disabilitas terdaftar per tahun (2020)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). "
+    },
+    {
+     "text": "Grafik memuat 5 kategori, dari 2018 sampai 2022. "
+    },
+    {
+     "text": "Nilai tertinggi pada 2018, yaitu "
+    },
+    {
+     "text": "227",
+     "claim": 0
+    },
+    {
+     "text": " orang; terendah pada 2021, yaitu "
+    },
+    {
+     "text": "39",
+     "claim": 1
+    },
+    {
+     "text": " orang. Selisih keduanya "
+    },
+    {
+     "text": "188",
+     "claim": 2
+    },
+    {
+     "text": " orang, dan rerata seluruh kategori "
+    },
+    {
+     "text": "129,8",
+     "claim": 3
+    },
+    {
+     "text": " orang. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "turun",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "-217",
+     "claim": 5
+    },
+    {
+     "text": " orang dari 2018 ke 2022. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "2018 "
+    },
+    {
+     "text": "227",
+     "claim": 6
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2019 "
+    },
+    {
+     "text": "208",
+     "claim": 7
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2020 "
+    },
+    {
+     "text": "135",
+     "claim": 8
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2021 "
+    },
+    {
+     "text": "39",
+     "claim": 9
+    },
+    {
+     "text": " orang; "
+    },
+    {
+     "text": "2022 "
+    },
+    {
+     "text": "40",
+     "claim": 10
+    },
+    {
+     "text": " orang."
+    }
+   ],
+   "claims": [
+    {
+     "e": "2018",
+     "m": "maksimum",
+     "v": 227.0
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 39.0
+    },
+    {
+     "e": "2018|2021",
+     "m": "selisih",
+     "v": 188.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 129.8
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": -217.2
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 227.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 208.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 135.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 39.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 40.0
+    }
+   ],
+   "D": [
+    {
+     "e": "2018",
+     "m": "maksimum",
+     "v": 227.0
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 39.0
+    },
+    {
+     "e": "2018|2021",
+     "m": "selisih",
+     "v": 188.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 129.8
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 649.0
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": -217.2
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan",
+     "v": -187.0
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    }
+   ],
+   "alt_auto": "Grafik batang berjudul “Mahasiswa disabilitas terdaftar per tahun (2020)”, dengan sumbu kategori Tahun dan sumbu nilai Jumlah (orang). Grafik memuat 5 kategori, dari 2018 sampai 2022. Nilai tertinggi pada 2018, yaitu 227 orang; terendah pada 2021, yaitu 39 orang. Selisih keduanya 188 orang, dan rerata seluruh kategori 129,8 orang. Secara keseluruhan tren turun: garis regresi berubah sekitar -217 orang dari 2018 ke 2022. Rincian nilai: 2018 227 orang; 2019 208 orang; 2020 135 orang; 2021 39 orang; 2022 40 orang.",
+   "claim_detail": [
+    {
+     "e": "2018",
+     "m": "maksimum",
+     "v": 227.0,
+     "ok": true,
+     "ref": 227.0
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 39.0,
+     "ok": true,
+     "ref": 39.0
+    },
+    {
+     "e": "2018|2021",
+     "m": "selisih",
+     "v": 188.0,
+     "ok": true,
+     "ref": 188.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 129.8,
+     "ok": true,
+     "ref": 129.8
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun",
+     "ok": true,
+     "ref": "turun"
+    },
+    {
+     "e": "2018|2022",
+     "m": "perubahan_terfit",
+     "v": -217.2,
+     "ok": true,
+     "ref": -217.2
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 227.0,
+     "ok": true,
+     "ref": 227.0
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 208.0,
+     "ok": true,
+     "ref": 208.0
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 135.0,
+     "ok": true,
+     "ref": 135.0
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 39.0,
+     "ok": true,
+     "ref": 39.0
+    },
+    {
+     "e": "2022",
+     "m": "nilai",
+     "v": 40.0,
+     "ok": true,
+     "ref": 40.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Gambar 1. Mahasiswa disabilitas terdaftar per tahun (2020)",
+   "id": "e009"
+  },
+  {
+   "kind": "heading",
+   "level": 3,
+   "page": 1,
+   "text": "2. Membaca graﬁk",
+   "id": "e010"
+  },
+  {
+   "kind": "paragraph",
+   "page": 1,
+   "text": "Data berikut berasal dari contoh ilustratif dan tidak mewakili statistik resmi. Mahasiswa diminta mengidentiﬁkasi nilai tertinggi, nilai terendah, serta pola umum pada setiap graﬁk.",
+   "id": "e011"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 96,
+   "hash": "4ab0e55297e80efcaec4393bcd7ca473",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e012",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "batang_horizontal",
+    "judul": "Ekspor komoditas Jawa Timur (2021)",
+    "label_x": "Nilai ekspor (juta USD)",
+    "label_y": "Komoditas",
+    "satuan": "juta USD",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "Kertas",
+     "nilai": 97.0
+    },
+    {
+     "kategori": "Udang",
+     "nilai": 584.0
+    },
+    {
+     "kategori": "Rokok",
+     "nilai": 826.0
+    },
+    {
+     "kategori": "Tembaga",
+     "nilai": 1200.0
+    },
+    {
+     "kategori": "Perhiasan",
+     "nilai": 1106.0
+    },
+    {
+     "kategori": "Kayu olahan",
+     "nilai": 893.0
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "Kertas",
+     "nilai": 97.0
+    },
+    {
+     "kategori": "Udang",
+     "nilai": 584.0
+    },
+    {
+     "kategori": "Rokok",
+     "nilai": 826.0
+    },
+    {
+     "kategori": "Tembaga",
+     "nilai": 1200.0
+    },
+    {
+     "kategori": "Perhiasan",
+     "nilai": 1106.0
+    },
+    {
+     "kategori": "Kayu olahan",
+     "nilai": 893.0
+    }
+   ],
+   "table": [
+    {
+     "kategori": "Kertas",
+     "nilai": 97.0
+    },
+    {
+     "kategori": "Udang",
+     "nilai": 584.0
+    },
+    {
+     "kategori": "Rokok",
+     "nilai": 826.0
+    },
+    {
+     "kategori": "Tembaga",
+     "nilai": 1200.0
+    },
+    {
+     "kategori": "Perhiasan",
+     "nilai": 1106.0
+    },
+    {
+     "kategori": "Kayu olahan",
+     "nilai": 893.0
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik batang horizontal "
+    },
+    {
+     "text": "berjudul “Ekspor komoditas Jawa Timur (2021)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Komoditas dan sumbu nilai Nilai ekspor (juta USD). "
+    },
+    {
+     "text": "Grafik memuat 6 kategori, dari Kertas sampai Kayu olahan. "
+    },
+    {
+     "text": "Nilai tertinggi pada Tembaga, yaitu "
+    },
+    {
+     "text": "1.200",
+     "claim": 0
+    },
+    {
+     "text": " juta USD; terendah pada Kertas, yaitu "
+    },
+    {
+     "text": "97",
+     "claim": 1
+    },
+    {
+     "text": " juta USD. Selisih keduanya "
+    },
+    {
+     "text": "1.103",
+     "claim": 2
+    },
+    {
+     "text": " juta USD, dan rerata seluruh kategori "
+    },
+    {
+     "text": "784,3",
+     "claim": 3
+    },
+    {
+     "text": " juta USD. "
+    },
+    {
+     "text": "Urutan dari tertinggi: Tembaga, Perhiasan, Kayu olahan, Rokok, Udang, Kertas. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "Kertas "
+    },
+    {
+     "text": "97",
+     "claim": 4
+    },
+    {
+     "text": " juta USD; "
+    },
+    {
+     "text": "Udang "
+    },
+    {
+     "text": "584",
+     "claim": 5
+    },
+    {
+     "text": " juta USD; "
+    },
+    {
+     "text": "Rokok "
+    },
+    {
+     "text": "826",
+     "claim": 6
+    },
+    {
+     "text": " juta USD; "
+    },
+    {
+     "text": "Tembaga "
+    },
+    {
+     "text": "1.200",
+     "claim": 7
+    },
+    {
+     "text": " juta USD; "
+    },
+    {
+     "text": "Perhiasan "
+    },
+    {
+     "text": "1.106",
+     "claim": 8
+    },
+    {
+     "text": " juta USD; "
+    },
+    {
+     "text": "Kayu olahan "
+    },
+    {
+     "text": "893",
+     "claim": 9
+    },
+    {
+     "text": " juta USD."
+    }
+   ],
+   "claims": [
+    {
+     "e": "Tembaga",
+     "m": "maksimum",
+     "v": 1200.0
+    },
+    {
+     "e": "Kertas",
+     "m": "minimum",
+     "v": 97.0
+    },
+    {
+     "e": "Tembaga|Kertas",
+     "m": "selisih",
+     "v": 1103.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 784.3333333333334
+    },
+    {
+     "e": "Kertas",
+     "m": "nilai",
+     "v": 97.0
+    },
+    {
+     "e": "Udang",
+     "m": "nilai",
+     "v": 584.0
+    },
+    {
+     "e": "Rokok",
+     "m": "nilai",
+     "v": 826.0
+    },
+    {
+     "e": "Tembaga",
+     "m": "nilai",
+     "v": 1200.0
+    },
+    {
+     "e": "Perhiasan",
+     "m": "nilai",
+     "v": 1106.0
+    },
+    {
+     "e": "Kayu olahan",
+     "m": "nilai",
+     "v": 893.0
+    }
+   ],
+   "D": [
+    {
+     "e": "Tembaga",
+     "m": "maksimum",
+     "v": 1200.0
+    },
+    {
+     "e": "Kertas",
+     "m": "minimum",
+     "v": 97.0
+    },
+    {
+     "e": "Tembaga|Kertas",
+     "m": "selisih",
+     "v": 1103.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 784.3333333333334
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 4706.0
+    }
+   ],
+   "alt_auto": "Grafik batang horizontal berjudul “Ekspor komoditas Jawa Timur (2021)”, dengan sumbu kategori Komoditas dan sumbu nilai Nilai ekspor (juta USD). Grafik memuat 6 kategori, dari Kertas sampai Kayu olahan. Nilai tertinggi pada Tembaga, yaitu 1.200 juta USD; terendah pada Kertas, yaitu 97 juta USD. Selisih keduanya 1.103 juta USD, dan rerata seluruh kategori 784,3 juta USD. Urutan dari tertinggi: Tembaga, Perhiasan, Kayu olahan, Rokok, Udang, Kertas. Rincian nilai: Kertas 97 juta USD; Udang 584 juta USD; Rokok 826 juta USD; Tembaga 1.200 juta USD; Perhiasan 1.106 juta USD; Kayu olahan 893 juta USD.",
+   "claim_detail": [
+    {
+     "e": "Tembaga",
+     "m": "maksimum",
+     "v": 1200.0,
+     "ok": true,
+     "ref": 1200.0
+    },
+    {
+     "e": "Kertas",
+     "m": "minimum",
+     "v": 97.0,
+     "ok": true,
+     "ref": 97.0
+    },
+    {
+     "e": "Tembaga|Kertas",
+     "m": "selisih",
+     "v": 1103.0,
+     "ok": true,
+     "ref": 1103.0
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 784.3333333333334,
+     "ok": true,
+     "ref": 784.3333333333334
+    },
+    {
+     "e": "Kertas",
+     "m": "nilai",
+     "v": 97.0,
+     "ok": true,
+     "ref": 97.0
+    },
+    {
+     "e": "Udang",
+     "m": "nilai",
+     "v": 584.0,
+     "ok": true,
+     "ref": 584.0
+    },
+    {
+     "e": "Rokok",
+     "m": "nilai",
+     "v": 826.0,
+     "ok": true,
+     "ref": 826.0
+    },
+    {
+     "e": "Tembaga",
+     "m": "nilai",
+     "v": 1200.0,
+     "ok": true,
+     "ref": 1200.0
+    },
+    {
+     "e": "Perhiasan",
+     "m": "nilai",
+     "v": 1106.0,
+     "ok": true,
+     "ref": 1106.0
+    },
+    {
+     "e": "Kayu olahan",
+     "m": "nilai",
+     "v": 893.0,
+     "ok": true,
+     "ref": 893.0
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 2. Ekspor komoditas Jawa Timur (2021)",
+   "id": "e013"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    328.70000000000005,
+    447.0,
+    480.7
+   ],
+   "odl_id": 99,
+   "hash": "56d0c72c8cc43fe73748ae0a3c26bcae",
+   "area": 0.11529172238966841,
+   "decorative": false,
+   "id": "e014",
+   "jenis": "diagram",
+   "draft": "Diagram alir yang menggambarkan tahapan dalam statistika inferensial. Urutannya dimulai dari populasi, kemudian diambil sampel, dihitung nilai statistiknya, dan diakhiri dengan proses inferensi.",
+   "checks": {},
+   "reasons": [
+    "Diagram nondata tidak memiliki pemeriksaan otomatis (K = ∅)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Gambar 3. Alur dari populasi ke inferensi",
+   "id": "e015"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "3. Ukuran pemusatan Rerata sampel dideﬁnisikan sebagai berikut.",
+   "id": "e016"
+  },
+  {
+   "kind": "image",
+   "page": 2,
+   "bbox": [
+    67.0,
+    566.7,
+    307.0,
+    614.7
+   ],
+   "odl_id": 103,
+   "hash": "b6be6aa801f8443ca6b7f746746dc4c7",
+   "area": 0.022994470947523903,
+   "decorative": false,
+   "id": "e017",
+   "jenis": "rumus",
+   "draft": "LaTeX: s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - \\bar{x})^2\nUcapan: s kuadrat sama dengan satu per n dikurang satu, dikali sigma dari i sama dengan satu sampai n, dari x sub i dikurangi x bar dikuadratkan.",
+   "checks": {},
+   "reasons": [
+    "Rumus: pengenal kedua belum tersedia, ditahan (fail-closed)"
+   ],
+   "status": "antrean"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "Regresi linear sederhana memodelkan hubungan antara variabel bebas x dan variabel terikat y. Koeﬁsien kemiringan menunjukkan besarnya perubahan y untuk setiap kenaikan satu satuan x.",
+   "id": "e018"
+  },
+  {
+   "kind": "paragraph",
+   "page": 2,
+   "text": "4. Latihan Perhatikan graﬁk berikut dan tentukan kategori dengan nilai tertinggi.",
+   "id": "e019"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    56.0,
+    447.0,
+    293.5
+   ],
+   "odl_id": 106,
+   "hash": "9a1adeef7ef4d962d131f84676b1945e",
+   "area": 0.18014331623385696,
+   "decorative": false,
+   "id": "e020",
+   "jenis": "grafik",
+   "ext": {
+    "jenis_grafik": "garis",
+    "judul": "Tingkat kelulusan tepat waktu per angkatan (2020)",
+    "label_x": "Angkatan",
+    "label_y": "Persentase (%)",
+    "satuan": "%",
+    "banyak_seri": 1
+   },
+   "T1": [
+    {
+     "kategori": "2015",
+     "nilai": 73.3
+    },
+    {
+     "kategori": "2016",
+     "nilai": 65.7
+    },
+    {
+     "kategori": "2017",
+     "nilai": 59.3
+    },
+    {
+     "kategori": "2018",
+     "nilai": 55.6
+    },
+    {
+     "kategori": "2019",
+     "nilai": 48.2
+    },
+    {
+     "kategori": "2020",
+     "nilai": 49.2
+    },
+    {
+     "kategori": "2021",
+     "nilai": 35.7
+    }
+   ],
+   "T2": [
+    {
+     "kategori": "2015",
+     "nilai": 73.3
+    },
+    {
+     "kategori": "2016",
+     "nilai": 65.7
+    },
+    {
+     "kategori": "2017",
+     "nilai": 59.3
+    },
+    {
+     "kategori": "2018",
+     "nilai": 55.6
+    },
+    {
+     "kategori": "2019",
+     "nilai": 48.2
+    },
+    {
+     "kategori": "2020",
+     "nilai": 49.2
+    },
+    {
+     "kategori": "2021",
+     "nilai": 35.7
+    }
+   ],
+   "table": [
+    {
+     "kategori": "2015",
+     "nilai": 73.3
+    },
+    {
+     "kategori": "2016",
+     "nilai": 65.7
+    },
+    {
+     "kategori": "2017",
+     "nilai": 59.3
+    },
+    {
+     "kategori": "2018",
+     "nilai": 55.6
+    },
+    {
+     "kategori": "2019",
+     "nilai": 48.2
+    },
+    {
+     "kategori": "2020",
+     "nilai": 49.2
+    },
+    {
+     "kategori": "2021",
+     "nilai": 35.7
+    }
+   ],
+   "delta": 0.0,
+   "axis_ok": true,
+   "axis_msg": "nilai berada dalam rentang sumbu",
+   "label_tertulis": true,
+   "seg": [
+    {
+     "text": "Grafik garis "
+    },
+    {
+     "text": "berjudul “Tingkat kelulusan tepat waktu per angkatan (2020)”, "
+    },
+    {
+     "text": "dengan sumbu kategori Angkatan dan sumbu nilai Persentase (%). "
+    },
+    {
+     "text": "Grafik memuat 7 kategori, dari 2015 sampai 2021. "
+    },
+    {
+     "text": "Nilai tertinggi pada 2015, yaitu "
+    },
+    {
+     "text": "73,3",
+     "claim": 0
+    },
+    {
+     "text": " %; terendah pada 2021, yaitu "
+    },
+    {
+     "text": "35,7",
+     "claim": 1
+    },
+    {
+     "text": " %. Selisih keduanya "
+    },
+    {
+     "text": "37,6",
+     "claim": 2
+    },
+    {
+     "text": " %, dan rerata seluruh kategori "
+    },
+    {
+     "text": "55,3",
+     "claim": 3
+    },
+    {
+     "text": " %. "
+    },
+    {
+     "text": "Secara keseluruhan tren "
+    },
+    {
+     "text": "turun",
+     "claim": 4
+    },
+    {
+     "text": ": garis regresi berubah sekitar "
+    },
+    {
+     "text": "-33,6",
+     "claim": 5
+    },
+    {
+     "text": " % dari 2015 ke 2021. "
+    },
+    {
+     "text": "Rincian nilai: "
+    },
+    {
+     "text": "2015 "
+    },
+    {
+     "text": "73,3",
+     "claim": 6
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2016 "
+    },
+    {
+     "text": "65,7",
+     "claim": 7
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2017 "
+    },
+    {
+     "text": "59,3",
+     "claim": 8
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2018 "
+    },
+    {
+     "text": "55,6",
+     "claim": 9
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2019 "
+    },
+    {
+     "text": "48,2",
+     "claim": 10
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2020 "
+    },
+    {
+     "text": "49,2",
+     "claim": 11
+    },
+    {
+     "text": " %; "
+    },
+    {
+     "text": "2021 "
+    },
+    {
+     "text": "35,7",
+     "claim": 12
+    },
+    {
+     "text": " %."
+    }
+   ],
+   "claims": [
+    {
+     "e": "2015",
+     "m": "maksimum",
+     "v": 73.3
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 35.7
+    },
+    {
+     "e": "2015|2021",
+     "m": "selisih",
+     "v": 37.599999999999994
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 55.285714285714285
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan_terfit",
+     "v": -33.62142857142857
+    },
+    {
+     "e": "2015",
+     "m": "nilai",
+     "v": 73.3
+    },
+    {
+     "e": "2016",
+     "m": "nilai",
+     "v": 65.7
+    },
+    {
+     "e": "2017",
+     "m": "nilai",
+     "v": 59.3
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 55.6
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 48.2
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 49.2
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 35.7
+    }
+   ],
+   "D": [
+    {
+     "e": "2015",
+     "m": "maksimum",
+     "v": 73.3
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 35.7
+    },
+    {
+     "e": "2015|2021",
+     "m": "selisih",
+     "v": 37.599999999999994
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 55.285714285714285
+    },
+    {
+     "e": "*",
+     "m": "total",
+     "v": 387.0
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan_terfit",
+     "v": -33.62142857142857
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan",
+     "v": -37.599999999999994
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun"
+    }
+   ],
+   "alt_auto": "Grafik garis berjudul “Tingkat kelulusan tepat waktu per angkatan (2020)”, dengan sumbu kategori Angkatan dan sumbu nilai Persentase (%). Grafik memuat 7 kategori, dari 2015 sampai 2021. Nilai tertinggi pada 2015, yaitu 73,3 %; terendah pada 2021, yaitu 35,7 %. Selisih keduanya 37,6 %, dan rerata seluruh kategori 55,3 %. Secara keseluruhan tren turun: garis regresi berubah sekitar -33,6 % dari 2015 ke 2021. Rincian nilai: 2015 73,3 %; 2016 65,7 %; 2017 59,3 %; 2018 55,6 %; 2019 48,2 %; 2020 49,2 %; 2021 35,7 %.",
+   "claim_detail": [
+    {
+     "e": "2015",
+     "m": "maksimum",
+     "v": 73.3,
+     "ok": true,
+     "ref": 73.3
+    },
+    {
+     "e": "2021",
+     "m": "minimum",
+     "v": 35.7,
+     "ok": true,
+     "ref": 35.7
+    },
+    {
+     "e": "2015|2021",
+     "m": "selisih",
+     "v": 37.599999999999994,
+     "ok": true,
+     "ref": 37.599999999999994
+    },
+    {
+     "e": "*",
+     "m": "rerata",
+     "v": 55.285714285714285,
+     "ok": true,
+     "ref": 55.285714285714285
+    },
+    {
+     "e": "*",
+     "m": "tren",
+     "v": "turun",
+     "ok": true,
+     "ref": "turun"
+    },
+    {
+     "e": "2015|2021",
+     "m": "perubahan_terfit",
+     "v": -33.62142857142857,
+     "ok": true,
+     "ref": -33.62142857142857
+    },
+    {
+     "e": "2015",
+     "m": "nilai",
+     "v": 73.3,
+     "ok": true,
+     "ref": 73.3
+    },
+    {
+     "e": "2016",
+     "m": "nilai",
+     "v": 65.7,
+     "ok": true,
+     "ref": 65.7
+    },
+    {
+     "e": "2017",
+     "m": "nilai",
+     "v": 59.3,
+     "ok": true,
+     "ref": 59.3
+    },
+    {
+     "e": "2018",
+     "m": "nilai",
+     "v": 55.6,
+     "ok": true,
+     "ref": 55.6
+    },
+    {
+     "e": "2019",
+     "m": "nilai",
+     "v": 48.2,
+     "ok": true,
+     "ref": 48.2
+    },
+    {
+     "e": "2020",
+     "m": "nilai",
+     "v": 49.2,
+     "ok": true,
+     "ref": 49.2
+    },
+    {
+     "e": "2021",
+     "m": "nilai",
+     "v": 35.7,
+     "ok": true,
+     "ref": 35.7
+    }
+   ],
+   "checks": {
+    "cF": true,
+    "cδ": true,
+    "cL": true,
+    "cA": true
+   },
+   "reasons": [],
+   "status": "terbit_otomatis"
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Gambar 4. Tingkat kelulusan tepat waktu per angkatan (2020)",
+   "id": "e021"
+  },
+  {
+   "kind": "image",
+   "page": 3,
+   "bbox": [
+    67.0,
+    327.6,
+    95.0,
+    355.6
+   ],
+   "odl_id": 109,
+   "hash": "5a6f6f5d8ec878fdb39ee82d8937e68b",
+   "area": 0.0015649014950398213,
+   "decorative": true,
+   "id": "e022",
+   "jenis": "dekoratif",
+   "status": "dekoratif",
+   "checks": {},
+   "reasons": [
+    "Disaring heuristik ukuran/pengulangan"
+   ]
+  },
+  {
+   "kind": "paragraph",
+   "page": 3,
+   "text": "Akhir materi",
+   "id": "e023"
+  }
+ ],
+ "thresholds": {
+  "theta_e": 0.01,
+  "epsilon": 0.02,
+  "rho": 0.1,
+  "locked": true,
+  "locked_at": "2026-10-12 12:38:31",
+  "calibrated_on": "30 grafik dev",
+  "aturan": "Î¸e terkecil (â‰¥0,01) yang mempertahankan jumlah terbit maksimum dengan rerata Fk (vs acuan) â‰¥ 0,98 pada grafik dev",
+  "riwayat": "v1: Fk 0,937 pada Î´=0 â†’ ditambah cL (nilai tercetak) dan aturan urutan acuan diselaraskan; v2: cA ditoleransi 20% rentang (sumbu melewati tik terluar); set uji belum dibuka"
+ },
+ "manifest": {
+  "model_t1": "gemma-4-26b-a4b-it",
+  "model_t2": "gemma-4-26b-a4b-it",
+  "model_b2": "gemma-4-26b-a4b-it",
+  "model_qa": "gemma-4-26b-a4b-it",
+  "thinking": "bawaan (Gemma) / minimal (Gemini)",
+  "temperature": 0,
+  "prompt_t1": "a2db0023d821",
+  "prompt_t2": "bbe13c6a83dc",
+  "prompt_b2": "ad760959b04a",
+  "skema": "2881acdadcfe"
+ },
+ "pages": 3,
+ "timing": {
+  "struktur_s": 3.02,
+  "total_s": 43.9
+ },
+ "_job": "C:\\Uner\\Lomba\\Campus Data Week\\Final\\Prototype\\work\\eval_materi_05",
+ "patch": {
+  "figures": 7,
+  "alt_filled": 7,
+  "figur_ditahan": 0,
+  "figur_tambahan": 0,
+  "halaman_tidak_cocok": [],
+  "th_cells": 0
+ },
+ "report": {
+  "B0": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 6,
+    "failed_checks": 171,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 11,
+      "checks": 1,
+      "desc": "The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 44,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 3,
+      "checks": 123,
+      "desc": "Content shall be marked as Artifact or tagged as real content"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 0,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "B1": {
+   "verapdf": {
+    "compliant": false,
+    "failed_rules": 5,
+    "failed_checks": 66,
+    "rules": [
+     {
+      "clause": "7.1",
+      "test": 8,
+      "checks": 1,
+      "desc": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML"
+     },
+     {
+      "clause": "7.2",
+      "test": 34,
+      "checks": 56,
+      "desc": "Natural language for text in page content shall be determined"
+     },
+     {
+      "clause": "7.1",
+      "test": 10,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true"
+     },
+     {
+      "clause": "6.2",
+      "test": 1,
+      "checks": 1,
+      "desc": "The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true"
+     },
+     {
+      "clause": "7.2",
+      "test": 22,
+      "checks": 7,
+      "desc": "Natural language for text in Alt attribute shall be determined"
+     }
+    ]
+   },
+   "g1": {
+    "tagged": false,
+    "figures": 7,
+    "alt_bermakna": 0,
+    "alt_ok": false,
+    "lang_ok": false,
+    "title_ok": false,
+    "pass": false,
+    "alt_ditahan": 0,
+    "pass_ketat": false
+   }
+  },
+  "D": {
+   "verapdf": {
+    "compliant": true,
+    "failed_rules": 0,
+    "failed_checks": 0,
+    "rules": []
+   },
+   "g1": {
+    "tagged": true,
+    "figures": 7,
+    "alt_bermakna": 7,
+    "alt_ok": true,
+    "lang_ok": true,
+    "title_ok": true,
+    "pass": true,
+    "alt_ditahan": 2,
+    "pass_ketat": false
+   }
+  }
+ }
+}
