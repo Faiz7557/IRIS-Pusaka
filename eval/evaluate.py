@@ -262,9 +262,9 @@ def nyata():
         nondek = [e for e in imgs if e["status"] != "dekoratif"]
         rep = st["report"]
         rows.append({"file": m["file"], "domain": m["domain"], "halaman": st["pages"], "bertag_asli": st["tagged_input"],
-                     "gambar": len(imgs) + st["patch"]["figur_tambahan"], "dekoratif": len(imgs) - len(nondek),
-                     "figur_vektor_ditahan": st["patch"]["figur_tambahan"],
-                     "antrean": sum(e["status"] == "antrean" for e in nondek) + st["patch"]["figur_tambahan"],
+                     "gambar": len(imgs), "dekoratif": len(imgs) - len(nondek),
+                     "figur_vektor_ditahan": sum(bool(e.get("vektor")) for e in nondek),  # kini elemen antrean
+                     "antrean": sum(e["status"] == "antrean" for e in nondek),
                      "terbit_otomatis": sum(e["status"] == "terbit_otomatis" for e in nondek),
                      **{k: {"aturan_gagal": rep[k]["verapdf"].get("failed_rules"), "g1_lulus": rep[k]["g1"]["pass"],
                             "g1_ketat": rep[k]["g1"]["pass_ketat"]}

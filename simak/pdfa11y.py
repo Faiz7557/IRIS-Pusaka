@@ -113,6 +113,33 @@ def _first_row_to_th(table) -> int:
     return n
 
 
+def _figs_by_page(p) -> tuple[dict, dict]:
+    """Figure pada pohon struktur, dikelompokkan per nomor halaman (1-based) menurut urutan dokumen."""
+    found = {"fig": [], "table": []}
+    if "/StructTreeRoot" in p.Root:
+        _struct_walk(p.Root.StructTreeRoot.get("/K"), found)
+    page_no = {pg.obj.objgen: i + 1 for i, pg in enumerate(p.pages)}
+    by_page: dict[int, list] = {}
+    for fig, pg in zip(found["fig"], found.get("fig_pg", [])):
+        by_page.setdefault(page_no.get(pg.objgen) if pg is not None else None, []).append(fig)
+    return found, by_page
+
+
+def _bbox(fig):
+    """Atribut Layout /BBox sebuah Figure (koordinat PDF), bila ada."""
+    attrs = fig.get("/A")
+    for a in (attrs if isinstance(attrs, pikepdf.Array) else [attrs]):
+        if isinstance(a, pikepdf.Dictionary) and isinstance(a.get("/BBox"), pikepdf.Array) and len(a.BBox) == 4:
+            return [float(v) for v in a.BBox]
+    return None
+
+
+def figure_boxes(pdf: Path) -> dict:
+    """{halaman: [bbox | None, …]} untuk setiap Figure bertag, dalam urutan pohon struktur."""
+    with pikepdf.open(pdf) as p:
+        return {n: [_bbox(f) for f in figs] for n, figs in _figs_by_page(p)[1].items() if n}
+
+
 def patch(src: Path, dst: Path, title: str, alts_by_page: dict, held_alt: str, lang: str = "id-ID") -> dict:
     """Menambal PDF bertag. Teks alternatif dipetakan per halaman menurut urutan; bila jumlah Figure
     pada suatu halaman tidak sama dengan jumlah citra yang diproses (mis. figur vektor), seluruh Figure
@@ -133,14 +160,7 @@ def patch(src: Path, dst: Path, title: str, alts_by_page: dict, held_alt: str, l
             m["dc:language"] = [lang]
             m.register_xml_namespace("http://www.aiim.org/pdfua/ns/id/", "pdfuaid")
             m["pdfuaid:part"] = "1"
-        found = {"fig": [], "table": []}
-        if "/StructTreeRoot" in p.Root:
-            _struct_walk(p.Root.StructTreeRoot.get("/K"), found)
-        page_no = {pg.obj.objgen: i + 1 for i, pg in enumerate(p.pages)}
-        by_page: dict[int, list] = {}
-        for fig, pg in zip(found["fig"], found.get("fig_pg", [])):
-            n = page_no.get(pg.objgen) if pg is not None else None
-            by_page.setdefault(n, []).append(fig)
+        found, by_page = _figs_by_page(p)
         stats["figures"] = len(found["fig"])
         for n, figs in by_page.items():
             alts = alts_by_page.get(n, [])

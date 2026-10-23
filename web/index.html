@@ -165,15 +165,15 @@ function render() {
   const imgs = STATE.elements.filter(e => e.kind === 'image');
   const c = s => imgs.filter(e => s.includes(e.status)).length;
   const nondek = imgs.filter(e => e.status !== 'dekoratif').length;
-  const vec = (STATE.patch || {}).figur_tambahan || 0;
-  const R = nondek + vec ? Math.round(100 * (c(['antrean']) + vec) / (nondek + vec)) : 0;
+  const vec = imgs.filter(e => e.vektor).length;
+  const R = nondek ? Math.round(100 * c(['antrean']) / nondek) : 0;
   $('#pages').textContent = `${STATE.pages} halaman`;
   $('#tally').innerHTML = [
     [c(['terbit_otomatis']), 'terbit otomatis, lolos gerbang'],
     [c(['antrean']), 'ditahan di antrean ULD'],
     [c(['disetujui', 'diubah']), 'disetujui atau diubah ULD'],
     [c(['dekoratif']), 'dekoratif (alt kosong)'],
-    ...(vec ? [[vec, 'figur vektor ditahan di PDF']] : []),
+    ...(vec ? [[vec, 'di antaranya figur tanpa citra terproses']] : []),
   ].map(([n, l]) => `<dt>${n}</dt><dd>${l}</dd>`).join('') + `<dt>${R}%</dt><dd>beban tinjauan R</dd>`;
   const rep = STATE.report || {};
   const rules = k => ((rep[k] || {}).verapdf || {}).failed_rules ?? '–';
@@ -254,6 +254,7 @@ async function act(e, aksi) {
   }
   const j = await (await fetch('/api/pekerjaan/' + JID)).json();
   STATE = j.state; render(); detail();
+  prog(`Keputusan "${aksi}" dicap untuk ${e.id}.`, false);
   pressSlip($('#d-slip'));
   announce(`Keputusan "${aksi}" dicap. PDF dan HTML dirakit ulang.`);
 }

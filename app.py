@@ -138,7 +138,10 @@ def tinjau(jid: str, el: str, body: Tinjau):
         raise HTTPException(400)
     if body.aksi == "ubah" and not body.alt.strip():
         raise HTTPException(400, "Teks alternatif tidak boleh kosong")
-    return pipeline.review(_job_dir(jid), el, body.aksi, body.alt.strip())
+    try:
+        return pipeline.review(_job_dir(jid), el, body.aksi, body.alt.strip())
+    except ValueError as e:
+        raise HTTPException(400, str(e))
 
 
 @app.get("/keluaran/{jid}/{name}")

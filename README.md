@@ -113,7 +113,10 @@ Catatan penting:
 ## Batasan (dilaporkan apa adanya)
 
 - Kuota free tier Gemini Flash hanya 20 permintaan/hari/model. Karena itu evaluasi memakai Gemma, dan T1/T2 memakai model yang sama dengan dua perintah berbeda.
-- Figur vektor (bukan citra raster) belum dideskripsikan; semuanya ditahan dengan penanda di PDF dan dihitung dalam R, tetapi belum muncul sebagai kartu di antrean UI.
+- Figur vektor (bukan citra raster) belum dideskripsikan; semuanya ditahan dengan penanda di PDF dan dihitung dalam R.
+  Sejak branch `fitur/kartu-figur-vektor` (setelah tag v1.0-final), setiap Figure bertag tanpa citra terproses tampil
+  sebagai kartu di antrean ULD dengan pratinjau dari `/BBox`. Pada halaman tanpa citra raster, keputusan ULD ditanam
+  ke Figure yang tepat di PDF; pada halaman campuran PDF tetap berpenanda tahan dan keputusan hanya masuk HTML.
 - Evaluasi dijalankan dua kali (VLM suhu 0 + cache): run 1 (12 Okt) dan run 2 (23 Okt) pada ambang yang sama; 0/60 status grafik berbeda (`python -m eval.banding_run eval/results_run1_2026-10-12.json eval/results.json`). Kedua run memakai model yang sama, jadi keduanya tidak mengukur variasi antarmodel.
 - Rumus belum memakai pengenal kedua dan MathCAT, jadi seluruh rumus ditahan (fail-closed) dengan draf LaTeX + ucapan untuk ULD.
 - Gambar dekoratif diberi `/Alt` "Hiasan (dekoratif)" di PDF; penandaan sebagai *Artifact* (menyunting aliran konten) belum dibuat. Di HTML sudah `alt=""`.

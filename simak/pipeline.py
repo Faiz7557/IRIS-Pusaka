@@ -138,6 +138,58 @@ HELD_FIGURE_ALT = ("[Menunggu tinjauan ULD] Gambar yang belum dapat diproses oto
                    "(mis. figur vektor); deskripsi belum diverifikasi.")
 
 
+def _struct_src(job: Path) -> Path:
+    """PDF yang pohon strukturnya ditambal: keluaran auto-tag, atau PDF asli bila sudah bertag."""
+    src = job / "odl" / "asli_tagged.pdf"
+    return src if src.exists() else job / "asli.pdf"
+
+
+def _vector_figures(job: Path, doc, els: list) -> list:
+    """Figure bertag tanpa citra raster (figur vektor dari Word/PowerPoint) menjadi elemen antrean ULD.
+
+    K = ∅ (data jalur vektor belum dibaca), jadi selalu ditahan. Pada halaman tanpa citra raster, urutan
+    Figure pada pohon struktur = urutan kartu, sehingga keputusan ULD dapat ditanam ke PDF. Pada halaman
+    campuran urutannya tidak dapat dipastikan: PDF tetap berpenanda tahan, keputusan ULD hanya masuk HTML.
+    """
+    raster = {}
+    for e in els:
+        if e["kind"] == "image":
+            raster[e["page"]] = raster.get(e["page"], 0) + 1
+    out = []
+    for n, boxes in sorted(pdfa11y.figure_boxes(_struct_src(job)).items()):
+        extra = len(boxes) - raster.get(n, 0)
+        if extra <= 0 or n > doc.page_count:
+            continue
+        page = doc[n - 1]
+        campuran = raster.get(n, 0) > 0
+        # ponytail: pada halaman campuran Figure mana yang vektor tidak diketahui; pratinjau seluruh halaman.
+        cand = [None] * extra if campuran else boxes
+        for k, bb in enumerate(cand):
+            el_id = f"v{n:03d}{k:02d}"
+            clip = None
+            if bb:
+                r = fitz.Rect(bb) * page.transformation_matrix & page.rect  # ruang PDF → ruang halaman
+                clip = r if r.get_area() >= 0.005 * page.rect.get_area() else None
+            pix = page.get_pixmap(clip=clip, dpi=150 if clip else 90)
+            (job / "img").mkdir(exist_ok=True)
+            (job / "img" / f"{el_id}.png").write_bytes(pix.tobytes("png"))
+            vektor_murni = not page.get_images()
+            reasons = ["Figur vektor tanpa citra raster: data jalur vektor belum dibaca (K = ∅), ditahan untuk ULD"
+                       if vektor_murni else
+                       "Figure bertag tanpa citra yang terdeteksi tata letak, tidak dapat diverifikasi (K = ∅); "
+                       "ditahan untuk ULD"]
+            if campuran:
+                reasons.append("Halaman ini juga memuat citra raster sehingga urutan Figure tidak dapat dipastikan; "
+                               "di PDF bertag figur tetap berpenanda tahan, keputusan ULD diterapkan pada HTML")
+            if not clip:
+                reasons.append(f"Pratinjau menampilkan seluruh halaman karena letak figur tidak tercatat "
+                               f"(figur ke-{k + 1} dari {len(cand)} pada halaman ini)")
+            out.append({"id": el_id, "kind": "image", "page": n, "vektor": True, "campuran": campuran,
+                        "jenis": "figur vektor" if vektor_murni else "figur", "status": "antrean", "checks": {},
+                        "reasons": reasons})
+    return out
+
+
 def alt_for(el: dict) -> str:
     """Teks alternatif yang ditanam ke keluaran, selalu dengan penanda statusnya."""
     st = el.get("status")
@@ -187,6 +239,9 @@ def run(pdf_path: Path, job: Path, progress=lambda *a: None) -> dict:
             progress("gambar", f"Gambar {done}/{len(imgs)} selesai")
     for e in els:
         e.pop("png_bytes", None)
+    for v in _vector_figures(job, doc, els):  # sisipkan setelah blok terakhir di halamannya (urutan baca)
+        i = max((j for j, e in enumerate(els) if e["page"] <= v["page"]), default=-1)
+        els.insert(i + 1, v)
 
     state = {"title": title, "file": pdf_path.name, "tagged_input": tagged_in, "elements": els,
              "thresholds": th, "manifest": vlm.manifest(), "pages": doc.page_count,
@@ -209,12 +264,9 @@ def assemble(job: Path, state: dict):
     state["_job"] = str(job)
     alts_by_page: dict[int, list] = {}
     for e in state["elements"]:
-        if e["kind"] == "image":
+        if e["kind"] == "image" and not e.get("campuran"):
             alts_by_page.setdefault(e["page"], []).append(alt_for(e))
-    src = job / "odl" / "asli_tagged.pdf"
-    if not src.exists():
-        src = job / "asli.pdf"
-    state["patch"] = pdfa11y.patch(src, job / "simak.pdf", state["title"], alts_by_page, HELD_FIGURE_ALT)
+    state["patch"] = pdfa11y.patch(_struct_src(job), job / "simak.pdf", state["title"], alts_by_page, HELD_FIGURE_ALT)
     for e in state["elements"]:  # status mengikuti isi PDF: halaman tidak cocok berarti ditahan
         if e["kind"] == "image" and e["page"] in state["patch"]["halaman_tidak_cocok"] and e["status"] == "terbit_otomatis":
             e["status"] = "antrean"
@@ -237,6 +289,8 @@ def review(job: Path, el_id: str, aksi: str, alt: str = "") -> dict:
     el = next(e for e in state["elements"] if e["id"] == el_id)
     if aksi == "setujui":
         el["alt_final"] = alt or el.get("alt_auto") or el.get("draft", "")
+        if not el["alt_final"].strip():  # figur vektor tidak punya draf: ULD wajib menulis deskripsinya
+            raise ValueError("Teks alternatif tidak boleh kosong")
         el["status"] = "disetujui"
     elif aksi == "ubah":
         el["alt_final"], el["status"] = alt, "diubah"
