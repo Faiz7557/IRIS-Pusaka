@@ -140,12 +140,113 @@ def figure_boxes(pdf: Path) -> dict:
         return {n: [_bbox(f) for f in figs] for n, figs in _figs_by_page(p)[1].items() if n}
 
 
+DECORATIVE_ALT = "Hiasan (dekoratif)"  # hanya bila Figure tidak dapat dijadikan Artifact
+MATCH_IOU = 0.8
+
+
+def _iou(a, b) -> float:
+    ix = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
+    iy = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+    inter = ix * iy
+    union = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - inter
+    return inter / union if union > 0 else 0.0
+
+
+def _match_by_bbox(figs, entries) -> dict:
+    """{indeks Figure: entri} untuk pasangan satu-satu dengan IoU ≥ MATCH_IOU; sisanya tidak dipasangkan."""
+    boxes = [_bbox(f) for f in figs]
+    cand = sorted(((_iou(fb, e["bbox"]), i, j) for i, fb in enumerate(boxes) if fb
+                   for j, e in enumerate(entries) if e.get("bbox")), reverse=True)
+    used_f, used_e, out = set(), set(), {}
+    for iou, i, j in cand:
+        if iou < MATCH_IOU:
+            break
+        if i not in used_f and j not in used_e:
+            used_f.add(i), used_e.add(j)
+            out[i] = entries[j]
+    return out
+
+
+def _mcids(fig, page) -> list | None:
+    """MCID langsung milik Figure pada halamannya; None bila bentuk /K tidak sederhana (objek, stream lain)."""
+    k = fig.get("/K")
+    out = []
+    for c in (list(k) if isinstance(k, pikepdf.Array) else [k]):
+        if isinstance(c, int):
+            out.append(int(c))
+        elif (isinstance(c, pikepdf.Dictionary) and c.get("/Type") == "/MCR" and "/Stm" not in c
+              and c.get("/Pg", page.obj).objgen == page.obj.objgen):
+            out.append(int(c.MCID))
+        else:
+            return None
+    return out or None
+
+
+def _parent_tree_array(p, idx):
+    def find(node):
+        nums = node.get("/Nums")
+        if nums is not None:
+            for i in range(0, len(nums) - 1, 2):
+                if int(nums[i]) == idx:
+                    return nums[i + 1]
+        for kid in node.get("/Kids") or []:
+            lim = kid.get("/Limits")
+            if lim is None or int(lim[0]) <= idx <= int(lim[1]):
+                hit = find(kid)
+                if hit is not None:
+                    return hit
+        return None
+    pt = p.Root.StructTreeRoot.get("/ParentTree")
+    return find(pt) if pt is not None else None
+
+
+def _to_artifact(p, page, figs) -> set:
+    """Menjadikan Figure dekoratif sebagai Artifact (PDF/UA 7.1): konten bertanda BMC /Artifact, Figure
+    dilepas dari pohon struktur, entri ParentTree dikosongkan. Mengembalikan objgen Figure yang berhasil."""
+    plan = {f.objgen: m for f in figs if (m := _mcids(f, page))}
+    wanted = {m for ms in plan.values() for m in ms}
+    if not wanted:
+        return set()
+    ops, seen = [], set()
+    for ins in pikepdf.parse_content_stream(page):
+        if (isinstance(ins, pikepdf.ContentStreamInstruction) and str(ins.operator) == "BDC"
+                and len(ins.operands) == 2 and isinstance(ins.operands[1], pikepdf.Dictionary)
+                and ins.operands[1].get("/MCID") in wanted):
+            seen.add(int(ins.operands[1].MCID))
+            ins = pikepdf.ContentStreamInstruction([pikepdf.Name.Artifact], pikepdf.Operator("BMC"))
+        ops.append(ins)
+    done = {g for g, ms in plan.items() if set(ms) <= seen}
+    if not done:
+        return set()
+    if seen - {m for g in done for m in plan[g]}:
+        return set()  # MCID Figure lain ikut terkena: batalkan seluruhnya agar konten tidak yatim
+    page.contents_coalesce()
+    page.Contents.write(pikepdf.unparse_content_stream(ops))
+    arr = _parent_tree_array(p, int(page.obj.get("/StructParents", -1)))
+    for f in figs:
+        if f.objgen not in done:
+            continue
+        if arr is not None:
+            for m in plan[f.objgen]:
+                if m < len(arr):
+                    arr[m] = None
+        parent = f.get("/P")
+        pk = parent.get("/K") if parent is not None else None
+        if isinstance(pk, pikepdf.Array):
+            parent.K = pikepdf.Array([c for c in pk if not (isinstance(c, pikepdf.Dictionary) and c.objgen == f.objgen)])
+        elif isinstance(pk, pikepdf.Dictionary) and pk.objgen == f.objgen:
+            del parent["/K"]
+    return done
+
+
 def patch(src: Path, dst: Path, title: str, alts_by_page: dict, held_alt: str, lang: str = "id-ID") -> dict:
-    """Menambal PDF bertag. Teks alternatif dipetakan per halaman menurut urutan; bila jumlah Figure
-    pada suatu halaman tidak sama dengan jumlah citra yang diproses (mis. figur vektor), seluruh Figure
-    pada halaman itu diberi penanda ditahan (fail-closed) agar deskripsi tidak terpasang pada gambar lain."""
+    """Menambal PDF bertag. alts_by_page = {halaman: [{"id", "alt", "bbox"}]}, alt None berarti dekoratif
+    (dijadikan Artifact), bbox dalam ruang PDF. Bila jumlah Figure pada halaman sama dengan jumlah entri,
+    pemetaan mengikuti urutan; bila tidak, entri dipasangkan menurut bbox (IoU ≥ MATCH_IOU) dan Figure yang
+    tidak berpasangan diberi penanda ditahan (fail-closed) agar deskripsi tidak terpasang pada gambar lain.
+    "tertanam" mencatat id entri yang keputusannya benar-benar masuk PDF."""
     stats = {"figures": 0, "alt_filled": 0, "figur_ditahan": 0, "figur_tambahan": 0, "halaman_tidak_cocok": [],
-             "th_cells": 0}
+             "th_cells": 0, "tertanam": [], "artefak": 0, "artefak_gagal": 0}
     with pikepdf.open(src) as p:
         p.Root.Lang = pikepdf.String(lang)
         p.Root.MarkInfo = pikepdf.Dictionary(Marked=True)
@@ -163,15 +264,34 @@ def patch(src: Path, dst: Path, title: str, alts_by_page: dict, held_alt: str, l
         found, by_page = _figs_by_page(p)
         stats["figures"] = len(found["fig"])
         for n, figs in by_page.items():
-            alts = alts_by_page.get(n, [])
-            if len(alts) != len(figs):
+            entries = alts_by_page.get(n, [])
+            if len(entries) == len(figs):
+                pairs = dict(enumerate(entries))
+            else:
                 stats["halaman_tidak_cocok"].append(n)
-                alts = [held_alt] * len(figs)
-                stats["figur_ditahan"] += len(figs)
-                stats["figur_tambahan"] += max(0, len(figs) - len(alts_by_page.get(n, [])))
-            for fig, alt in zip(figs, alts):
-                fig.Alt = pikepdf.String(alt)
+                stats["figur_tambahan"] += max(0, len(figs) - len(entries))
+                pairs = _match_by_bbox(figs, entries)
+            deco = []
+            for i, fig in enumerate(figs):
+                e = pairs.get(i)
+                if e is None:
+                    fig.Alt = pikepdf.String(held_alt)
+                    stats["figur_ditahan"] += 1
+                elif e["alt"] is None:
+                    deco.append(fig)
+                    continue
+                else:
+                    fig.Alt = pikepdf.String(e["alt"])
                 stats["alt_filled"] += 1
+            if deco:
+                done = _to_artifact(p, p.pages[n - 1], deco) if n else set()
+                for fig in deco:
+                    if fig.objgen not in done:
+                        fig.Alt = pikepdf.String(DECORATIVE_ALT)
+                        stats["alt_filled"] += 1
+                stats["artefak"] += len(done)
+                stats["artefak_gagal"] += len(deco) - len(done)
+            stats["tertanam"] += [e["id"] for e in pairs.values()]
         for t in found["table"]:
             stats["th_cells"] += _first_row_to_th(t)
         p.save(dst)

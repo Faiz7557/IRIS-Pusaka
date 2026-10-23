@@ -83,5 +83,22 @@ async function harness(page) {
     assert.equal(h.element('#test-bar .status').textContent, 'Transkrip kosong');
     assert.equal(h.element('#test-bar [data-a="play"]').disabled, true);
   }
-  console.log('PASS: stale polling, duplicate start, offline recovery, stable player controls/empty state');
+  {
+    // R = masuk antrean setelah gerbang / gambar nondekoratif; keputusan ULD tidak mengubahnya.
+    const h = await harness('index.html');
+    const gate = {e0: 'terbit_otomatis', e1: 'antrean', e2: 'antrean', e3: 'antrean', e4: 'antrean', e5: 'dekoratif'};
+    const state = JSON.parse(JSON.stringify(fixture.completed));
+    state.elements.forEach(e => { if (gate[e.id]) e.status_gerbang = gate[e.id]; });
+    h.context.STATE_IN = state;
+    h.run('STATE = STATE_IN; render();');
+    assert.match(h.element('#tally').innerHTML, /<dt>80%<\/dt><dd>beban tinjauan R · 4\/5 masuk antrean/);
+    h.run("STATE.elements.find(e => e.id === 'e1').status = 'dekoratif'; render();");
+    assert.match(h.element('#tally').innerHTML, /<dt>80%<\/dt>/, 'ULD decisions must not change R');
+    const legacy = JSON.parse(JSON.stringify(fixture.completed));
+    legacy.elements.forEach(e => { if (['e2', 'e3', 'e4'].includes(e.id)) e.log = [{aksi: 'setujui'}]; });
+    h.context.STATE_IN = legacy;
+    h.run('STATE = STATE_IN; render();');
+    assert.match(h.element('#tally').innerHTML, /beban tinjauan R · 4\/5 masuk antrean/, 'legacy sessions count ULD-decided elements as queued');
+  }
+  console.log('PASS: stale polling, duplicate start, offline recovery, stable player controls/empty state, review burden R');
 })().catch(e => { console.error(e); process.exitCode = 1; });

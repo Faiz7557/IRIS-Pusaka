@@ -4,6 +4,7 @@ import html
 from pathlib import Path
 
 from .chart import fmt
+from .listen import figure_labels
 
 _FONT = Path(__file__).resolve().parent.parent / "web" / "fonts" / "AtkinsonHyperlegibleNext-normal-latin.woff2"
 _FONT_FACE = ("@font-face{font-family:'Atkinson Hyperlegible Next';font-weight:200 800;font-display:swap;"
@@ -74,7 +75,8 @@ def _data_table(el) -> str:
 
 
 def build_html(state: dict, alt_for) -> str:
-    parts, n_ok, n_wait, n_reject, fig_no, tab_no = [], 0, 0, 0, 0, 0
+    parts, n_ok, n_wait, n_reject, tab_no = [], 0, 0, 0, 0
+    labels = figure_labels(state["elements"])
     for el in state["elements"]:
         k = el["kind"]
         if k == "heading":
@@ -101,30 +103,30 @@ def build_html(state: dict, alt_for) -> str:
             if st == "dekoratif":
                 parts.append(f"<img class='deco' src='{src}' alt=''>")
                 continue
-            fig_no += 1
+            label = labels[el["id"]]
             alt = alt_for(el)
             if st == "terbit_otomatis":
                 n_ok += 1
                 badge = "<span class='stamp s-ok'>Dihasilkan otomatis · angka terverifikasi</span>"
                 body = f"<p>{esc(el['alt_auto'])}</p>" + _data_table(el)
-                say = f"Gambar {fig_no}. {el['alt_auto']}"
+                say = f"{label}. {el['alt_auto']}"
             elif st in ("disetujui", "diubah"):
                 n_ok += 1
                 badge = "<span class='stamp s-ok'>" + ("Diubah dan disetujui ULD" if st == "diubah" else "Disetujui ULD") + "</span>"
                 body = f"<p>{esc(el['alt_final'])}</p>" + (_data_table(el) if el.get("table") else "")
-                say = f"Gambar {fig_no}. {el['alt_final']}"
+                say = f"{label}. {el['alt_final']}"
             elif st == "ditolak":
                 n_reject += 1
                 badge = "<span class='stamp s-reject'>Ditolak ULD · deskripsi belum tersedia</span>"
                 body = "<p>Deskripsi ditolak ULD. Gambar ini belum memiliki uraian yang dapat dipercaya.</p>"
-                say = f"Gambar {fig_no}. Deskripsi ditolak Unit Layanan Disabilitas; uraian belum tersedia."
+                say = f"{label}. Deskripsi ditolak Unit Layanan Disabilitas; uraian belum tersedia."
             else:
                 n_wait += 1
                 badge = "<span class='stamp s-hold'>Menunggu tinjauan ULD</span>"
                 body = "<p>Deskripsi gambar ini belum dapat diverifikasi otomatis dan sedang ditinjau Unit Layanan Disabilitas.</p>"
-                say = f"Gambar {fig_no}. {el.get('jenis', 'gambar')}, menunggu tinjauan Unit Layanan Disabilitas."
+                say = f"{label}. {el.get('jenis', 'gambar')}, menunggu tinjauan Unit Layanan Disabilitas."
             parts.append(f"<figure data-say='{esc(say)}'>{badge}<img src='{src}' alt='{esc(alt)}'>"
-                         f"<figcaption><strong>Gambar {fig_no}.</strong> {body}</figcaption></figure>")
+                         f"<figcaption><strong>{esc(label)}.</strong> {body}</figcaption></figure>")
     notice = (f"<div class='notice' role='note'>Dokumen ini diremediasi oleh SIMAK. {n_ok} gambar memiliki deskripsi "
               f"terverifikasi atau disetujui ULD; {n_wait} gambar menunggu tinjauan; {n_reject} deskripsi ditolak. Deskripsi berlabel "
               f"<em>dihasilkan otomatis</em> dibangun dari tabel data dengan statistik yang dihitung kode.</div>")

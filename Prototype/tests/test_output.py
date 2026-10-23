@@ -54,6 +54,26 @@ class ReaderTests(unittest.TestCase):
         self.assertIn("scope='col'", html)
         self.assertIn("role='region'", html)
 
+    def test_figure_labels_do_not_invent_numbers_or_shift(self):
+        els = self.state['elements']
+        for e, page in zip([e for e in els if e['kind'] == 'image'], [1, 1, 2, 2, 2, 3]):
+            e['page'] = page
+        before = listen.figure_labels(els)
+        self.assertEqual(before['e0'], 'Gambar pertama di halaman 1')
+        self.assertEqual(before['e1'], 'Gambar kedua di halaman 1')
+        self.assertNotIn('e5', before)  # dekoratif tidak dibacakan
+        next(e for e in els if e['id'] == 'e0')['status'] = 'dekoratif'
+        after = listen.figure_labels(els)
+        self.assertEqual(after['e1'], 'Gambar di halaman 1')
+        self.assertEqual({k: after[k] for k in ('e2', 'e3', 'e4')}, {k: before[k] for k in ('e2', 'e3', 'e4')},
+                         'menandai dekoratif tidak menggeser label di halaman lain')
+        html = output.build_html(self.state, pipeline.alt_for)
+        spoken = [s['text'] for s in listen.remediated(self.state) if s['kind'] == 'image']
+        for text in [html] + spoken:
+            self.assertNotRegex(text, r'Gambar \d')
+        self.assertIn('<strong>Gambar ketiga di halaman 2.</strong>', html)
+        self.assertTrue(spoken[0].startswith('Gambar di halaman 1. '))
+
     def test_rejected_image_not_narrated_as_pending(self):
         seg = next(s for s in listen.remediated(self.state) if s.get('el') == 'e4')
         self.assertIn('ditolak', seg['text'])

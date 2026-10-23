@@ -12,6 +12,25 @@ from pathlib import Path
 import fitz
 
 _NUM = re.compile(r"\d")
+_ORDINAL = ["pertama", "kedua", "ketiga", "keempat", "kelima", "keenam", "ketujuh", "kedelapan", "kesembilan", "kesepuluh"]
+
+
+def figure_labels(elements) -> dict:
+    """Label gambar yang dibacakan, tanpa nomor urut buatan: "Gambar N" milik keterangan penulis materi,
+    dan nomor buatan bergeser setiap kali ULD menandai gambar dekoratif. Bentuknya "Gambar di halaman 2",
+    atau "Gambar kedua di halaman 2" bila halaman itu memuat lebih dari satu gambar yang dibacakan."""
+    per_page: dict[int, list] = {}
+    for e in elements:
+        if e["kind"] == "image" and e.get("status") != "dekoratif":
+            per_page.setdefault(e["page"], []).append(e["id"])
+    out = {}
+    for page, ids in per_page.items():
+        for k, el_id in enumerate(ids):
+            if len(ids) == 1:
+                out[el_id] = f"Gambar di halaman {page}"
+            else:
+                out[el_id] = f"Gambar {_ORDINAL[k] if k < len(_ORDINAL) else f'ke-{k + 1}'} di halaman {page}"
+    return out
 
 
 def _clean(text: str) -> str:
@@ -45,7 +64,8 @@ def remediated(state: dict) -> list[dict]:
 
 
 def _remediated(state: dict) -> list[dict]:
-    segs, fig_no, tab_no = [], 0, 0
+    segs, tab_no = [], 0
+    labels = figure_labels(state["elements"])
     for el in state["elements"]:
         k = el["kind"]
         if k == "heading":
@@ -65,7 +85,6 @@ def _remediated(state: dict) -> list[dict]:
                 segs.append({"kind": "skip", "page": el["page"], "text": "Hiasan dilewati.", "say": "",
                              "note": "gambar dekoratif, tidak dibacakan", "el": el["id"]})
                 continue
-            fig_no += 1
             if st == "terbit_otomatis":
                 body, note = el["alt_auto"], "dihasilkan otomatis, angka terverifikasi"
             elif st in ("disetujui", "diubah"):
@@ -75,7 +94,7 @@ def _remediated(state: dict) -> list[dict]:
             else:
                 body, note = (f"{(el.get('jenis') or 'gambar').capitalize()}, menunggu tinjauan "
                               "Unit Layanan Disabilitas."), "ditahan, belum diverifikasi"
-            text = f"Gambar {fig_no}. {body}"
+            text = f"{labels[el['id']]}. {body}"
             segs.append({"kind": "image", "page": el["page"], "text": text, "say": text, "note": note,
                          "el": el["id"], "status": st})
     return segs

@@ -277,6 +277,9 @@ def run(pdf_path: Path, job: Path, progress=lambda *a: None) -> dict:
     doc.close()
     progress("rakit", "Merakit PDF bertag dan HTML, lalu validasi veraPDF")
     assemble(job, state)
+    for e in els:  # status setelah gerbang dibekukan: beban tinjauan R tidak berubah oleh keputusan ULD
+        if e["kind"] == "image":
+            e["status_gerbang"] = e["status"]
     rep = {}
     for name, f in (("B0", orig), ("B1", b1), ("D", job / "simak.pdf")):
         rep[name] = {"verapdf": pdfa11y.verapdf(f), "g1": pdfa11y.g1_audit(f)}
@@ -292,16 +295,40 @@ def assemble(job: Path, state: dict, output: Path | None = None):
     output = output or job
     state["_job"] = str(job)
     alts_by_page: dict[int, list] = {}
-    for e in state["elements"]:
-        if e["kind"] == "image" and not e.get("campuran"):
-            alts_by_page.setdefault(e["page"], []).append(alt_for(e))
+    with fitz.open(job / "asli.pdf") as doc:
+        for e in state["elements"]:
+            if e["kind"] == "image" and not e.get("campuran"):
+                bbox = None
+                if e.get("bbox") and e["page"] <= doc.page_count:  # ruang halaman fitz → ruang PDF (/BBox Figure)
+                    bbox = list(fitz.Rect(e["bbox"]) * ~doc[e["page"] - 1].transformation_matrix)
+                alts_by_page.setdefault(e["page"], []).append(
+                    {"id": e["id"], "alt": None if e.get("status") == "dekoratif" else alt_for(e), "bbox": bbox})
     state["patch"] = pdfa11y.patch(_struct_src(job), output / "simak.pdf", state["title"], alts_by_page, HELD_FIGURE_ALT)
-    for e in state["elements"]:  # status mengikuti isi PDF: halaman tidak cocok berarti ditahan
-        if e["kind"] == "image" and e["page"] in state["patch"]["halaman_tidak_cocok"] and e["status"] == "terbit_otomatis":
-            e["status"] = "antrean"
-            e.setdefault("reasons", []).append("Halaman memuat figur yang tidak dapat dipasangkan dengan citra; "
-                                               "ditahan agar deskripsi tidak terpasang pada gambar lain")
+    sync_with_pdf(state)
     (output / "simak.html").write_text(build_html(state, alt_for), encoding="utf-8")
+
+
+PDF_HELD_REASON = ("Halaman memuat figur yang tidak dapat dipasangkan dengan citra; di PDF bertag figur ini tetap "
+                   "berpenanda tahan, keputusan ULD hanya diterapkan pada HTML dan mode dengar")
+
+
+def sync_with_pdf(state: dict):
+    """Status mengikuti isi PDF: elemen yang keputusannya tidak tertanam di PDF ditandai pdf_ditahan;
+    yang terbit otomatis dikembalikan ke antrean agar deskripsi tidak terpasang pada gambar lain."""
+    tidak_cocok, tertanam = set(state["patch"]["halaman_tidak_cocok"]), set(state["patch"].get("tertanam", []))
+    for e in state["elements"]:
+        if e["kind"] != "image" or e.get("campuran"):
+            continue
+        e["pdf_ditahan"] = e["page"] in tidak_cocok and e["id"] not in tertanam
+        reasons = e.setdefault("reasons", [])
+        if not e["pdf_ditahan"]:
+            if PDF_HELD_REASON in reasons:
+                reasons.remove(PDF_HELD_REASON)
+            continue
+        if e["status"] == "terbit_otomatis":
+            e["status"] = "antrean"
+        if PDF_HELD_REASON not in reasons:
+            reasons.append(PDF_HELD_REASON)
 
 
 def save(job: Path, state: dict):
